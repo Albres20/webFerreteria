@@ -1,0 +1,13 @@
+
+#Activar RewriteEngine
+RewriteEngine on
+
+#Esta condicion es verdadera cuando la ruta al REQUEST_FILENAME no hace referencia
+#a una carpeta que existe en el
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

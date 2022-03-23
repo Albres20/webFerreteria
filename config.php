@@ -3,5 +3,5 @@
     const VIEWS='Views/';
     define('DFT', 'Default/');
     define('RQ', 'Resource/');
-    define('URL', 'http://localhost/MVCWEB/');
+    define('URL', 'http://localhost/webferreteria/');
 ?>

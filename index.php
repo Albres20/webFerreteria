@@ -3,7 +3,7 @@
     $controller="";
     $method="";
     $params="";
-    $url=$_GET["url"] ?? "Index/index";
+    $url=$_GET["url"] ?? "Index/Index";
     $arrayUrl=explode("/", $url);//explode es para convertirlo a array
     
 
@@ -26,7 +26,7 @@
         }
         
     }
-    echo $controller;
+    //echo $controller;
     spl_autoload_register(function($class){
         if(file_exists(LBS.$class.".php")){
             require LBS.$class.".php";
@@ -37,7 +37,18 @@
     if(file_exists($controllersPath)){
         require $controllersPath;
         $controller=new $controller();
+        if(isset($method)){
+            if(method_exists($controller, $method)){
+                if(isset($params)){
+                    $controller->{$method}($params);
+                }
+                else{
+                    $controller->{$method}();
+                }
+            }
 
+        }
     }
+
     //echo $controller." ".$method." ".$params;
 ?>

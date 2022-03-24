@@ -7,6 +7,7 @@
     
     <title>Document</title>
     <link rel="stylesheet" href="<?php echo URL.RQ?>css/cabecera.css">
+    
 </head>
 <body>
 
@@ -14,7 +15,7 @@
 
             <section class="contenedor">
                 <div class="nombreTitulo">
-                    TRAIDING E.I.R.L.
+                    TRADING E.I.R.L.
                 </div>
                 <div class="logo">
                     <img src="https://hyt-trading.com/wp-content/uploads/2021/03/hyt-logo-inicio.png" >
@@ -45,8 +46,34 @@
             </form>
         </section>
     </section>
-    <footer class="contenedor">
-
+    <footer>
+        <div class="contenedor">
+            <div class="contactos">
+                <div class="contenedorLocalizacion">
+                    <div class="localizacion">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="letraLocalizacion">Av. Jamaica Mza.M Lote 3 <br>Urb. San Agustín 2da Etapa, Comas.</div> 
+                </div>
+                <div class="contenedorTelefono">    
+                    <div class="telefono">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <div class="numeroTelefono"><br>987330113</div> 
+                </div>
+                <div class="contenedorMensaje">
+                    <div class="mensaje">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div> 
+                    <div class="mensajeCorreo">ventas@hyt-trading.com</div>
+                </div>   
+            </div>
+            <div class="redes">
+                 
+                    
+            </div>
+        </div>
     </footer>
+    <script src="https://kit.fontawesome.com/47fb3045a9.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -113,10 +113,173 @@ body .contenedorCuerpo .contenedorLogin .form input{
 
 
 /*pie de pagina*/
-footer .contenedor{
+footer {
     background: rgb(0, 0, 0);
     display: flex;
-    justify-content: center;
-    text-align: center;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    height: calc(100vh - 130px - 410px);
+    
     
 }
+footer .contenedor{
+    width: 100%;
+    display: flex;
+}
+footer .contactos{
+    margin: 5px 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+    
+}
+footer .contenedorLocalizacion{
+    width: 32%;
+    text-align:end;
+
+}
+
+footer .contenedorLocalizacion .localizacion{
+    background: yellow;
+    border-radius: 50px; 
+    display: inline-block;
+
+}
+footer .contenedorLocalizacion .localizacion i{
+    padding-top: 2px;
+}
+
+footer .contenedorLocalizacion .letraLocalizacion{
+   
+    color: aliceblue;
+    margin-right: 0px;
+    text-align: right;
+    display: inline-block;
+}
+footer .contenedorLocalizacion .localizacion{
+    background: yellow;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    text-align: center;
+    
+    
+}
+footer .contenedorLocalizacion .contenedorTelefono{
+    color: aliceblue;
+}
+footer .contenedorTelefono{
+    width: 32%;
+    align-items: center;
+    text-align: center;
+}
+footer .contenedorTelefono .telefono{
+    background: yellow;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    text-align: center;
+    display: inline-block;
+    
+}
+footer .contenedorTelefono .telefono i{
+    padding-top: 2px;
+}
+footer .contenedorTelefono .numeroTelefono{
+
+    color: aliceblue;
+    display: inline-block;
+}
+
+footer .contenedorMensaje{
+    width: 32%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+footer .contenedorMensaje .mensaje{
+    background: yellow;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    display: inline-block;
+    
+}
+footer .contenedorMensaje .mensajeCorreo{
+    width: 40%;
+    color: aliceblue;
+    display: inline-block;
+}
+
+
+@media(max-width: 1370px) {
+    header .contenedor .nombreTitulo{
+    
+        color: rgb(255, 255, 255);
+        font-size: 35px;
+        width: 22%;
+        margin-top: 20px;
+    }
+    header .contenedor .logo{  
+        margin-top: 0px;
+  
+    }
+    header .contenedor .logo img{  
+        width: 150px;
+        padding: 0px 0px;
+        filter: brightness(1500%);
+    }
+    body .contenedorCuerpo .contenedorLogin{
+    
+        background: rgba(0, 0, 0, .5);
+        width: 25%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 30px;
+        
+    
+    }
+    body .contenedorCuerpo .contenedorLogin .logoLogin{
+        justify-content: center;
+        text-align: center;
+        margin-top: 20px;
+    }
+    body .contenedorCuerpo .contenedorLogin .logoLogin img{
+        width: 200px;
+        
+    }
+    body .contenedorCuerpo .contenedorLogin .logoLogin img:hover{
+        width: 210px;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: -5px;
+        
+    }
+    body .contenedorCuerpo .contenedorLogin .form input{
+        width: 80%;
+        height: 40px;
+        border-radius: 12px;
+        text-align: center;
+        border: none;
+       
+    }
+    body .contenedorCuerpo .contenedorLogin .form .btn{
+        width: 100%;
+        display: inline-block;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 20px;
+      
+        
+    }
+    body .contenedorCuerpo .contenedorLogin .form button{
+        width: 50%;
+        height: 40px;
+        border-radius: 12px;
+        background: rgba(223, 89, 32, 2.0);
+        border: none;
+        color: white;
+        font-size: 20px;
+    }
+  }

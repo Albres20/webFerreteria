@@ -6,7 +6,7 @@
         }
         public function Index(){
 
-            $this->view->Render($this, "index");
+            $this->view->Render($this, "index",null);
         }
     }
 ?>

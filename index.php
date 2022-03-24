@@ -32,6 +32,9 @@
             require LBS.$class.".php";
         }
     });
+
+    require 'Controllers/ErrorController.php';
+    $error = new ErrorController();
     $controller=$controller.'Controller';
     $controllersPath="Controllers/".$controller.'.php';
     if(file_exists($controllersPath)){
@@ -45,9 +48,13 @@
                 else{
                     $controller->{$method}();
                 }
+            }else{
+                $error->Error($url);
             }
 
         }
+    }else{
+        $error->Error($url);
     }
 
     //echo $controller." ".$method." ".$params;

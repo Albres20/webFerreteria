@@ -69,10 +69,17 @@
                 </div>   
             </div>
             <div class="redes">
-                 
-                    
-            </div>
+                
+                <div class="redesContenedor">
+                     <a href="" class="facebook"><i class="fa-brands fa-facebook-square"></i></a>
+                     <a href="" class="instagram"><i class="fa-brands fa-instagram-square"></i></a>
+                     <a href="" class="youtube"><i class="fa-brands fa-youtube-square"></i></a>
+                     <a href="" class="correo"><i class="fa-solid fa-envelope"></i></a>
+                 </div>    
         </div>
+            
+        </div>
+        
     </footer>
     <script src="https://kit.fontawesome.com/47fb3045a9.js" crossorigin="anonymous"></script>
 </body>

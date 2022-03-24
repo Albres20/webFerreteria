@@ -1,6 +1,9 @@
 *{
-    margin: 0px;
-    padding: 0px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 header .contenedor{
@@ -34,6 +37,9 @@ header .franjaInferior{
 }
 
 /*Cuerpo*/
+body{
+    margin-bottom: 0px ;
+}
 body .contenedorCuerpo{
     margin-top: 0px;
     background: url("../image/fondoLogin.jpg");
@@ -115,32 +121,31 @@ body .contenedorCuerpo .contenedorLogin .form input{
 /*pie de pagina*/
 footer {
     background: rgb(0, 0, 0);
-    display: flex;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+    
     height: calc(100vh - 130px - 410px);
-    
-    
-}
-footer .contenedor{
-    width: 100%;
-    display: flex;
-}
-footer .contactos{
-    margin: 5px 0px;
-    width: 100%;
-    display: flex;
     align-items: center;
     
     
 }
-footer .contenedorLocalizacion{
+footer .contenedor{
+
+    justify-content:space-between;
+}
+footer .contenedor .contactos{
+    padding-top: 12px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    
+    
+}
+footer .contenedor .contenedorLocalizacion{
     width: 32%;
     text-align:end;
 
 }
 
-footer .contenedorLocalizacion .localizacion{
+footer .contenedor .contenedorLocalizacion .localizacion{
     background: yellow;
     border-radius: 50px; 
     display: inline-block;
@@ -194,7 +199,6 @@ footer .contenedorTelefono .numeroTelefono{
 
 footer .contenedorMensaje{
     width: 32%;
-    display: flex;
     align-items: center;
     text-align: center;
 }
@@ -212,7 +216,31 @@ footer .contenedorMensaje .mensajeCorreo{
     display: inline-block;
 }
 
+footer .contenedor .redes{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 15px;
+    align-items: center;
+    text-align: center;
+    border-top: white solid 1px;
+    
+}
+footer .contenedor .redes .redesContenedor{
 
+    
+    width: 80%;
+    
+}
+footer .contenedor .redes .redesContenedor a{
+    
+    font-size: 30px;
+    text-align: center;
+    margin: 0px 40px;
+    color: white;
+    padding-top: 80px;
+    
+}
 @media(max-width: 1370px) {
     header .contenedor .nombreTitulo{
     

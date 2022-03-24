@@ -283,3 +283,10 @@ footer .contenedorMensaje .mensajeCorreo{
         font-size: 20px;
     }
   }
+  @media(max-width: 1920px){
+
+    footer{
+        height: calc(100vh - 130px - 720px);
+    }
+    
+  }

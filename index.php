@@ -32,9 +32,10 @@
             require LBS.$class.".php";
         }
     });
-
+    /*Manjeo de errores */
     require 'Controllers/ErrorController.php';
     $error = new ErrorController();
+    
     $controller=$controller.'Controller';
     $controllersPath="Controllers/".$controller.'.php';
     if(file_exists($controllersPath)){

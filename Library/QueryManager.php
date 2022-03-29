@@ -15,6 +15,21 @@ class QueryManager{
             die();
         }
     }
+
+    public function Select1($attr,$table,$where,$param){ //funcion para consultar una tabla
+        try{
+            $where = $where ?? "";
+            $query = "SELECT ".$attr." FROM ".$table." ".$where;
+            $sth = $this->pdo->prepare($query);
+            $sth -> execute($param);
+            $response = $sth->fetchAll(PDO::FETCH_ASSOC);
+            return array("results" => $response);
+        }catch (\Throwable $th){
+            return $th -> getMessage();
+        }
+
+        $pdo = null;
+    }
 }
 
 

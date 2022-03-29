@@ -1,7 +1,9 @@
 <?php
     class Controllers{
         public function __construct() {
+            Session::StartSession();
             $this->view=new Views();
+            $this->role=new Roles();
             $this->loadClassModel();
         }
 

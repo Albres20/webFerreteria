@@ -6,7 +6,8 @@
         }
         public function Index(){
 
-            $this->view->Render($this, "index",null);
+            $this->role->setRoles();
+            $this->view->Render($this, "index",null,null,null);
         }
     }
 ?>

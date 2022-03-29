@@ -6,7 +6,7 @@
         }
 
         public function Error($url){
-            $this->view->Render($this, "Error", $url);
+            $this->view->Render($this, "Error", $url,null,null);
         }
     }
 ?>

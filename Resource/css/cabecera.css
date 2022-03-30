@@ -1,9 +1,6 @@
 * {
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 header .contenedor {
@@ -39,10 +36,6 @@ header .franjaInferior {
 
 /*Cuerpo*/
 
-body {
-    margin-bottom: 0px;
-}
-
 body .contenedorCuerpo {
     margin-top: 0px;
     background: url("../image/fondoLogin.jpg");
@@ -54,13 +47,70 @@ body .contenedorCuerpo {
     justify-content: center;
 }
 
-body .contenedorLogin .logoLogin {
-    justify-content: center;
-    text-align: center;
+body .contenedorCuerpo .contenedorLogin {
+    background: rgba(0, 0, 0, .5);
+    width: 30%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 30px;
 }
 
-body .logoLogin img {
-    width: 250px;
+body .contenedorCuerpo .contenedorLogin .logoLogin {
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+body .contenedorCuerpo .contenedorLogin .logoLogin img:hover {
+    width: 310px;
+}
+
+body .contenedorCuerpo .contenedorLogin .form {
+    margin: 20px 10px;
+}
+
+body .contenedorCuerpo .contenedorLogin .form .user {
+    width: 100%;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+body .contenedorCuerpo .contenedorLogin .form .pass {
+    width: 100%;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+body .contenedorCuerpo .contenedorLogin .form .btn {
+    width: 100%;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+body .contenedorCuerpo .contenedorLogin .form button {
+    width: 40%;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(223, 89, 32, 2.0);
+    border: none;
+    color: white;
+    font-size: 25px;
+}
+
+body .contenedorCuerpo .contenedorLogin .form input {
+    width: 50%;
+    height: 40px;
+    border-radius: 12px;
+    text-align: center;
+    border: none;
 }
 
 
@@ -68,27 +118,30 @@ body .logoLogin img {
 
 footer {
     background: rgb(0, 0, 0);
+    display: flex;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
     height: calc(100vh - 130px - 410px);
-    align-items: center;
 }
 
 footer .contenedor {
-    justify-content: space-between;
+    width: 100%;
+    display: flex;
 }
 
-footer .contenedor .contactos {
-    padding-top: 12px;
+footer .contactos {
+    margin: 5px 0px;
+    width: 100%;
     display: flex;
     align-items: center;
-    padding-bottom: 10px;
 }
 
-footer .contenedor .contenedorLocalizacion {
+footer .contenedorLocalizacion {
     width: 32%;
     text-align: end;
 }
 
-footer .contenedor .contenedorLocalizacion .localizacion {
+footer .contenedorLocalizacion .localizacion {
     background: yellow;
     border-radius: 50px;
     display: inline-block;
@@ -143,6 +196,7 @@ footer .contenedorTelefono .numeroTelefono {
 
 footer .contenedorMensaje {
     width: 32%;
+    display: flex;
     align-items: center;
     text-align: center;
 }
@@ -159,28 +213,6 @@ footer .contenedorMensaje .mensajeCorreo {
     width: 40%;
     color: aliceblue;
     display: inline-block;
-}
-
-footer .contenedor .redes {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding-top: 15px;
-    align-items: center;
-    text-align: center;
-    border-top: white solid 1px;
-}
-
-footer .contenedor .redes .redesContenedor {
-    width: 80%;
-}
-
-footer .contenedor .redes .redesContenedor a {
-    font-size: 30px;
-    text-align: center;
-    margin: 0px 40px;
-    color: white;
-    padding-top: 80px;
 }
 
 @media(max-width: 1370px) {

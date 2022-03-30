@@ -278,6 +278,6 @@ footer .contenedorMensaje .mensajeCorreo {
 
 @media(min-width: 1920px) {
     footer {
-        height: calc(100vh - 130px - 720px);
+        height: calc(100vh - 130px - 120px);
     }
 }

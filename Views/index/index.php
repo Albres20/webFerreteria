@@ -26,7 +26,11 @@
                 
             </section>
     </header>
+    
     <section class="vh-100 gradient-custom contenedorLogin">
+    <div class="contenedorCuerpo">
+        
+        
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -51,11 +55,14 @@
 
                         <button class="btn btn-outline-light btn-lg px-5" type="submit">Iniciar Sesión</button>
                         </form>
+                        <button class="btn btn-outline-light btn-lg px-5" type="submit">prueba</button>
+                        </form>
                     </div>
                 </div>
                 </div>
             </div>
             </div>
+        </div>
         </div>
     </section>
     <footer>

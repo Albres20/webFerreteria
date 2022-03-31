@@ -1,0 +1,56 @@
+[31-Mar-2022 19:15:03 Europe/Berlin] Hello, errors!
+[31-Mar-2022 19:30:32 Europe/Berlin] Hello, errors!
+[31-Mar-2022 19:30:32 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "SessionController" not found in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php:3
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\Principal.php(21): require_once()
+#1 C:\xampp\htdocs\webFerreteria\index.php(15): Principal->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 3
+[31-Mar-2022 19:38:43 Europe/Berlin] Hello, errors!
+[31-Mar-2022 19:38:43 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "SessionController" not found in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php:3
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\Principal.php(21): require_once()
+#1 C:\xampp\htdocs\webFerreteria\index.php(15): Principal->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 3
+[31-Mar-2022 19:42:22 Europe/Berlin] Hello, errors!
+[31-Mar-2022 19:42:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "SessionController" not found in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php:3
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\Principal.php(21): require_once()
+#1 C:\xampp\htdocs\webFerreteria\index.php(15): Principal->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 3
+[31-Mar-2022 19:58:37 Europe/Berlin] Hello, errors!
+[31-Mar-2022 19:58:37 Europe/Berlin] PHP Fatal error:  Cannot use "parent" when current class scope has no parent in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 6
+[31-Mar-2022 20:03:54 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:03:59 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:04:02 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:12:20 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:12:40 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:12:40 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Errores" not found in C:\xampp\htdocs\webFerreteria\Library\Principal.php:61
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\index.php(21): Principal->__construct()
+#1 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\Principal.php on line 61
+[31-Mar-2022 20:13:41 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:13:44 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:13:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Errores" not found in C:\xampp\htdocs\webFerreteria\Library\Principal.php:61
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\index.php(21): Principal->__construct()
+#1 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\Principal.php on line 61
+[31-Mar-2022 20:15:32 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:15:49 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:15:57 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:16:46 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:16:48 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:16:51 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:18:20 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:18:22 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:18:31 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:18:32 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:20:40 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:20:41 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:20:41 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:20:45 Europe/Berlin] Hello, errors!
+[31-Mar-2022 20:31:19 Europe/Berlin] Hello, errors!

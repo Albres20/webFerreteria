@@ -74,35 +74,5 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/47fb3045a9.js" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(login);
-
-	    $(function(){
-            $('#btnLogin').click(function(){
-                var datos = $("#Session").serialize();
-                
-                //var email = $('form[name=Session] input[name=email]')[0].value;
-                //var password = $('form[name=Session] input[name=password]')[0].value;
-
-                /*if (email == "" || password == "") {
-                    alert("Campos Vacios");
-                }else{*/
-                    $.ajax({
-                        type: 'POST',
-                        url: '<?php echo URL;?>User/user/userLogin',
-                        data: datos,
-                        success: function(response){
-                            if (response == 1) {
-                                document.location = '<?php echo URL;?>Home/principal/principal';
-                            } else {
-                                alert("Email o contraseña incorrectos");
-                            }
-                        }
-                    });
-                    return false; //Evitar submit del formulario
-                //}
-            });
-	    });
-</script>
 </body>
 </html>

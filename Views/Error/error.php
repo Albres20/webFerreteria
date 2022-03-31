@@ -38,7 +38,7 @@
                         Lo sentimos, ocurrió un error al cargar la página.
                     </div>
                     <div class="error-actions">
-                        <a href="#" class="btn btn-primary btn-lg"><span class="home"></span>
+                        <a href="<?php echo URL?>" class="btn btn-primary btn-lg"><span class="home"></span>
                             Ir al inicio </a>
                     </div>
                 </div>

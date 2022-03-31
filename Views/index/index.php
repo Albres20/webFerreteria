@@ -30,18 +30,17 @@
             <div class="logoLogin">
                 <img src="https://hyt-trading.com/wp-content/uploads/2021/03/hyt-logo-inicio.png" width="300px">
             </div>
-            <form action="" class="form">
+            <form id="Session" name="Session" method="POST" class="form">
                 
                 <div class="user">
-                    <input type="text" placeholder="Enter Username" name="uname" required>
+                    <input id="username" type="text" placeholder="Enter Username" name="uname" required>
                 </div>
                 <div class="pass">
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <input id="password" type="password" placeholder="Enter Password" name="psw" required>
                 </div>
                 <div class="btn">
-                    <button type="submit">Iniciar Sesión</button>
+                    <button id="btnLogin" type="submit">Iniciar Sesión</button>
                 </div>
-                
                 
             </form>
         </section>
@@ -75,5 +74,35 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/47fb3045a9.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(login);
+
+	    $(function(){
+            $('#btnLogin').click(function(){
+                var datos = $("#Session").serialize();
+                
+                //var email = $('form[name=Session] input[name=email]')[0].value;
+                //var password = $('form[name=Session] input[name=password]')[0].value;
+
+                /*if (email == "" || password == "") {
+                    alert("Campos Vacios");
+                }else{*/
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo URL;?>User/user/userLogin',
+                        data: datos,
+                        success: function(response){
+                            if (response == 1) {
+                                document.location = '<?php echo URL;?>Home/principal/principal';
+                            } else {
+                                alert("Email o contraseña incorrectos");
+                            }
+                        }
+                    });
+                    return false; //Evitar submit del formulario
+                //}
+            });
+	    });
+</script>
 </body>
 </html>

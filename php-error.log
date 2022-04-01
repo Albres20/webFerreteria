@@ -66,3 +66,240 @@ Stack trace:
 [01-Apr-2022 02:38:51 Europe/Berlin] PHP Warning:  require_once(classes/errors.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\webFerreteria\index.php on line 15
 [01-Apr-2022 02:39:54 Europe/Berlin] Hello, errors!
 [01-Apr-2022 03:33:11 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:40:44 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:40:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "SessionController" not found in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php:3
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\Principal.php(21): require_once()
+#1 C:\xampp\htdocs\webFerreteria\index.php(26): Principal->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 3
+[01-Apr-2022 18:40:49 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:40:49 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "SessionController" not found in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php:3
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\Principal.php(21): require_once()
+#1 C:\xampp\htdocs\webFerreteria\index.php(26): Principal->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 3
+[01-Apr-2022 18:40:52 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:40:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "SessionController" not found in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php:3
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\Principal.php(21): require_once()
+#1 C:\xampp\htdocs\webFerreteria\index.php(26): Principal->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 3
+[01-Apr-2022 18:42:28 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:42:28 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "SessionController" not found in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php:3
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\Principal.php(21): require_once()
+#1 C:\xampp\htdocs\webFerreteria\index.php(26): Principal->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 3
+[01-Apr-2022 18:42:44 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:42:44 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "SessionController" not found in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php:3
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\Principal.php(21): require_once()
+#1 C:\xampp\htdocs\webFerreteria\index.php(26): Principal->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 3
+[01-Apr-2022 18:47:56 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:47:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "SessionController" not found in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php:3
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\Principal.php(21): require_once()
+#1 C:\xampp\htdocs\webFerreteria\index.php(26): Principal->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 3
+[01-Apr-2022 18:47:59 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:47:59 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:48:25 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:48:25 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "SessionController" not found in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php:3
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\Principal.php(21): require_once()
+#1 C:\xampp\htdocs\webFerreteria\index.php(26): Principal->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 3
+[01-Apr-2022 18:50:10 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:50:10 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "SessionController" not found in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php:3
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\Principal.php(21): require_once()
+#1 C:\xampp\htdocs\webFerreteria\index.php(26): Principal->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 3
+[01-Apr-2022 18:50:11 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:50:11 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "SessionController" not found in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php:3
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\Principal.php(21): require_once()
+#1 C:\xampp\htdocs\webFerreteria\index.php(26): Principal->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 3
+[01-Apr-2022 18:52:54 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:56:06 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:56:06 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Session" not found in C:\xampp\htdocs\webFerreteria\Controllers\SessionController.php:39
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Controllers\SessionController.php(19): SessionController->init()
+#1 C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php(6): SessionController->__construct()
+#2 C:\xampp\htdocs\webFerreteria\Library\Principal.php(22): PrincipalController->__construct()
+#3 C:\xampp\htdocs\webFerreteria\index.php(28): Principal->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\SessionController.php on line 39
+[01-Apr-2022 18:56:07 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:56:07 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Session" not found in C:\xampp\htdocs\webFerreteria\Controllers\SessionController.php:39
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Controllers\SessionController.php(19): SessionController->init()
+#1 C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php(6): SessionController->__construct()
+#2 C:\xampp\htdocs\webFerreteria\Library\Principal.php(22): PrincipalController->__construct()
+#3 C:\xampp\htdocs\webFerreteria\index.php(28): Principal->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Controllers\SessionController.php on line 39
+[01-Apr-2022 18:56:57 Europe/Berlin] Hello, errors!
+[01-Apr-2022 18:56:57 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 18:56:57 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[01-Apr-2022 18:56:57 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[01-Apr-2022 18:56:57 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 19:18:53 Europe/Berlin] Hello, errors!
+[01-Apr-2022 19:18:53 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 19:18:53 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[01-Apr-2022 19:18:53 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[01-Apr-2022 19:18:53 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 19:29:32 Europe/Berlin] Hello, errors!
+[01-Apr-2022 19:29:32 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 19:29:32 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[01-Apr-2022 19:29:32 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[01-Apr-2022 19:29:32 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:01:57 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:01:57 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:01:57 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[01-Apr-2022 20:01:57 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[01-Apr-2022 20:01:57 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:02:18 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:02:18 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:02:18 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/PrincipalController/authenticate, url => PrincipalController
+[01-Apr-2022 20:02:18 Europe/Berlin] sessionController::isPublic(): currentURL => PrincipalController
+[01-Apr-2022 20:02:18 Europe/Berlin] SessionController::validateSession() redirect al login
+[01-Apr-2022 20:02:18 Europe/Berlin] ExistPOST: No existe el parametro username
+[01-Apr-2022 20:02:18 Europe/Berlin] Login::authenticate() error with params
+[01-Apr-2022 20:02:18 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:02:18 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:02:18 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/?error=11c37cfab311fbe28652f4947a9523c4, url => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:02:18 Europe/Berlin] sessionController::isPublic(): currentURL => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:02:18 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:02:18 Europe/Berlin] View::handleError() existsKey =>Hubo un problema al autenticarse
+[01-Apr-2022 20:02:26 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:02:26 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:02:26 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/?error=11c37cfab311fbe28652f4947a9523c4, url => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:02:26 Europe/Berlin] sessionController::isPublic(): currentURL => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:02:26 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:02:26 Europe/Berlin] View::handleError() existsKey =>Hubo un problema al autenticarse
+[01-Apr-2022 20:05:16 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:05:16 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:05:16 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/PrincipalController/authenticate, url => PrincipalController
+[01-Apr-2022 20:05:16 Europe/Berlin] sessionController::isPublic(): currentURL => PrincipalController
+[01-Apr-2022 20:05:16 Europe/Berlin] SessionController::validateSession() redirect al login
+[01-Apr-2022 20:05:16 Europe/Berlin] ExistPOST: No existe el parametro username
+[01-Apr-2022 20:05:16 Europe/Berlin] Login::authenticate() error with params
+[01-Apr-2022 20:05:16 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:05:16 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:05:16 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/?error=11c37cfab311fbe28652f4947a9523c4, url => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:05:16 Europe/Berlin] sessionController::isPublic(): currentURL => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:05:16 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:05:16 Europe/Berlin] View::handleError() existsKey =>Hubo un problema al autenticarse
+[01-Apr-2022 20:05:21 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:05:21 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:05:21 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/PrincipalController/authenticate, url => PrincipalController
+[01-Apr-2022 20:05:21 Europe/Berlin] sessionController::isPublic(): currentURL => PrincipalController
+[01-Apr-2022 20:05:21 Europe/Berlin] SessionController::validateSession() redirect al login
+[01-Apr-2022 20:05:21 Europe/Berlin] ExistPOST: No existe el parametro username
+[01-Apr-2022 20:05:21 Europe/Berlin] Login::authenticate() error with params
+[01-Apr-2022 20:05:21 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:05:21 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:05:21 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/?error=11c37cfab311fbe28652f4947a9523c4, url => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:05:21 Europe/Berlin] sessionController::isPublic(): currentURL => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:05:21 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:05:21 Europe/Berlin] View::handleError() existsKey =>Hubo un problema al autenticarse
+[01-Apr-2022 20:08:34 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:08:34 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:08:34 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/?error=11c37cfab311fbe28652f4947a9523c4, url => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:08:34 Europe/Berlin] sessionController::isPublic(): currentURL => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:08:34 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:08:34 Europe/Berlin] View::handleError() existsKey =>Hubo un problema al autenticarse
+[01-Apr-2022 20:08:38 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:08:38 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:08:38 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/PrincipalController/authenticate, url => PrincipalController
+[01-Apr-2022 20:08:38 Europe/Berlin] sessionController::isPublic(): currentURL => PrincipalController
+[01-Apr-2022 20:08:38 Europe/Berlin] SessionController::validateSession() redirect al login
+[01-Apr-2022 20:08:38 Europe/Berlin] ExistPOST: No existe el parametro username
+[01-Apr-2022 20:08:38 Europe/Berlin] Login::authenticate() error with params
+[01-Apr-2022 20:08:38 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:08:38 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:08:38 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/?error=11c37cfab311fbe28652f4947a9523c4, url => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:08:38 Europe/Berlin] sessionController::isPublic(): currentURL => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:08:38 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:08:38 Europe/Berlin] View::handleError() existsKey =>Hubo un problema al autenticarse
+[01-Apr-2022 20:10:57 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:10:57 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:10:57 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/?error=11c37cfab311fbe28652f4947a9523c4, url => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:10:57 Europe/Berlin] sessionController::isPublic(): currentURL => ?error=11c37cfab311fbe28652f4947a9523c4
+[01-Apr-2022 20:10:57 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:10:57 Europe/Berlin] View::handleError() existsKey =>Hubo un problema al autenticarse
+[01-Apr-2022 20:11:03 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:11:03 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:11:03 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/PrincipalController/authenticate, url => PrincipalController
+[01-Apr-2022 20:11:03 Europe/Berlin] sessionController::isPublic(): currentURL => PrincipalController
+[01-Apr-2022 20:11:03 Europe/Berlin] SessionController::validateSession() redirect al login
+[01-Apr-2022 20:11:03 Europe/Berlin] ExistPOST: Existen parámetros
+[01-Apr-2022 20:11:03 Europe/Berlin] PHP Warning:  Undefined property: PrincipalController::$model in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 30
+[01-Apr-2022 20:11:03 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:11:03 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:11:03 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[01-Apr-2022 20:11:03 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[01-Apr-2022 20:11:03 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:17:00 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:17:00 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:17:00 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[01-Apr-2022 20:17:00 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[01-Apr-2022 20:17:00 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:17:04 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:17:04 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:17:04 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/PrincipalController/authenticate, url => PrincipalController
+[01-Apr-2022 20:17:04 Europe/Berlin] sessionController::isPublic(): currentURL => PrincipalController
+[01-Apr-2022 20:17:04 Europe/Berlin] SessionController::validateSession() redirect al login
+[01-Apr-2022 20:17:04 Europe/Berlin] ExistPOST: Existen parámetros
+[01-Apr-2022 20:17:04 Europe/Berlin] PHP Warning:  Undefined property: PrincipalController::$model in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 32
+[01-Apr-2022 20:17:04 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:17:04 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:17:04 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[01-Apr-2022 20:17:04 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[01-Apr-2022 20:17:04 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:18:34 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:18:34 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:18:34 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[01-Apr-2022 20:18:34 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[01-Apr-2022 20:18:34 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:18:38 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:18:38 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:18:38 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/PrincipalController/authenticate, url => PrincipalController
+[01-Apr-2022 20:18:38 Europe/Berlin] sessionController::isPublic(): currentURL => PrincipalController
+[01-Apr-2022 20:18:38 Europe/Berlin] SessionController::validateSession() redirect al login
+[01-Apr-2022 20:18:38 Europe/Berlin] ExistPOST: Existen parámetros
+[01-Apr-2022 20:18:38 Europe/Berlin] PHP Warning:  Undefined property: PrincipalController::$model in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 32
+[01-Apr-2022 20:18:38 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:18:38 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:18:38 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[01-Apr-2022 20:18:38 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[01-Apr-2022 20:18:38 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:22:04 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:22:04 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:22:04 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[01-Apr-2022 20:22:04 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[01-Apr-2022 20:22:04 Europe/Berlin] SessionController::validateSession() public page
+[01-Apr-2022 20:22:08 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:22:08 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:22:08 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/PrincipalController/authenticate, url => PrincipalController
+[01-Apr-2022 20:22:08 Europe/Berlin] sessionController::isPublic(): currentURL => PrincipalController
+[01-Apr-2022 20:22:08 Europe/Berlin] SessionController::validateSession() redirect al login
+[01-Apr-2022 20:22:08 Europe/Berlin] ExistPOST: Existen parámetros
+[01-Apr-2022 20:22:08 Europe/Berlin] PHP Warning:  Undefined property: PrincipalController::$model in C:\xampp\htdocs\webFerreteria\Controllers\PrincipalController.php on line 32
+[01-Apr-2022 20:22:08 Europe/Berlin] Hello, errors!
+[01-Apr-2022 20:22:08 Europe/Berlin] SessionController::validateSession()
+[01-Apr-2022 20:22:08 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[01-Apr-2022 20:22:08 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[01-Apr-2022 20:22:08 Europe/Berlin] SessionController::validateSession() public page

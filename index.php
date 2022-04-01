@@ -21,6 +21,9 @@
     require_once 'Library/Views.php';
     require_once 'Library/Principal.php';
 
+    require_once 'classes/Session.php';
+    require_once 'Controllers/SessionController.php';
+
     require_once 'config.php';
 
     $principal = new Principal();

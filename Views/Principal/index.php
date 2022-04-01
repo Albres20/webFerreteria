@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="<?php echo URL.RQ?>image/logoht.png">
     
-    <title>Document</title>
+    <title>Hyt-Trading</title>
+    <!-- cabecera -->
     <link rel="stylesheet" href="<?php echo URL.RQ?>css/cabecera.css">
+    <!--=====================================
+    PLUGINS DE JAVASCRIPT
+    ======================================-->
+    <!-- jQuery 3 -->
+    <script src="<?php echo URL.RQ?>js/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="<?php echo URL.RQ?>js/bootstrap/bootstrap.min.js"></script>
+    <!-- SweetAlert 2 -->
+    <script src="<?php echo URL.RQ?>js/sweetalert2/sweetalert2.all.js"></script>
     
 </head>
 <body>
@@ -30,13 +41,14 @@
             <div class="logoLogin">
                 <img src="https://hyt-trading.com/wp-content/uploads/2021/03/hyt-logo-inicio.png" width="300px">
             </div>
-            <form id="Session" name="Session" method="POST" class="form">
-                
+            <?php $this->showMessages();?>
+            <form action="<?php echo constant('URL'); ?>PrincipalController/authenticate" method="POST" id="Session" name="Session" class="form">
+                <div><?php (isset($this->errorMessage))?  $this->errorMessage : '' ?></div>
                 <div class="user">
-                    <input id="username" type="text" placeholder="Enter Username" name="uname" required>
+                    <input name="username" id="username" type="text" placeholder="Usuario" autocomplete="off">
                 </div>
                 <div class="pass">
-                    <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+                    <input name="password" id="password" type="password" placeholder="Contraseña">
                 </div>
                 <div class="btn">
                     <button id="btnLogin" type="submit">Iniciar Sesión</button>

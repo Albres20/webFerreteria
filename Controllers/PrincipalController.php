@@ -1,6 +1,8 @@
 <?php
 
-class PrincipalController extends Controllers{
+require_once 'Models/Principal_model.php';
+
+class PrincipalController extends SessionController{
 
     function __construct(){
         parent::__construct();

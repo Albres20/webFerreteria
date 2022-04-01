@@ -1,0 +1,29 @@
+{
+    "sites": [{
+            "site": "",
+            "access": "public",
+            "role": ""
+        },
+        {
+            "site": "caja",
+            "access": "private",
+            "role": "caja"
+        },
+        {
+            "site": "logistica",
+            "access": "private",
+            "role": "logistica"
+        },
+        {
+            "site": "admin",
+            "access": "private",
+            "role": "admin"
+        }
+    ],
+
+    "default-sites": {
+        "caja": "caja",
+        "logistica": "logistica",
+        "admin": "admin"
+    }
+}

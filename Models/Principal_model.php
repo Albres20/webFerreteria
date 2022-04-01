@@ -6,12 +6,12 @@ class Principal_model extends QueryManager{
         parent::__construct();
     }
 
-    /*public function login($username, $password){
+    public function login($username, $password){
         // insertar datos en la BD
         error_log("login: inicio");
         try{
             //$query = $this->db->connect()->prepare('SELECT * FROM users WHERE username = :username');
-            $query = $this->prepare('SELECT * FROM users WHERE username = :username');
+            $query = $this->prepare('SELECT * FROM usuarios WHERE username = :username');
             $query->execute(['username' => $username]);
             
             if($query->rowCount() == 1){
@@ -34,9 +34,7 @@ class Principal_model extends QueryManager{
         }catch(PDOException $e){
             return NULL;
         }
-    }*/
-
-    
+    }
 
 }
 

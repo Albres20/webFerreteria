@@ -10,6 +10,11 @@
     ini_set("error_log", "php-error.log");
     error_log( "Hello, errors!" );
 
+    //require_once 'classes/session.php';
+    //require_once 'classes/sessionController.php';
+    require_once 'classes/ErrorsMessages.php';
+    require_once 'classes/SuccessMessages.php';
+
     require_once 'Library/Connection.php';
     require_once 'Library/Controllers.php';
     require_once 'Library/QueryManager.php';

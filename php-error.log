@@ -54,3 +54,15 @@ Stack trace:
 [31-Mar-2022 20:20:41 Europe/Berlin] Hello, errors!
 [31-Mar-2022 20:20:45 Europe/Berlin] Hello, errors!
 [31-Mar-2022 20:31:19 Europe/Berlin] Hello, errors!
+[01-Apr-2022 01:43:09 Europe/Berlin] Hello, errors!
+[01-Apr-2022 01:43:10 Europe/Berlin] Hello, errors!
+[01-Apr-2022 01:43:20 Europe/Berlin] Hello, errors!
+[01-Apr-2022 01:43:27 Europe/Berlin] Hello, errors!
+[01-Apr-2022 01:43:32 Europe/Berlin] Hello, errors!
+[01-Apr-2022 02:01:09 Europe/Berlin] Hello, errors!
+[01-Apr-2022 02:38:50 Europe/Berlin] Hello, errors!
+[01-Apr-2022 02:38:50 Europe/Berlin] PHP Warning:  require_once(classes/errors.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\webFerreteria\index.php on line 15
+[01-Apr-2022 02:38:51 Europe/Berlin] Hello, errors!
+[01-Apr-2022 02:38:51 Europe/Berlin] PHP Warning:  require_once(classes/errors.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\webFerreteria\index.php on line 15
+[01-Apr-2022 02:39:54 Europe/Berlin] Hello, errors!
+[01-Apr-2022 03:33:11 Europe/Berlin] Hello, errors!

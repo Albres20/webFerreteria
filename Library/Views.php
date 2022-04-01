@@ -19,9 +19,9 @@ class Views{
             // no se muestra nada porque no puede haber un error y success al mismo tiempo
         }else if(isset($_GET['success'])){
             
-            $this->handleSuccess();
+            $this->handleSuccess(); // si hay un mensaje de exito
         }else if(isset($_GET['error'])){
-            $this->handleError();
+            $this->handleError(); // si hay un mensaje de error
         }
     }
 

@@ -1,2 +1,3 @@
 .vscode
+#ignorar la consola de error
 php-error.log

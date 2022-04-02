@@ -145,3 +145,123 @@
 [02-Apr-2022 23:32:55 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
 [02-Apr-2022 23:32:55 Europe/Berlin] sessionController::isPublic(): currentURL => 
 [02-Apr-2022 23:32:55 Europe/Berlin] SessionController::validateSession() public page
+[02-Apr-2022 23:34:35 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:34:35 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:34:35 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[02-Apr-2022 23:34:35 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[02-Apr-2022 23:34:35 Europe/Berlin] SessionController::validateSession() public page
+[02-Apr-2022 23:37:47 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:37:47 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:37:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[02-Apr-2022 23:37:47 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[02-Apr-2022 23:37:47 Europe/Berlin] SessionController::validateSession() public page
+[02-Apr-2022 23:38:31 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:38:31 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:38:31 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[02-Apr-2022 23:38:31 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[02-Apr-2022 23:38:31 Europe/Berlin] SessionController::validateSession() public page
+[02-Apr-2022 23:38:37 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:38:37 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:38:37 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login/authenticate, url => login
+[02-Apr-2022 23:38:37 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[02-Apr-2022 23:38:37 Europe/Berlin] SessionController::validateSession() redirect al login
+[02-Apr-2022 23:38:37 Europe/Berlin] ExistPOST: Existen parámetros
+[02-Apr-2022 23:38:37 Europe/Berlin] login: inicio
+[02-Apr-2022 23:38:37 Europe/Berlin] login: user id 88
+[02-Apr-2022 23:38:37 Europe/Berlin] login: success
+[02-Apr-2022 23:38:37 Europe/Berlin] Login::authenticate() passed
+[02-Apr-2022 23:38:37 Europe/Berlin] sessionController::initialize(): user: admin
+[02-Apr-2022 23:38:37 Europe/Berlin] sessionController::authorizeAccess(): role: admin
+[02-Apr-2022 23:38:37 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:38:37 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:38:37 Europe/Berlin] sessionController::getUserSessionData(): admin
+[02-Apr-2022 23:38:37 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[02-Apr-2022 23:38:37 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:38:37 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[02-Apr-2022 23:38:37 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:38:37 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[02-Apr-2022 23:38:46 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:38:46 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:38:46 Europe/Berlin] sessionController::getUserSessionData(): admin
+[02-Apr-2022 23:38:46 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[02-Apr-2022 23:38:46 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:38:46 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[02-Apr-2022 23:38:46 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:38:46 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[02-Apr-2022 23:41:20 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:41:20 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:41:20 Europe/Berlin] sessionController::getUserSessionData(): admin
+[02-Apr-2022 23:41:20 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[02-Apr-2022 23:41:20 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:41:20 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[02-Apr-2022 23:41:20 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:41:20 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[02-Apr-2022 23:47:15 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:47:15 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:47:15 Europe/Berlin] sessionController::getUserSessionData(): admin
+[02-Apr-2022 23:47:15 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[02-Apr-2022 23:47:15 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:47:15 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[02-Apr-2022 23:47:15 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:47:15 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[02-Apr-2022 23:47:21 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:47:21 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:47:21 Europe/Berlin] sessionController::getUserSessionData(): admin
+[02-Apr-2022 23:47:21 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[02-Apr-2022 23:47:21 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:47:21 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[02-Apr-2022 23:47:21 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:47:21 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[02-Apr-2022 23:47:30 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:47:30 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:47:30 Europe/Berlin] sessionController::getUserSessionData(): admin
+[02-Apr-2022 23:47:30 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[02-Apr-2022 23:47:30 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:47:30 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[02-Apr-2022 23:47:30 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:47:30 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[02-Apr-2022 23:47:34 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:47:34 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:47:34 Europe/Berlin] sessionController::getUserSessionData(): admin
+[02-Apr-2022 23:47:34 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[02-Apr-2022 23:47:34 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:47:34 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[02-Apr-2022 23:47:34 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:47:34 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[02-Apr-2022 23:50:29 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:50:29 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:50:29 Europe/Berlin] sessionController::getUserSessionData(): admin
+[02-Apr-2022 23:50:29 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[02-Apr-2022 23:50:29 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:50:29 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[02-Apr-2022 23:50:29 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:50:29 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[02-Apr-2022 23:50:30 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:50:30 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:50:30 Europe/Berlin] sessionController::getUserSessionData(): admin
+[02-Apr-2022 23:50:30 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[02-Apr-2022 23:50:30 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:50:30 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[02-Apr-2022 23:50:30 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:50:30 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[02-Apr-2022 23:51:44 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:51:44 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:51:44 Europe/Berlin] sessionController::getUserSessionData(): admin
+[02-Apr-2022 23:51:44 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[02-Apr-2022 23:51:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:51:44 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[02-Apr-2022 23:51:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[02-Apr-2022 23:51:44 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[02-Apr-2022 23:51:54 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:51:54 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:51:55 Europe/Berlin] sessionController::getUserSessionData(): admin
+[02-Apr-2022 23:51:55 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[02-Apr-2022 23:51:55 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logout, url => logout
+[02-Apr-2022 23:51:55 Europe/Berlin] sessionController::isPublic(): currentURL => logout
+[02-Apr-2022 23:51:55 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logout, url => logout
+[02-Apr-2022 23:51:55 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[02-Apr-2022 23:51:55 Europe/Berlin] Hello, errors!
+[02-Apr-2022 23:51:55 Europe/Berlin] SessionController::validateSession()
+[02-Apr-2022 23:51:55 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[02-Apr-2022 23:51:55 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[02-Apr-2022 23:51:55 Europe/Berlin] SessionController::validateSession() public page

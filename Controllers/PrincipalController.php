@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Models/Principal_model.php';
+require_once 'Models/Principalmodel.php';
 
 class PrincipalController extends SessionController{
 
@@ -29,6 +29,7 @@ class PrincipalController extends SessionController{
             }
             // si el login es exitoso regresa solo el ID del usuario
             
+            $this->model = new PrincipalModel();
             $user = $this->model->login($username, $password);
 
             if($user != NULL){

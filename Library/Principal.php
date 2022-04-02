@@ -20,7 +20,7 @@ class Principal{
             $archivoController = 'Controllers/PrincipalController.php';
             require_once $archivoController;
             $controller = new PrincipalController();
-            $controller->loadModel('login');
+            $controller->loadModel('Principal');
             $controller->render();
             return false;
         }

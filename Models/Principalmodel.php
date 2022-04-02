@@ -1,6 +1,8 @@
 <?php
 
-class Principal_model extends QueryManager{
+require_once 'Models/Usermodel.php';
+
+class PrincipalModel extends QueryManager{
 
     public function __construct(){
         parent::__construct();

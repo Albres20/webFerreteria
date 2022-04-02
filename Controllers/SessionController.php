@@ -2,6 +2,9 @@
 /**
  * Controlador que también maneja las sesiones
  */
+require_once 'Classes/Session.php';
+require_once 'Models/Usermodel.php';
+
 class SessionController extends Controllers{
     
     private $userSession;
@@ -147,7 +150,7 @@ class SessionController extends Controllers{
             break;
             }
         }
-        header('location: '.$url);
+        header('location: '. constant('URL'). $url);
         
     }
 

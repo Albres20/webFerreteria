@@ -7,13 +7,13 @@ class Controllers{
     }
 
     function loadModel($model){
-        $url = 'Models/'.$model.'QueryManager.php';
+        $url = 'Models/'.$model.'model.php';
 
         if(file_exists($url)){
             require_once $url;
 
             $modelName = $model.'Model';
-            $this->model = new $modelName();
+            $this->model = new PrincipalModel();
         }
     }
 

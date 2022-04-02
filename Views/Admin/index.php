@@ -74,7 +74,7 @@
                       <a class="dropdown-item" href="#">Mi perfil</a>
                       <a class="dropdown-item" href="#">Suscripciones</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Cerrar sesión</a>
+                      <a class="dropdown-item" href="<?php echo constant('URL'); ?>logout">Cerrar sesión</a>
                     </div>
                   </li>
                 </ul>

@@ -1,7 +1,7 @@
 <?php
-require_once 'Controllers/ErrorController.php';
+require_once 'controllers/errores.php';
 
-class Principal{
+class App{
 
     function __construct(){
 
@@ -17,14 +17,14 @@ class Principal{
 
         // cuando se ingresa sin definir controlador
         if(empty($url[0])){
-            $archivoController = 'Controllers/PrincipalController.php';
+            $archivoController = 'controllers/login.php';
             require_once $archivoController;
-            $controller = new PrincipalController();
-            $controller->loadModel('Principal');
+            $controller = new Login();
+            $controller->loadModel('login');
             $controller->render();
             return false;
         }
-        $archivoController = 'Controllers/' . $url[0] . '.php';
+        $archivoController = 'controllers/' . $url[0] . '.php';
 
         if(file_exists($archivoController)){
             require_once $archivoController;
@@ -52,13 +52,13 @@ class Principal{
                         $controller->{$url[1]}();    
                     }
                 }else{
-                    $controller = new ErrorController(); // si no existe el metodo
+                    $controller = new Errores(); 
                 }
             }else{
-                $controller->render(); // si no hay metodo, renderizar vista por defecto
+                $controller->render();
             }
         }else{
-            $controller = new ErrorController(); // si no existe el controlador
+            $controller = new Errores();
         }
     }
 }

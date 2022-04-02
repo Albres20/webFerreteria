@@ -1,19 +1,19 @@
 <?php
 
-class Controllers{
+class Controller{
 
     function __construct(){
-        $this->view = new Views();
+        $this->view = new View();
     }
 
     function loadModel($model){
-        $url = 'Models/'.$model.'model.php';
+        $url = 'models/'.$model.'model.php';
 
         if(file_exists($url)){
             require_once $url;
 
             $modelName = $model.'Model';
-            $this->model = new PrincipalModel();
+            $this->model = new $modelName();
         }
     }
 

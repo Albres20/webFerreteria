@@ -1,8 +1,7 @@
+
 <?php
 
-require_once 'Models/Principalmodel.php';
-
-class PrincipalController extends SessionController{
+class Login extends SessionController{
 
     function __construct(){
         parent::__construct();
@@ -12,7 +11,7 @@ class PrincipalController extends SessionController{
         $actual_link = trim("$_SERVER[REQUEST_URI]");
         $url = explode('/', $actual_link);
         $this->view->errorMessage = '';
-        $this->view->render('Principal/index'); //ver el login
+        $this->view->render('login/index');
     }
 
     function authenticate(){
@@ -29,7 +28,6 @@ class PrincipalController extends SessionController{
             }
             // si el login es exitoso regresa solo el ID del usuario
             
-            $this->model = new PrincipalModel();
             $user = $this->model->login($username, $password);
 
             if($user != NULL){

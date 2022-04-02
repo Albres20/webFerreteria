@@ -7,7 +7,7 @@
     
     <title>Página no Encontrada</title>
     <link rel="stylesheet" href="<?php echo URL.RQ?>css/cabecera.css">
-    <link rel="stylesheet" href="<?php echo URL.RQ?>css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo URL.RQ?>css/bootstrap/bootstrap.min.css">
     
 </head>
 <body>

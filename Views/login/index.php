@@ -42,7 +42,7 @@
                 <img src="https://hyt-trading.com/wp-content/uploads/2021/03/hyt-logo-inicio.png" width="300px">
             </div>
             <?php $this->showMessages();?>
-            <form action="<?php echo constant('URL'); ?>PrincipalController/authenticate" method="POST" id="Session" name="Session" class="form">
+            <form action="<?php echo constant('URL'); ?>login/authenticate" method="POST" id="Session" name="Session" class="form">
                 <div><?php (isset($this->errorMessage))?  $this->errorMessage : '' ?></div>
                 <div class="user">
                     <input name="username" id="username" type="text" placeholder="Usuario" autocomplete="off">

@@ -1,30 +1,38 @@
 <?php
-    error_reporting(E_ALL); // Error/Exception engine, always use E_ALL
+error_reporting(E_ALL); // Error/Exception engine, always use E_ALL
 
-    ini_set('ignore_repeated_errors', TRUE); // always use TRUE
-    
-    ini_set('display_errors', FALSE); // Error/Exception display, use FALSE only in production environment or real server. Use TRUE in development environment
-    
-    ini_set('log_errors', TRUE); // Error/Exception file logging engine.
-    
-    ini_set("error_log", "php-error.log");
-    error_log( "Hello, errors!" );
+ini_set('ignore_repeated_errors', TRUE); // always use TRUE
 
-    //require_once 'classes/session.php';
-    //require_once 'classes/sessionController.php';
-    require_once 'classes/ErrorsMessages.php';
-    require_once 'classes/SuccessMessages.php';
+ini_set('display_errors', FALSE); // Error/Exception display, use FALSE only in production environment or real server. Use TRUE in development environment
 
-    require_once 'Library/Connection.php';
-    require_once 'Library/Controllers.php';
-    require_once 'Library/QueryManager.php';
-    require_once 'Library/Views.php';
-    require_once 'Library/Principal.php';
+ini_set('log_errors', TRUE); // Error/Exception file logging engine.
 
-    require_once 'classes/Session.php';
-    require_once 'Controllers/SessionController.php';
+ini_set("error_log", "php-error.log");
+error_log( "Hello, errors!" );
 
-    require_once 'config.php';
+//tail -f /tmp/php-error.log
+require_once 'library/database.php';
+//require_once 'library/messages.php';
 
-    $principal = new Principal();
+require_once 'library/controller.php';
+require_once 'library/view.php';
+require_once 'library/model.php';
+require_once 'library/app.php';
+
+
+require_once 'classes/session.php';
+require_once 'classes/sessionController.php';
+require_once 'classes/errors.php';
+require_once 'classes/success.php';
+
+
+require_once 'config/config.php';
+
+include_once 'models/usermodel.php';
+//include_once 'models/expensesmodel.php';
+//include_once "models/categoriesmodel.php";
+//include_once "models/joinexpensescategoriesmodel.php";
+
+$app = new App();
+
 ?>

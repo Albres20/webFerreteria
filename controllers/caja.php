@@ -1,6 +1,6 @@
 <?php
 
-class AdminController extends SessionController{
+class Caja extends SessionController{
 
     private $user;
 
@@ -8,25 +8,25 @@ class AdminController extends SessionController{
         parent::__construct();
 
         $this->user = $this->getUserSessionData();
-        error_log("Dashboard::constructor() ");
+        error_log("Caja::constructor() ");
     }
 
      function render(){
-        error_log("Dashboard::RENDER() ");
+        error_log("Caja::RENDER() ");
         /*$expensesModel          = new ExpensesModel();
         $expenses               = $this->getExpenses(5);
         $totalThisMonth         = $expensesModel->getTotalAmountThisMonth($this->user->getId());
         $maxExpensesThisMonth   = $expensesModel->getMaxExpensesThisMonth($this->user->getId());
-        $categories             = $this->getCategories();*/
+        $categories             = $this->getCategories();
 
-        /*$this->view->render('dashboard/index', [
+        $this->view->render('dashboard/index', [
             'user'                 => $this->user,
             'expenses'             => $expenses,
             'totalAmountThisMonth' => $totalThisMonth,
             'maxExpensesThisMonth' => $maxExpensesThisMonth,
             'categories'           => $categories
         ]);*/
-        $this->view->render('Admin/index');
+        $this->view->render('caja/index');
     }
     
     //obtiene la lista de expenses y $n tiene el número de expenses por transacción

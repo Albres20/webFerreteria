@@ -5,25 +5,30 @@
             "role": ""
         },
         {
-            "site": "Caja",
+            "site": "caja",
             "access": "private",
             "role": "caja"
         },
         {
-            "site": "Logistica",
+            "site": "logistica",
             "access": "private",
             "role": "logistica"
         },
         {
-            "site": "Admin",
+            "site": "ventas",
+            "access": "private",
+            "role": "admin"
+        },
+        {
+            "site": "admin",
             "access": "private",
             "role": "admin"
         }
     ],
 
     "default-sites": {
-        "caja": "Caja",
-        "logistica": "Logistica",
-        "admin": "Admin"
+        "caja": "caja",
+        "logistica": "logistica",
+        "admin": "admin"
     }
 }

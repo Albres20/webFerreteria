@@ -1,6 +1,6 @@
 <?php
 
-class Views{
+class View{
 
     function __construct(){
     }
@@ -11,7 +11,7 @@ class Views{
         $this->handleMessages();
         
 
-        require 'Views/' . $nombre . '.php';
+        require 'views/' . $nombre . '.php';
     }
     
     private function handleMessages(){
@@ -19,9 +19,9 @@ class Views{
             // no se muestra nada porque no puede haber un error y success al mismo tiempo
         }else if(isset($_GET['success'])){
             
-            $this->handleSuccess(); // si hay un mensaje de exito
+            $this->handleSuccess();
         }else if(isset($_GET['error'])){
-            $this->handleError(); // si hay un mensaje de error
+            $this->handleError();
         }
     }
 

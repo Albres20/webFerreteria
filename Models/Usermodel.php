@@ -1,6 +1,6 @@
 <?php
 
-class UserModel extends QueryManager implements IModel{
+class UserModel extends Model implements IModel{
 
     private $id;
     private $username;

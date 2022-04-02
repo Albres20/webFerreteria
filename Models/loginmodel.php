@@ -1,8 +1,6 @@
 <?php
 
-require_once 'Models/Usermodel.php';
-
-class PrincipalModel extends QueryManager{
+class LoginModel extends Model{
 
     public function __construct(){
         parent::__construct();
@@ -37,6 +35,8 @@ class PrincipalModel extends QueryManager{
             return NULL;
         }
     }
+
+    
 
 }
 

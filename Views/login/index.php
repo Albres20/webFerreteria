@@ -7,6 +7,8 @@
     <link rel="icon" href="<?php echo URL.RQ?>image/logoht.png">
     
     <title>Hyt-Trading</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="<?php echo URL.RQ?>css/bootstrap/bootstrap.min.css">
     <!-- cabecera -->
     <link rel="stylesheet" href="<?php echo URL.RQ?>css/cabecera.css">
     <!--=====================================
@@ -14,8 +16,6 @@
     ======================================-->
     <!-- jQuery 3 -->
     <script src="<?php echo URL.RQ?>js/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap 3.3.7 -->
-    <script src="<?php echo URL.RQ?>js/bootstrap/bootstrap.min.js"></script>
     <!-- SweetAlert 2 -->
     <script src="<?php echo URL.RQ?>js/sweetalert2/sweetalert2.all.js"></script>
     
@@ -57,34 +57,46 @@
             </form>
         </section>
     </section>
-    <footer>
-        <div class="contenedor">
-            <div class="contactos">
-                <div class="contenedorLocalizacion">
-                    <div class="localizacion">
+    <footer class="text-center footer-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+                <div class="localizacion">
                         <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="letraLocalizacion">Av. Jamaica Mza.M Lote 3 <br>Urb. San Agustín 2da Etapa, Comas.</div> 
                 </div>
-                <div class="contenedorTelefono">    
-                    <div class="telefono">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                    </div>
-                    <div class="numeroTelefono"><br>987330113</div> 
-                </div>
-                <div class="contenedorMensaje">
-                    <div class="mensaje">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div> 
-                    <div class="mensajeCorreo">ventas@hyt-trading.com</div>
-                </div>   
+                <ul class="list-inline">
+                    <li>
+                        <a  target="_blank" href="#" class="btn-social btn-outline"></a>Av. Jamaica Mza.M Lote 3<br>Urb. San Agustín 2da Etapa, Comas
+                    </li>
+                </ul>
+
             </div>
-            <div class="redes">
-                 
-                    
+            <div class="col-md-4 footer-col">
+                <div class="telefono">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <ul class="list-inline">
+                    <li>
+                        <a  target="_blank" href="#" class="btn-social btn-outline"></a>987330113
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="email">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <ul class="list-inline">
+                    <li>
+                        <a  target="_blank" href="#" class="btn-social btn-outline"></a>ventas@hyt-trading.com
+                    </li>
+                </ul>
+
+
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
+
     <script src="https://kit.fontawesome.com/47fb3045a9.js" crossorigin="anonymous"></script>
 </body>
 </html>

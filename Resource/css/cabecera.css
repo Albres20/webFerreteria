@@ -116,103 +116,13 @@ body .contenedorCuerpo .contenedorLogin .form input {
 
 /*pie de pagina*/
 
-footer {
+.footer-style {
+    padding-top: 20px;
     background: rgb(0, 0, 0);
-    display: flex;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    height: calc(100vh - 130px - 410px);
 }
 
-footer .contenedor {
-    width: 100%;
-    display: flex;
-}
-
-footer .contactos {
-    margin: 5px 0px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-footer .contenedorLocalizacion {
-    width: 32%;
-    text-align: end;
-}
-
-footer .contenedorLocalizacion .localizacion {
-    background: yellow;
-    border-radius: 50px;
-    display: inline-block;
-}
-
-footer .contenedorLocalizacion .localizacion i {
-    padding-top: 2px;
-}
-
-footer .contenedorLocalizacion .letraLocalizacion {
-    color: aliceblue;
-    margin-right: 0px;
-    text-align: right;
-    display: inline-block;
-}
-
-footer .contenedorLocalizacion .localizacion {
-    background: yellow;
-    width: 20px;
-    height: 20px;
-    border-radius: 50px;
-    text-align: center;
-}
-
-footer .contenedorLocalizacion .contenedorTelefono {
-    color: aliceblue;
-}
-
-footer .contenedorTelefono {
-    width: 32%;
-    align-items: center;
-    text-align: center;
-}
-
-footer .contenedorTelefono .telefono {
-    background: yellow;
-    width: 20px;
-    height: 20px;
-    border-radius: 50px;
-    text-align: center;
-    display: inline-block;
-}
-
-footer .contenedorTelefono .telefono i {
-    padding-top: 2px;
-}
-
-footer .contenedorTelefono .numeroTelefono {
-    color: aliceblue;
-    display: inline-block;
-}
-
-footer .contenedorMensaje {
-    width: 32%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-footer .contenedorMensaje .mensaje {
-    background: yellow;
-    width: 20px;
-    height: 20px;
-    border-radius: 50px;
-    display: inline-block;
-}
-
-footer .contenedorMensaje .mensajeCorreo {
-    width: 40%;
-    color: aliceblue;
-    display: inline-block;
+footer {
+    color: white;
 }
 
 @media(max-width: 1370px) {

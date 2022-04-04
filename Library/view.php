@@ -61,13 +61,18 @@ class View{
 
     public function showError(){
         if(array_key_exists('error', $this->d)){
-            echo '<div class="error">'.$this->d['error'].'</div>';
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert"> 
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>ERROR </strong>'.$this->d['error'].'
+            </div>';
         }
     }
 
     public function showSuccess(){
         if(array_key_exists('success', $this->d)){
-            echo '<div class="success">'.$this->d['success'].'</div>';
+            echo '<div class="alert alert-success alert-dismissible fade show" role="alert"> <strong>ERROR </strong>'.$this->d['success'].'
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>';
         }
     }
 }

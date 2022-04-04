@@ -14,11 +14,11 @@ header .contenedor .nombreTitulo {
     color: rgb(255, 255, 255);
     font-size: 50px;
     width: 22%;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 header .contenedor .logo {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 header .contenedor .logo img {
@@ -67,6 +67,7 @@ body .contenedorCuerpo .contenedorLogin .logoLogin img:hover {
 
 body .contenedorCuerpo .contenedorLogin .form {
     margin: 20px 10px;
+    text-align: center;
 }
 
 body .contenedorCuerpo .contenedorLogin .form .user {

@@ -11,13 +11,6 @@
     <link rel="stylesheet" href="<?php echo URL.RQ?>css/bootstrap/bootstrap.min.css">
     <!-- cabecera -->
     <link rel="stylesheet" href="<?php echo URL.RQ?>css/cabecera.css">
-    <!--=====================================
-    PLUGINS DE JAVASCRIPT
-    ======================================-->
-    <!-- jQuery 3 -->
-    <script src="<?php echo URL.RQ?>js/jquery/dist/jquery.min.js"></script>
-    <!-- SweetAlert 2 -->
-    <script src="<?php echo URL.RQ?>js/sweetalert2/sweetalert2.all.js"></script>
     
 </head>
 <body>
@@ -50,11 +43,13 @@
                 <div class="pass">
                     <input name="password" id="password" type="password" placeholder="Contraseña">
                 </div>
+                <a href="#">¿Olvidé mi contraseña?</a>
                 <div class="btn">
                     <button id="btnLogin" type="submit">Iniciar Sesión</button>
                 </div>
                 
             </form>
+            
         </section>
     </section>
     <footer class="text-center footer-style">
@@ -97,6 +92,15 @@
     </div>
 </footer>
 
+    <!--=====================================
+    PLUGINS DE JAVASCRIPT
+    ======================================-->
+    <!-- bootstrap -->
+    <script src="<?php echo URL.RQ?>js/bootstrap/bootstrap.min.js"></script>
+    <!-- jQuery 3 -->
+    <script src="<?php echo URL.RQ?>js/jquery/dist/jquery.min.js"></script>
+    <!-- SweetAlert 2 -->
+    <script src="<?php echo URL.RQ?>js/sweetalert2/sweetalert2.all.js"></script>
     <script src="https://kit.fontawesome.com/47fb3045a9.js" crossorigin="anonymous"></script>
 </body>
 </html>

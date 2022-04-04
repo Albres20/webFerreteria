@@ -23,7 +23,7 @@ class UserModel extends Model implements IModel{
         $this->role = '';
         $this->photo = '';
         $this->estado = 0;
-        //$this->ultimo_login = '';
+        $this->ultimo_login = '';
         //$this->agregado = '';
     }
 
@@ -244,6 +244,7 @@ class UserModel extends Model implements IModel{
         $this->email = $array['email'];
         $this->role = $array['role'];
         $this->photo = $array['photo'];
+        $this->estado = $array['estado']; //verifica el estado agarrando consulta el db
     }
 
     private function getHashedPassword($password){
@@ -266,7 +267,7 @@ class UserModel extends Model implements IModel{
     public function setEmail($email){       $this->email = $email;}
     public function setRole($role){         $this->role = $role;}
     public function setPhoto($photo){       $this->photo = $photo;}
-    //public function setEstado($estado){     $this->estado = $estado;}
+    public function setEstado($estado){     $this->estado = $estado;}
     //public function setUltimo_login($ultimo_login){ $this->ultimo_login = $ultimo_login;}
     //public function setAgregado($agregado){ $this->agregado = $agregado;}
 
@@ -277,7 +278,7 @@ class UserModel extends Model implements IModel{
     public function getEmail(){             return $this->email;}
     public function getRole(){              return $this->role;}
     public function getPhoto(){             return $this->photo;}
-    //public function getEstado(){            return $this->estado;}
+    public function getEstado(){            return $this->estado;}
     //public function getUltimo_login(){      return $this->ultimo_login;}
     //public function getAgregado(){          return $this->agregado;}
 }

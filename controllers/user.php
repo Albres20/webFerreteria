@@ -9,34 +9,13 @@ class User extends SessionController{
         parent::__construct();
 
         $this->user = $this->getUserSessionData();
-        error_log("user " . $this->user->getName());
+        //error_log("user " . $this->user->getName());
     }
 
     function render(){
         $this->view->render('user/index', [
             "user" => $this->user
         ]);
-    }
-
-    function updateBudget(){
-        if(!$this->existPOST('budget')){
-            $this->redirect('user', ['error' => Errors::ERROR_USER_UPDATEBUDGET]);
-            return;
-        }
-
-        $budget = $this->getPost('budget');
-
-        if(empty($budget) || $budget === 0 || $budget < 0){
-            $this->redirect('user', ['error' => Errors::ERROR_USER_UPDATEBUDGET_EMPTY]);
-            return;
-        }
-    
-        $this->user->setBudget($budget);
-        if($this->user->update()){
-            $this->redirect('user', ['success' => Success::SUCCESS_USER_UPDATEBUDGET]);
-        }else{
-            //error
-        }
     }
 
     function updateName(){
@@ -52,7 +31,7 @@ class User extends SessionController{
             return;
         }
         
-        $this->user->setName($name);
+        $this->user->setFullname($name);
         if($this->user->update()){
             $this->redirect('user', ['success' => Success::SUCCESS_USER_UPDATEBUDGET]);
         }else{

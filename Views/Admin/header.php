@@ -1,109 +1,170 @@
-<!doctype html>
-<html lang="es">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="<?php echo URL.RQ?>image/logoht.png">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo URL.RQ?>css/bootstrap/bootstrap.min.css">
-    <!-- Styles -->
-    <link rel="stylesheet" href="<?php echo URL.RQ?>/css/admin/style.css">
-
-    <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
-
-    <!-- Ionic icons -->
-    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-
-    <title>Admin - Hyt-Trading</title>
-</head>
-
-<body>
-        <!-- Sidebar -->
-        <div id="sidebar-container" class="bg-primary">
-            <div class="logo">
-                <h4 class="text-light font-weight-bold mb-0">Hyt-Trading</h4>
-            </div>
-            <div class="menu">
-                <a href="<?php echo constant('URL'); ?>admin" class="d-block text-light p-3 border-0"><i class="icon ion-md-home lead mr-2"></i>
-                    Inicio</a>
-
-                <!-- navbar -->
-                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link d-block text-light p-3 border-0 dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon ion-md-briefcase lead mr-2"></i>Compras</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#"><i class="icon ion-md-add-circle lead mr-2"></i>Nueva compra</a>
-                          <a class="dropdown-item" href="#"><i class="icon ion-md-list-box lead mr-2"></i>Historial de compras</a>
-                        </div>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link d-block text-light p-3 border-0 dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon ion-md-cart lead mr-2"></i>Ventas</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#"><i class="icon ion-md-add-circle lead mr-2"></i>Nueva venta</a>
-                          <a class="dropdown-item" href="#"><i class="icon ion-md-list-box lead mr-2"></i>Historial de ventas</a>
-                          <a class="dropdown-item" href="#"><i class="icon ion-md-clipboard lead mr-2"></i>Seguimiento de venta</a>
-                          <a class="dropdown-item" href="#"><i class="icon ion-md-document lead mr-2"></i>Facturación</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#"><i class="icon ion-md-card lead mr-2"></i>Cotizaciones</a>
-                        </div>
-                    </li>
-                </ul>
-
-                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-cube lead mr-2"></i>
-                    Productos</a>
-                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-contacts lead mr-2"></i>
-                    Clientes / Proveedores</a>
-                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
-                    Reportes</a>
-                <a href="<?php echo constant('URL'); ?>usuarios" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
-                    Usuarios</a>
-                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
-                    Perfil</a>
-                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-settings lead mr-2"></i>
-                    Configuración</a>
-            </div>
-        </div>
-        <!-- Fin sidebar -->
-
-        <div class="w-100">
-
-         <!-- Navbar -->
-         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <div class="container">
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="leftside-menu">
     
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+                <!-- LOGO -->
+                <a href="<?php echo URL?>admin" class="logo text-center logo-light">
+                    <span class="logo-lg">
+                        <img src="<?php echo URL.RQ?>image/logoht.png" alt="" height="80">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="<?php echo URL.RQ?>image/logoht.png" alt="" height="30">
+                    </span>
+                </a>
+
+                <!-- LOGO -->
     
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <img src="<?php echo URL.RQ?>image/user-1.png" class="img-fluid rounded-circle avatar mr-2"
-                      alt="https://generated.photos/" />
-                    Diego Velázquez
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#"><i class="icon ion-md-person lead mr-2"></i>Mi perfil</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="<?php echo constant('URL'); ?>logout"><i class="icon ion-md-log-out lead mr-2"></i>Cerrar sesión</a>
+                <div class="h-100" id="leftside-menu-container" data-simplebar="">
+
+                    <!--- Sidemenu -->
+                    <ul class="side-nav">
+
+                        <li class="side-nav-item">
+                            <a href="<?php echo URL?>admin" class="side-nav-link">
+                                <i class="uil-home-alt"></i>
+                                <span> Inicio </span>
+                            </a>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarHYTcompras" aria-expanded="false" aria-controls="sidebarHYTcompras" class="side-nav-link">
+                                <i class="uil-wallet"></i>
+                                <span> Compras </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarHYTcompras">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="#">Nueva compra</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Historial de compras</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarHYTventas" aria-expanded="false" aria-controls="sidebarHYTventas" class="side-nav-link">
+                                <i class="uil-shopping-cart-alt"></i>
+                                <span> Ventas </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarHYTventas">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="#">Nueva venta</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Historial de ventas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Seguimiento de venta</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Facturación</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Cotizaciones <span class="badge rounded-pill badge-success-lighten font-10 float-end">New</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a href="#" class="side-nav-link">
+                                <i class="uil-tag-alt"></i>
+                                <span> Productos </span>
+                            </a>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a href="#" class="side-nav-link">
+                                <i class="uil-user-square"></i>
+                                <span> Clientes / Proveedores </span>
+                            </a>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a href="#" class="side-nav-link">
+                                <i class="uil-chart"></i>
+                                <span> Reportes </span>
+                            </a>
+                        </li>
+                        
+                        <li class="side-nav-item">
+                            <a href="<?php echo URL?>usuarios" class="side-nav-link">
+                                <i class="uil-users-alt"></i>
+                                <span> Usuarios </span>
+                            </a>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a href="#" class="side-nav-link">
+                                <i class="uil-user"></i>
+                                <span> Perfil </span>
+                            </a>
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a href="#" class="side-nav-link">
+                                <i class="uil-bright"></i>
+                                <span> Configuración </span>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <!-- End Sidebar -->
+
+                    <div class="clearfix"></div>
+
+                </div>
+                <!-- Sidebar -left -->
+
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    <!-- Topbar Start -->
+                    <div class="navbar-custom">
+                        <ul class="list-unstyled topbar-menu float-end mb-0">
+
+                            <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <span class="account-user-avatar"> 
+                                        <img src="<?php echo URL.RQ?>assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                    </span>
+                                    <span>
+                                        <span class="account-user-name"><?php echo $user->getFullname(); ?></span>
+                                        <span class="account-position"><?php echo $user->getRole(); ?></span>
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                    <!-- item-->
+                                    <div class=" dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0">Bienvenido !</h6>
+                                    </div>
+
+                                    <!-- item-->
+                                    <a href="#" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-account-circle me-1"></i>
+                                        <span>Mi cuenta</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="<?php echo URL?>logout" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-logout me-1"></i>
+                                        <span>Cerrar sesión	</span>
+                                    </a>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <button class="button-menu-mobile open-left">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
                     </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-          <!-- Fin Navbar -->
-</body>
-
-</html>

@@ -20,6 +20,11 @@
             "role": "admin"
         },
         {
+            "site": "usuarios",
+            "access": "private",
+            "role": "admin"
+        },
+        {
             "site": "admin",
             "access": "private",
             "role": "admin"

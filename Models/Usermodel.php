@@ -22,7 +22,7 @@ class UserModel extends Model implements IModel{
         $this->email = '';
         $this->role = '';
         $this->photo = '';
-        $this->estado = 0;
+        $this->estado = 1;
         $this->ultimo_login = '';
         //$this->agregado = '';
     }
@@ -124,14 +124,15 @@ class UserModel extends Model implements IModel{
 
     public function save(){
         try{
-            $query = $this->prepare('INSERT INTO usuarios (username, password, fullname, email, role, photo) VALUES(:username, :password, :fullname, :email, :role, :photo)');
+            $query = $this->prepare('INSERT INTO usuarios (username, password, fullname, email, role, photo, estado) VALUES(:username, :password, :fullname, :email, :role, :photo, :estado)');
             $query->execute([
                 'username'  => $this->username, 
                 'password'  => $this->password,
                 'fullname'  => $this->fullname,
                 'email'     => $this->email,
                 'role'      => $this->role,
-                'photo'     => $this->photo
+                'photo'     => $this->photo,
+                'estado'    => $this->estado
                 ]);
             return true;
         }catch(PDOException $e){
@@ -155,7 +156,7 @@ class UserModel extends Model implements IModel{
                 $item->setEmail($p['email']);
                 $item->setRole($p['role']);
                 $item->setPhoto($p['photo']);
-                //$item->setEstado($p['estado']);
+                $item->setEstado($p['estado']);
                 array_push($items, $item);
             }
             return $items;
@@ -182,6 +183,7 @@ class UserModel extends Model implements IModel{
             $this->email = $user['email'];
             $this->role = $user['role'];
             $this->photo = $user['photo'];
+            $this->estado = $user['estado'];
 
             return $this;
         }catch(PDOException $e){
@@ -202,7 +204,7 @@ class UserModel extends Model implements IModel{
 
     public function update(){
         try{
-            $query = $this->prepare('UPDATE usuarios SET username = :username, password = :password, fullname = :fullname, email = :email, role = :role, photo = :photo WHERE id = :id');
+            $query = $this->prepare('UPDATE usuarios SET username = :username, password = :password, fullname = :fullname, email = :email, role = :role, photo = :photo, estado = :estado WHERE id = :id');
             $query->execute([
                 'id'        => $this->id,
                 'username' => $this->username, 
@@ -211,6 +213,7 @@ class UserModel extends Model implements IModel{
                 'email'    => $this->email,
                 'role'     => $this->role,
                 'photo' => $this->photo,
+                'estado' => $this->estado
 
                 ]);
             return true;
@@ -245,6 +248,20 @@ class UserModel extends Model implements IModel{
         $this->role = $array['role'];
         $this->photo = $array['photo'];
         $this->estado = $array['estado']; //verifica el estado agarrando consulta el db
+    }
+
+    public function toArray(){
+        $array = [];
+        $array['id'] = $this->id;
+        $array['username'] = $this->username;
+        $array['password'] = $this->password;
+        $array['fullname'] = $this->fullname;
+        $array['email'] = $this->email;
+        $array['role'] = $this->role;
+        $array['photo'] = $this->photo;
+        $array['estado'] = $this->estado;
+        
+        return $array;
     }
 
     private function getHashedPassword($password){

@@ -1,25 +1,25 @@
             <!-- ========== Left Sidebar Start ========== -->
             <div class="leftside-menu">
-    
+
                 <!-- LOGO -->
-                <a href="<?php echo URL?>admin" class="logo text-center logo-light">
+                <a href="<?php echo URL ?>admin" class="logo text-center logo-light">
                     <span class="logo-lg">
-                        <img src="<?php echo URL.RQ?>image/logoht.png" alt="" height="80">
+                        <img src="<?php echo URL . RQ ?>image/logoht.png" alt="" height="80">
                     </span>
                     <span class="logo-sm">
-                        <img src="<?php echo URL.RQ?>image/logoht.png" alt="" height="30">
+                        <img src="<?php echo URL . RQ ?>image/logoht.png" alt="" height="30">
                     </span>
                 </a>
 
                 <!-- LOGO -->
-    
+
                 <div class="h-100" id="leftside-menu-container" data-simplebar="">
 
                     <!--- Sidemenu -->
                     <ul class="side-nav">
 
                         <li class="side-nav-item">
-                            <a href="<?php echo URL?>admin" class="side-nav-link">
+                            <a href="<?php echo URL ?>admin" class="side-nav-link">
                                 <i class="uil-home-alt"></i>
                                 <span> Inicio </span>
                             </a>
@@ -90,9 +90,9 @@
                                 <span> Reportes </span>
                             </a>
                         </li>
-                        
+
                         <li class="side-nav-item">
-                            <a href="<?php echo URL?>usuarios" class="side-nav-link">
+                            <a href="<?php echo URL ?>usuarios" class="side-nav-link">
                                 <i class="uil-users-alt"></i>
                                 <span> Usuarios </span>
                             </a>
@@ -131,12 +131,12 @@
                 <div class="content">
                     <!-- Topbar Start -->
                     <div class="navbar-custom">
-                        <ul class="list-unstyled topbar-menu float-end mb-0">
 
+                        <ul class="list-unstyled topbar-menu float-end mb-0">
                             <li class="dropdown notification-list">
                                 <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                    <span class="account-user-avatar"> 
-                                        <img src="<?php echo URL.RQ?>assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                    <span class="account-user-avatar">
+                                        <img src="<?php echo URL . RQ ?>assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                     </span>
                                     <span>
                                         <span class="account-user-name"><?php echo $user->getFullname(); ?></span>
@@ -156,9 +156,9 @@
                                     </a>
 
                                     <!-- item-->
-                                    <a href="<?php echo URL?>logout" class="dropdown-item notify-item">
+                                    <a href="<?php echo URL ?>logout" class="dropdown-item notify-item">
                                         <i class="mdi mdi-logout me-1"></i>
-                                        <span>Cerrar sesión	</span>
+                                        <span>Cerrar sesión </span>
                                     </a>
                                 </div>
                             </li>

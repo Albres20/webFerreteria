@@ -1,3 +1,8 @@
+<?php
+    $user = $this->d['user'];
+    //$usuarios = $this->d['usuarios'];
+
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>

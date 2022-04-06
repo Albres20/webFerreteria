@@ -2,9 +2,11 @@
 
 class Admin extends SessionController{
 
+    private $user;
 
     function __construct(){
         parent::__construct();
+        $this->user = $this->getUserSessionData();
     }
 
     function render(){
@@ -13,7 +15,11 @@ class Admin extends SessionController{
         $this->view->render('admin/index', [
             "stats" => $stats
         ]);*/
-        $this->view->render('admin/index');
+        $this->view->render('admin/index', [
+            'user' => $this->user
+        ]);
+
+        //$this->view->render('admin/index');
     }
 
     /*function createCategory(){

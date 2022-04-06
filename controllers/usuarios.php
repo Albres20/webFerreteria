@@ -32,11 +32,55 @@ class Usuarios extends SessionController{
     //     $res['count-users'] = count($users);
     //     return $res;
     // }
+    // function createUsuarios(){
+    //     $this->view->render('admin/crearusuariomodal');
+    // }
+
+    // devuelve el JSON para las llamadas AJAX
+    function getUsuariosJSON()
+    {
+            header('Content-Type: application/json');
+            $res = [];
+            $userModel = new UserModel();
+            $users = $userModel->getAll();
+    
+            foreach ($users as $user) {
+                array_push($res, $user->toArray());
+            }
+            
+            echo json_encode($res);
+    }
+
+    function newUsuarios(){
+        error_log('Admin::newUsuarios()');
+        if($this->existPOST(['username', 'password', 'fullname', 'email', 'role'])){
+            $username = $this->getPost('username');
+            $password = $this->getPost('password');
+            $fullname = $this->getPost('fullname');
+            $email = $this->getPost('email');
+            $role = $this->getPost('role');
+
+            $userModel = new UserModel();
+
+            if(!$userModel->exists($username)){
+                $userModel->setUsername($username);
+                $userModel->setPassword($password);
+                $userModel->setFullname($fullname);
+                $userModel->setEmail($email);
+                $userModel->setRole($role);
+                $userModel->save();
+                error_log('Admin::newUsuarios() => new usuario creado');
+                //$this->redirect('admin', ['success' => Success::SUCCESS_ADMIN_NEWCATEGORY]);
+            }else{
+                //$this->redirect('admin', ['error' => Errors::ERROR_ADMIN_NEWCATEGORY_EXISTS]);
+            }
+        }
+    }
     
     private function getUsuariosDB(){
         $res = [];
         $userModel = new UserModel();
-        $users = $userModel->getAll($this->user->getId());
+        $users = $userModel->getAll();
 
         foreach ($users as $user) {
             array_push($res, $user->getId());

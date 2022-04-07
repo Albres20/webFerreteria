@@ -71,7 +71,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="#" class="side-nav-link">
+                            <a href="productos" class="side-nav-link">
                                 <i class="uil-tag-alt"></i>
                                 <span> Productos </span>
                             </a>
@@ -92,7 +92,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="<?php echo URL ?>usuarios" class="side-nav-link">
+                            <a href="usuarios" class="side-nav-link">
                                 <i class="uil-users-alt"></i>
                                 <span> Usuarios </span>
                             </a>

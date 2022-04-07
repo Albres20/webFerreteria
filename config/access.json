@@ -15,17 +15,22 @@
             "role": "logistica"
         },
         {
+            "site": "admin",
+            "access": "private",
+            "role": "admin"
+        },
+        {
             "site": "ventas",
             "access": "private",
             "role": "admin"
         },
         {
-            "site": "usuarios",
+            "site": "productos",
             "access": "private",
             "role": "admin"
         },
         {
-            "site": "admin",
+            "site": "usuarios",
             "access": "private",
             "role": "admin"
         }

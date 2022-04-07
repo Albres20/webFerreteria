@@ -1,7 +1,6 @@
 <?php
 $user = $this->d['user'];
-$usuarios = $this->d['usuarios'];
-//getModal();
+$productos = $this->d['productos'];
 
 ?>
 <!DOCTYPE html>
@@ -44,14 +43,14 @@ $usuarios = $this->d['usuarios'];
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active">Usuarios</li>
+                                <li class="breadcrumb-item active">Productos</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Usuarios</h4>
+                        <h4 class="page-title">Productos</h4>
                     </div>
                 </div>
                 <div id="main-container">
-                    <?php $this->showMessages();?>
+                    <?php $this->showMessages(); ?>
                 </div>
             </div>
             <!-- end page title -->
@@ -62,7 +61,7 @@ $usuarios = $this->d['usuarios'];
                         <div class="card-body">
                             <div class="row mb-2">
                                 <div class="col-sm-4">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarUsuario" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarProducto" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo</button>
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="text-sm-end">
@@ -83,21 +82,21 @@ $usuarios = $this->d['usuarios'];
                                                     <label class="form-check-label" for="customCheck1">&nbsp;</label>
                                                 </div>
                                             </th>
-                                            <th data-sort="id" class="all">ID</th>
-                                            <th data-sort="username">Usuario</th>
-                                            <th data-sort="fullname">Nombre Completo</th>
-                                            <th data-sort="email">Correo</th>
-                                            <th data-sort="role">Acceso</th>
-                                            <th data-sort="estado">Estado</th>
+                                            <th data-sort="codigo" class="all">Codigo</th>
+                                            <th data-sort="imagen">Imagen</th>
+                                            <th data-sort="nombre">Nombre</th>
+                                            <th data-sort="precio_venta">Prec. Venta</th>
+                                            <th data-sort="cantidad">Stock</th>
+                                            <th data-sort="categoria">Categoria</th>
                                             <th style="width: 85px;">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody id="databody">
                                         <?php
-                                            if($usuarios === NULL){
-                                                //showError('Datos no disponibles por el momento.');
-                                            }
-                                            foreach ($usuarios as $usuario){ ?>
+                                        if ($productos === NULL) {
+                                            //showError('Datos no disponibles por el momento.');
+                                        }
+                                        foreach ($productos as $producto) { ?>
                                             <tr>
                                                 <td>
                                                     <div class="form-check">
@@ -105,25 +104,20 @@ $usuarios = $this->d['usuarios'];
                                                         <label class="form-check-label" for="customCheck2">&nbsp;</label>
                                                     </div>
                                                 </td>
-                                                <?php echo '<td>'.$usuario['usuario']->getId().'</td>' ?>
-                                                <?php echo '<td>'.$usuario['usuario']->getUsername().'</td>' ?>
-                                                <?php echo '<td>'.$usuario['usuario']->getFullname().'</td>' ?>
-                                                <?php echo '<td>'.$usuario['usuario']->getEmail().'</td>' ?>
-                                                <?php echo '<td>'.$usuario['usuario']->getRole().'</td>' ?>
+                                                <?php echo '<td>' . $producto['producto']->getCodigo() . '</td>' ?>
+                                                <?php echo '<td>' . $producto['producto']->getImagen() . '</td>' ?>
+                                                <?php echo '<td>' . $producto['producto']->getNombre() . '</td>' ?>
+                                                <?php echo '<td>' . $producto['producto']->getPrecioVenta() . '</td>' ?>
+                                                <?php echo '<td>' . $producto['producto']->getStock() . '</td>' ?>
+                                                <?php echo '<td>' . $producto['producto']->getIdCategoria() . '</td>' ?>
 
-                                                <?php if($usuario['usuario']->getEstado() == 1){ ?>
-                                                    <?php echo '<td><span class="badge bg-success">Activo</span>' ?>
-                                                <?php }else{ ?>
-                                                    <?php echo '<td><span class="badge bg-danger">Inactivo</span></td>' ?>
-                                                <?php } ?>
-                                                
                                                 <td class="table-action">
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                    <a href="http://localhost/webFerreteria/usuarios/delete/<?php echo $usuario['usuario']->getId(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                    <a href="http://localhost/webFerreteria/usuarios/delete/<?php echo $producto['producto']->getId(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                                 </td>
                                             </tr>
-                                        <?php } ?>                      
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -167,50 +161,35 @@ $usuarios = $this->d['usuarios'];
     MODAL AGREGAR USUARIO
     ======================================-->
     <!-- Standard modal -->
-    <div id="modalAgregarUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+    <div id="modalAgregarProducto" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form id="formnewuser" name="formnewuser" action="usuarios/newUsuarios" class="needs-validation" method="POST" novalidate>
+                <form id="formnewproduct" name="formnewuser" action="productos/newProductos" class="needs-validation" method="POST" novalidate>
 
                     <div class="modal-header">
-                        <h4 class="modal-title" id="standard-modalLabel">Nuevo usuario</h4>
+                        <h4 class="modal-title" id="standard-modalLabel">Nuevo Producto</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
                         <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltipUsername">Usuario</label>
-                            <div class="input-group">
-                                <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-                                <input type="text" class="form-control" id="validationTooltipUsername" name="username" placeholder="Usuario" aria-describedby="validationTooltipUsernamePrepend" required>
-                                <div class="invalid-tooltip">
-                                    Proporcine un nombre de usuario único y válido.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip01">Mostrar/Ocultar contraseña</label>
-                            <div class="input-group">
-                                <input type="password" class="form-control" id="validationTooltip01" name="password" placeholder="Contraseña" required>
-                                <div class="input-group-text" data-password="false">
-                                    <span class="password-eye"></span>
-                                </div>
-                                <div class="invalid-tooltip">
-                                    Propocione una contraseña valida.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip02">Nombre Completo</label>
+                            <label class="form-label" for="validationTooltip02">Código</label>
                             <input type="text" class="form-control" id="validationTooltip02" name="fullname" placeholder="Nombre Completo" required>
                             <div class="invalid-tooltip">
-                                Proporcione su nombre completo.
+                                Proporcione un código válido.
                             </div>
                         </div>
                         <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip03">Correo</label>
+                            <label class="form-label" for="validationTooltip03">Nombre</label>
                             <input type="text" class="form-control" id="validationTooltip03" name="email" placeholder="Correo" required>
                             <div class="invalid-tooltip">
-                                Proporcione un correo válido.
+                                Proporcione un nombre válido.
+                            </div>
+                        </div>
+                        <div class="position-relative mb-3">
+                            <label class="form-label" for="validationTooltip03">Marca</label>
+                            <input type="text" class="form-control" id="validationTooltip03" name="email" placeholder="Correo" required>
+                            <div class="invalid-tooltip">
+                                Proporcione una marca válida.
                             </div>
                         </div>
                         <div class="position-relative mb-3">
@@ -243,8 +222,8 @@ $usuarios = $this->d['usuarios'];
                     </div>
                     <?php
                     //$newusuarios = newUsuarios();
-                    $crearUsuario = new Usuarios();
-                    $crearUsuario->newUsuarios();
+                    $nuevoproducto = new Productos();
+                    $nuevoproducto->newProductos();
 
                     ?>
                 </form>
@@ -273,11 +252,16 @@ $usuarios = $this->d['usuarios'];
     <script src="<?php echo URL . RQ ?>assets/js/vendor/dataTables.checkboxes.min.js"></script>
 
     <!-- third party js ends -->
+    <!-- plugin js -->
+    <script src="assets/js/vendor/dropzone.min.js"></script>
+    <!-- init js -->
+    <script src="assets/js/ui/component.fileupload.js"></script>
 
     <!-- demo app -->
     <script src="<?php echo URL . RQ ?>assets/js/pages/demo.products.js"></script>
     <!-- end demo js-->
-    <!-- <script src="<?//php echo URL . RQ ?>js/tablausuarios.js"></script> -->
+    <!-- <script src="<? //php echo URL . RQ 
+                        ?>js/tablausuarios.js"></script> -->
 </body>
 
 </html>

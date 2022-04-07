@@ -6,7 +6,7 @@ class Success{
     //method
     //operation
     
-    const SUCCESS_ADMIN_NEWCATEGORY     = "f52228665c4f14c8695b194f670b0ef1";
+    const SUCCESS_ADMIN_NEWUSER     = "f52228665c4f14c8695b194f670b0ef1";
     const SUCCESS_EXPENSES_DELETE       = "fcd919285d5759328b143801573ec47d";
     const SUCCESS_EXPENSES_NEWEXPENSE   = "fbbd0f23184e820e1df466abe6102955";
     const SUCCESS_USER_UPDATEBUDGET     = "2ee085ac8828407f4908e4d134195e5c";
@@ -20,7 +20,7 @@ class Success{
     public function __construct()
     {
         $this->successList = [
-            Success::SUCCESS_ADMIN_NEWCATEGORY => "Nueva categoría creada correctamente",
+            Success::SUCCESS_ADMIN_NEWUSER => "Nuevo usuario creado correctamente",
             Success::SUCCESS_EXPENSES_DELETE => "Gasto eliminado correctamente",
             Success::SUCCESS_EXPENSES_NEWEXPENSE => "Nuevo gasto registrado correctamente",
             Success::SUCCESS_USER_UPDATEBUDGET => "Presupuesto actualizado correctamente",

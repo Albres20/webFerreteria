@@ -53,12 +53,13 @@ class Usuarios extends SessionController{
 
     function newUsuarios(){
         error_log('Admin::newUsuarios()');
-        if($this->existPOST(['username', 'password', 'fullname', 'email', 'role'])){
+        if($this->existPOST(['username', 'password', 'fullname', 'email', 'role', 'estado'])){
             $username = $this->getPost('username');
             $password = $this->getPost('password');
             $fullname = $this->getPost('fullname');
             $email = $this->getPost('email');
             $role = $this->getPost('role');
+            $estado = $this->getPost('estado');
 
             $userModel = new UserModel();
 
@@ -68,24 +69,31 @@ class Usuarios extends SessionController{
                 $userModel->setFullname($fullname);
                 $userModel->setEmail($email);
                 $userModel->setRole($role);
+                $userModel->setEstado($estado);
                 $userModel->save();
                 error_log('Admin::newUsuarios() => new usuario creado');
-                //$this->redirect('admin', ['success' => Success::SUCCESS_ADMIN_NEWCATEGORY]);
+                $this->redirect('usuarios', ['success' => Success::SUCCESS_ADMIN_NEWUSER]);
             }else{
-                //$this->redirect('admin', ['error' => Errors::ERROR_ADMIN_NEWCATEGORY_EXISTS]);
+                $this->redirect('usuarios', ['error' => Errors::ERROR_ADMIN_NEWUSER_EXISTS]);
             }
         }
     }
     
-    private function getUsuariosDB(){
+    function getUsuariosDB(){
         $res = [];
         $userModel = new UserModel();
-        $users = $userModel->getAll();
+        $usuarios = $userModel->getAll();
 
-        foreach ($users as $user) {
-            array_push($res, $user->getId());
-        }
-        $res = array_values(array_unique($res));
+        foreach ($usuarios as $usuario) {
+            $usersarray = [];
+            $usersarray['usuario'] = $usuario;
+            // $categoryArray['total'] = $total;
+            // $categoryArray['count'] = $numberOfExpenses;
+            // $categoryArray['category'] = $category;
+
+             array_push($res, $usersarray);
+         }
+        //$res = array_values(array_unique($res));
 
         return $res;
     }

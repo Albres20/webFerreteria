@@ -1612,3 +1612,216 @@ Stack trace:
 [07-Apr-2022 06:51:51 Europe/Berlin] sessionController::getUserSessionData(): admin
 [07-Apr-2022 06:51:51 Europe/Berlin] Gestion de usuarios ::constructor() 
 [07-Apr-2022 06:51:51 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 03:48:33 Europe/Berlin] Hello, errors!
+[07-Apr-2022 03:48:33 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 03:48:33 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 03:48:33 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 03:48:33 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 03:48:33 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 03:48:33 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 03:48:33 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 03:48:33 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 03:48:33 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 03:48:33 Europe/Berlin] Gestion de productos::RENDER() 
+[07-Apr-2022 03:48:33 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 03:48:33 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 03:48:33 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 03:48:33 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 03:48:33 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 03:48:33 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 03:48:33 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 03:48:33 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 03:48:33 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 03:48:33 Europe/Berlin] Admin::newProductos()
+[07-Apr-2022 03:48:33 Europe/Berlin] Hello, errors!
+[07-Apr-2022 03:48:33 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:40:55 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:40:55 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:40:55 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 04:40:55 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 04:40:55 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 04:40:55 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 04:40:55 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 04:40:55 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:40:55 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 04:40:55 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 04:40:55 Europe/Berlin] Gestion de productos::RENDER() 
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "id" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 76
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "codigo" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 77
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "nombre" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 78
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "precio_compra" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 79
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "precio_venta" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 80
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "stock" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 81
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "imagen" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 82
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "idcategoria" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 83
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "id" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 76
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "codigo" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 77
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "nombre" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 78
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "precio_compra" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 79
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "precio_venta" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 80
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "stock" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 81
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "imagen" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 82
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "idcategoria" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 83
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "id" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 76
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "codigo" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 77
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "nombre" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 78
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "precio_compra" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 79
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "precio_venta" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 80
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "stock" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 81
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "imagen" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 82
+[07-Apr-2022 04:40:55 Europe/Berlin] PHP Warning:  Undefined array key "idcategoria" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 83
+[07-Apr-2022 04:40:55 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:40:55 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 04:40:55 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 04:40:55 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 04:40:55 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 04:40:55 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 04:40:55 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:40:55 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 04:40:55 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 04:40:55 Europe/Berlin] Admin::newProductos()
+[07-Apr-2022 04:40:55 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:40:55 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:57:25 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:57:25 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:57:25 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 04:57:25 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 04:57:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 04:57:25 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 04:57:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 04:57:25 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:57:25 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 04:57:25 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 04:57:25 Europe/Berlin] Gestion de productos::RENDER() 
+[07-Apr-2022 04:57:25 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\webFerreteria\controllers\productos.php on line 31
+[07-Apr-2022 04:57:25 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:57:25 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 04:57:25 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 04:57:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 04:57:25 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 04:57:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 04:57:25 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:57:25 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 04:57:25 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 04:57:25 Europe/Berlin] Admin::newProductos()
+[07-Apr-2022 04:57:25 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:57:25 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:00:47 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:00:47 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:00:47 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:00:47 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 05:00:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:00:47 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 05:00:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:00:47 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:00:47 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:00:47 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 05:00:47 Europe/Berlin] Gestion de productos::RENDER() 
+[07-Apr-2022 05:00:47 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\webFerreteria\controllers\productos.php on line 31
+[07-Apr-2022 05:00:47 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:00:47 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:00:47 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 05:00:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:00:47 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 05:00:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:00:47 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:00:47 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:00:47 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 05:00:47 Europe/Berlin] Admin::newProductos()
+[07-Apr-2022 05:00:48 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:00:48 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:08:14 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:08:14 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:08:14 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:08:14 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 05:08:14 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:08:14 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 05:08:14 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:08:14 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:08:14 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:08:14 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 05:08:14 Europe/Berlin] Gestion de productos::RENDER() 
+[07-Apr-2022 05:08:14 Europe/Berlin] PHP Warning:  Undefined array key "productos_idcategoria" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 151
+[07-Apr-2022 05:08:14 Europe/Berlin] PHP Warning:  Undefined array key "productos_idcategoria" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 151
+[07-Apr-2022 05:08:14 Europe/Berlin] PHP Warning:  Undefined array key "productos_idcategoria" in C:\xampp\htdocs\webFerreteria\models\productosmodel.php on line 151
+[07-Apr-2022 05:08:14 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:08:14 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:08:14 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 05:08:14 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:08:14 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 05:08:14 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:08:14 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:08:14 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:08:14 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 05:08:14 Europe/Berlin] Admin::newProductos()
+[07-Apr-2022 05:08:14 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:08:14 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:08:44 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:08:44 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:08:44 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:08:44 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 05:08:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:08:44 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 05:08:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:08:44 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:08:44 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:08:44 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 05:08:44 Europe/Berlin] Gestion de productos::RENDER() 
+[07-Apr-2022 05:08:44 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:08:44 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:08:44 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 05:08:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:08:44 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 05:08:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:08:44 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:08:44 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:08:44 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 05:08:44 Europe/Berlin] Admin::newProductos()
+[07-Apr-2022 05:08:44 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:08:44 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:09:27 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:09:27 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:09:27 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:09:27 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 05:09:27 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:09:27 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 05:09:27 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:09:27 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:09:27 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:09:27 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 05:09:27 Europe/Berlin] Gestion de productos::RENDER() 
+[07-Apr-2022 05:09:27 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:09:27 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:09:27 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 05:09:27 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:09:27 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 05:09:27 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:09:27 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:09:27 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:09:27 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 05:09:27 Europe/Berlin] Admin::newProductos()
+[07-Apr-2022 05:09:27 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:09:27 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:10:20 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:10:20 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:10:20 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:10:20 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 05:10:20 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:10:20 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 05:10:20 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:10:20 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:10:20 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:10:20 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 05:10:20 Europe/Berlin] Gestion de productos::RENDER() 
+[07-Apr-2022 05:10:20 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:10:20 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:10:20 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[07-Apr-2022 05:10:20 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:10:20 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 05:10:20 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:10:20 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:10:20 Europe/Berlin] sessionController::getUserSessionData(): moises
+[07-Apr-2022 05:10:20 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 05:10:20 Europe/Berlin] Admin::newProductos()
+[07-Apr-2022 05:10:20 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:10:20 Europe/Berlin] Hello, errors!

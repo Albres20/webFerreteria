@@ -347,6 +347,1271 @@ Stack trace:
 [07-Apr-2022 02:40:42 Europe/Berlin] Gestion de usuarios ::constructor() 
 [07-Apr-2022 02:40:42 Europe/Berlin] Admin::newUsuarios()
 [07-Apr-2022 02:40:42 Europe/Berlin] ExistPOST: No existe el parametro username
+[07-Apr-2022 04:49:35 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:49:35 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:49:35 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:49:35 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:49:35 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[07-Apr-2022 04:49:35 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[07-Apr-2022 04:49:35 Europe/Berlin] SessionController::validateSession() => sitio público, redirige al main de cada rol
+[07-Apr-2022 04:49:35 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:49:35 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:49:35 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:49:35 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:49:35 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 04:49:35 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 04:49:35 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 04:49:35 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:49:35 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:49:43 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:49:43 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:49:43 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:49:43 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:49:43 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logout, url => logout
+[07-Apr-2022 04:49:43 Europe/Berlin] sessionController::isPublic(): currentURL => logout
+[07-Apr-2022 04:49:43 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logout, url => logout
+[07-Apr-2022 04:49:43 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 04:49:43 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:49:43 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:49:43 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[07-Apr-2022 04:49:43 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[07-Apr-2022 04:49:43 Europe/Berlin] SessionController::validateSession() public page
+[07-Apr-2022 04:49:52 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:49:52 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:49:52 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login/authenticate, url => login
+[07-Apr-2022 04:49:52 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[07-Apr-2022 04:49:52 Europe/Berlin] SessionController::validateSession() redirect al login
+[07-Apr-2022 04:49:52 Europe/Berlin] ExistPOST: Existen parámetros
+[07-Apr-2022 04:49:52 Europe/Berlin] login: inicio
+[07-Apr-2022 04:49:52 Europe/Berlin] login: user id 88
+[07-Apr-2022 04:49:52 Europe/Berlin] login: user estado valido 88 -> 1
+[07-Apr-2022 04:49:52 Europe/Berlin] login: password ok
+[06-Apr-2022 21:49:52 America/Bogota] Login::authenticate() passed
+[06-Apr-2022 21:49:52 America/Bogota] sessionController::initialize(): user: admin
+[06-Apr-2022 21:49:52 America/Bogota] sessionController::authorizeAccess(): role: admin
+[07-Apr-2022 04:49:52 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:49:52 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:49:52 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:49:52 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:49:52 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 04:49:52 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 04:49:52 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 04:49:52 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:49:52 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:49:56 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:49:59 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:49:59 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:49:59 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:49:59 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:49:59 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 04:49:59 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 04:49:59 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 04:49:59 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:49:59 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:52:13 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:52:13 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:52:13 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:52:13 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 04:52:13 Europe/Berlin] Gestion de usuarios::RENDER() 
+[07-Apr-2022 04:52:13 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:52:13 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:52:13 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 04:52:13 Europe/Berlin] Admin::newUsuarios()
+[07-Apr-2022 04:52:13 Europe/Berlin] ExistPOST: No existe el parametro username
+[07-Apr-2022 04:52:13 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:52:13 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:52:13 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:52:13 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 04:52:13 Europe/Berlin] Gestion de usuarios::RENDER() 
+[07-Apr-2022 04:52:13 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:52:13 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:52:13 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:52:13 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 04:52:13 Europe/Berlin] Admin::newUsuarios()
+[07-Apr-2022 04:52:13 Europe/Berlin] ExistPOST: No existe el parametro username
+[07-Apr-2022 04:52:15 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:56:43 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:56:45 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:56:45 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:56:45 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:56:45 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:56:45 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:56:45 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 04:56:45 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:56:45 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:56:45 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:56:45 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 04:56:45 Europe/Berlin] Gestion de usuarios::RENDER() 
+[07-Apr-2022 04:56:45 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:56:45 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:56:45 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:56:45 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:56:45 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 04:56:45 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:56:45 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:56:45 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:56:45 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 04:56:45 Europe/Berlin] Admin::newUsuarios()
+[07-Apr-2022 04:56:45 Europe/Berlin] ExistPOST: No existe el parametro username
+[07-Apr-2022 04:56:47 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:56:47 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:56:47 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:56:47 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:56:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:56:47 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 04:56:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:56:47 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:56:47 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:56:47 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 04:56:47 Europe/Berlin] Gestion de usuarios::RENDER() 
+[07-Apr-2022 04:56:47 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:56:47 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:56:47 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:56:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:56:47 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 04:56:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:56:47 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:56:47 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:56:47 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 04:56:47 Europe/Berlin] Admin::newUsuarios()
+[07-Apr-2022 04:56:47 Europe/Berlin] ExistPOST: No existe el parametro username
+[07-Apr-2022 04:57:48 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:57:48 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:57:48 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:57:48 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:57:48 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:57:48 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 04:57:48 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:57:48 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:57:48 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:57:48 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 04:57:48 Europe/Berlin] Gestion de usuarios::RENDER() 
+[07-Apr-2022 04:57:48 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 04:57:48 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:57:48 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 04:57:48 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:57:48 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 04:57:48 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 04:57:48 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 04:57:48 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 04:57:48 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 04:57:48 Europe/Berlin] Admin::newUsuarios()
+[07-Apr-2022 04:57:48 Europe/Berlin] ExistPOST: No existe el parametro username
+[07-Apr-2022 04:57:49 Europe/Berlin] Hello, errors!
+[07-Apr-2022 04:57:49 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedor' not found in C:\xampp\htdocs\webFerreteria\Library\app.php:33
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#1 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\app.php on line 33
+[07-Apr-2022 05:02:31 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:02:31 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:31 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:31 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:31 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 05:02:31 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 05:02:31 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 05:02:31 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:02:31 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:31 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:02:31 Europe/Berlin] Gestion de usuarios::RENDER() 
+[07-Apr-2022 05:02:31 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:31 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:31 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:31 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 05:02:31 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 05:02:31 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 05:02:31 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:02:31 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:31 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:02:31 Europe/Berlin] Admin::newUsuarios()
+[07-Apr-2022 05:02:31 Europe/Berlin] ExistPOST: No existe el parametro username
+[07-Apr-2022 05:02:33 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:02:33 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:33 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:33 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:33 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:02:33 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:02:33 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:02:33 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:02:33 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:33 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:02:33 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:02:33 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:02:33 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:33 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:33 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:33 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:02:33 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:02:33 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:02:33 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:02:33 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:35 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:02:35 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:35 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:35 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:35 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:02:35 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:02:35 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:02:35 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:02:35 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:35 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:02:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:02:36 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:02:36 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:36 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:36 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:36 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:02:36 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:02:36 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:02:36 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:02:36 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:37 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:02:37 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:37 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:37 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:37 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:02:37 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:02:37 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:02:37 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:02:37 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:37 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:02:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:02:37 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:02:37 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:37 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:37 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:37 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:02:37 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:02:37 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:02:37 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:02:37 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:38 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:02:38 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:38 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:38 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:38 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:02:38 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 05:02:38 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:02:38 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:02:38 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:38 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 05:02:38 Europe/Berlin] Gestion de productos::RENDER() 
+[07-Apr-2022 05:02:38 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\webFerreteria\controllers\productos.php on line 31
+[07-Apr-2022 05:02:38 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:38 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:38 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:38 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:02:38 Europe/Berlin] sessionController::isPublic(): currentURL => productos
+[07-Apr-2022 05:02:38 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/productos, url => productos
+[07-Apr-2022 05:02:38 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:02:38 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:38 Europe/Berlin] Gestion de productos ::constructor() 
+[07-Apr-2022 05:02:38 Europe/Berlin] Admin::newProductos()
+[07-Apr-2022 05:02:39 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:02:39 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:02:41 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:02:41 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:41 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:41 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:41 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 05:02:41 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 05:02:41 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 05:02:41 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:02:41 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:41 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:02:41 Europe/Berlin] Gestion de usuarios::RENDER() 
+[07-Apr-2022 05:02:41 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:41 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:41 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:41 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 05:02:41 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 05:02:41 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 05:02:41 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:02:41 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:41 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:02:41 Europe/Berlin] Admin::newUsuarios()
+[07-Apr-2022 05:02:41 Europe/Berlin] ExistPOST: No existe el parametro username
+[07-Apr-2022 05:02:43 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:02:43 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:43 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:43 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:43 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:02:43 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:02:43 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:02:43 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:02:43 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:43 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:02:43 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:02:43 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:02:43 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:02:43 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:02:43 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:02:43 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:02:43 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:02:43 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:02:43 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:02:43 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:35 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:04:35 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:04:35 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:35 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:04:35 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:04:35 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:04:35 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:04:35 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:04:35 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:38 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:04:38 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:04:38 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:38 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:04:38 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:04:38 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:04:38 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:04:38 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:04:38 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:38 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:04:38 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:04:38 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:04:38 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:04:38 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:38 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:04:38 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:04:38 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:04:38 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:04:38 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:04:38 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:41 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:04:41 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:04:41 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:41 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:04:41 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:04:41 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:04:41 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:04:41 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:04:41 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:41 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:04:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:04:41 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:04:41 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:04:41 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:41 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:04:41 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:04:41 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:04:41 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:04:41 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:04:41 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:44 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:04:44 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:04:44 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:44 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:04:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 05:04:44 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 05:04:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 05:04:44 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:04:44 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:44 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:04:44 Europe/Berlin] Gestion de usuarios::RENDER() 
+[07-Apr-2022 05:04:44 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:04:44 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:44 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:04:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 05:04:44 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[07-Apr-2022 05:04:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[07-Apr-2022 05:04:44 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:04:44 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:44 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:04:44 Europe/Berlin] Admin::newUsuarios()
+[07-Apr-2022 05:04:44 Europe/Berlin] ExistPOST: No existe el parametro username
+[07-Apr-2022 05:04:46 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:04:46 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:04:46 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:46 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:04:46 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:04:46 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:04:46 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:04:46 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:04:46 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:46 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:04:46 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:04:46 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:04:46 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:04:46 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:46 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:04:46 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:04:46 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:04:46 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:04:46 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:04:46 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:50 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:04:50 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:04:50 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:50 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:04:50 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:04:50 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:04:50 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:04:50 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:04:50 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:52 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:04:52 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:04:52 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:52 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:04:52 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:04:52 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:04:52 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:04:52 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:04:52 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:52 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:04:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:04:52 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:04:52 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:04:52 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:04:52 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:04:52 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:04:52 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:04:52 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:04:52 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:04:52 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:47 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:09:47 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:09:47 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:47 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:09:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:09:47 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:09:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:09:47 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:09:47 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:48 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:09:48 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:09:48 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:48 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:09:48 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:09:48 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:09:48 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:09:48 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:09:48 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:48 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:09:48 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:09:48 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:09:48 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:09:48 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:48 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:09:48 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:09:48 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:09:48 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:09:48 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:09:48 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:50 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:09:50 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:09:50 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:50 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:09:50 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:09:50 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:09:50 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:09:50 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:09:50 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:50 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:09:50 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:09:50 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:09:50 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:09:50 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:50 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:09:50 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:09:50 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:09:50 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:09:50 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:09:50 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:51 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:09:52 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:09:52 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:52 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:09:52 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:09:52 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:09:52 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:09:52 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:09:52 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:52 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:09:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:09:52 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:09:52 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:09:52 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:52 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:09:52 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:09:52 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:09:52 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:09:52 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:09:52 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:53 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:09:53 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:09:53 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:53 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:09:53 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:09:53 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:09:53 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:09:53 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:09:53 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:53 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:09:53 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:09:53 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:09:53 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:09:53 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:09:53 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:09:53 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:09:53 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:09:53 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:09:53 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:09:53 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:14 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:14:14 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:14:14 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:14 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:14:14 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:14:14 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:14:14 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:14:14 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:14:14 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:18 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:14:18 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:14:18 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:18 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:14:18 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:14:18 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:14:18 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:14:18 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:14:18 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:20 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:14:20 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:14:20 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:20 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:14:20 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:14:20 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:14:20 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:14:20 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:14:20 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:20 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:14:20 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:14:20 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:14:20 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:14:20 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:20 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:14:20 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:14:20 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:14:20 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:14:20 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:14:20 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:21 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:14:21 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:14:21 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:21 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:14:21 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:14:21 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:14:21 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:14:21 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:14:21 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:21 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:14:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:14:21 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:14:21 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:14:21 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:21 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:14:21 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:14:21 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:14:21 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:14:21 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:14:21 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:22 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:14:22 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:14:22 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:22 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:14:22 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:14:22 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:14:22 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:14:22 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[07-Apr-2022 05:14:22 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:22 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:14:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:14:22 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:14:22 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:14:22 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:14:22 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:14:22 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:14:22 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:14:22 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:14:22 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:14:22 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:15:03 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:15:03 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:15:03 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:15:03 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:15:03 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:15:03 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:15:03 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:15:03 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:15:03 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:15:04 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:15:04 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:15:04 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:15:04 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:15:04 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:15:04 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:15:04 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:15:04 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:15:04 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:15:05 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:15:05 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:15:05 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:15:05 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:15:05 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:15:05 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:15:05 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:15:05 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[07-Apr-2022 05:15:05 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:15:05 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:15:07 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:15:07 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:15:07 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:15:07 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:15:07 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:15:07 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:15:07 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:15:07 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:15:07 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:15:07 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:15:07 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:17:27 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:17:27 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:17:27 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:17:27 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:17:27 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:17:27 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:17:27 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:17:27 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:17:27 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:17:27 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:17:27 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:17:57 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:17:57 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:17:57 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:17:57 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:17:57 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:17:57 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:17:57 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:17:57 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:17:57 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:17:57 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:17:57 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'createClienteProveedorModel' not found in C:\xampp\htdocs\webFerreteria\Library\controller.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\app.php(34): Controller->loadModel('createClientePr...')
+#1 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 16
+[07-Apr-2022 05:19:31 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:31 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:31 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:31 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:31 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:31 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:31 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:31 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:31 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:31 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:31 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:32 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:32 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:32 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:32 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:32 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:32 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:32 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:32 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:32 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:32 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:32 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:32 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:32 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:32 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:32 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:32 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:32 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:32 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:32 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:32 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:32 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:55 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:55 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:55 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:55 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:55 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:55 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:55 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:55 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:55 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:55 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:55 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:56 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:56 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:56 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:56 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:56 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:56 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:56 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:56 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:56 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:56 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:56 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:56 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:56 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:56 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:56 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:56 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:56 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:56 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:56 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:56 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:56 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:57 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:57 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:57 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:57 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:57 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:57 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:57 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:57 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:57 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:57 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:57 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:57 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:57 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:57 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:57 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:57 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:57 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:57 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:57 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:57 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:57 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:57 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:58 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:58 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:58 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:58 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:58 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:58 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:58 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:58 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:58 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:58 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:58 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:58 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:58 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:58 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:58 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:58 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:58 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:58 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:58 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:58 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:58 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:58 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:19:59 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:19:59 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:19:59 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:59 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:19:59 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:59 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:19:59 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:19:59 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:19:59 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:19:59 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:19:59 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:20:00 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:20:00 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:20:00 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:00 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:20:00 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:00 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:20:00 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:00 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:20:00 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:00 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:20:00 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'there' (T_STRING), expecting ';' or ',' in C:\xampp\htdocs\webFerreteria\Models\createClienteProveedormodel.php on line 7
+[07-Apr-2022 05:20:28 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:20:28 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:20:28 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:28 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:20:28 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:28 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:20:28 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:28 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:20:28 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:28 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:20:28 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 05:20:28 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Usuarios' not found in C:\xampp\htdocs\webFerreteria\Views\Admin\createClienteProveedor.php:246
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\view.php(14): require()
+#1 C:\xampp\htdocs\webFerreteria\controllers\createClienteProveedor.php(18): View->render('admin/createCli...', Array)
+#2 C:\xampp\htdocs\webFerreteria\Library\app.php(58): CreateClienteProveedor->render()
+#3 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Views\Admin\createClienteProveedor.php on line 246
+[07-Apr-2022 05:20:29 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:20:29 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:20:29 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:29 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:20:29 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:29 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:20:29 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:29 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:20:29 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:29 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:20:29 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 05:20:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Usuarios' not found in C:\xampp\htdocs\webFerreteria\Views\Admin\createClienteProveedor.php:246
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\view.php(14): require()
+#1 C:\xampp\htdocs\webFerreteria\controllers\createClienteProveedor.php(18): View->render('admin/createCli...', Array)
+#2 C:\xampp\htdocs\webFerreteria\Library\app.php(58): CreateClienteProveedor->render()
+#3 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Views\Admin\createClienteProveedor.php on line 246
+[07-Apr-2022 05:20:30 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:20:30 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:20:30 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:30 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:20:30 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:30 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:20:30 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:30 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:20:30 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:30 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:20:30 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 05:20:30 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Usuarios' not found in C:\xampp\htdocs\webFerreteria\Views\Admin\createClienteProveedor.php:246
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\view.php(14): require()
+#1 C:\xampp\htdocs\webFerreteria\controllers\createClienteProveedor.php(18): View->render('admin/createCli...', Array)
+#2 C:\xampp\htdocs\webFerreteria\Library\app.php(58): CreateClienteProveedor->render()
+#3 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Views\Admin\createClienteProveedor.php on line 246
+[07-Apr-2022 05:20:31 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:20:31 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:20:31 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:31 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:20:31 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:31 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:20:31 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:31 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:20:31 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:31 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:20:31 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 05:20:31 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Usuarios' not found in C:\xampp\htdocs\webFerreteria\Views\Admin\createClienteProveedor.php:246
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\view.php(14): require()
+#1 C:\xampp\htdocs\webFerreteria\controllers\createClienteProveedor.php(18): View->render('admin/createCli...', Array)
+#2 C:\xampp\htdocs\webFerreteria\Library\app.php(58): CreateClienteProveedor->render()
+#3 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Views\Admin\createClienteProveedor.php on line 246
+[07-Apr-2022 05:20:35 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:20:35 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:20:35 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:35 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:20:35 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:35 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:20:35 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:35 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:20:35 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:35 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:20:35 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 05:20:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Usuarios' not found in C:\xampp\htdocs\webFerreteria\Views\Admin\createClienteProveedor.php:246
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\view.php(14): require()
+#1 C:\xampp\htdocs\webFerreteria\controllers\createClienteProveedor.php(18): View->render('admin/createCli...', Array)
+#2 C:\xampp\htdocs\webFerreteria\Library\app.php(58): CreateClienteProveedor->render()
+#3 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Views\Admin\createClienteProveedor.php on line 246
+[07-Apr-2022 05:20:36 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:20:36 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:20:36 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:36 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:20:36 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:36 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:20:36 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:20:36 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:20:36 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:20:36 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:20:36 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 05:20:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Usuarios' not found in C:\xampp\htdocs\webFerreteria\Views\Admin\createClienteProveedor.php:246
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\Library\view.php(14): require()
+#1 C:\xampp\htdocs\webFerreteria\controllers\createClienteProveedor.php(18): View->render('admin/createCli...', Array)
+#2 C:\xampp\htdocs\webFerreteria\Library\app.php(58): CreateClienteProveedor->render()
+#3 C:\xampp\htdocs\webFerreteria\index.php(36): App->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\Views\Admin\createClienteProveedor.php on line 246
+[07-Apr-2022 05:21:23 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:21:23 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:21:23 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:21:23 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:21:23 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:21:23 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:21:23 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:21:23 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:21:23 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:21:23 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:21:23 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 05:21:23 Europe/Berlin] Hello, errors!
+[07-Apr-2022 05:21:23 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 05:21:23 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:21:23 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 05:21:23 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:21:23 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 05:21:23 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 05:21:23 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 05:21:23 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 05:21:23 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 05:21:23 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 06:08:54 Europe/Berlin] Hello, errors!
+[07-Apr-2022 06:08:55 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:08:55 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:08:55 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:08:55 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:08:55 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 06:08:55 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:08:55 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:08:55 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:08:55 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:08:55 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 06:09:09 Europe/Berlin] Hello, errors!
+[07-Apr-2022 06:09:09 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:09:09 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:09:09 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:09:09 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:09:09 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 06:09:09 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:09:09 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:09:09 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:09:09 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:09:09 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 06:09:25 Europe/Berlin] Hello, errors!
+[07-Apr-2022 06:09:25 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:09:25 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:09:25 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:09:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:09:25 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 06:09:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:09:25 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:09:25 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:09:25 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:09:25 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 06:10:24 Europe/Berlin] Hello, errors!
+[07-Apr-2022 06:10:24 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:10:24 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:10:24 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:10:24 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:10:24 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 06:10:24 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:10:24 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:10:24 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:10:24 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:10:24 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 06:10:25 Europe/Berlin] Hello, errors!
+[07-Apr-2022 06:10:25 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:10:25 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:10:25 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:10:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:10:25 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 06:10:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:10:25 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:10:25 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:10:25 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:10:25 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 06:11:30 Europe/Berlin] Hello, errors!
+[07-Apr-2022 06:11:30 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:11:30 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:11:30 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:11:30 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:11:30 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 06:11:30 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:11:30 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:11:30 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:11:30 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:11:30 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 06:13:47 Europe/Berlin] Hello, errors!
+[07-Apr-2022 06:13:47 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:13:47 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:13:47 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:13:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:13:47 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 06:13:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:13:47 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:13:47 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:13:47 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:13:47 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 06:37:32 Europe/Berlin] Hello, errors!
+[07-Apr-2022 06:37:32 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:37:32 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:37:32 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:37:32 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:37:32 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 06:37:32 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:37:32 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:37:32 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:37:32 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:37:32 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 06:41:49 Europe/Berlin] Hello, errors!
+[07-Apr-2022 06:41:49 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:41:49 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:41:49 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:41:49 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:41:49 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 06:41:49 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:41:49 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:41:49 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:41:49 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:41:49 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[07-Apr-2022 06:42:03 Europe/Berlin] Hello, errors!
+[07-Apr-2022 06:42:03 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor/newUsuarios, url => createClienteProveedor
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor/newUsuarios, url => createClienteProveedor
+[07-Apr-2022 06:42:03 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:42:03 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:42:03 Europe/Berlin] Admin::newUsuarios()
+[07-Apr-2022 06:42:03 Europe/Berlin] ExistPOST: Existen parámetros
+[07-Apr-2022 06:42:03 Europe/Berlin] PHP Notice:  Undefined index: username in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 45
+[07-Apr-2022 06:42:03 Europe/Berlin] PHP Notice:  Undefined index: password in C:\xampp\htdocs\webFerreteria\Library\controller.php on line 45
+[07-Apr-2022 06:42:03 Europe/Berlin] Admin::newUsuarios() => new usuario creado
+[07-Apr-2022 06:42:03 Europe/Berlin] Hello, errors!
+[07-Apr-2022 06:42:03 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios?success=f52228665c4f14c8695b194f670b0ef1, url => usuarios?success=f52228665c4f14c8695b194f670b0ef1
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios?success=f52228665c4f14c8695b194f670b0ef1
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios?success=f52228665c4f14c8695b194f670b0ef1, url => usuarios?success=f52228665c4f14c8695b194f670b0ef1
+[07-Apr-2022 06:42:03 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:42:03 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:42:03 Europe/Berlin] Gestion de usuarios::RENDER() 
+[07-Apr-2022 06:42:03 Europe/Berlin] View::handleError() existsKey =>1
+[07-Apr-2022 06:42:03 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios?success=f52228665c4f14c8695b194f670b0ef1, url => usuarios?success=f52228665c4f14c8695b194f670b0ef1
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios?success=f52228665c4f14c8695b194f670b0ef1
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios?success=f52228665c4f14c8695b194f670b0ef1, url => usuarios?success=f52228665c4f14c8695b194f670b0ef1
+[07-Apr-2022 06:42:03 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:42:03 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:42:03 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:42:03 Europe/Berlin] Admin::newUsuarios()
+[07-Apr-2022 06:42:03 Europe/Berlin] ExistPOST: No existe el parametro username
+[07-Apr-2022 06:51:44 Europe/Berlin] Hello, errors!
+[07-Apr-2022 06:51:44 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:51:44 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:51:44 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:51:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios?success=f52228665c4f14c8695b194f670b0ef1, url => usuarios?success=f52228665c4f14c8695b194f670b0ef1
+[07-Apr-2022 06:51:44 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios?success=f52228665c4f14c8695b194f670b0ef1
+[07-Apr-2022 06:51:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios?success=f52228665c4f14c8695b194f670b0ef1, url => usuarios?success=f52228665c4f14c8695b194f670b0ef1
+[07-Apr-2022 06:51:44 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:51:44 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:51:44 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:51:44 Europe/Berlin] Gestion de usuarios::RENDER() 
+[07-Apr-2022 06:51:44 Europe/Berlin] View::handleError() existsKey =>1
+[07-Apr-2022 06:51:44 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:51:44 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:51:44 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:51:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios?success=f52228665c4f14c8695b194f670b0ef1, url => usuarios?success=f52228665c4f14c8695b194f670b0ef1
+[07-Apr-2022 06:51:44 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios?success=f52228665c4f14c8695b194f670b0ef1
+[07-Apr-2022 06:51:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios?success=f52228665c4f14c8695b194f670b0ef1, url => usuarios?success=f52228665c4f14c8695b194f670b0ef1
+[07-Apr-2022 06:51:44 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:51:44 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:51:44 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:51:44 Europe/Berlin] Admin::newUsuarios()
+[07-Apr-2022 06:51:44 Europe/Berlin] ExistPOST: No existe el parametro username
+[07-Apr-2022 06:51:51 Europe/Berlin] Hello, errors!
+[07-Apr-2022 06:51:51 Europe/Berlin] SessionController::validateSession()
+[07-Apr-2022 06:51:51 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:51:51 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[07-Apr-2022 06:51:51 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:51:51 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[07-Apr-2022 06:51:51 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[07-Apr-2022 06:51:51 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[07-Apr-2022 06:51:51 Europe/Berlin] sessionController::getUserSessionData(): admin
+[07-Apr-2022 06:51:51 Europe/Berlin] Gestion de usuarios ::constructor() 
+[07-Apr-2022 06:51:51 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
 [07-Apr-2022 03:48:33 Europe/Berlin] Hello, errors!
 [07-Apr-2022 03:48:33 Europe/Berlin] SessionController::validateSession()
 [07-Apr-2022 03:48:33 Europe/Berlin] sessionController::getUserSessionData(): moises

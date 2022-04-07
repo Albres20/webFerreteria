@@ -85,6 +85,7 @@ $productos = $this->d['productos'];
                                             <th data-sort="codigo" class="all">Codigo</th>
                                             <th data-sort="imagen">Imagen</th>
                                             <th data-sort="nombre">Nombre</th>
+                                            <th data-sort="nombre">Marca</th>
                                             <th data-sort="precio_venta">Prec. Venta</th>
                                             <th data-sort="cantidad">Stock</th>
                                             <th data-sort="categoria">Categoria</th>
@@ -107,6 +108,7 @@ $productos = $this->d['productos'];
                                                 <?php echo '<td>' . $producto['producto']->getCodigo() . '</td>' ?>
                                                 <?php echo '<td>' . $producto['producto']->getImagen() . '</td>' ?>
                                                 <?php echo '<td>' . $producto['producto']->getNombre() . '</td>' ?>
+                                                <?php echo '<td>' . $producto['producto']->getMarca() . '</td>' ?>
                                                 <?php echo '<td>' . $producto['producto']->getPrecioVenta() . '</td>' ?>
                                                 <?php echo '<td>' . $producto['producto']->getStock() . '</td>' ?>
                                                 <?php echo '<td>' . $producto['producto']->getIdCategoria() . '</td>' ?>

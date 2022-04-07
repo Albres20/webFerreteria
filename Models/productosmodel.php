@@ -5,6 +5,7 @@
         private $id;
         private $codigo;
         private $nombre;
+        private $marca;
         private $precio_compra;
         private $precio_venta;
         private $stock;
@@ -15,6 +16,7 @@
         public function setId($id){ $this->id = $id; }
         public function setCodigo($codigo){ $this->codigo = $codigo; }
         public function setNombre($nombre){ $this->nombre = $nombre; }
+        public function setMarca($marca){ $this->marca = $marca; }
         public function setPrecioCompra($precio_compra){ $this->precio_compra = $precio_compra; }
         public function setPrecioVenta($precio_venta){ $this->precio_venta = $precio_venta; }
         public function setStock($stock){ $this->stock = $stock; }
@@ -25,6 +27,7 @@
         public function getId(){ return $this->id; }
         public function getCodigo(){ return $this->codigo; }
         public function getNombre(){ return $this->nombre; }
+        public function getMarca(){ return $this->marca; }
         public function getPrecioCompra(){ return $this->precio_compra; }
         public function getPrecioVenta(){ return $this->precio_venta; }
         public function getStock(){ return $this->stock; }
@@ -63,27 +66,21 @@
 
         public function getAll(){
             $items = [];
+
             try{
                 $query = $this->query('SELECT * FROM productos');
-                $query->execute();
-
-                if($query->rowCount() > 0){
-                    while($row = $query->fetch(PDO::FETCH_ASSOC)){
-                        $item = new Productosmodel();
-                        $item->setId($row['id']);
-                        $item->setCodigo($row['codigo']);
-                        $item->setNombre($row['nombre']);
-                        $item->setPrecioCompra($row['precio_compra']);
-                        $item->setPrecioVenta($row['precio_venta']);
-                        $item->setStock($row['stock']);
-                        $item->setImagen($row['imagen']);
-                        $item->setIdCategoria($row['idcategoria']);
-                        array_push($items, $item);
-                    }
+    
+                while($p = $query->fetch(PDO::FETCH_ASSOC)){
+                    $item = new Productosmodel();
+                    $item->from($p); 
+                    
+                    array_push($items, $item);
                 }
+    
                 return $items;
+    
             }catch(PDOException $e){
-                return NULL;
+                echo $e;
             }
         }
 
@@ -144,14 +141,16 @@
         }
 
         public function from($array){
-            $this->id = $array['id'];
-            $this->codigo = $array['codigo'];
-            $this->nombre = $array['nombre'];
-            $this->precio_compra = $array['precio_compra'];
-            $this->precio_venta = $array['precio_venta'];
-            $this->stock = $array['stock'];
-            $this->imagen = $array['imagen'];
-            $this->idcategoria = $array['idcategoria'];
+            $this->id = $array['productos_id'];
+            $this->codigo = $array['productos_codigo'];
+            $this->nombre = $array['productos_nombre'];
+            $this->marca = $array['productos_marca'];
+            $this->precio_compra = $array['productos_preccompra'];
+            $this->precio_venta = $array['productos_precventa'];
+            $this->stock = $array['productos_cantidad'];
+            $this->imagen = $array['productos_imagen'];
+            $this->idcategoria = $array['productos_idcategorias'];
+
         }
     }
 ?>

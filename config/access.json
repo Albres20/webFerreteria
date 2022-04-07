@@ -33,6 +33,11 @@
             "site": "usuarios",
             "access": "private",
             "role": "admin"
+        },
+        {
+            "site": "createClienteProveedor",
+            "access": "private",
+            "role": "admin"
         }
     ],
 

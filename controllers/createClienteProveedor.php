@@ -15,7 +15,7 @@ class CreateClienteProveedor extends SessionController{
 
         $this->view->render('admin/createClienteProveedor', [
             'user' => $this->user,
-            'usuarios' => $this->getUsuariosDB()
+            'usuarios' => $this->getClienteDB()
         ]);
         /*$this->view->render('admin/usuarios', [
             "usuarios" => $usuarios
@@ -54,40 +54,56 @@ class CreateClienteProveedor extends SessionController{
     function newUsuarios(){
         error_log('Admin::newUsuarios()');
         if($this->existPOST(['fullname', 'fullapellido', 'email', 'dni', 'role', 'estado'])){
-            $username = $this->getPost('username');
-            $password = $this->getPost('password');
-            $fullname = $this->getPost('fullname');
+            $fullname=$this->getPost('fullname');
+            $fullapellido = $this->getPost('fullapellido');
+            $pass = $this->getPost('password');
+            $dni = $this->getPost('dni');
             $email = $this->getPost('email');
             $role = $this->getPost('role');
             $estado = $this->getPost('estado');
-            if($role=='Cliente'){
-
+            echo '<script language="javascript">alert("juas");</script>';
+            if($role=='cliente'){
+                $createClienteProveedorModel = new createClienteProveedorModel();
+                if(!$createClienteProveedorModel->exists($fullname)){
+                    $createClienteProveedorModel->setFullname($fullname);
+                    $createClienteProveedorModel->setFullapellido($fullapellido);
+                    $createClienteProveedorModel->setDni($dni);
+                    $createClienteProveedorModel->setEmail($email);
+                    $createClienteProveedorModel->setRole($role);
+                    $createClienteProveedorModel->setEstado($estado);
+                    $createClienteProveedorModel->save();
+                    error_log('Admin::newUsuarios() => new usuario creado');
+                    $this->redirect('createClienteProveedor', ['success' => Success::SUCCESS_ADMIN_NEWUSER]);
+                }else{
+                    $this->redirect('createClienteProveedor', ['error' => Errors::ERROR_ADMIN_NEWUSER_EXISTS]);
+                }
             }
-            if($role=='Proveedor'){
-
+            
+            if($role=='proveedor'){
+                
+                $createProveedorModel = new createProveedorModel();
+                if(!$createProveedorModel->exists($fullname)){
+                    $createProveedorModel->setFullname($fullname);
+                    $createProveedorModel->setFullapellido($fullapellido);
+                    $createProveedorModel->setDni($dni);
+                    $createProveedorModel->setEmail($email);
+                    $createProveedorModel->setRole($role);
+                    $createProveedorModel->setEstado($estado);
+                    $createProveedorModel->save();
+                    error_log('Admin::newUsuarios() => new proveedor creado');
+                    $this->redirect('createClienteProveedor', ['success' => Success::SUCCESS_ADMIN_NEWUSER]);
+                }else{
+                    $this->redirect('createClienteProveedor', ['error' => Errors::ERROR_ADMIN_NEWUSER_EXISTS]);
+                }
             }
-            $userModel = new UserModel();
-
-            if(!$userModel->exists($username)){
-                $userModel->setUsername($username);
-                $userModel->setPassword($password);
-                $userModel->setFullname($fullname);
-                $userModel->setEmail($email);
-                $userModel->setRole($role);
-                $userModel->setEstado($estado);
-                $userModel->save();
-                error_log('Admin::newUsuarios() => new usuario creado');
-                $this->redirect('usuarios', ['success' => Success::SUCCESS_ADMIN_NEWUSER]);
-            }else{
-                $this->redirect('usuarios', ['error' => Errors::ERROR_ADMIN_NEWUSER_EXISTS]);
-            }
+            
         }
     }
     
-    function getUsuariosDB(){
+    function getClienteDB(){
         $res = [];
-        $userModel = new UserModel();
-        $usuarios = $userModel->getAll();
+        $CreateClienteProveedorModel = new CreateClienteProveedorModel();
+        $usuarios = $CreateClienteProveedorModel->getAll();
 
         foreach ($usuarios as $usuario) {
             $usersarray = [];

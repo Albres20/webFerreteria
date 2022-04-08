@@ -38,6 +38,11 @@
             "site": "createClienteProveedor",
             "access": "private",
             "role": "admin"
+        },
+        {
+            "site": "createProveedor",
+            "access": "private",
+            "role": "admin"
         }
     ],
 

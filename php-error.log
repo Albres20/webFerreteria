@@ -6851,3 +6851,51 @@ Stack trace:
 [07-Apr-2022 20:19:33 Europe/Berlin] sessionController::getUserSessionData(): moises
 [07-Apr-2022 20:19:33 Europe/Berlin] Gestion de productos ::constructor() 
 [07-Apr-2022 20:19:33 Europe/Berlin] Admin::newProductos()
+[08-Apr-2022 05:40:25 Europe/Berlin] Hello, errors!
+[08-Apr-2022 05:40:25 Europe/Berlin] SessionController::validateSession()
+[08-Apr-2022 05:40:25 Europe/Berlin] sessionController::getUserSessionData(): admin
+[08-Apr-2022 05:40:25 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[08-Apr-2022 05:40:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webferreteria/, url => 
+[08-Apr-2022 05:40:25 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[08-Apr-2022 05:40:25 Europe/Berlin] SessionController::validateSession() => sitio público, redirige al main de cada rol
+[08-Apr-2022 05:40:25 Europe/Berlin] Hello, errors!
+[08-Apr-2022 05:40:25 Europe/Berlin] SessionController::validateSession()
+[08-Apr-2022 05:40:25 Europe/Berlin] sessionController::getUserSessionData(): admin
+[08-Apr-2022 05:40:25 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[08-Apr-2022 05:40:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[08-Apr-2022 05:40:25 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[08-Apr-2022 05:40:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[08-Apr-2022 05:40:25 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[08-Apr-2022 05:40:25 Europe/Berlin] sessionController::getUserSessionData(): admin
+[08-Apr-2022 05:40:28 Europe/Berlin] Hello, errors!
+[08-Apr-2022 05:40:28 Europe/Berlin] SessionController::validateSession()
+[08-Apr-2022 05:40:28 Europe/Berlin] sessionController::getUserSessionData(): admin
+[08-Apr-2022 05:40:28 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[08-Apr-2022 05:40:28 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[08-Apr-2022 05:40:28 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[08-Apr-2022 05:40:28 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[08-Apr-2022 05:40:28 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[08-Apr-2022 05:40:28 Europe/Berlin] sessionController::getUserSessionData(): admin
+[08-Apr-2022 05:40:28 Europe/Berlin] Gestion de usuarios ::constructor() 
+[08-Apr-2022 05:40:28 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 
+[08-Apr-2022 05:41:02 Europe/Berlin] Hello, errors!
+[08-Apr-2022 05:41:02 Europe/Berlin] SessionController::validateSession()
+[08-Apr-2022 05:41:02 Europe/Berlin] sessionController::getUserSessionData(): admin
+[08-Apr-2022 05:41:02 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[08-Apr-2022 05:41:02 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios/delete/1, url => usuarios
+[08-Apr-2022 05:41:02 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[08-Apr-2022 05:41:02 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios/delete/1, url => usuarios
+[08-Apr-2022 05:41:02 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[08-Apr-2022 05:41:02 Europe/Berlin] sessionController::getUserSessionData(): admin
+[08-Apr-2022 05:41:02 Europe/Berlin] Gestion de usuarios ::constructor() 
+[08-Apr-2022 05:41:03 Europe/Berlin] Hello, errors!
+[08-Apr-2022 05:41:03 Europe/Berlin] SessionController::validateSession()
+[08-Apr-2022 05:41:03 Europe/Berlin] sessionController::getUserSessionData(): admin
+[08-Apr-2022 05:41:03 Europe/Berlin] sessionController::validateSession(): username:admin - role: admin
+[08-Apr-2022 05:41:03 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[08-Apr-2022 05:41:03 Europe/Berlin] sessionController::isPublic(): currentURL => createClienteProveedor
+[08-Apr-2022 05:41:03 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/createClienteProveedor, url => createClienteProveedor
+[08-Apr-2022 05:41:03 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[08-Apr-2022 05:41:03 Europe/Berlin] sessionController::getUserSessionData(): admin
+[08-Apr-2022 05:41:03 Europe/Berlin] Gestion de usuarios ::constructor() 
+[08-Apr-2022 05:41:03 Europe/Berlin] Gestion de creacion cliente proveedor::RENDER() 

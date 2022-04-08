@@ -8,6 +8,7 @@
         private $marca;
         private $precio_compra;
         private $precio_venta;
+        private $ganancia;
         private $stock;
         private $imagen;
         //private $fecha;
@@ -19,6 +20,7 @@
         public function setMarca($marca){ $this->marca = $marca; }
         public function setPrecioCompra($precio_compra){ $this->precio_compra = $precio_compra; }
         public function setPrecioVenta($precio_venta){ $this->precio_venta = $precio_venta; }
+        public function setGanancia($ganancia){ $this->ganancia = $ganancia; }
         public function setStock($stock){ $this->stock = $stock; }
         public function setImagen($imagen){ $this->imagen = $imagen; }
         //public function setFecha($fecha){ $this->fecha = $fecha; }
@@ -30,6 +32,7 @@
         public function getMarca(){ return $this->marca; }
         public function getPrecioCompra(){ return $this->precio_compra; }
         public function getPrecioVenta(){ return $this->precio_venta; }
+        public function getGanancia(){ return $this->ganancia; }
         public function getStock(){ return $this->stock; }
         public function getImagen(){ return $this->imagen; }
         //public function getFecha(){ return $this->fecha; }
@@ -47,15 +50,15 @@
                 productos_preccompra, productos_ganancia, productos_precventa, productos_cantidad, productos_imagen, productos_idcategorias) 
                 VALUES (:codigo, :nombre, :marca, :buying_price, :profit, :selling_price, :stock, :inputImage, :categoria)');
                 $query->execute([
-                    'codigo' => $this->codigo,
-                    'nombre' => $this->nombre,
-                    'marca' => $this->marca,
-                    'buying_price' => $this->precio_compra,
-                    'profit' => $this->precio_venta,
-                    'selling_price' => $this->precio_venta,
-                    'stock' => $this->stock,
-                    'inputImage' => $this->imagen,
-                    'categoria' => $this->idcategoria
+                    'productos_codigo' => $this->codigo,
+                    'productos_nombre' => $this->nombre,
+                    'productos_marca' => $this->marca,
+                    'productos_preccompra' => $this->precio_compra,
+                    'productos_ganancia' => $this->ganancia,
+                    'productos_precventa' => $this->precio_venta,
+                    'productos_cantidad' => $this->stock,
+                    'productos_imagen' => $this->imagen,
+                    'productos_idcategorias' => $this->idcategoria
 
                 ]);
 
@@ -110,6 +113,22 @@
             }
         }
 
+        function updatePhoto($hash, $productos_id){
+            try{
+                $query = $this->db->connect()->prepare('UPDATE productos SET productos_imagen = :val WHERE productos_id = :productos_id');
+                $query->execute(['val' => $hash, 'productos_id' => $productos_id]);
+    
+                if($query->rowCount() > 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            
+            }catch(PDOException $e){
+                return NULL;
+            }
+        }
+
         public function delete($id){
             try{
                 $query = $this->prepare('DELETE FROM productos WHERE id = :id');
@@ -145,10 +164,10 @@
             }
         }
 
-        public function exists($productos_codigo){
+        public function exists($codigo){
             try{
                 $query = $this->prepare('SELECT productos_codigo FROM productos WHERE productos_codigo = :productos_codigo');
-                $query->execute( ['productos_codigo' => $productos_codigo]);
+                $query->execute( ['productos_codigo' => $codigo]);
                 
                 if($query->rowCount() > 0){
                     return true;

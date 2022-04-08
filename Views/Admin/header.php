@@ -1,13 +1,13 @@
-            <!-- ========== Left Sidebar Start ========== -->
+       <!-- ========== Left Sidebar Start ========== -->
             <div class="leftside-menu">
 
                 <!-- LOGO -->
-                <a href="<?php echo URL ?>admin" class="logo text-center logo-light">
+                <a href="admin" class="logo text-center logo-light">
                     <span class="logo-lg">
-                        <img src="<?php echo URL.RQ?>image/logoht.png" alt="" height="80">
+                        <img src="<?php echo URL . RQ ?>image/logoht.png" alt="" height="80">
                     </span>
                     <span class="logo-sm">
-                        <img src="<?php echo URL.RQ?>image/logoht.png" alt="" height="30">
+                        <img src="<?php echo URL . RQ ?>image/logoht.png" alt="" height="30">
                     </span>
                 </a>
 

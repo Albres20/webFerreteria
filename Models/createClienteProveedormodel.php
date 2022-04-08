@@ -293,11 +293,11 @@ class CreateClienteProveedorModel extends Model implements IModel{
     //public function setAgregado($agregado){ $this->agregado = $agregado;}
 
     public function getId(){                return $this->id;}
-    public function getUsername(){          return $this->username;}
-    public function getPassword(){          return $this->password;}
     public function getFullname(){          return $this->fullname;}
+    public function getFullapellido(){          return $this->fullapellido;}
     public function getEmail(){             return $this->email;}
     public function getRole(){              return $this->role;}
+    public function getDni(){             return $this->dni;}
     //public function getPhoto(){             return $this->photo;}
     public function getEstado(){            return $this->estado;}
     //public function getUltimo_login(){      return $this->ultimo_login;}

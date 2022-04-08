@@ -54,6 +54,7 @@ $createClienteProveedor = $this->d['usuarios'];
                 <div id="main-container">
                     <?php $this->showMessages();?>
                 </div>
+                
             </div>
             <!-- end page title -->
 
@@ -65,6 +66,7 @@ $createClienteProveedor = $this->d['usuarios'];
                                 <div class="col-sm-4">
                                     <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarUsuario" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo</button>
                                 </div>
+                                
                                 <div class="col-sm-8">
                                     <div class="text-sm-end">
                                         <!-- <button type="button" class="btn btn-success mb-2 me-1"><i class="mdi mdi-cog-outline"></i></button> -->
@@ -84,11 +86,13 @@ $createClienteProveedor = $this->d['usuarios'];
                                                     <label class="form-check-label" for="customCheck1">&nbsp;</label>
                                                 </div>
                                             </th>
-                                            <th data-sort="id" class="all">ID</th>
+                                            
+                                            <!-- <th data-sort="id" class="all">ID</th> -->
                                             <th data-sort="username">Nombre Completo</th>
                                             <th data-sort="fullname">Apellido Completo</th>
                                             <th data-sort="email">Correo</th>
                                             <th data-sort="role">DNI</th>
+                                            <th data-sort="tipo">Tipo</th>
                                             <th data-sort="estado">Estado</th>
                                             <th style="width: 85px;">Acciones</th>
                                         </tr>
@@ -107,11 +111,11 @@ $createClienteProveedor = $this->d['usuarios'];
                                                         <label class="form-check-label" for="customCheck2">&nbsp;</label>
                                                     </div>
                                                 </td>
-                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getId().'</td>' ?>
-                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getUsername().'</td>' ?>
+                                                <?php /*echo '<td>'.$createClienteProveedor['usuario']->getId().'</td>' */?>
                                                 <?php echo '<td>'.$createClienteProveedor['usuario']->getFullname().'</td>' ?>
+                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getFullapellido().'</td>' ?>
                                                 <?php echo '<td>'.$createClienteProveedor['usuario']->getEmail().'</td>' ?>
-                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getEmail().'</td>' ?>
+                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getDni().'</td>' ?>
                                                 <?php echo '<td>'.$createClienteProveedor['usuario']->getRole().'</td>' ?>
 
                                                 <?php if($createClienteProveedor['usuario']->getEstado() == 1){ ?>
@@ -274,6 +278,7 @@ $createClienteProveedor = $this->d['usuarios'];
 
     <!-- demo app -->
     <script src="<?php echo URL . RQ ?>assets/js/pages/demo.products.js"></script>
+    
     <!-- end demo js-->
     <!-- <script src="<?//php echo URL . RQ ?>js/tablausuarios.js"></script> -->
 </body>

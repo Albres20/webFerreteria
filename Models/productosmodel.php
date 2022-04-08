@@ -43,15 +43,20 @@
 
         public function save(){
             try{
-                $query = $this->prepare('INSERT INTO productos (codigo, nombre, precio_compra, precio_venta, stock, imagen, idcategoria) VALUES (:codigo, :nombre, :precio_compra, :precio_venta, :stock, :imagen, :idcategoria)');
+                $query = $this->prepare('INSERT INTO productos (productos_codigo, productos_nombre, productos_marca, 
+                productos_preccompra, productos_ganancia, productos_precventa, productos_cantidad, productos_imagen, productos_idcategorias) 
+                VALUES (:codigo, :nombre, :marca, :buying_price, :profit, :selling_price, :stock, :inputImage, :categoria)');
                 $query->execute([
                     'codigo' => $this->codigo,
                     'nombre' => $this->nombre,
-                    'precio_compra' => $this->precio_compra,
-                    'precio_venta' => $this->precio_venta,
+                    'marca' => $this->marca,
+                    'buying_price' => $this->precio_compra,
+                    'profit' => $this->precio_venta,
+                    'selling_price' => $this->precio_venta,
                     'stock' => $this->stock,
-                    'imagen' => $this->imagen,
-                    'idcategoria' => $this->idcategoria
+                    'inputImage' => $this->imagen,
+                    'categoria' => $this->idcategoria
+
                 ]);
 
                 if($query->rowCount() > 0){
@@ -137,6 +142,22 @@
                 }
             }catch(PDOException $e){
                 return NULL;
+            }
+        }
+
+        public function exists($productos_codigo){
+            try{
+                $query = $this->prepare('SELECT productos_codigo FROM productos WHERE productos_codigo = :productos_codigo');
+                $query->execute( ['productos_codigo' => $productos_codigo]);
+                
+                if($query->rowCount() > 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }catch(PDOException $e){
+                echo $e;
+                return false;
             }
         }
 

@@ -4,10 +4,10 @@
                 <!-- LOGO -->
                 <a href="<?php echo URL ?>admin" class="logo text-center logo-light">
                     <span class="logo-lg">
-                        <img src="<?php echo URL . RQ ?>image/logoht.png" alt="" height="80">
+                        <img src="<?php echo URL.RQ?>image/logoht.png" alt="" height="80">
                     </span>
                     <span class="logo-sm">
-                        <img src="<?php echo URL . RQ ?>image/logoht.png" alt="" height="30">
+                        <img src="<?php echo URL.RQ?>image/logoht.png" alt="" height="30">
                     </span>
                 </a>
 
@@ -19,7 +19,7 @@
                     <ul class="side-nav">
 
                         <li class="side-nav-item">
-                            <a href="<?php echo URL ?>admin" class="side-nav-link">
+                            <a href="admin" class="side-nav-link">
                                 <i class="uil-home-alt"></i>
                                 <span> Inicio </span>
                             </a>

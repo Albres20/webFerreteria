@@ -1,6 +1,7 @@
 <?php
 $user = $this->d['user'];
 $productos = $this->d['productos'];
+$categorias = $this->d['categorias'];
 
 ?>
 <!DOCTYPE html>
@@ -82,14 +83,12 @@ $productos = $this->d['productos'];
                                         <tr>
                                             <th class="all" style="width: 20px;">
                                                 <div class="form-check">
-                                                    <input type="checkbox" class="form-check-input" id="customCheck1">
                                                     <label class="form-check-label" for="customCheck1">&nbsp;</label>
                                                 </div>
                                             </th>
                                             <th data-sort="codigo" class="all">Codigo</th>
-                                            <th data-sort="imagen">Imagen</th>
-                                            <th data-sort="nombre">Nombre</th>
-                                            <th data-sort="nombre">Marca</th>
+                                            <th data-sort="nombre">Producto</th>
+                                            <th data-sort="marca">Marca</th>
                                             <th data-sort="precio_venta">Prec. Venta</th>
                                             <th data-sort="cantidad">Stock</th>
                                             <th data-sort="categoria">Categoria</th>
@@ -105,22 +104,29 @@ $productos = $this->d['productos'];
                                             <tr>
                                                 <td>
                                                     <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck2">
                                                         <label class="form-check-label" for="customCheck2">&nbsp;</label>
                                                     </div>
                                                 </td>
-                                                <?php echo '<td>' . $producto['producto']->getCodigo() . '</td>' ?>
-                                                <?php echo '<td>' . $producto['producto']->getImagen() . '</td>' ?>
-                                                <?php echo '<td>' . $producto['producto']->getNombre() . '</td>' ?>
-                                                <?php echo '<td>' . $producto['producto']->getMarca() . '</td>' ?>
-                                                <?php echo '<td>' . $producto['producto']->getPrecioVenta() . '</td>' ?>
-                                                <?php echo '<td>' . $producto['producto']->getStock() . '</td>' ?>
-                                                <?php echo '<td>' . $producto['producto']->getIdCategoria() . '</td>' ?>
-
+                                                <?php echo '<td>' . $producto['producto']->getproductos_codigo() . '</td>' ?>
+                                                <td>
+                                                    <?php if($producto['producto']->getproductos_imagen() != ""){
+                                                            echo '<img src="'.URL . RQ . 'image/imgproductos/' . $producto['producto']->getproductos_imagen() . '" alt="product-img" title="product-img" class="rounded me-3" height="48">';
+                                                        }else{
+                                                            echo '<img src="'.URL . RQ . 'image/imgproductos/default-product.png" alt="product-img" title="product-img" class="rounded me-3" height="48">';
+                                                        }
+                                                        echo '<p class="m-0 d-inline-block align-middle font-16">
+                                                                <a href="#" class="text-body">'. $producto['producto']->getproductos_nombre().'</a>
+                                                            </p>'; 
+                                                    ?>
+                                                </td>
+                                                <?php echo '<td>' . $producto['producto']->getproductos_marca() . '</td>' ?>
+                                                <?php echo '<td> S/ ' . $producto['producto']->getproductos_precventa() . '</td>' ?>
+                                                <?php echo '<td>' . $producto['producto']->getproductos_cantidad() . '</td>' ?>
+                                                <?php echo '<td><span class="badge badge-outline rounded-pill" style="background-color:'.$producto['producto']->getcategorias_color().'">' . $producto['producto']->getcategorias_nombre() . '</span>' ?>
                                                 <td class="table-action">
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                    <a href="http://localhost/webFerreteria/usuarios/delete/<?php echo $producto['producto']->getId(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                    <a href="http://localhost/webFerreteria/usuarios/delete/<?php echo $producto['producto']->getproductos_id(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -180,35 +186,35 @@ $productos = $this->d['productos'];
                         <div class="row">
                             <div class="col-md-6 col-lg-7">
                                 <div class="position-relative mb-3">
-                                    <label class="form-label" for="validationTooltip02">Código</label>
-                                    <input type="text" class="form-control" id="validationTooltip02" name="fullname" placeholder="Código" required>
+                                    <label class="form-label" for="codigo">Código</label>
+                                    <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Código" required>
                                     <div class="invalid-tooltip">
                                         Proporcione un código válido.
                                     </div>
                                 </div>
                                 <div class="position-relative mb-3">
-                                    <label class="form-label" for="validationTooltip03">Nombre</label>
-                                    <input type="text" class="form-control" id="validationTooltip03" name="email" placeholder="Nombre" required>
+                                    <label class="form-label" for="nombre">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
                                     <div class="invalid-tooltip">
                                         Proporcione un nombre válido.
                                     </div>
                                 </div>
                                 <div class="position-relative mb-3">
-                                    <label class="form-label" for="validationTooltip03">Marca</label>
-                                    <input type="text" class="form-control" id="validationTooltip03" name="email" placeholder="Marca" required>
+                                    <label class="form-label" for="marca">Marca</label>
+                                    <input type="text" class="form-control" id="marca" name="marca" placeholder="Marca" required>
                                     <div class="invalid-tooltip">
                                         Proporcione una marca válida.
                                     </div>
                                 </div>
                                 <div class="position-relative mb-3">
-                                    <label class="form-label" for="validationTooltip04">Categoria</label>
-                                    <select class="form-select" id="validationTooltip04" name="role" required>
-                                        <option value="">Seleccione una opción</option>
-                                        <option value="admin">Administrador</option>
-                                        <option value="logistica">Logistica</option>
-                                        <option value="caja">Cajero</option>
+                                    <label class="form-label" for="categoria">Categoria</label>
+                                    <select class="form-select" id="categoria" name="categoria" required>
+                                    <option value="">Seleccione una opción</option>
+                                    <?php foreach ($categorias as $categoria) { ?>
+                                        <option value="<?php echo $categoria['categoria']->getcategorias_id();?>"><?php echo $categoria['categoria']->getcategorias_nombre(); ?></option>
+                                    <?php } ?>    
                                     </select>
-                                    <a data-v-e66c59b4 href="javascript:void(0)" class="ml-1 float-right">Registrar nueva categoría</a>
+                                    <a data-v-e66c59b4 href="javascript:void(0);" class="ml-1 float-right">Registrar nueva categoría</a>
                                     <div class="invalid-tooltip">
                                         Proporcione un categoria válida.
                                     </div>
@@ -216,8 +222,8 @@ $productos = $this->d['productos'];
                                 <div class="row">
                                     <div class="col-md-6 col-lg-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="validationTooltip89">Precio de compra</label>
-                                            <input class="form-control" data-toggle="touchspin" id="validationTooltip89" type="text" data-step="0.1" data-decimals="2" data-bts-prefix="S/" pattern="\d+(\.\d{2})?" title="precio con 2 decimales" onkeyup="precio_venta();" required>
+                                            <label class="form-label" for="buying_price">Precio de compra</label>
+                                            <input class="form-control" data-toggle="touchspin" id="buying_price" name="buying_price" type="text" data-step="0.1" data-decimals="2" data-bts-prefix="S/" pattern="\d+(\.\d{2})?" title="precio con 2 decimales" onkeyup="precio_venta();" required>
                                             <div class="invalid-tooltip">
                                                 Proporcione un precio de compra válido.
                                             </div>
@@ -225,8 +231,8 @@ $productos = $this->d['productos'];
                                     </div>
                                     <div class="col-md-6 col-lg-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="validationTooltip89">Ganancia</label>
-                                            <input class="form-control" data-toggle="touchspin" id="validationTooltip89" type="text" data-step="0.1" data-decimals="2" data-bts-prefix="S/" pattern="\d+(\.\d{2})?" title="precio con 2 decimales" onkeyup="precio_venta();" required>
+                                            <label class="form-label" for="profit">Ganancia</label>
+                                            <input class="form-control" data-toggle="touchspin" id="profit" name="profit" type="text" data-step="0.1" data-decimals="2" data-bts-prefix="S/" pattern="\d+(\.\d{2})?" title="precio con 2 decimales" onkeyup="precio_venta();" required>
                                             <div class="invalid-tooltip">
                                                 Proporcione una ganancia válida.
                                             </div>
@@ -234,15 +240,15 @@ $productos = $this->d['productos'];
                                     </div>
                                 </div>
                                 <div class="position-relative mb-3 col-lg-9">
-                                    <label class="form-label" for="validationTooltip88">Precio de venta</label>
-                                    <input class="form-control" data-toggle="touchspin" id="validationTooltip88" type="text" data-step="0.1" data-decimals="2" data-bts-prefix="S/" pattern="\d+(\.\d{2})?" title="precio con 2 decimales" required>
+                                    <label class="form-label" for="selling_price">Precio de venta</label>
+                                    <input class="form-control" data-toggle="touchspin" id="selling_price" name="selling_price" type="text" data-step="0.1" data-decimals="2" data-bts-prefix="S/" pattern="\d+(\.\d{2})?" title="precio con 2 decimales" required>
                                     <div class="invalid-tooltip">
                                         Proporcione un precio de venta válido.
                                     </div>
                                 </div>
                                 <div class="position-relative mb-3 col-lg-9">
-                                    <label class="form-label" for="validationTooltip87">Stock inicial</label>
-                                    <input class="form-control" data-toggle="touchspin" id="validationTooltip87" type="text" pattern="\d{1,11}" title="cantidad del producto" maxlength="11" required>
+                                    <label class="form-label" for="stock">Stock inicial</label>
+                                    <input class="form-control" data-toggle="touchspin" id="stock" name="stock" type="text" pattern="\d{1,11}" title="cantidad del producto" maxlength="11" required>
                                     <div class="invalid-tooltip">
                                         Proporcione un stock válido.
                                     </div>
@@ -289,21 +295,6 @@ $productos = $this->d['productos'];
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <div id="warning-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-body p-4">
-                    <div class="text-center">
-                        <i class="dripicons-warning h1 text-warning"></i>
-                        <h4 class="mt-2">Extensión incorrecta</h4>
-                        <p class="mt-3" id="mensaje"></p>
-                        <button type="button" class="btn btn-warning my-2" data-bs-dismiss="modal">Continuar</button>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
 
     </div>
     <!-- END wrapper -->
@@ -325,9 +316,9 @@ $productos = $this->d['productos'];
 
     <!-- third party js ends -->
     <!-- plugin js -->
-    <script src="<?php echo URL . RQ ?>assets/js/vendor/dropzone.min.js"></script>
+    <!-- <script src="assets/js/vendor/dropzone.min.js"></script> -->
     <!-- init js -->
-    <script src="<?php echo URL . RQ ?>assets/js/ui/component.fileupload.js"></script>
+    <!-- <script src="assets/js/ui/component.fileupload.js"></script> -->
 
     <!-- demo app -->
     <script src="<?php echo URL . RQ ?>assets/js/pages/demo.products.js"></script>
@@ -380,9 +371,14 @@ $productos = $this->d['productos'];
                 return true
             } else {
                 tField.value = "";
-                MENSAJE = "Usted sólo puede subir archivos con extensiones " + (extArray.join(" ")) + "\n";
-                $("#mensaje").html(MENSAJE);
-                $("#warning-alert-modal").modal('show');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Solo se permiten archivos con extensiones: ' + extArray.join(', '),
+                });
+                //MENSAJE = "Usted sólo puede subir archivos con extensiones " + (extArray.join(" ")) + "\n";
+                //$("#mensaje").html(MENSAJE);
+                //$("#warning-alert-modal").modal('show');
                 //alert("Usted sólo puede subir archivos con extensiones " + (extArray.join(" ")) + "\n Reiniciando Formulario");
                 return false;
                 setTimeout("location.reload()", 2000);
@@ -391,8 +387,11 @@ $productos = $this->d['productos'];
     </script>
     <script type="text/javascript">
         function precio_venta() {
-            //var profit = $("#profit").val(); //ganancia
+            var profit = $("#profit").val(); //ganancia
             var buying_price = $("#buying_price").val();
+
+            console.log(profit);
+            console.log(buying_price);
 
             var parametros = {
                 "profit": profit,

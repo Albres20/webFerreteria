@@ -51,7 +51,7 @@ $usuarios = $this->d['usuarios'];
                     </div>
                 </div>
                 <div id="main-container">
-                    <?php $this->showMessages();?>
+                    <?php $this->showMessages(); ?>
                 </div>
             </div>
             <!-- end page title -->
@@ -62,7 +62,7 @@ $usuarios = $this->d['usuarios'];
                         <div class="card-body">
                             <div class="row mb-2">
                                 <div class="col-sm-4">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarUsuario" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarUsuario" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo usuario</button>
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="text-sm-end">
@@ -79,7 +79,6 @@ $usuarios = $this->d['usuarios'];
                                         <tr>
                                             <th class="all" style="width: 20px;">
                                                 <div class="form-check">
-                                                    <input type="checkbox" class="form-check-input" id="customCheck1">
                                                     <label class="form-check-label" for="customCheck1">&nbsp;</label>
                                                 </div>
                                             </th>
@@ -94,36 +93,35 @@ $usuarios = $this->d['usuarios'];
                                     </thead>
                                     <tbody id="databody">
                                         <?php
-                                            if($usuarios === NULL){
-                                                //showError('Datos no disponibles por el momento.');
-                                            }
-                                            foreach ($usuarios as $usuario){ ?>
+                                        if ($usuarios === NULL) {
+                                            //showError('Datos no disponibles por el momento.');
+                                        }
+                                        foreach ($usuarios as $usuario) { ?>
                                             <tr>
                                                 <td>
                                                     <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck2">
                                                         <label class="form-check-label" for="customCheck2">&nbsp;</label>
                                                     </div>
                                                 </td>
-                                                <?php echo '<td>'.$usuario['usuario']->getId().'</td>' ?>
-                                                <?php echo '<td>'.$usuario['usuario']->getUsername().'</td>' ?>
-                                                <?php echo '<td>'.$usuario['usuario']->getFullname().'</td>' ?>
-                                                <?php echo '<td>'.$usuario['usuario']->getEmail().'</td>' ?>
-                                                <?php echo '<td>'.$usuario['usuario']->getRole().'</td>' ?>
+                                                <?php echo '<td>' . $usuario['usuario']->getId() . '</td>' ?>
+                                                <?php echo '<td>' . $usuario['usuario']->getUsername() . '</td>' ?>
+                                                <?php echo '<td>' . $usuario['usuario']->getFullname() . '</td>' ?>
+                                                <?php echo '<td>' . $usuario['usuario']->getEmail() . '</td>' ?>
+                                                <?php echo '<td>' . $usuario['usuario']->getRole() . '</td>' ?>
 
-                                                <?php if($usuario['usuario']->getEstado() == 1){ ?>
+                                                <?php if ($usuario['usuario']->getEstado() == 1) { ?>
                                                     <?php echo '<td><span class="badge bg-success">Activo</span>' ?>
-                                                <?php }else{ ?>
+                                                <?php } else { ?>
                                                     <?php echo '<td><span class="badge bg-danger">Inactivo</span></td>' ?>
                                                 <?php } ?>
-                                                
+
                                                 <td class="table-action">
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
                                                     <a href="http://localhost/webFerreteria/usuarios/delete/<?php echo $usuario['usuario']->getId(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                                 </td>
                                             </tr>
-                                        <?php } ?>                      
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -158,7 +156,7 @@ $usuarios = $this->d['usuarios'];
     </footer>
     <!-- end Footer -->
 
-    </div>
+
 
     <!-- ============================================================== -->
     <!-- End Page content -->
@@ -277,7 +275,8 @@ $usuarios = $this->d['usuarios'];
     <!-- demo app -->
     <script src="<?php echo URL . RQ ?>assets/js/pages/demo.products.js"></script>
     <!-- end demo js-->
-    <!-- <script src="<?//php echo URL . RQ ?>js/tablausuarios.js"></script> -->
+    <!-- <script src="<? //php echo URL . RQ 
+                        ?>js/tablausuarios.js"></script> -->
 </body>
 
 </html>

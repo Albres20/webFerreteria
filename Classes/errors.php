@@ -27,6 +27,11 @@ class Errors{
     const ERROR_SIGNUP_NEWUSER_EMPTY             = "a5bcd7089d83f45e17e989fbc86003ed";
     const ERROR_SIGNUP_NEWUSER_EXISTS            = "a74accfd26e06d012266810952678cf3";
 
+    const ERROR_NEWPRODUCT_EMPTY                 = "e5fa27bcb1688ddf4c7f4850be7b524f";
+    const ERROR_PRODUCT_UPDATEPHOTO              = "c5dc37de94913f1c8834099b9124fb66";
+    const ERROR_SIGNUP_NEWPRODUCT_EXISTS         = "b2a3c9a3e0e891e27689c40a15f263be";
+    const ERROR_SIGNUP_NEWPRODUCT                = "c049877d530419271c1578fe7553d215";
+
 
     private $errorsList = [];
 
@@ -52,6 +57,11 @@ class Errors{
             Errors::ERROR_SIGNUP_NEWUSER            => 'Hubo un error al intentar registrarte. Intenta de nuevo',
             Errors::ERROR_SIGNUP_NEWUSER_EMPTY      => 'Los campos no pueden estar vacíos',
             Errors::ERROR_SIGNUP_NEWUSER_EXISTS     => 'El nombre de usuario ya existe, selecciona otro',
+            
+            Errors::ERROR_NEWPRODUCT_EMPTY           => 'Algunos de los campos no pueden estar vacíos',
+            Errors::ERROR_PRODUCT_UPDATEPHOTO       => 'Hubo un error al actualizar la foto',
+            Errors::ERROR_SIGNUP_NEWPRODUCT_EXISTS  => 'El nombre de producto ya existe, selecciona otro',
+            Errors::ERROR_SIGNUP_NEWPRODUCT        => 'Hubo un error al intentar registrar. Intenta de nuevo',
         ];
     }
 

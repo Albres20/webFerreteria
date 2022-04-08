@@ -66,7 +66,7 @@ $categorias = $this->d['categorias'];
                         <div class="card-body">
                             <div class="row mb-2">
                                 <div class="col-sm-4">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarProducto" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo producto</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarProducto" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo</button>
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="text-sm-end">
@@ -79,19 +79,19 @@ $categorias = $this->d['categorias'];
 
                             <div class="table-responsive">
                                 <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable">
-                                <thead class="table-light">
+                                    <thead class="table-light">
                                         <tr>
                                             <th class="all" style="width: 20px;">
                                                 <div class="form-check">
                                                     <label class="form-check-label" for="customCheck1">&nbsp;</label>
                                                 </div>
                                             </th>
-                                            <th data-sort="" class="all">Codigo</th>
-                                            <th data-sort="">Producto</th>
-                                            <th data-sort="">Marca</th>
-                                            <th data-sort="">Prec. Venta</th>
-                                            <th data-sort="">Stock</th>
-                                            <th data-sort="">Categoria</th>
+                                            <th data-sort="codigo" class="all">Codigo</th>
+                                            <th data-sort="nombre">Producto</th>
+                                            <th data-sort="marca">Marca</th>
+                                            <th data-sort="precio_venta">Prec. Venta</th>
+                                            <th data-sort="cantidad">Stock</th>
+                                            <th data-sort="categoria">Categoria</th>
                                             <th style="width: 85px;">Acciones</th>
                                         </tr>
                                     </thead>
@@ -109,20 +109,20 @@ $categorias = $this->d['categorias'];
                                                 </td>
                                                 <?php echo '<td>' . $producto['producto']->getproductos_codigo() . '</td>' ?>
                                                 <td>
-                                                    <?php if($producto['producto']->getproductos_imagen() != ""){
-                                                            echo '<img src="'.URL . RQ .'image/imgproductos/' . $producto['producto']->getproductos_imagen() . '" alt="product-img" title="product-img" class="rounded me-3" height="48">';
-                                                        }else{
-                                                            echo '<img src="'.URL . RQ .'image/imgproductos/default-product.png" alt="product-img" title="product-img" class="rounded me-3" height="48">';
-                                                        }
-                                                        echo '<p class="m-0 d-inline-block align-middle font-16">
-                                                                <a href="#" class="text-body">'. $producto['producto']->getproductos_nombre().'</a>
-                                                            </p>'; 
+                                                    <?php if ($producto['producto']->getproductos_imagen() != "") {
+                                                        echo '<img src="' . URL . RQ . 'image/imgproductos/' . $producto['producto']->getproductos_imagen() . '" alt="product-img" title="product-img" class="rounded me-3" height="48">';
+                                                    } else {
+                                                        echo '<img src="' . URL . RQ . 'image/imgproductos/default-product.png" alt="product-img" title="product-img" class="rounded me-3" height="48">';
+                                                    }
+                                                    echo '<p class="m-0 d-inline-block align-middle font-16">
+                                                                <a href="#" class="text-body">' . $producto['producto']->getproductos_nombre() . '</a>
+                                                            </p>';
                                                     ?>
                                                 </td>
                                                 <?php echo '<td>' . $producto['producto']->getproductos_marca() . '</td>' ?>
                                                 <?php echo '<td> S/ ' . $producto['producto']->getproductos_precventa() . '</td>' ?>
                                                 <?php echo '<td>' . $producto['producto']->getproductos_cantidad() . '</td>' ?>
-                                                <?php echo '<td><span class="badge badge-outline rounded-pill" style="background-color:'.$producto['producto']->getcategorias_color().'">' . $producto['producto']->getcategorias_nombre() . '</span>' ?>
+                                                <?php echo '<td><span class="badge badge-outline rounded-pill" style="background-color:' . $producto['producto']->getcategorias_color() . '">' . $producto['producto']->getcategorias_nombre() . '</span>' ?>
                                                 <td class="table-action">
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
@@ -164,8 +164,6 @@ $categorias = $this->d['categorias'];
     </footer>
     <!-- end Footer -->
 
-
-
     <!-- ============================================================== -->
     <!-- End Page content -->
     <!-- ============================================================== -->
@@ -187,7 +185,7 @@ $categorias = $this->d['categorias'];
                             <div class="col-md-6 col-lg-7">
                                 <div class="position-relative mb-3">
                                     <label class="form-label" for="codigopd">Código</label>
-                                    <input type="text" class="form-control" id="codigopd" name="productoscodigo" placeholder="Codigo" aria-describedby="validationTooltipUsernamePrepend" required>
+                                    <input type="text" class="form-control" id="codigopd" name="productos_nombre" placeholder="Codigo" aria-describedby="validationTooltipUsernamePrepend" required>
                                     <div class="invalid-tooltip">
                                         Proporcione un código válido.
                                     </div>
@@ -260,7 +258,7 @@ $categorias = $this->d['categorias'];
                                     <label class="form-label" for="validationTooltip05">Imagen</label>
                                     <div class="custom-file">
                                         <label data-v-e66c59b4 class="cursor-pointer d-block" for="inputImage">Seleccionar Archivo
-                                            <img id="imagePreview" data-v-e66c59b4 src="resource/image/imgproductos/default-product.png" alt="default" width="100%" class="rounded">
+                                            <img id="imagePreview" data-v-e66c59b4 src="<?php echo URL . RQ ?>image/imgproductos/default-product.png" alt="default" width="100%" class="rounded">
                                         </label>
                                         <div data-v-e66c59b4>
                                             <input data-v-e66c59b4 type="file" id="inputImage" name="productos_imagen" class="input-file-custom form-control-file" accept="image/*">

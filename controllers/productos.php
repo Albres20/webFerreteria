@@ -77,74 +77,102 @@
 
         function newProductos(){
             error_log('Admin::newProductos()');
-            if($this->existPOST(['codigo', 'nombre', 'marca', 'buying_price', 'profit', 'selling_price', 'stock', 'inputImage', 'categoria'])){
+            if($this->existPOST(['productoscodigo','productos_nombre', 'productos_marca', 'productos_preccompra', 'productos_ganancia', 
+            'productos_precventa', 'productos_cantidad', 'productos_imagen', 'productos_idcategorias'])){
                 
-                $codigo = $this->getPOST('codigo');
-                $nombre = $this->getPOST('nombre');
-                $marca = $this->getPOST('marca');
-                $precio_compra = $this->getPOST('buying_price');
-                $ganancia = $this->getPOST('profit');
-                $precio_venta = $this->getPOST('selling_price');
-                $stock = $this->getPOST('stock');
-                $imagen = $this->getPOST('inputImage');
-                $categoria = $this->getPOST('categoria');
+                $codigo = $this->getPost('productoscodigo');
+                //json_encode($codigo);
+                $nombre = $this->getPost('productos_nombre');
+                $marca = $this->getPost('productos_marca');
+                $precio_compra = $this->getPost('productos_preccompra');
+                $ganancia = $this->getPost('productos_ganancia');
+                $precio_venta = $this->getPost('productos_precventa');
+                $stock = $this->getPost('productos_cantidad');
+                $imagen = $this->getPost('productos_imagen');
+                $categoria = $this->getPost('productos_idcategorias');
 
-                //validate data sin imagen requerida
-                if($codigo == '' || empty($codigo) || $nombre == '' || empty($nombre) || 
-                   $marca == '' || empty($marca) || $precio_compra == '' || empty($precio_compra) || $ganancia == '' || empty($ganancia) ||
-                   $precio_venta == '' || empty($precio_venta) || $stock == '' || empty($stock) || 
-                   $categoria == '' || empty($categoria)){
-                    // error al validar datos
-                    //$this->errorAtSignup('Campos vacios');
-                    $this->redirect('productos', ['error' => Errors::ERROR_NEWPRODUCT_EMPTY]);
-                }
+                //$ruta = URL.RQ."/image/imgproductos/default-product.png";
 
-                $ruta = URL.RQ."/image/imgproductos/default-product.png";
-
-                $this->updatePhoto();
-
+                //$this->updatePhoto();
                 $productosModel = new ProductosModel();
+
+
+                if(isset($_FILES["productos_imagen"])){
+                    $photo = $_FILES['productos_imagen'];
+    
+                    $target_dir = URL.RQ."image/imgproductos/";
+                    $extarr = explode('.', $photo["name"]);
+                    $filename = $extarr[sizeof($extarr)-2];
+                    $ext = $extarr[sizeof($extarr)-1];
+                    $hash = md5(Date('Ymdgi') . $filename) . '.' . $ext;
+                    $target_file = $target_dir . $hash;
+                    $uploadOk = 1;
+                    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+                
+                    $check = getimagesize($photo["tmp_name"]);
+                    if($check !== false) {
+                        //echo "File is an image - " . $check["mime"] . ".";
+                        $uploadOk = 1;
+                    } else {
+                        //echo "File is not an image.";
+                        $uploadOk = 0;
+                    }
+                    if ($uploadOk == 0) {
+                        //echo "Sorry, your file was not uploaded.";
+                        $this->redirect('productos', ['error' => Errors::ERROR_USER_UPDATEPHOTO_FORMAT]);
+                    // if everything is ok, try to upload file
+                    } else {
+                        if (move_uploaded_file($photo["tmp_name"], $target_file)) {
+    
+                            //$this->model->updatePhoto($hash, $this->user->getId());
+                            $productosModel->setImagen($hash);
+    
+                            //$this->redirect('productos', ['success' => Success::SUCCESS_PRODUCT_UPDATEPHOTO]);
+                        } else {
+                            $this->redirect('productos', ['error' => Errors::ERROR_PRODUCT_UPDATEPHOTO]);
+                        }
+                    }
+
+                }
                 $productosModel->setCodigo($codigo);
                 $productosModel->setNombre($nombre);
                 $productosModel->setMarca($marca);
                 $productosModel->setPrecioCompra($precio_compra);
                 $productosModel->setPrecioVenta($precio_venta);
+                $productosModel->setGanancia($ganancia);
                 $productosModel->setStock($stock);
-                $productosModel->setImagen($imagen);
+                //$productosModel->setImagen($imagen);
                 $productosModel->setidCategoria($categoria);
-
-                /*$user = new UserModel();
-                $user->setUsername($username);
-                $user->setPassword($password);
-                $user->setRole("user");*/
                 
                 if($productosModel->exists($codigo)){
                     //$this->errorAtSignup('Error al registrar el producto. Escribe un nombre o codigo diferente');
-                    error_log('codigo del post'. $codigo);
+                    error_log('codigo del post que existe en la db -> '. $codigo);
                     $this->redirect('productos', ['error' => Errors::ERROR_SIGNUP_NEWPRODUCT_EXISTS]);
                     //return;
                 }else if($productosModel->save()){
-                    //$this->view->render('login/index');
+                    //$this->view->render('login/index');success
                     $this->redirect('productos', ['success' => Success::SUCCESS_SIGNUP_NEWPRODUCT]);
                 }else{
-                    // $this->errorAtSignup('Error al registrar el usuario. Inténtalo más tarde');
-                    //return; 
+                    // $this->errorAtSignup('Error al registrar el producto. Inténtalo más tarde');
+                    //return;
+                    error_log('codigo del post que no existe -> '. $codigo); 
                     $this->redirect('productos', ['error' => Errors::ERROR_SIGNUP_NEWPRODUCT]);
                 }
             }else{
                 // error, cargar vista con errores
                 //$this->errorAtSignup('Ingresa nombre de usuario y password');
+                //error_log('no existe post de productos -> '.$this->getPost('codigo'). ' - '.$this->getPost('productos_iamgen'));
                 $this->redirect('productos', ['error' => Errors::ERROR_SIGNUP_NEWPRODUCT_EXISTS]);
             }
         }
 
         function updatePhoto(){
-            if(isset($_FILES['imagen'])){
+            if(isset($_FILES['inputImage'])){
 
             
-                $photo = $_FILES['imagen'];
+                $photo = $_FILES['inputImage'];
     
-                $target_dir = "public/img/photos/";
+                $target_dir = URL.RQ."image/imgproductos/";
                 $extarr = explode('.', $photo["name"]);
                 $filename = $extarr[sizeof($extarr)-2];
                 $ext = $extarr[sizeof($extarr)-1];
@@ -168,7 +196,9 @@
                 // if everything is ok, try to upload file
                 } else {
                     if (move_uploaded_file($photo["tmp_name"], $target_file)) {
+
                         //$this->model->updatePhoto($hash, $this->user->getId());
+
                         $this->redirect('productos', ['success' => Success::SUCCESS_PRODUCT_UPDATEPHOTO]);
                     } else {
                         $this->redirect('productos', ['error' => Errors::ERROR_PRODUCT_UPDATEPHOTO]);

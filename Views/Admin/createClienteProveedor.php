@@ -1,6 +1,7 @@
 <?php
 $user = $this->d['user'];
-$usuarios = $this->d['usuarios'];
+$createClienteProveedor = $this->d['usuarios'];
+
 //getModal();
 
 ?>
@@ -84,20 +85,21 @@ $usuarios = $this->d['usuarios'];
                                                 </div>
                                             </th>
                                             <th data-sort="id" class="all">ID</th>
-                                            <th data-sort="username">Usuario</th>
-                                            <th data-sort="fullname">Nombre Completo</th>
+                                            <th data-sort="username">Nombre Completo</th>
+                                            <th data-sort="fullname">Apellido Completo</th>
                                             <th data-sort="email">Correo</th>
-                                            <th data-sort="role">Acceso</th>
+                                            <th data-sort="role">DNI</th>
                                             <th data-sort="estado">Estado</th>
                                             <th style="width: 85px;">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody id="databody">
                                         <?php
-                                            if($usuarios === NULL){
+                                            if($createClienteProveedor === NULL){
                                                 //showError('Datos no disponibles por el momento.');
+                                                echo URL;
                                             }
-                                            foreach ($usuarios as $usuario){ ?>
+                                            foreach ($createClienteProveedor as $createClienteProveedor){ ?>
                                             <tr>
                                                 <td>
                                                     <div class="form-check">
@@ -105,13 +107,14 @@ $usuarios = $this->d['usuarios'];
                                                         <label class="form-check-label" for="customCheck2">&nbsp;</label>
                                                     </div>
                                                 </td>
-                                                <?php echo '<td>'.$usuario['usuario']->getId().'</td>' ?>
-                                                <?php echo '<td>'.$usuario['usuario']->getUsername().'</td>' ?>
-                                                <?php echo '<td>'.$usuario['usuario']->getFullname().'</td>' ?>
-                                                <?php echo '<td>'.$usuario['usuario']->getEmail().'</td>' ?>
-                                                <?php echo '<td>'.$usuario['usuario']->getRole().'</td>' ?>
+                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getId().'</td>' ?>
+                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getUsername().'</td>' ?>
+                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getFullname().'</td>' ?>
+                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getEmail().'</td>' ?>
+                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getEmail().'</td>' ?>
+                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getRole().'</td>' ?>
 
-                                                <?php if($usuario['usuario']->getEstado() == 1){ ?>
+                                                <?php if($createClienteProveedor['usuario']->getEstado() == 1){ ?>
                                                     <?php echo '<td><span class="badge bg-success">Activo</span>' ?>
                                                 <?php }else{ ?>
                                                     <?php echo '<td><span class="badge bg-danger">Inactivo</span></td>' ?>
@@ -120,13 +123,15 @@ $usuarios = $this->d['usuarios'];
                                                 <td class="table-action">
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                    <a href="http://localhost/webFerreteria/usuarios/delete/<?php echo $usuario['usuario']->getId(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                    <a href="http://localhost/webFerreteria/usuarios/delete/<?php echo $createClienteProveedor['usuario']->getId(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>                      
                                     </tbody>
                                 </table>
+                                
                             </div>
+                            
                         </div> <!-- end card-body-->
                     </div> <!-- end card-->
                 </div> <!-- end col -->

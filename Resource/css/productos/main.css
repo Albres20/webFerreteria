@@ -1,0 +1,40 @@
+.cursor-pointer[data-v-e66c59b4] {
+    cursor: pointer;
+    margin-bottom: 0.75rem;
+}
+
+.rounded {
+    border-radius: 10px;
+}
+
+[data-v-e66c59b4] .input-file-custom {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.btn-group-sm>.btn,
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+.svg-inline--fa {
+    display: var(--fa-display, inline-block);
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+}
+
+.float-right {
+    float: right!important;
+}

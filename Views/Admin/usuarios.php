@@ -167,13 +167,13 @@ $usuarios = $this->d['usuarios'];
     MODAL AGREGAR USUARIO
     ======================================-->
     <!-- Standard modal -->
-    <div id="modalAgregarUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+    <div id="modalAgregarUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form id="formnewuser" name="formnewuser" action="usuarios/newUsuarios" class="needs-validation" method="POST" novalidate>
 
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="standard-modalLabel">Nuevo usuario</h4>
+                    <div class="modal-header modal-colored-header bg-danger">
+                        <h4 class="modal-title" id="primary-header-modalLabel">Nuevo usuario</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
@@ -238,7 +238,7 @@ $usuarios = $this->d['usuarios'];
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-danger">Guardar</button>
                         </div>
                     </div>
                     <?php

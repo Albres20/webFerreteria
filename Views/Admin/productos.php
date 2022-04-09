@@ -110,7 +110,7 @@ $categorias = $this->d['categorias'];
                                                 <?php echo '<td>' . $producto['producto']->getproductos_codigo() . '</td>' ?>
                                                 <td>
                                                     <?php if($producto['producto']->getproductos_imagen() != ""){
-                                                            echo '<img src="'.URL . RQ .'image/imgproductos/' . $producto['producto']->getproductos_imagen() . '" alt="product-img" title="product-img" class="rounded me-3" height="48">';
+                                                            echo '<img src="'.URL . RQ . $producto['producto']->getproductos_imagen() . '" alt="product-img" title="product-img" class="rounded me-3" height="48">';
                                                         }else{
                                                             echo '<img src="'.URL . RQ .'image/imgproductos/default-product.png" alt="product-img" title="product-img" class="rounded me-3" height="48">';
                                                         }

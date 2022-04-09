@@ -63,9 +63,17 @@ $createClienteProveedor = $this->d['usuarios'];
                     <div class="card">
                         <div class="card-body">
                             <div class="row mb-2">
-                                <div class="col-sm-4">
+                                <div class="col-sm-2">
                                     <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarUsuario" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo</button>
                                 </div>
+                                <div class="col-sm-2">
+                                    <select id="miselect" class="form-select" aria-label="Default select example">
+                                    <option value="1" selected>Todos</option>
+                                    <option value="2">Cliente</option>
+                                    <option value="3">Proveedor</option>
+                                    </select>
+                                </div>
+                                
                                 
                                 <div class="col-sm-8">
                                     <div class="text-sm-end">
@@ -98,7 +106,28 @@ $createClienteProveedor = $this->d['usuarios'];
                                         </tr>
                                     </thead>
                                     <tbody id="databody">
+                                        
+                                    <script> 
+                                                
+                                                $(document).ready(function () {
+                                                $('#miselect').change(function () {
+                                                    // Obtener valor del las opciones selecionadas
+                                                    var selectValue = $("#miselect").val() || [];
+                                                    $("#resultadoValue").text(selectValue);
+                                                    // Obtener el texto del las opciones selecionadas
+                                        
+                                                    var selectText = $("#miselect option:selected").map(function () {
+                                                        return $(this).text();
+                                                    }).get().join(',');
+                                                    $('#resultadoTexto').text(selectText);
+                                                    
+                                                });
+                                            }) 
+                                           
+                                            </script>    
                                         <?php
+                                        $var_PHP = "<script> document.write(selectValue); </script>";
+                                        echo $var_PHP.'hereeeeeeee'             ;
                                             if($createClienteProveedor === NULL){
                                                 //showError('Datos no disponibles por el momento.');
                                                 echo URL;
@@ -133,7 +162,10 @@ $createClienteProveedor = $this->d['usuarios'];
                                         <?php } ?>                      
                                     </tbody>
                                 </table>
-                                
+                                <br>
+                                <span id="resultadoValue">Valor</span>
+                                <br>
+                                <span id="resultadoTexto">Texto</span>
                             </div>
                             
                         </div> <!-- end card-body-->
@@ -281,6 +313,9 @@ $createClienteProveedor = $this->d['usuarios'];
     
     <!-- end demo js-->
     <!-- <script src="<?//php echo URL . RQ ?>js/tablausuarios.js"></script> -->
+    <script >
+                                           
+                                        </script>   
 </body>
 
 </html>

@@ -40,7 +40,11 @@
         
         public function __construct(){
             parent::__construct();
-    
+            
+            //$this->codigo = '';
+            //$this->nombre = '';
+            //$this->marca = '';
+
             //$this->agregado = '';
         }
 
@@ -48,7 +52,8 @@
             try{
                 $query = $this->prepare('INSERT INTO productos (productos_codigo, productos_nombre, productos_marca, 
                 productos_preccompra, productos_ganancia, productos_precventa, productos_cantidad, productos_imagen, productos_idcategorias) 
-                VALUES (:codigo, :nombre, :marca, :buying_price, :profit, :selling_price, :stock, :inputImage, :categoria)');
+                VALUES (:productos_codigo, :productos_nombre, :productos_marca, :productos_preccompra, :productos_ganancia, 
+                :productos_precventa, :productos_cantidad, :productos_imagen, :productos_idcategorias)');
                 $query->execute([
                     'productos_codigo' => $this->codigo,
                     'productos_nombre' => $this->nombre,
@@ -61,14 +66,11 @@
                     'productos_idcategorias' => $this->idcategoria
 
                 ]);
+                if($query->rowCount()) return true;
 
-                if($query->rowCount() > 0){
-                    return true;
-                }else{
-                    return false;
-                }
+                return false;
             }catch(PDOException $e){
-                return NULL;
+                return false;
             }
         }
 

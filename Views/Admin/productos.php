@@ -176,7 +176,7 @@ $categorias = $this->d['categorias'];
     <div id="modalAgregarProducto" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <form id="formnewproduct" name="formnewuser" action="productos/newProductos" class="needs-validation" method="POST" novalidate>
+                <form id="formnewproduct" name="formnewuser" action="productos/newProductos" class="needs-validation" method="POST" enctype="multipart/form-data" novalidate>
 
                     <div class="modal-header modal-colored-header bg-danger">
                         <h4 class="modal-title" id="standard-modalLabel">Nuevo Producto</h4>
@@ -187,7 +187,7 @@ $categorias = $this->d['categorias'];
                             <div class="col-md-6 col-lg-7">
                                 <div class="position-relative mb-3">
                                     <label class="form-label" for="codigopd">Código</label>
-                                    <input type="text" class="form-control" id="codigopd" name="productoscodigo" placeholder="Codigo" aria-describedby="validationTooltipUsernamePrepend" required>
+                                    <input type="text" class="form-control" id="codigopd" name="productos_codigo" placeholder="Codigo" aria-describedby="validationTooltipUsernamePrepend" required>
                                     <div class="invalid-tooltip">
                                         Proporcione un código válido.
                                     </div>
@@ -285,8 +285,8 @@ $categorias = $this->d['categorias'];
                     </div>
                     <?php
                     //$newusuarios = newUsuarios();
-                    $nuevoproducto = new Productos();
-                    $nuevoproducto->newProductos();
+                    $crearProducto = new Productos();
+                    $crearProducto->newProductos();
 
                     ?>
                 </form>

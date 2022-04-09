@@ -77,10 +77,10 @@
 
         function newProductos(){
             error_log('Admin::newProductos()');
-            if($this->existPOST(['productoscodigo','productos_nombre', 'productos_marca', 'productos_preccompra', 'productos_ganancia', 
-            'productos_precventa', 'productos_cantidad', 'productos_imagen', 'productos_idcategorias'])){
+            if($this->existPOST(['productos_codigo','productos_nombre', 'productos_marca', 'productos_preccompra', 'productos_ganancia', 
+            'productos_precventa', 'productos_cantidad', 'productos_idcategorias'])){
                 
-                $codigo = $this->getPost('productoscodigo');
+                $codigo = $this->getPost('productos_codigo');
                 //json_encode($codigo);
                 $nombre = $this->getPost('productos_nombre');
                 $marca = $this->getPost('productos_marca');
@@ -88,52 +88,49 @@
                 $ganancia = $this->getPost('productos_ganancia');
                 $precio_venta = $this->getPost('productos_precventa');
                 $stock = $this->getPost('productos_cantidad');
-                $imagen = $this->getPost('productos_imagen');
+                //$imagen = $this->getPost('productos_imagen');
                 $categoria = $this->getPost('productos_idcategorias');
 
-                //$ruta = URL.RQ."/image/imgproductos/default-product.png";
+                $ruta = "resource/image/imgproductos/default-product.png";
 
                 //$this->updatePhoto();
+                $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
                 $productosModel = new ProductosModel();
+                //error_log("Admin::newProductos() :: productosModel -> ". $_FILES['productos_imagen']['name']);
+
+                if(isset($_FILES["productos_imagen"]["tmp_name"]) && in_array($_FILES["productos_imagen"]["type"], $permitidos)){
+
+					list($ancho, $alto) = getimagesize($_FILES["productos_imagen"]["tmp_name"]);
+
+					$nuevoAncho = 500;
+					$nuevoAlto = 500;
+
+					/*=============================================
+					CREAMOS EL DIRECTORIO DONDE VAMOS A GUARDAR LA FOTO DEL USUARIO
+					=============================================*/
+
+					$directorio = "resource/image/imgproductos/".$codigo;
+
+					mkdir($directorio, 0755);
 
 
-                if(isset($_FILES["productos_imagen"])){
-                    $photo = $_FILES['productos_imagen'];
-    
-                    $target_dir = URL.RQ."image/imgproductos/";
-                    $extarr = explode('.', $photo["name"]);
-                    $filename = $extarr[sizeof($extarr)-2];
-                    $ext = $extarr[sizeof($extarr)-1];
-                    $hash = md5(Date('Ymdgi') . $filename) . '.' . $ext;
-                    $target_file = $target_dir . $hash;
-                    $uploadOk = 1;
-                    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-                
-                    $check = getimagesize($photo["tmp_name"]);
-                    if($check !== false) {
-                        //echo "File is an image - " . $check["mime"] . ".";
-                        $uploadOk = 1;
-                    } else {
-                        //echo "File is not an image.";
-                        $uploadOk = 0;
-                    }
-                    if ($uploadOk == 0) {
-                        //echo "Sorry, your file was not uploaded.";
-                        $this->redirect('productos', ['error' => Errors::ERROR_USER_UPDATEPHOTO_FORMAT]);
-                    // if everything is ok, try to upload file
-                    } else {
-                        if (move_uploaded_file($photo["tmp_name"], $target_file)) {
-    
-                            //$this->model->updatePhoto($hash, $this->user->getId());
-                            $productosModel->setImagen($hash);
-    
-                            //$this->redirect('productos', ['success' => Success::SUCCESS_PRODUCT_UPDATEPHOTO]);
-                        } else {
-                            $this->redirect('productos', ['error' => Errors::ERROR_PRODUCT_UPDATEPHOTO]);
-                        }
-                    }
+                    /*=============================================
+					GUARDAMOS LA IMAGEN EN EL DIRECTORIO
+					=============================================*/
 
+					$aleatorio = mt_rand(100,999);
+
+					$ruta = "resource/image/imgproductos/".$codigo."/".$aleatorio.".png";
+
+					$origen = imagecreatefrompng($_FILES["productos_imagen"]["tmp_name"]);						
+
+					$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+
+					imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+
+					imagepng($destino, $ruta);
                 }
+
                 $productosModel->setCodigo($codigo);
                 $productosModel->setNombre($nombre);
                 $productosModel->setMarca($marca);
@@ -141,8 +138,9 @@
                 $productosModel->setPrecioVenta($precio_venta);
                 $productosModel->setGanancia($ganancia);
                 $productosModel->setStock($stock);
-                //$productosModel->setImagen($imagen);
+                $productosModel->setImagen($ruta);
                 $productosModel->setidCategoria($categoria);
+                error_log('Admin::newProductos() supuestos en la db por set -> '.$productosModel->getCodigo().' - '.$productosModel->getNombre().' - '.$productosModel->getMarca().' - '.$productosModel->getPrecioCompra().' - '.$productosModel->getPrecioVenta().' - '.$productosModel->getGanancia().' - '.$productosModel->getStock().' - '.$productosModel->getImagen().' - '.$productosModel->getidCategoria());
                 
                 if($productosModel->exists($codigo)){
                     //$this->errorAtSignup('Error al registrar el producto. Escribe un nombre o codigo diferente');

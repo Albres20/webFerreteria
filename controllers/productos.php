@@ -91,7 +91,7 @@
                 //$imagen = $this->getPost('productos_imagen');
                 $categoria = $this->getPost('productos_idcategorias');
 
-                $ruta = "image/imgproductos/default-product.png";
+                $ruta ="";
 
                 //$this->updatePhoto();
                 $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
@@ -102,7 +102,7 @@
 
                     $photo = $_FILES['productos_imagen'];
     
-                    $target_dir = URL.RQ."image/imgproductos/";
+                    $target_dir = RQ."image/imgproductos/";
                     $extarr = explode('.', $photo["name"]);
                     $filename = $extarr[sizeof($extarr)-2];
                     $ext = $extarr[sizeof($extarr)-1];

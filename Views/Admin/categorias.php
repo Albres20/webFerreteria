@@ -1,7 +1,7 @@
 <?php
 $user = $this->d['user'];
-$usuarios = $this->d['usuarios'];
-//getModal();
+$categorias = $this->d['categorias'];
+$stats = $this->d['stats'];
 
 ?>
 <!DOCTYPE html>
@@ -25,6 +25,10 @@ $usuarios = $this->d['usuarios'];
     <link href="<?php echo URL . RQ ?>assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
     <link href="<?php echo URL . RQ ?>assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
 
+
+    <!-- estilo imagen prducto css -->
+    <!-- <link href="<?php echo URL . RQ ?>css/productos/main.css" rel="stylesheet" type="text/css"> -->
+
 </head>
 
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -44,10 +48,10 @@ $usuarios = $this->d['usuarios'];
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="admin">Inicio</a></li>
-                                <li class="breadcrumb-item active">Usuarios</li>
+                                <li class="breadcrumb-item active">Categorias</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Usuarios</h4>
+                        <h4 class="page-title">Categorias</h4>
                     </div>
                 </div>
                 <div id="main-container">
@@ -62,7 +66,7 @@ $usuarios = $this->d['usuarios'];
                         <div class="card-body">
                             <div class="row mb-2">
                                 <div class="col-sm-4">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarUsuario" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo usuario</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarCategoria" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nueva Categoria</button>
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="text-sm-end">
@@ -74,54 +78,43 @@ $usuarios = $this->d['usuarios'];
                             </div>
 
                             <div class="table-responsive">
-                                <table class="table table-centered w-100 dt-responsive nowrap" id="users-datatable">
+                                <table class="table table-centered w-100 dt-responsive nowrap" id="categories-datatable">
                                     <thead class="table-light">
                                         <tr>
-                                            <th class="all" style="width: 20px;">
+                                            <th style="width: 20px;">
                                                 <div class="form-check">
                                                     <label class="form-check-label" for="customCheck1">&nbsp;</label>
                                                 </div>
                                             </th>
                                             <th data-sort="id" class="all">ID</th>
-                                            <th data-sort="username">Usuario</th>
-                                            <th data-sort="fullname">Nombre Completo</th>
-                                            <th data-sort="email">Correo</th>
-                                            <th data-sort="role">Acceso</th>
-                                            <th data-sort="estado">Estado</th>
+                                            <th data-sort="nombre">Nombre</th>
+                                            <th data-sort="color">Color</th>
+                                            <th data-sort="">Cant. de productos</th>
                                             <th style="width: 85px;">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody id="databody">
-                                        <?php
-                                        if ($usuarios === NULL) {
-                                            //showError('Datos no disponibles por el momento.');
-                                        }
-                                        foreach ($usuarios as $usuario) { ?>
+                                        <?php foreach ($categorias as $categoria) { ?>
                                             <tr>
                                                 <td>
                                                     <div class="form-check">
                                                         <label class="form-check-label" for="customCheck2">&nbsp;</label>
                                                     </div>
                                                 </td>
-                                                <?php echo '<td>' . $usuario['usuario']->getId() . '</td>' ?>
-                                                <?php echo '<td>' . $usuario['usuario']->getUsername() . '</td>' ?>
-                                                <?php echo '<td>' . $usuario['usuario']->getFullname() . '</td>' ?>
-                                                <?php echo '<td>' . $usuario['usuario']->getEmail() . '</td>' ?>
-                                                <?php echo '<td>' . $usuario['usuario']->getRole() . '</td>' ?>
-
-                                                <?php if ($usuario['usuario']->getEstado() == 1) { ?>
-                                                    <?php echo '<td><span class="badge bg-success">Activo</span>' ?>
-                                                <?php } else { ?>
-                                                    <?php echo '<td><span class="badge bg-danger">Inactivo</span></td>' ?>
-                                                <?php } ?>
+                                                <?php echo '<td>' . $categoria['categoria']->getcategorias_id() . '</td>' ?>
+                                                <?php echo '<td>' . $categoria['categoria']->getcategorias_nombre() . '</td>' ?>
+                                                <?php echo '<td><div class="progress progress-sm" style="background-color:' . $categoria['categoria']->getcategorias_color() . '">
+                                                                    <div class="progress-bar progress-lg" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                            </td>' ?>
+                                                <?php echo '<td>' . $categoria['categoria']->getcategorias_id() . '</td>' ?>
 
                                                 <td class="table-action">
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                    <a href="http://localhost/webFerreteria/usuarios/delete/<?php echo $usuario['usuario']->getId(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                    <a href="http://localhost/webFerreteria/categorias/delete/<?php echo $categoria['categoria']->getcategorias_id(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                                 </td>
-                                            </tr>
-                                        <?php } ?>
+                                            <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -162,76 +155,31 @@ $usuarios = $this->d['usuarios'];
     <!-- End Page content -->
     <!-- ============================================================== -->
     <!--=====================================
-    MODAL AGREGAR USUARIO
+    MODAL AGREGAR CATEGORIA
     ======================================-->
     <!-- Standard modal -->
-    <div id="modalAgregarUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
+    <div id="modalAgregarCategoria" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form id="formnewuser" name="formnewuser" action="usuarios/newUsuarios" class="needs-validation" method="POST" novalidate>
+                <form id="formnewuser" name="formnewuser" action="categorias/newCategorias" class="needs-validation" method="POST" novalidate>
 
                     <div class="modal-header modal-colored-header bg-danger">
-                        <h4 class="modal-title" id="primary-header-modalLabel">Nuevo usuario</h4>
+                        <h4 class="modal-title" id="primary-header-modalLabel">Nueva Categoria</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
                         <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltipUsername">Usuario</label>
-                            <div class="input-group">
-                                <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-                                <input type="text" class="form-control" id="validationTooltipUsername" name="username" placeholder="Usuario" aria-describedby="validationTooltipUsernamePrepend" required>
-                                <div class="invalid-tooltip">
-                                    Proporcine un nombre de usuario único y válido.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip01">Mostrar/Ocultar contraseña</label>
-                            <div class="input-group">
-                                <input type="password" class="form-control" id="validationTooltip01" name="password" placeholder="Contraseña" required>
-                                <div class="input-group-text" data-password="false">
-                                    <span class="password-eye"></span>
-                                </div>
-                                <div class="invalid-tooltip">
-                                    Propocione una contraseña valida.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip02">Nombre Completo</label>
-                            <input type="text" class="form-control" id="validationTooltip02" name="fullname" placeholder="Nombre Completo" required>
+                            <label class="form-label" for="validationTooltip02">Nombre</label>
+                            <input type="text" class="form-control" id="validationTooltip02" name="categorias_nombre" placeholder="Nombre" required>
                             <div class="invalid-tooltip">
-                                Proporcione su nombre completo.
+                                Proporcione un nombre válido.
                             </div>
                         </div>
                         <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip03">Correo</label>
-                            <input type="text" class="form-control" id="validationTooltip03" name="email" placeholder="Correo" required>
+                            <label for="example-color" class="form-label">Color</label>
+                            <input class="form-control" id="example-color" type="color" name="categorias_color" value="#FF00FF" required>
                             <div class="invalid-tooltip">
-                                Proporcione un correo válido.
-                            </div>
-                        </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip04">Acceso</label>
-                            <select class="form-select" id="validationTooltip04" name="role" required>
-                                <option value="">Seleccione una opción</option>
-                                <option value="admin">Administrador</option>
-                                <option value="logistica">Logistica</option>
-                                <option value="caja">Cajero</option>
-                            </select>
-                            <div class="invalid-tooltip">
-                                Proporcione un acceso de usuario válido.
-                            </div>
-                        </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip05">Estado</label>
-                            <select class="form-select" id="validationTooltip05" name="estado" required>
-                                <option value="">Seleccione una opción</option>
-                                <option value="1">Activo</option>
-                                <option value="0">Inactivo</option>
-                            </select>
-                            <div class="invalid-tooltip">
-                                Proporcione un estado de usuario válido.
+                                Proporcione un color válido.
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -240,9 +188,8 @@ $usuarios = $this->d['usuarios'];
                         </div>
                     </div>
                     <?php
-                    //$newusuarios = newUsuarios();
-                    $crearUsuario = new Usuarios();
-                    $crearUsuario->newUsuarios();
+                        $crearCategoria = new Categorias();
+                        $crearCategoria->newCategorias();
 
                     ?>
                 </form>
@@ -269,14 +216,13 @@ $usuarios = $this->d['usuarios'];
     <script src="<?php echo URL . RQ ?>assets/js/vendor/dataTables.responsive.min.js"></script>
     <script src="<?php echo URL . RQ ?>assets/js/vendor/responsive.bootstrap5.min.js"></script>
     <script src="<?php echo URL . RQ ?>assets/js/vendor/dataTables.checkboxes.min.js"></script>
-
-    <!-- third party js ends -->
-
     <!-- demo app -->
-    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.users.js"></script>
+    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.categories.js"></script>
     <!-- end demo js-->
-    <!-- <script src="<? //php echo URL . RQ 
-                        ?>js/tablausuarios.js"></script> -->
+
+    <!-- sweetalert2 js -->
+    <script src="<?php echo URL . RQ ?>js/sweetalert2/sweetalert2.all.js"></script>
+
 </body>
 
 </html>

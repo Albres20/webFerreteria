@@ -31,6 +31,7 @@ class Errors{
     const ERROR_PRODUCT_UPDATEPHOTO              = "c5dc37de94913f1c8834099b9124fb66";
     const ERROR_SIGNUP_NEWPRODUCT_EXISTS         = "b2a3c9a3e0e891e27689c40a15f263be";
     const ERROR_SIGNUP_NEWPRODUCT                = "c049877d530419271c1578fe7553d215";
+    const ERROR_ADMIN_NEWCATEGORY_EXISTS         = "680fa880f3d1afea9c53c84305eb9af3";
 
 
     private $errorsList = [];
@@ -62,6 +63,8 @@ class Errors{
             Errors::ERROR_PRODUCT_UPDATEPHOTO       => 'Hubo un error al actualizar la foto',
             Errors::ERROR_SIGNUP_NEWPRODUCT_EXISTS  => 'El nombre de producto ya existe, selecciona otro',
             Errors::ERROR_SIGNUP_NEWPRODUCT        => 'Hubo un error al intentar registrar. Intenta de nuevo',
+
+            Errors::ERROR_ADMIN_NEWCATEGORY_EXISTS  => 'La categoría ya existe, selecciona otra',
         ];
     }
 

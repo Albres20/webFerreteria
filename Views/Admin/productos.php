@@ -47,7 +47,7 @@ $categorias = $this->d['categorias'];
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                                <li class="breadcrumb-item"><a href="admin">Inicio</a></li>
                                 <li class="breadcrumb-item active">Productos</li>
                             </ol>
                         </div>
@@ -110,7 +110,7 @@ $categorias = $this->d['categorias'];
                                                 <?php echo '<td>' . $producto['producto']->getproductos_codigo() . '</td>' ?>
                                                 <td>
                                                     <?php if($producto['producto']->getproductos_imagen() != ""){
-                                                            echo '<img src="'.URL . RQ . $producto['producto']->getproductos_imagen() . '" alt="product-img" title="product-img" class="rounded me-3" height="48">';
+                                                            echo '<img src="'.URL . RQ .'image/imgproductos/'. $producto['producto']->getproductos_imagen() . '" alt="product-img" title="product-img" class="rounded me-3" height="48">';
                                                         }else{
                                                             echo '<img src="'.URL . RQ .'image/imgproductos/default-product.png" alt="product-img" title="product-img" class="rounded me-3" height="48">';
                                                         }
@@ -187,7 +187,7 @@ $categorias = $this->d['categorias'];
                             <div class="col-md-6 col-lg-7">
                                 <div class="position-relative mb-3">
                                     <label class="form-label" for="codigopd">Código</label>
-                                    <input type="text" class="form-control" id="codigopd" name="productos_codigo" placeholder="Codigo" aria-describedby="validationTooltipUsernamePrepend" required>
+                                    <input type="text" class="form-control" id="codigopd" name="productos_codigo" placeholder="Codigo" aria-describedby="validationTooltipUsernamePrepend" autocomplete="off" required>
                                     <div class="invalid-tooltip">
                                         Proporcione un código válido.
                                     </div>
@@ -313,13 +313,6 @@ $categorias = $this->d['categorias'];
     <script src="<?php echo URL . RQ ?>assets/js/vendor/dataTables.responsive.min.js"></script>
     <script src="<?php echo URL . RQ ?>assets/js/vendor/responsive.bootstrap5.min.js"></script>
     <script src="<?php echo URL . RQ ?>assets/js/vendor/dataTables.checkboxes.min.js"></script>
-
-    <!-- third party js ends -->
-    <!-- plugin js -->
-    <!-- <script src="assets/js/vendor/dropzone.min.js"></script> -->
-    <!-- init js -->
-    <!-- <script src="assets/js/ui/component.fileupload.js"></script> -->
-
     <!-- demo app -->
     <script src="<?php echo URL . RQ ?>assets/js/pages/demo.products.js"></script>
     <!-- end demo js-->

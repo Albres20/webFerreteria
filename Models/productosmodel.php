@@ -131,6 +131,18 @@
             }
         }
 
+        public function getcontarPorCategoria($productos_idcategorias){
+            try{
+                $query = $this->prepare('SELECT COUNT(*) FROM productos WHERE productos_idcategorias = :productos_idcategorias');
+                $query->execute([ 'productos_idcategorias' => $productos_idcategorias]);
+                $producto = $query->fetch(PDO::FETCH_ASSOC);
+
+                return $producto['COUNT(*)'];
+            }catch(PDOException $e){
+                return false;
+            }
+        }
+
         public function delete($id){
             try{
                 $query = $this->prepare('DELETE FROM productos WHERE id = :id');

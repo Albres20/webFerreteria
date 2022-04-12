@@ -76,7 +76,12 @@
                                 <span> Productos </span>
                             </a>
                         </li>
-
+                        <li class="side-nav-item">
+                            <a href="categorias" class="side-nav-link">
+                                <i class="uil-bag"></i>
+                                <span> Categorias </span>
+                            </a>
+                        </li>
                         <li class="side-nav-item">
                             <a href="createClienteProveedor" class="side-nav-link">
                                 <i class="uil-user-square"></i>
@@ -99,7 +104,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="#" class="side-nav-link">
+                            <a href="./perfil" class="side-nav-link">
                                 <i class="uil-user"></i>
                                 <span> Perfil </span>
                             </a>

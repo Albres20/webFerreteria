@@ -46,7 +46,7 @@ class Errors{
             Errors::ERROR_USER_UPDATEBUDGET         => 'No se puede actualizar el presupuesto',
             Errors::ERROR_USER_UPDATEBUDGET_EMPTY   => 'El presupuesto no puede estar vacio o ser negativo',
             Errors::ERROR_USER_UPDATENAME_EMPTY     => 'El nombre no puede estar vacio o ser negativo',
-            Errors::ERROR_USER_UPDATENAME           => 'No se puede actualizar el nombre',
+            Errors::ERROR_USER_UPDATENAME           => 'No se puede actualizar los datos personales',
             Errors::ERROR_USER_UPDATEPASSWORD       => 'No se puede actualizar la contraseña',
             Errors::ERROR_USER_UPDATEPASSWORD_EMPTY => 'El nombre no puede estar vacio o ser negativo',
             Errors::ERROR_USER_UPDATEPASSWORD_ISNOTTHESAME => 'Los passwords no son los mismos',

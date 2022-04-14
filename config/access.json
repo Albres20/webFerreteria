@@ -51,8 +51,8 @@
         },
         {
             "site": "perfil",
-            "access": "public",
-            "role": ""
+            "access": "private",
+            "role": "admin"
         }
     ],
 

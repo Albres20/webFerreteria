@@ -18,26 +18,6 @@ class User extends SessionController{
         ]);
     }
 
-    function updateName(){
-        if(!$this->existPOST('name')){
-            $this->redirect('user', ['error' => Errors::ERROR_USER_UPDATEBUDGET]);
-            return;
-        }
-
-        $name = $this->getPost('name');
-
-        if(empty($name)){
-            $this->redirect('user', ['error' => Errors::ERROR_USER_UPDATEBUDGET]);
-            return;
-        }
-        
-        $this->user->setFullname($name);
-        if($this->user->update()){
-            $this->redirect('user', ['success' => Success::SUCCESS_USER_UPDATEBUDGET]);
-        }else{
-            //error
-        }
-    }
 
     function updatePassword(){
         if(!$this->existPOST(['current_password', 'new_password'])){

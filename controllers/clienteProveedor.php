@@ -1,21 +1,21 @@
 <?php
 
-class CreateClienteProveedor extends SessionController{
+class ClienteProveedor extends SessionController{
 
     private $user;
 
     function __construct(){
         parent::__construct();
         $this->user = $this->getUserSessionData();
-        error_log("Gestion de usuarios ::constructor() ");
+        error_log("Gestion de cliente/proveedor ::constructor() ");
     }
 
     function render(){
-        error_log("Gestion de creacion cliente proveedor::RENDER() ");
+        error_log("Gestion de cliente/proveedor::RENDER() ");
 
-        $this->view->render('admin/createClienteProveedor', [
+        $this->view->render('admin/clienteProveedor', [
             'user' => $this->user,
-            'usuarios' => $this->getClienteDB()
+            //'usuarios' => $this->getClienteDB()
         ]);
         /*$this->view->render('admin/usuarios', [
             "usuarios" => $usuarios
@@ -51,7 +51,7 @@ class CreateClienteProveedor extends SessionController{
             echo json_encode($res);
     }
 
-    function newUsuarios(){
+    function newClienteProveedor(){
         error_log('Admin::newUsuarios()');
         if($this->existPOST(['fullname', 'fullapellido', 'email', 'dni', 'role', 'estado'])){
             $fullname=$this->getPost('fullname');

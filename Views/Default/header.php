@@ -160,7 +160,7 @@
                                </div>
 
                                <!-- item-->
-                               <a href="#" class="dropdown-item notify-item">
+                               <a href="perfil" class="dropdown-item notify-item">
                                    <i class="mdi mdi-account-circle me-1"></i>
                                    <span>Mi cuenta</span>
                                </a>

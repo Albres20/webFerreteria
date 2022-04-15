@@ -285,8 +285,8 @@ $categorias = $this->d['categorias'];
                     </div>
                     <?php
                     //$newusuarios = newUsuarios();
-                    $crearProducto = new Productos();
-                    $crearProducto->newProductos();
+                    //$crearProducto = new Productos();
+                    //$crearProducto->newProductos();
 
                     ?>
                 </form>

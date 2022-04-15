@@ -1,6 +1,6 @@
 <?php
 $user = $this->d['user'];
-$createClienteProveedor = $this->d['usuarios'];
+//$createClienteProveedor = $this->d['usuarios'];
 
 //getModal();
 
@@ -45,10 +45,10 @@ $createClienteProveedor = $this->d['usuarios'];
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                <li class="breadcrumb-item active">Usuarios</li>
+                                <li class="breadcrumb-item active">Cliente / Proveedor</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Usuarios</h4>
+                        <h4 class="page-title">Cliente / Proveedor</h4>
                     </div>
                 </div>
                 <div id="main-container">
@@ -63,18 +63,10 @@ $createClienteProveedor = $this->d['usuarios'];
                     <div class="card">
                         <div class="card-body">
                             <div class="row mb-2">
-                                <div class="col-sm-2">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarUsuario" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo</button>
+                            <div class="row mb-2">
+                                <div class="col-sm-4">
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarCliente" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo cliente / proveedor</button>
                                 </div>
-                                <div class="col-sm-2">
-                                    <select id="miselect" class="form-select" aria-label="Default select example">
-                                    <option value="1" selected>Todos</option>
-                                    <option value="2">Cliente</option>
-                                    <option value="3">Proveedor</option>
-                                    </select>
-                                </div>
-                                
-                                
                                 <div class="col-sm-8">
                                     <div class="text-sm-end">
                                         <!-- <button type="button" class="btn btn-success mb-2 me-1"><i class="mdi mdi-cog-outline"></i></button> -->
@@ -85,7 +77,7 @@ $createClienteProveedor = $this->d['usuarios'];
                             </div>
 
                             <div class="table-responsive">
-                                <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable">
+                                <table class="table table-centered w-100 dt-responsive nowrap" id="clienteproveedor-datatable">
                                     <thead class="table-light">
                                         <tr>
                                             <th class="all" style="width: 20px;">
@@ -95,77 +87,18 @@ $createClienteProveedor = $this->d['usuarios'];
                                                 </div>
                                             </th>
                                             
-                                            <!-- <th data-sort="id" class="all">ID</th> -->
-                                            <th data-sort="username">Nombre Completo</th>
-                                            <th data-sort="fullname">Apellido Completo</th>
-                                            <th data-sort="email">Correo</th>
-                                            <th data-sort="role">DNI</th>
-                                            <th data-sort="tipo">Tipo</th>
-                                            <th data-sort="estado">Estado</th>
+                                            <th data-sort="id" class="all">ID</th>
+                                            <th data-sort="username">Nombre / Razón social</th>
+                                            <th data-sort="fullname">Documento</th>
+                                            <th data-sort="email">Tipo</th>
+                                            <th data-sort="role">Dirección </th>
+                                            <th data-sort="tipo">Teléfono </th>
                                             <th style="width: 85px;">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody id="databody">
-                                        
-                                    <script> 
-                                                
-                                                $(document).ready(function () {
-                                                $('#miselect').change(function () {
-                                                    // Obtener valor del las opciones selecionadas
-                                                    var selectValue = $("#miselect").val() || [];
-                                                    $("#resultadoValue").text(selectValue);
-                                                    // Obtener el texto del las opciones selecionadas
-                                        
-                                                    var selectText = $("#miselect option:selected").map(function () {
-                                                        return $(this).text();
-                                                    }).get().join(',');
-                                                    $('#resultadoTexto').text(selectText);
-                                                    
-                                                });
-                                            }) 
-                                           
-                                            </script>    
-                                        <?php
-                                        $var_PHP = "<script> document.write(selectValue); </script>";
-                                        echo $var_PHP.'hereeeeeeee'             ;
-                                            if($createClienteProveedor === NULL){
-                                                //showError('Datos no disponibles por el momento.');
-                                                echo URL;
-                                            }
-                                            foreach ($createClienteProveedor as $createClienteProveedor){ ?>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck2">
-                                                        <label class="form-check-label" for="customCheck2">&nbsp;</label>
-                                                    </div>
-                                                </td>
-                                                <?php /*echo '<td>'.$createClienteProveedor['usuario']->getId().'</td>' */?>
-                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getFullname().'</td>' ?>
-                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getFullapellido().'</td>' ?>
-                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getEmail().'</td>' ?>
-                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getDni().'</td>' ?>
-                                                <?php echo '<td>'.$createClienteProveedor['usuario']->getRole().'</td>' ?>
-
-                                                <?php if($createClienteProveedor['usuario']->getEstado() == 1){ ?>
-                                                    <?php echo '<td><span class="badge bg-success">Activo</span>' ?>
-                                                <?php }else{ ?>
-                                                    <?php echo '<td><span class="badge bg-danger">Inactivo</span></td>' ?>
-                                                <?php } ?>
-                                                
-                                                <td class="table-action">
-                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                    <a href="http://localhost/webFerreteria/usuarios/delete/<?php echo $createClienteProveedor['usuario']->getId(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                                </td>
-                                            </tr>
-                                        <?php } ?>                      
                                     </tbody>
                                 </table>
-                                <br>
-                                <span id="resultadoValue">Valor</span>
-                                <br>
-                                <span id="resultadoTexto">Texto</span>
                             </div>
                             
                         </div> <!-- end card-body-->
@@ -205,16 +138,16 @@ $createClienteProveedor = $this->d['usuarios'];
     <!-- End Page content -->
     <!-- ============================================================== -->
     <!--=====================================
-    MODAL AGREGAR USUARIO
+    MODAL AGREGAR CLIENTE / PROVEEDOR
     ======================================-->
     <!-- Standard modal -->
-    <div id="modalAgregarUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+    <div id="modalAgregarCliente" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form id="formnewuser" name="formnewuser" action="createClienteProveedor/newUsuarios" class="needs-validation" method="POST" novalidate>
+                <form id="formnewclienteprov" name="formnewclienteprov" action="clienteProveedor/newClienteProveedor" class="needs-validation" method="POST" novalidate>
 
                     <div class="modal-header">
-                        <h4 class="modal-title" id="standard-modalLabel">Nuevo usuario</h4>
+                        <h4 class="modal-title" id="standard-modalLabel">Nuevo Cliente / Proveedor</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
@@ -309,13 +242,11 @@ $createClienteProveedor = $this->d['usuarios'];
     <!-- third party js ends -->
 
     <!-- demo app -->
-    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.products.js"></script>
+    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.clientes.js"></script>
     
     <!-- end demo js-->
     <!-- <script src="<?//php echo URL . RQ ?>js/tablausuarios.js"></script> -->
-    <script >
-                                           
-                                        </script>   
+ 
 </body>
 
 </html>

@@ -83,7 +83,7 @@
                        </a>
                    </li>
                    <li class="side-nav-item">
-                       <a href="createClienteProveedor" class="side-nav-link">
+                       <a href="clienteProveedor" class="side-nav-link">
                            <i class="uil-user-square"></i>
                            <span> Clientes / Proveedores </span>
                        </a>
@@ -160,13 +160,13 @@
                                </div>
 
                                <!-- item-->
-                               <a href="#" class="dropdown-item notify-item">
+                               <a href="perfil" class="dropdown-item notify-item">
                                    <i class="mdi mdi-account-circle me-1"></i>
                                    <span>Mi cuenta</span>
                                </a>
 
                                <!-- item-->
-                               <a href="<?php echo URL ?>logout" class="dropdown-item notify-item">
+                               <a href="logout" class="dropdown-item notify-item">
                                    <i class="mdi mdi-logout me-1"></i>
                                    <span>Cerrar sesión </span>
                                </a>

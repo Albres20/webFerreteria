@@ -19,6 +19,7 @@ class Errors{
     const ERROR_USER_UPDATEPASSWORD_EMPTY       = "0f0735f8603324a7bca482debdf088fa";
     const ERROR_USER_UPDATEPASSWORD_ISNOTTHESAME = "27731b37e286a3c6429a1b8e44ef3ff6";
     const ERROR_USER_UPDATEPHOTO                 = "dfb4dc6544b0dae81ea132de667b2a5d";
+    const ERROR_USER_UPDATEPHOTO_SIZE            = "3a6c3be360cbbff4866e67b9c8341afa";
     const ERROR_USER_UPDATEPHOTO_FORMAT          = "53f3554f0533aa9f20fbf46bd5328430";
     const ERROR_LOGIN_AUTHENTICATE               = "11c37cfab311fbe28652f4947a9523c4";
     const ERROR_LOGIN_AUTHENTICATE_EMPTY         = "2194ac064912be67fc164539dc435a42";
@@ -29,6 +30,7 @@ class Errors{
 
     const ERROR_NEWPRODUCT_EMPTY                 = "e5fa27bcb1688ddf4c7f4850be7b524f";
     const ERROR_PRODUCT_UPDATEPHOTO              = "c5dc37de94913f1c8834099b9124fb66";
+    const ERROR_PRODUCT_SIZEPHOTO                = "177fe6532a554bf5322c0462db2d8d67";
     const ERROR_SIGNUP_NEWPRODUCT_EXISTS         = "b2a3c9a3e0e891e27689c40a15f263be";
     const ERROR_SIGNUP_NEWPRODUCT                = "c049877d530419271c1578fe7553d215";
     const ERROR_ADMIN_NEWCATEGORY_EXISTS         = "680fa880f3d1afea9c53c84305eb9af3";
@@ -51,6 +53,7 @@ class Errors{
             Errors::ERROR_USER_UPDATEPASSWORD_EMPTY => 'El nombre no puede estar vacio o ser negativo',
             Errors::ERROR_USER_UPDATEPASSWORD_ISNOTTHESAME => 'Los passwords no son los mismos',
             Errors::ERROR_USER_UPDATEPHOTO          => 'Hubo un error al actualizar la foto',
+            Errors::ERROR_USER_UPDATEPHOTO_SIZE     => 'La foto no puede ser mayor a 2MB',
             Errors::ERROR_USER_UPDATEPHOTO_FORMAT   => 'El archivo no es una imagen',
             Errors::ERROR_LOGIN_AUTHENTICATE        => 'Hubo un problema al autenticarse',
             Errors::ERROR_LOGIN_AUTHENTICATE_EMPTY  => 'Los parámetros para autenticar no pueden estar vacíos',
@@ -61,6 +64,7 @@ class Errors{
             
             Errors::ERROR_NEWPRODUCT_EMPTY           => 'Algunos de los campos no pueden estar vacíos',
             Errors::ERROR_PRODUCT_UPDATEPHOTO       => 'Hubo un error al actualizar la foto',
+            Errors::ERROR_PRODUCT_SIZEPHOTO         => 'La foto debe ser menor a 2MB',
             Errors::ERROR_SIGNUP_NEWPRODUCT_EXISTS  => 'El nombre de producto ya existe, selecciona otro',
             Errors::ERROR_SIGNUP_NEWPRODUCT        => 'Hubo un error al intentar registrar. Intenta de nuevo',
 

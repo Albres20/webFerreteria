@@ -52,9 +52,9 @@ $user = $this->d['user'];
                     </div>
                 </div>
                 <div id="main-container">
-                    <?php $this->showMessages();?>
+                    <?php $this->showMessages(); ?>
                 </div>
-                
+
             </div>
             <!-- end page title -->
 
@@ -63,74 +63,74 @@ $user = $this->d['user'];
                     <div class="card">
                         <div class="card-body">
                             <div class="row mb-2">
-                            <div class="row mb-2">
-                                <div class="col-sm-4">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarCliente" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo cliente / proveedor</button>
-                                </div>
-                                <div class="col-sm-8">
-                                    <div class="text-sm-end">
-                                        <!-- <button type="button" class="btn btn-success mb-2 me-1"><i class="mdi mdi-cog-outline"></i></button> -->
-                                        <button type="button" class="btn btn-light mb-2 me-1">Importar</button>
-                                        <button type="button" class="btn btn-light mb-2">Exportar</button>
+                                <div class="row mb-2">
+                                    <div class="col-sm-4">
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarCliente" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo cliente / proveedor</button>
                                     </div>
-                                </div><!-- end col-->
-                            </div>
+                                    <div class="col-sm-8">
+                                        <div class="text-sm-end">
+                                            <!-- <button type="button" class="btn btn-success mb-2 me-1"><i class="mdi mdi-cog-outline"></i></button> -->
+                                            <button type="button" class="btn btn-light mb-2 me-1">Importar</button>
+                                            <button type="button" class="btn btn-light mb-2">Exportar</button>
+                                        </div>
+                                    </div><!-- end col-->
+                                </div>
 
-                            <div class="table-responsive">
-                                <table class="table table-centered w-100 dt-responsive nowrap" id="clienteproveedor-datatable">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th class="all" style="width: 20px;">
-                                                <div class="form-check">
-                                                    <input type="checkbox" class="form-check-input" id="customCheck1">
-                                                    <label class="form-check-label" for="customCheck1">&nbsp;</label>
-                                                </div>
-                                            </th>
-                                            
-                                            <th data-sort="id" class="all">ID</th>
-                                            <th data-sort="username">Nombre / Razón social</th>
-                                            <th data-sort="fullname">Documento</th>
-                                            <th data-sort="email">Tipo</th>
-                                            <th data-sort="role">Dirección </th>
-                                            <th data-sort="tipo">Teléfono </th>
-                                            <th style="width: 85px;">Acciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="databody">
-                                    </tbody>
-                                </table>
-                            </div>
-                            
-                        </div> <!-- end card-body-->
-                    </div> <!-- end card-->
-                </div> <!-- end col -->
-            </div>
-            <!-- end row -->
+                                <div class="table-responsive">
+                                    <table class="table table-centered w-100 dt-responsive nowrap" id="clienteproveedor-datatable">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th class="all" style="width: 20px;">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="customCheck1">
+                                                        <label class="form-check-label" for="customCheck1">&nbsp;</label>
+                                                    </div>
+                                                </th>
 
-        </div> <!-- container -->
+                                                <th data-sort="id" class="all">ID</th>
+                                                <th data-sort="username">Nombre / Razón social</th>
+                                                <th data-sort="fullname">Documento</th>
+                                                <th data-sort="email">Tipo</th>
+                                                <th data-sort="role">Dirección </th>
+                                                <th data-sort="tipo">Teléfono </th>
+                                                <th style="width: 85px;">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="databody">
+                                        </tbody>
+                                    </table>
+                                </div>
 
-    </div> <!-- content -->
-
-    <!-- Footer Start -->
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script> © Hyt - Trading
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
                 </div>
-                <div class="col-md-6">
-                    <div class="text-md-end footer-links d-none d-md-block">
-                        <a href="javascript: void(0);">About</a>
-                        <a href="javascript: void(0);">Support</a>
-                        <a href="javascript: void(0);">Contact Us</a>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        <!-- Footer Start -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> © Hyt - Trading
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-md-end footer-links d-none d-md-block">
+                            <a href="javascript: void(0);">About</a>
+                            <a href="javascript: void(0);">Support</a>
+                            <a href="javascript: void(0);">Contact Us</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!-- end Footer -->
+        </footer>
+        <!-- end Footer -->
 
     </div>
 
@@ -146,66 +146,116 @@ $user = $this->d['user'];
             <div class="modal-content">
                 <form id="formnewclienteprov" name="formnewclienteprov" action="clienteProveedor/newClienteProveedor" class="needs-validation" method="POST" novalidate>
 
-                    <div class="modal-header">
+                    <div class="modal-header modal-colored-header bg-danger">
                         <h4 class="modal-title" id="standard-modalLabel">Nuevo Cliente / Proveedor</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                        
+                        <!---->
+                        <!---->
+                        <!---->
                         <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip01">Nombre</label>
-                            <input type="text" class="form-control" id="validationTooltip01" name="fullname" placeholder="Nombre Completo" required>
-                            <div class="invalid-tooltip">
-                                Proporcione su nombre completo.
+                            <label for="inputDocumentType" class="form-label">Tipo de documento</label>
+                            <div class="row">
+                                <!---->
+                                <div class="col-md-3 d-grid">
+                                    <label class="btn btn-secondary active" for="option-1">
+                                        <input type="radio" name="select" id="option-1" autocomplete="off" value="RUC" checked> RUC
+                                    </label>
+                                </div>
+                                <div class="col-md-3 d-grid">
+                                    <label class="btn btn-secondary" for="option-2">
+                                        <input type="radio" name="select" id="option-2" autocomplete="off" value="DNI"> DNI
+                                    </label>
+                                </div>
+                                <div class="col-md-6 d-grid">
+                                    <label class="btn btn-secondary" for="option-3">
+                                        <input type="radio" name="select" id="option-3" autocomplete="off" value="SIN DOCUMENTO"> SIN DOCUMENTO
+                                    </label>
+                                </div>
+                                <!---->
+                                <!---->
+                                <!---->
                             </div>
                         </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip02">Apellido</label>
-                            <input type="text" class="form-control" id="validationTooltip02" name="fullapellido" placeholder="Nombre Completo" required>
-                            <div class="invalid-tooltip">
-                                Proporcione su apellido completo.
+
+                        <div id="mostrardivRUC" class="position-relative mb-3">
+                            <!-- style="display:none;" -->
+
+                            <div class="position-relative mb-3">
+                                <label for="inputDocumentNumber" class="form-label">Nº de Documento</label>
+                                <div class="input-group">
+                                    <input type="text" id="inputDocumentNumber" placeholder="Nº de Documento" flow="" class="form-control" required>
+                                    <button type="button" class="btn btn-sm btn-outline-danger sunat-button"> SUNAT <i class="uil uil-search"></i>
+                                    </button>
+
+                                    <!---->
+                                    <div class="invalid-tooltip">
+                                        Proporcione un Nº de documento válido.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="position-relative mb-3">
+                                <label class="form-label" for="validationTooltip01">Nombre legal *</label>
+                                <input type="text" class="form-control" id="validationTooltip01" name="fullname" placeholder="Nombre legal / Razón social" required>
+                                <div class="invalid-tooltip">
+                                    Proporcione su Nombre legal / Razón social.
+                                </div>
+                            </div>
+
+                            <div class="position-relative mb-3">
+                                <label for="inputAddress" class="form-label">Dirección</label>
+                                <input type="text" id="inputAddress" placeholder="Dirección" flow="" class="form-control" required>
+                                <div class="invalid-tooltip">
+                                    Proporcione una dirección válida.
+                                </div>
+                            </div>
+
+                            <div class="position-relative mb-3">
+                                <label for="inputTipo" class="form-label">Tipo</label>
+                                <select id="inputTipo" class="form-select">
+                                    <option value="CLIENTE">
+                                        Cliente
+                                    </option>
+                                    <option value="PROVEEDOR">
+                                        Proveedor
+                                    </option>
+                                    <option value="CLIENTE/PROVEEDOR">
+                                        Cliente/Proveedor
+                                    </option>
+                                </select>
+                                <div class="invalid-tooltip">
+                                    Proporcione un tipo.
+                                </div>
                             </div>
                         </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip03">Correo</label>
-                            <input type="text" class="form-control" id="validationTooltip03" name="email" placeholder="Correo" required>
-                            <div class="invalid-tooltip">
-                                Proporcione un correo válido.
+
+                        <!---->
+                        <div class="mb-3 text-right">
+                            <button type="button" class="btn btn-link collapsed" aria-expanded="false" aria-controls="clientAdvancedInputs" style="padding: 0px;"><small>Ver más</small></button>
+                        </div>
+                        <div id="clientAdvancedInputs" class="position-relative mb-3">
+                            <!-- style="display:none;" -->
+                            <div class="position-relative mb-3">
+                                <label class="form-label">Teléfono</label>
+                                <input type="text" class="form-control" data-toggle="input-mask" data-mask-format="000-0000">
+                                <span class="font-13 text-muted">Ej. "xxx-xxxx"</span>
+                            </div>
+                            <div class="position-relative mb-3">
+                                <label for="inputEmail" class="form-label">Correo electrónico</label>
+                                <input type="email" id="inputEmail" placeholder="Correo electrónico" flow="" class="form-control">
+                                <!---->
+                            </div>
+                            <div class="position-relative mb-3">
+                                <label for="inputAdditionalData" class="form-label">Datos adicionales</label>
+                                <textarea type="text" id="inputAdditionalData" placeholder="Datos adicionales" class="form-control"></textarea>
                             </div>
                         </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip03">DNI</label>
-                            <input type="text" class="form-control" id="validationTooltip03" name="dni" placeholder="Correo" required>
-                            <div class="invalid-tooltip">
-                                Proporcione un DNI válido.
-                            </div>
-                        </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip04">Tipo de usuario</label>
-                            <select class="form-select" id="validationTooltip04" name="role" required>
-                                <option value="">Seleccione una opción</option>
-                                <option value="cliente">Cliente</option>
-                                <option value="proveedor">Proveedor</option>
-                                
-                            </select>
-                            <div class="invalid-tooltip">
-                                Proporcione un acceso de usuario válido.
-                            </div>
-                        </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip05">Estado</label>
-                            <select class="form-select" id="validationTooltip05" name="estado" required>
-                                <option value="">Seleccione una opción</option>
-                                <option value="1">Activo</option>
-                                <option value="0">Inactivo</option>
-                            </select>
-                            <div class="invalid-tooltip">
-                                Proporcione un estado de usuario válido.
-                            </div>
-                        </div>
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-danger">Guardar</button>
                         </div>
                     </div>
                     <?php
@@ -243,10 +293,11 @@ $user = $this->d['user'];
 
     <!-- demo app -->
     <script src="<?php echo URL . RQ ?>assets/js/pages/demo.clientes.js"></script>
-    
+
     <!-- end demo js-->
-    <!-- <script src="<?//php echo URL . RQ ?>js/tablausuarios.js"></script> -->
- 
+    <!-- <script src="<? //php echo URL . RQ 
+                        ?>js/tablausuarios.js"></script> -->
+
 </body>
 
 </html>

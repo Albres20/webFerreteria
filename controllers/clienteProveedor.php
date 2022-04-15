@@ -63,7 +63,7 @@ class ClienteProveedor extends SessionController{
             $estado = $this->getPost('estado');
             echo '<script language="javascript">alert("juas");</script>';
             if($role=='cliente'){
-                $createClienteProveedorModel = new createClienteProveedorModel();
+                $createClienteProveedorModel = new ClienteProveedorModel();
                 if(!$createClienteProveedorModel->exists($fullname)){
                     $createClienteProveedorModel->setFullname($fullname);
                     $createClienteProveedorModel->setFullapellido($fullapellido);
@@ -102,7 +102,7 @@ class ClienteProveedor extends SessionController{
     
     function getClienteDB(){
         $res = [];
-        $CreateClienteProveedorModel = new CreateClienteProveedorModel();
+        $CreateClienteProveedorModel = new ClienteProveedorModel();
         $usuarios = $CreateClienteProveedorModel->getAll();
 
         foreach ($usuarios as $usuario) {

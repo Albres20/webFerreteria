@@ -83,7 +83,7 @@
                        </a>
                    </li>
                    <li class="side-nav-item">
-                       <a href="createClienteProveedor" class="side-nav-link">
+                       <a href="clienteProveedor" class="side-nav-link">
                            <i class="uil-user-square"></i>
                            <span> Clientes / Proveedores </span>
                        </a>

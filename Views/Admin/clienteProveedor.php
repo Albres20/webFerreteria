@@ -209,15 +209,16 @@ $clientes = $this->d['clientes'];
                             <div class="position-relative mb-3">
                                 <label for="cp_numdocumRUC" class="form-label">Nº de Documento</label>
                                 <div class="input-group">
-                                    <input type="text" id="cp_numdocumRUC" name="cp_numdocum" placeholder="Nº de Documento" flow="" class="form-control" required>
+                                    <input type="text" id="cp_numdocumRUC" name="cp_numdocum" placeholder="Nº de Documento" flow="" class="form-control" required maxlength="11">
                                     <button type="button" id="buscarRUC" class="btn btn-sm btn-outline-danger"> SUNAT <i class="uil uil-search"></i>
                                     </button>
-
-                                    <!---->
                                     <div class="invalid-tooltip">
                                         Proporcione un Nº de documento válido.
                                     </div>
                                 </div>
+                                <span class="text-danger" style="display:none;" id="spanerrorRUC"><strong>Ocurrió un error buscando información sobre este RUC</strong></span>
+                                <span class="text-danger" style="display:none;" id="span11RUC"><strong>El RUC debe tener 11 dígitos</strong></span>
+                                <!---->
                             </div>
 
                             <div class="position-relative mb-3">
@@ -262,7 +263,7 @@ $clientes = $this->d['clientes'];
                                 <label for="cp_numdocumDNI" class="form-label">Nº de Documento</label>
                                 <div class="input-group">
                                     <input type="text" id="cp_numdocumDNI" placeholder="Nº de Documento" name="cp_numdocum" class="form-control" required disabled>
-                                    <button type="button" class="btn btn-sm btn-outline-danger"> BUSCAR <i class="uil uil-search"></i>
+                                    <button type="button" id="buscarDNI" class="btn btn-sm btn-outline-danger"> BUSCAR <i class="uil uil-search"></i>
                                     </button>
 
                                     <!---->
@@ -270,6 +271,9 @@ $clientes = $this->d['clientes'];
                                         Proporcione un Nº de documento válido.
                                     </div>
                                 </div>
+                                <span class="text-danger" style="display:none;" id="spanerrorDNI"><strong>Ocurrió un error buscando información sobre este DNI</strong></span>
+                                <span class="text-danger" style="display:none;" id="span11DNI"><strong>El DNI debe tener 8 dígitos</strong></span>
+                                <!---->
                             </div>
 
                             <div class="position-relative mb-3">
@@ -425,6 +429,7 @@ $clientes = $this->d['clientes'];
                 $("#mostrardivRUC").hide();
                 $("#mostrardivDNI").hide();
                 $("#mostrardivSINDOC").hide();
+                $('input[type="text"]').val('');
 
                 //const botontarjeta = document.getElementById("boton-tarjeta");
                 //obtenes el valor de los tres sets de Radios
@@ -522,29 +527,29 @@ $clientes = $this->d['clientes'];
     <script>
         $(function() {
             $('#buscarRUC').on('click', function() {
-                var ruc = $('#cp_numdocumRUC').val();
-                var url = 'resource/php/consulta_sunat.php';
+                //todos los span no visibles
+                $('#spanerrorRUC').hide();
+                $('#span11RUC').hide();
+
+                ruc = $('#cp_numdocumRUC').val();
+                var url = '<?php echo URL . RQ ?>php/consulta_sunat.php';
+                //console.log(ruc);
                 //$('.ajaxgif').removeClass('hide');
                 $.ajax({
                     type: 'POST',
                     url: url,
-                    data: 'ruc=' + ruc,
-                    success: function(datos_dni) {
+                    data: 'cp_numdocum=' + ruc,
+                    dataType: 'json',
+                    success: function(r) {
                         //$('.ajaxgif').addClass('hide');
-                        var datos = eval(datos_dni);
-                        var nada = 'nada';
-                        if (datos[0] == nada) {
-                            alert('DNI o RUC no válido o no registrado');
+                        if (ruc.length < 11) {
+                            $('#span11RUC').show(); //ruc menor de 11 dígitos
+                        } else if (r.numeroDocumento == ruc) {
+                            $('#cp_nombrelegalRUC').val(r.nombre);
+                            $('#cp_direccionRUC').val(r.direccion);
+                            $('#inputAdditionalData').val(r.estado);
                         } else {
-                            //$('#numero_ruc').text(datos[0]);
-                            $('#cp_nombrelegalRUC').text(datos[1]);
-                            //$('#fecha_actividad').text(datos[2]);
-                            //$('#condicion').text(datos[3]);
-                            //$('#tipo').text(datos[4]);
-                            //$('#estado').text(datos[5]);
-                            //$('#fecha_inscripcion').text(datos[6]);
-                            $('#cp_direccionRUC').text(datos[7]);
-                            //$('#emision').text(datos[8]);
+                            $('#spanerrorRUC').show(); //ruc no encontrado
                         }
                     }
                 });
@@ -553,6 +558,41 @@ $clientes = $this->d['clientes'];
         });
     </script>
     <!-- end script de obtener datos por RUC-->
+
+    <!-- script de obtener datos por DNI-->
+    <script>
+        $(function() {
+            $('#buscarDNI').on('click', function() {
+                //todos los span no visibles
+                $('#spanerrorDNI').hide();
+                $('#span11DNI').hide();
+
+                dni = $('#cp_numdocumDNI').val();
+                var url = '<?php echo URL . RQ ?>php/consulta_sunat1.php';
+                //console.log(dni);
+                //$('.ajaxgif').removeClass('hide');
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: 'cp_numdocum=' + dni,
+                    dataType: 'json',
+                    success: function(r) {
+                        //$('.ajaxgif').addClass('hide');
+                        if (dni.length < 8) {
+                            $('#span11DNI').show(); //dni menor de 8 dígitos
+                        } else if (r.numeroDocumento == dni) {
+                            $('#cp_nombrelegalDNI').val(r.nombre);
+                            $('#inputAdditionalData').val(r.estado);
+                        } else {
+                            $('#spanerrorDNI').show(); //dni no encontrado
+                        }
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+    <!-- end script de obtener datos por DNI-->
 
 </body>
 

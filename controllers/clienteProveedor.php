@@ -15,7 +15,7 @@ class ClienteProveedor extends SessionController{
 
         $this->view->render('admin/clienteProveedor', [
             'user' => $this->user,
-            //'usuarios' => $this->getClienteDB()
+            'clientes' => $this->getClienteDB(),
         ]);
         /*$this->view->render('admin/usuarios', [
             "usuarios" => $usuarios
@@ -36,83 +36,101 @@ class ClienteProveedor extends SessionController{
     //     $this->view->render('admin/crearusuariomodal');
     // }
 
-    // devuelve el JSON para las llamadas AJAX
-    function getUsuariosJSON()
-    {
-            header('Content-Type: application/json');
-            $res = [];
-            $userModel = new UserModel();
-            $users = $userModel->getAll();
-    
-            foreach ($users as $user) {
-                array_push($res, $user->toArray());
-            }
-            
-            echo json_encode($res);
-    }
 
     function newClienteProveedor(){
-        error_log('Admin::newUsuarios()');
-        if($this->existPOST(['fullname', 'fullapellido', 'email', 'dni', 'role', 'estado'])){
-            $fullname=$this->getPost('fullname');
-            $fullapellido = $this->getPost('fullapellido');
-            $pass = $this->getPost('password');
-            $dni = $this->getPost('dni');
-            $email = $this->getPost('email');
-            $role = $this->getPost('role');
-            $estado = $this->getPost('estado');
-            echo '<script language="javascript">alert("juas");</script>';
-            if($role=='cliente'){
-                $createClienteProveedorModel = new ClienteProveedorModel();
-                if(!$createClienteProveedorModel->exists($fullname)){
-                    $createClienteProveedorModel->setFullname($fullname);
-                    $createClienteProveedorModel->setFullapellido($fullapellido);
-                    $createClienteProveedorModel->setDni($dni);
-                    $createClienteProveedorModel->setEmail($email);
-                    $createClienteProveedorModel->setRole($role);
-                    $createClienteProveedorModel->setEstado($estado);
-                    $createClienteProveedorModel->save();
-                    error_log('Admin::newUsuarios() => new usuario creado');
-                    $this->redirect('createClienteProveedor', ['success' => Success::SUCCESS_ADMIN_NEWUSER]);
+        error_log('Admin::newClienteProveedor()');
+        if ($_REQUEST['cp_tipodocum'] != "SIN DOCUMENTO") {
+            if($this->existPOST(['cp_tipodocum', 'cp_numdocum','cp_nombrelegal','cp_direccion','cp_tipo','cp_telefono'
+            ,'cp_correo','cp_datosadicionales'])){
+                $tipodocum = $this->getPost('cp_tipodocum');
+                $numdocum = $this->getPost('cp_numdocum');
+                $nombrelegal = $this->getPost('cp_nombrelegal');
+                $direccion = $this->getPost('cp_direccion');
+                $tipo = $this->getPost('cp_tipo');
+                $telefono = $this->getPost('cp_telefono');
+                $correo = $this->getPost('cp_correo');
+                $datosadicionales = $this->getPost('cp_datosadicionales');
+
+                $clienteproveedormodel = new ClienteProveedorModel();
+
+                $clienteproveedormodel->setcp_tipodocum($tipodocum);
+                $clienteproveedormodel->setcp_numdocum($numdocum);
+                $clienteproveedormodel->setcp_nombrelegal($nombrelegal);
+                $clienteproveedormodel->setcp_direccion($direccion);
+                $clienteproveedormodel->setcp_tipo($tipo);
+                $clienteproveedormodel->setcp_telefono($telefono);
+                $clienteproveedormodel->setcp_correo($correo);
+                $clienteproveedormodel->setcp_datosadicionales($datosadicionales);
+
+                if($clienteproveedormodel->existsNUM($numdocum)){
+                    //$this->errorAtSignup('Error al registrar el producto. Escribe un nombre o codigo diferente');
+                    $this->redirect('clienteProveedor', ['error' => Errors::ERROR_CLIENTENUM_NEWUSER_EXISTS]);
+                    //return;
+                }else if($clienteproveedormodel->save()){
+                    //$this->view->render('login/index');success
+                    error_log('Admin::newClienteProveedor() => new cliente / proveedor creado');
+                    $this->redirect('clienteProveedor', ['success' => Success::SUCCESS_CLIENTE_NEWUSER]);
                 }else{
-                    $this->redirect('createClienteProveedor', ['error' => Errors::ERROR_ADMIN_NEWUSER_EXISTS]);
+                    // $this->errorAtSignup('Error al registrar el producto. Inténtalo más tarde');
+                    //return;
+                    error_log('Admin::newClienteProveedor() => error al crear cliente / proveedor CON DNI O RUC');
+                    $this->redirect('clienteProveedor', ['error' => Errors::ERROR_SIGNUP_NEWCLIENTE_FAILED]);
                 }
             }
-            
-            if($role=='proveedor'){
+        
+        }else{
+            if($this->existPOST('cp_tipodocum','cp_nombrelegal','cp_direccion','cp_tipo','cp_telefono'
+            ,'cp_correo','cp_datosadicionales')){
+                $tipodocum = $this->getPost('cp_tipodocum');
+                $nombrelegal = $this->getPost('cp_nombrelegal');
+                $direccion = $this->getPost('cp_direccion');
+                $tipo = $this->getPost('cp_tipo');
+                $telefono = $this->getPost('cp_telefono');
+                $correo = $this->getPost('cp_correo');
+                $datosadicionales = $this->getPost('cp_datosadicionales');
+
+                $clienteproveedormodel = new ClienteProveedorModel();
                 
-                $createProveedorModel = new createProveedorModel();
-                if(!$createProveedorModel->exists($fullname)){
-                    $createProveedorModel->setFullname($fullname);
-                    $createProveedorModel->setFullapellido($fullapellido);
-                    $createProveedorModel->setDni($dni);
-                    $createProveedorModel->setEmail($email);
-                    $createProveedorModel->setRole($role);
-                    $createProveedorModel->setEstado($estado);
-                    $createProveedorModel->save();
-                    error_log('Admin::newUsuarios() => new proveedor creado');
-                    $this->redirect('createClienteProveedor', ['success' => Success::SUCCESS_ADMIN_NEWUSER]);
+                $clienteproveedormodel->setcp_tipodocum($tipodocum);
+                $clienteproveedormodel->setcp_numdocum(00000000);
+                $clienteproveedormodel->setcp_nombrelegal($nombrelegal);
+                $clienteproveedormodel->setcp_direccion($direccion);
+                $clienteproveedormodel->setcp_tipo($tipo);
+                $clienteproveedormodel->setcp_telefono($telefono);
+                $clienteproveedormodel->setcp_correo($correo);
+                $clienteproveedormodel->setcp_datosadicionales($datosadicionales);
+
+                if($clienteproveedormodel->existsNOM($nombrelegal)){
+                    //$this->errorAtSignup('Error al registrar el producto. Escribe un nombre o codigo diferente');
+                    $this->redirect('clienteProveedor', ['error' => Errors::ERROR_CLIENTENOM_NEWUSER_EXISTS]);
+                    //return;
+                }else if($clienteproveedormodel->save()){
+                    //$this->view->render('login/index');success
+                    error_log('Admin::newClienteProveedor() => new cliente / proveedor creado');
+                    $this->redirect('clienteProveedor', ['success' => Success::SUCCESS_CLIENTE_NEWUSER]);
                 }else{
-                    $this->redirect('createClienteProveedor', ['error' => Errors::ERROR_ADMIN_NEWUSER_EXISTS]);
+                    // $this->errorAtSignup('Error al registrar el producto. Inténtalo más tarde');
+                    //return;
+                    error_log('Admin::newClienteProveedor() => error al crear cliente / proveedor SIN DOCUMENTO');
+                    $this->redirect('clienteProveedor', ['error' => Errors::ERROR_SIGNUP_NEWCLIENTE_FAILED]);
                 }
             }
-            
         }
     }
     
     function getClienteDB(){
         $res = [];
         $CreateClienteProveedorModel = new ClienteProveedorModel();
-        $usuarios = $CreateClienteProveedorModel->getAll();
+        $clientes = $CreateClienteProveedorModel->getAll();
 
-        foreach ($usuarios as $usuario) {
-            $usersarray = [];
-            $usersarray['usuario'] = $usuario;
+        foreach ($clientes as $cliente) {
+            $clientesarray = [];
+            $clientesarray['cliente'] = $cliente;
             // $categoryArray['total'] = $total;
             // $categoryArray['count'] = $numberOfExpenses;
             // $categoryArray['category'] = $category;
 
-             array_push($res, $usersarray);
+             array_push($res, $clientesarray);
          }
         //$res = array_values(array_unique($res));
 

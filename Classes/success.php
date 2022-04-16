@@ -19,6 +19,8 @@ class Success{
     const SUCCESS_SIGNUP_NEWPRODUCT = "058511c88c073a0adf1fb3d67529c0c9";
     const SUCCESS_ADMIN_NEWCATEGORY = "7085d129f6bae935bc430885bbf2a25e";
     
+    const SUCCESS_CLIENTE_NEWUSER = "2be8ec3653049b96e4faaf9b058050af";
+    
     private $successList = [];
 
     public function __construct()
@@ -35,6 +37,8 @@ class Success{
             Success::SUCCESS_PRODUCT_UPDATEPHOTO => "Imagen de producto actualizada correctamente",
             Success::SUCCESS_SIGNUP_NEWPRODUCT => "Producto registrado correctamente",
             Success::SUCCESS_ADMIN_NEWCATEGORY => "Categoria registrada correctamente",
+
+            Success::SUCCESS_CLIENTE_NEWUSER => "Cliente / Proveedor registrado correctamente",
         ];
     }
 

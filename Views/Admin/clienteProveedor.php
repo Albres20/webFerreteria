@@ -1,6 +1,6 @@
 <?php
 $user = $this->d['user'];
-//$createClienteProveedor = $this->d['usuarios'];
+$clientes = $this->d['clientes'];
 
 //getModal();
 
@@ -97,6 +97,30 @@ $user = $this->d['user'];
                                             </tr>
                                         </thead>
                                         <tbody id="databody">
+                                            <?php
+                                            if ($clientes === NULL) {
+                                                //showError('Datos no disponibles por el momento.');
+                                            }
+                                            foreach ($clientes as $cliente) { ?>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <label class="form-check-label" for="customCheck2">&nbsp;</label>
+                                                        </div>
+                                                    </td>
+                                                    <?php echo '<td>' . $cliente['cliente']->getcp_id() . '</td>' ?>
+                                                    <?php echo '<td>' . $cliente['cliente']->getcp_nombrelegal() . '</td>' ?>
+                                                    <?php echo '<td>' . $cliente['cliente']->getcp_tipodocum() .' - '. $cliente['cliente']->getcp_numdocum() .'</td>' ?>
+                                                    <?php echo '<td>' . $cliente['cliente']->getcp_tipo() . '</td>' ?>
+                                                    <?php echo '<td> <i class="uil uil-map-marker-alt"></i>' . $cliente['cliente']->getcp_direccion() . '</td>' ?>
+                                                    <?php echo '<td> <i class="uil uil-phone"></i> ' . $cliente['cliente']->getcp_telefono() . '</td>' ?>
+                                                    <td class="table-action">
+                                                        <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
+                                                        <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                        <a href="http://localhost/webFerreteria/clienteProveedor/delete/<?php echo $cliente['cliente']->getcp_id(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -160,17 +184,17 @@ $user = $this->d['user'];
                                 <!---->
                                 <div class="col-md-3 d-grid">
                                     <label class="btn btn-secondary active" for="option-1">
-                                        <input type="radio" name="select" id="option-1" autocomplete="off" value="RUC" checked> RUC
+                                        <input type="radio" name="cp_tipodocum" id="option-1" autocomplete="off" value="RUC" checked> RUC
                                     </label>
                                 </div>
                                 <div class="col-md-3 d-grid">
                                     <label class="btn btn-secondary" for="option-2">
-                                        <input type="radio" name="select" id="option-2" autocomplete="off" value="DNI"> DNI
+                                        <input type="radio" name="cp_tipodocum" id="option-2" autocomplete="off" value="DNI"> DNI
                                     </label>
                                 </div>
                                 <div class="col-md-6 d-grid">
                                     <label class="btn btn-secondary" for="option-3">
-                                        <input type="radio" name="select" id="option-3" autocomplete="off" value="SIN DOCUMENTO"> SIN DOCUMENTO
+                                        <input type="radio" name="cp_tipodocum" id="option-3" autocomplete="off" value="SIN DOCUMENTO"> SIN DOCUMENTO
                                     </label>
                                 </div>
                                 <!---->
@@ -178,15 +202,15 @@ $user = $this->d['user'];
                                 <!---->
                             </div>
                         </div>
-
+                        <!-------- DIV RUC ------------->
                         <div id="mostrardivRUC" class="position-relative mb-3">
                             <!-- style="display:none;" -->
 
                             <div class="position-relative mb-3">
-                                <label for="inputDocumentNumber" class="form-label">Nº de Documento</label>
+                                <label for="cp_numdocumRUC" class="form-label">Nº de Documento</label>
                                 <div class="input-group">
-                                    <input type="text" id="inputDocumentNumber" placeholder="Nº de Documento" flow="" class="form-control" required>
-                                    <button type="button" class="btn btn-sm btn-outline-danger sunat-button"> SUNAT <i class="uil uil-search"></i>
+                                    <input type="text" id="cp_numdocumRUC" name="cp_numdocum" placeholder="Nº de Documento" flow="" class="form-control" required>
+                                    <button type="button" class="btn btn-sm btn-outline-danger"> SUNAT <i class="uil uil-search"></i>
                                     </button>
 
                                     <!---->
@@ -197,24 +221,114 @@ $user = $this->d['user'];
                             </div>
 
                             <div class="position-relative mb-3">
-                                <label class="form-label" for="validationTooltip01">Nombre legal *</label>
-                                <input type="text" class="form-control" id="validationTooltip01" name="fullname" placeholder="Nombre legal / Razón social" required>
+                                <label class="form-label" for="cp_nombrelegalRUC">Nombre legal *</label>
+                                <input type="text" class="form-control" id="cp_nombrelegalRUC" name="cp_nombrelegal" placeholder="Nombre legal / Razón social" required>
                                 <div class="invalid-tooltip">
                                     Proporcione su Nombre legal / Razón social.
                                 </div>
                             </div>
 
                             <div class="position-relative mb-3">
-                                <label for="inputAddress" class="form-label">Dirección</label>
-                                <input type="text" id="inputAddress" placeholder="Dirección" flow="" class="form-control" required>
+                                <label for="cp_direccionRUC" class="form-label">Dirección</label>
+                                <input type="text" id="cp_direccionRUC" placeholder="Dirección" name="cp_direccion" class="form-control">
                                 <div class="invalid-tooltip">
                                     Proporcione una dirección válida.
                                 </div>
                             </div>
 
                             <div class="position-relative mb-3">
-                                <label for="inputTipo" class="form-label">Tipo</label>
-                                <select id="inputTipo" class="form-select">
+                                <label for="cp_tipoRUC" class="form-label">Tipo</label>
+                                <select id="cp_tipoRUC" class="form-select" name="cp_tipo">
+                                    <option value="CLIENTE">
+                                        Cliente
+                                    </option>
+                                    <option value="PROVEEDOR">
+                                        Proveedor
+                                    </option>
+                                    <option value="CLIENTE/PROVEEDOR">
+                                        Cliente/Proveedor
+                                    </option>
+                                </select>
+                                <div class="invalid-tooltip">
+                                    Proporcione un tipo.
+                                </div>
+                            </div>
+                        </div>
+                        <!---------- DIV DNI -------------->
+                        <div id="mostrardivDNI" class="position-relative mb-3" style="display:none;">
+                            <!-- style="display:none;" -->
+
+                            <div class="position-relative mb-3">
+                                <label for="cp_numdocumDNI" class="form-label">Nº de Documento</label>
+                                <div class="input-group">
+                                    <input type="text" id="cp_numdocumDNI" placeholder="Nº de Documento" name="cp_numdocum" class="form-control" required disabled>
+                                    <button type="button" class="btn btn-sm btn-outline-danger"> BUSCAR <i class="uil uil-search"></i>
+                                    </button>
+
+                                    <!---->
+                                    <div class="invalid-tooltip">
+                                        Proporcione un Nº de documento válido.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="position-relative mb-3">
+                                <label class="form-label" for="cp_nombrelegalDNI">Nombre legal *</label>
+                                <input type="text" class="form-control" id="cp_nombrelegalDNI" name="cp_nombrelegal" placeholder="Nombre legal / Razón social" required disabled>
+                                <div class="invalid-tooltip">
+                                    Proporcione su Nombre legal / Razón social.
+                                </div>
+                            </div>
+
+                            <div class="position-relative mb-3">
+                                <label for="cp_direccionDNI" class="form-label">Dirección</label>
+                                <input type="text" id="cp_direccionDNI" placeholder="Dirección" name="cp_direccion" class="form-control" disabled>
+                                <div class="invalid-tooltip">
+                                    Proporcione una dirección válida.
+                                </div>
+                            </div>
+
+                            <div class="position-relative mb-3">
+                                <label for="cp_tipoDNI" class="form-label">Tipo</label>
+                                <select id="cp_tipoDNI" class="form-select" name="cp_tipo" disabled>
+                                    <option value="CLIENTE">
+                                        Cliente
+                                    </option>
+                                    <option value="PROVEEDOR">
+                                        Proveedor
+                                    </option>
+                                    <option value="CLIENTE/PROVEEDOR">
+                                        Cliente/Proveedor
+                                    </option>
+                                </select>
+                                <div class="invalid-tooltip">
+                                    Proporcione un tipo.
+                                </div>
+                            </div>
+                        </div>
+                        <!---------- DIV SIN DOCUMENTO -------------->
+                        <div id="mostrardivSINDOC" class="position-relative mb-3" style="display:none;">
+                            <!-- style="display:none;" -->
+
+                            <div class="position-relative mb-3">
+                                <label class="form-label" for="cp_nombrelegalSINDOC">Nombre legal *</label>
+                                <input type="text" class="form-control" id="cp_nombrelegalSINDOC" name="cp_nombrelegal" placeholder="Nombre legal / Razón social" required disabled>
+                                <div class="invalid-tooltip">
+                                    Proporcione su Nombre legal / Razón social.
+                                </div>
+                            </div>
+
+                            <div class="position-relative mb-3">
+                                <label for="cp_direccionSINDOC" class="form-label">Dirección</label>
+                                <input type="text" id="cp_direccionSINDOC" placeholder="Dirección" name="cp_direccion" class="form-control" disabled>
+                                <div class="invalid-tooltip">
+                                    Proporcione una dirección válida.
+                                </div>
+                            </div>
+
+                            <div class="position-relative mb-3">
+                                <label for="cp_tipoSINDOC" class="form-label">Tipo</label>
+                                <select id="cp_tipoSINDOC" class="form-select" name="cp_tipo" disabled>
                                     <option value="CLIENTE">
                                         Cliente
                                     </option>
@@ -231,25 +345,30 @@ $user = $this->d['user'];
                             </div>
                         </div>
 
-                        <!---->
-                        <div class="mb-3 text-right">
-                            <button type="button" class="btn btn-link collapsed" aria-expanded="false" aria-controls="clientAdvancedInputs" style="padding: 0px;"><small>Ver más</small></button>
+                        <!--boton ver más-->
+                        <div class="mb-3 d-flex flex-row-reverse">
+                            <button type="button" class="btn btn-collapse-toggle" data-toggle="collapse" data-bs-target="#clientAdvancedInputs" title="Collapse" style="padding: 0px;">
+                                <medium>Ver más</medium><i class="uil uil-angle-down"></i>
+                            </button>
                         </div>
-                        <div id="clientAdvancedInputs" class="position-relative mb-3">
+                        <div id="clientAdvancedInputs" class="collapse in position-relative mb-3">
                             <!-- style="display:none;" -->
                             <div class="position-relative mb-3">
                                 <label class="form-label">Teléfono</label>
-                                <input type="text" class="form-control" data-toggle="input-mask" data-mask-format="000-0000">
+                                <input type="text" class="form-control" name="cp_telefono" data-toggle="input-mask" data-mask-format="000-0000">
                                 <span class="font-13 text-muted">Ej. "xxx-xxxx"</span>
                             </div>
                             <div class="position-relative mb-3">
                                 <label for="inputEmail" class="form-label">Correo electrónico</label>
-                                <input type="email" id="inputEmail" placeholder="Correo electrónico" flow="" class="form-control">
+                                <input type="email" id="inputEmail" name="cp_correo" placeholder="Correo electrónico" class="form-control">
+                                <div class="invalid-tooltip">
+                                    Proporcione un formato adecuado.
+                                </div>
                                 <!---->
                             </div>
                             <div class="position-relative mb-3">
                                 <label for="inputAdditionalData" class="form-label">Datos adicionales</label>
-                                <textarea type="text" id="inputAdditionalData" placeholder="Datos adicionales" class="form-control"></textarea>
+                                <textarea type="text" id="inputAdditionalData" name="cp_datosadicionales" placeholder="Datos adicionales" class="form-control"></textarea>
                             </div>
                         </div>
 
@@ -293,10 +412,111 @@ $user = $this->d['user'];
 
     <!-- demo app -->
     <script src="<?php echo URL . RQ ?>assets/js/pages/demo.clientes.js"></script>
-
     <!-- end demo js-->
-    <!-- <script src="<? //php echo URL . RQ 
-                        ?>js/tablausuarios.js"></script> -->
+
+    <!-- script del form por tipo de documento -->
+    <script>
+        $(document).ready(function() {
+            //$("#mostrardivtarjeta").hide();
+
+            $("input[type='radio']").change(function() {
+
+                //Ocultas todo
+                $("#mostrardivRUC").hide();
+                $("#mostrardivDNI").hide();
+                $("#mostrardivSINDOC").hide();
+
+                //const botontarjeta = document.getElementById("boton-tarjeta");
+                //obtenes el valor de los tres sets de Radios
+                var opc = $("input[id='option-1']:checked").val();
+                var opc2 = $("input[id='option-2']:checked").val();
+                var opc3 = $("input[id='option-3']:checked").val();
+
+                //tomas la decisión que queres en base a los dos valores
+                //en este caso si selecciona "nombre" y "ciudad" mostras el input text para el Nombre
+                if (opc == "RUC") {
+                    $("#mostrardivRUC").show();
+                    //RUC HABILITADO
+                    $("#cp_numdocumRUC").prop('disabled', false);
+                    $("#cp_nombrelegalRUC").prop('disabled', false);
+                    $("#cp_direccionRUC").prop('disabled', false);
+                    $("#cp_tipoRUC").prop('disabled', false);
+                    //DNI DESABILITADO
+                    $("#cp_numdocumDNI").prop('disabled', true);
+                    $("#cp_nombrelegalDNI").prop('disabled', true);
+                    $("#cp_direccionDNI").prop('disabled', true);
+                    $("#cp_tipoDNI").prop('disabled', true);
+                    //SIN DOC DESABILITADO
+                    //$("#cp_numdodumSINDOC").prop('disabled', true);
+                    $("#cp_nombrelegalSINDOC").prop('disabled', true);
+                    $("#cp_direccionSINDOC").prop('disabled', true);
+                    $("#cp_tipoSINDOC").prop('disabled', true);
+                    //console.log("mostrar DIV RUC");
+                }
+                if (opc2 == "DNI") {
+                    $("#mostrardivDNI").show();
+                    //DNI HABILITADO
+                    $("#cp_numdocumDNI").prop('disabled', false);
+                    $("#cp_nombrelegalDNI").prop('disabled', false);
+                    $("#cp_direccionDNI").prop('disabled', false);
+                    $("#cp_tipoDNI").prop('disabled', false);
+                    //RUC DESABILITADO
+                    $("#cp_numdocumRUC").prop('disabled', true);
+                    $("#cp_nombrelegalRUC").prop('disabled', true);
+                    $("#cp_direccionRUC").prop('disabled', true);
+                    $("#cp_tipoRUC").prop('disabled', true);
+                    //SIN DOC DESABILITADO
+                    //$("#cp_numdodumSINDOC").prop('disabled', true);
+                    $("#cp_nombrelegalSINDOC").prop('disabled', true);
+                    $("#cp_direccionSINDOC").prop('disabled', true);
+                    $("#cp_tipoSINDOC").prop('disabled', true);
+                    //console.log("mostrar DIV DNI");
+                }
+                if (opc3 == "SIN DOCUMENTO") {
+                    $("#mostrardivSINDOC").show();
+                    //SIN DOC HABILITADO
+                    //$("#cp_numdodumSINDOC").prop('disabled', true);
+                    $("#cp_nombrelegalSINDOC").prop('disabled', false);
+                    $("#cp_direccionSINDOC").prop('disabled', false);
+                    $("#cp_tipoSINDOC").prop('disabled', false);
+                    //RUC DESABILITADO
+                    $("#cp_numdocumRUC").prop('disabled', true);
+                    $("#cp_nombrelegalRUC").prop('disabled', true);
+                    $("#cp_direccionRUC").prop('disabled', true);
+                    $("#cp_tipoRUC").prop('disabled', true);
+                    //DNI DESABILITADO
+                    $("#cp_numdocumDNI").prop('disabled', true);
+                    $("#cp_nombrelegalDNI").prop('disabled', true);
+                    $("#cp_direccionDNI").prop('disabled', true);
+                    $("#cp_tipoDNI").prop('disabled', true);
+                }
+
+            });
+        });
+    </script>
+    <!--- script del form por tipo de documento -->
+
+    <!-- script del form de añadir más campos-->
+    <script>
+        $('.btn-collapse-toggle').on('click', function() {
+            var ico = $(this).find('i');
+            var target = $(this).attr('data-bs-target');
+
+            if (ico.hasClass('uil-angle-up')) {
+                ico.removeClass('uil-angle-up');
+                ico.addClass('uil-angle-down');
+                $(this).attr('title', 'Minimize');
+            } else {
+                ico.removeClass('uil-angle-down');
+                ico.addClass('uil-angle-up');
+                $(this).attr('title', 'Maximize');
+            }
+
+            // here comes the effect
+            $(target).collapse('toggle');
+        });
+    </script>
+    <!-- end script del form de añadir más campos-->
 
 </body>
 

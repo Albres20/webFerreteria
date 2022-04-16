@@ -35,6 +35,10 @@ class Errors{
     const ERROR_SIGNUP_NEWPRODUCT                = "c049877d530419271c1578fe7553d215";
     const ERROR_ADMIN_NEWCATEGORY_EXISTS         = "680fa880f3d1afea9c53c84305eb9af3";
 
+    const ERROR_CLIENTENUM_NEWUSER_EXISTS       = "723050dd6dd920c25ee22714011e3204";
+    const ERROR_CLIENTENOM_NEWUSER_EXISTS      = "8b89a8f6c838503a06cb31285358db07";
+    const ERROR_SIGNUP_NEWCLIENTE_FAILED       = "4b652e6611c638275e33cb1e6e3fd53e";
+
 
     private $errorsList = [];
 
@@ -69,6 +73,10 @@ class Errors{
             Errors::ERROR_SIGNUP_NEWPRODUCT        => 'Hubo un error al intentar registrar. Intenta de nuevo',
 
             Errors::ERROR_ADMIN_NEWCATEGORY_EXISTS  => 'La categoría ya existe, selecciona otra',
+
+            Errors::ERROR_CLIENTENUM_NEWUSER_EXISTS => 'El número de documento ya existe, selecciona otro',
+            Errors::ERROR_CLIENTENOM_NEWUSER_EXISTS => 'El nombre de cliente / proveedor ya existe, selecciona otro',
+            Errors::ERROR_SIGNUP_NEWCLIENTE_FAILED => 'Hubo un error al intentar registrar. Intenta de nuevo',
         ];
     }
 

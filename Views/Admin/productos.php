@@ -170,7 +170,7 @@ $categorias = $this->d['categorias'];
     <!-- End Page content -->
     <!-- ============================================================== -->
     <!--=====================================
-    MODAL AGREGAR USUARIO
+    MODAL AGREGAR PRODUCTO
     ======================================-->
     <!-- Standard modal -->
     <div id="modalAgregarProducto" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">

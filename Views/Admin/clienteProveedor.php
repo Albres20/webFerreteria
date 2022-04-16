@@ -110,7 +110,7 @@ $clientes = $this->d['clientes'];
                                                     </td>
                                                     <?php echo '<td>' . $cliente['cliente']->getcp_id() . '</td>' ?>
                                                     <?php echo '<td>' . $cliente['cliente']->getcp_nombrelegal() . '</td>' ?>
-                                                    <?php echo '<td>' . $cliente['cliente']->getcp_tipodocum() .' - '. $cliente['cliente']->getcp_numdocum() .'</td>' ?>
+                                                    <?php echo '<td>' . $cliente['cliente']->getcp_tipodocum() . ' - ' . $cliente['cliente']->getcp_numdocum() . '</td>' ?>
                                                     <?php echo '<td>' . $cliente['cliente']->getcp_tipo() . '</td>' ?>
                                                     <?php echo '<td> <i class="uil uil-map-marker-alt"></i>' . $cliente['cliente']->getcp_direccion() . '</td>' ?>
                                                     <?php echo '<td> <i class="uil uil-phone"></i> ' . $cliente['cliente']->getcp_telefono() . '</td>' ?>
@@ -210,7 +210,7 @@ $clientes = $this->d['clientes'];
                                 <label for="cp_numdocumRUC" class="form-label">Nº de Documento</label>
                                 <div class="input-group">
                                     <input type="text" id="cp_numdocumRUC" name="cp_numdocum" placeholder="Nº de Documento" flow="" class="form-control" required>
-                                    <button type="button" class="btn btn-sm btn-outline-danger"> SUNAT <i class="uil uil-search"></i>
+                                    <button type="button" id="buscarRUC" class="btn btn-sm btn-outline-danger"> SUNAT <i class="uil uil-search"></i>
                                     </button>
 
                                     <!---->
@@ -517,6 +517,42 @@ $clientes = $this->d['clientes'];
         });
     </script>
     <!-- end script del form de añadir más campos-->
+
+    <!-- script de obtener datos por RUC-->
+    <script>
+        $(function() {
+            $('#buscarRUC').on('click', function() {
+                var ruc = $('#cp_numdocumRUC').val();
+                var url = 'resource/php/consulta_sunat.php';
+                //$('.ajaxgif').removeClass('hide');
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: 'ruc=' + ruc,
+                    success: function(datos_dni) {
+                        //$('.ajaxgif').addClass('hide');
+                        var datos = eval(datos_dni);
+                        var nada = 'nada';
+                        if (datos[0] == nada) {
+                            alert('DNI o RUC no válido o no registrado');
+                        } else {
+                            //$('#numero_ruc').text(datos[0]);
+                            $('#cp_nombrelegalRUC').text(datos[1]);
+                            //$('#fecha_actividad').text(datos[2]);
+                            //$('#condicion').text(datos[3]);
+                            //$('#tipo').text(datos[4]);
+                            //$('#estado').text(datos[5]);
+                            //$('#fecha_inscripcion').text(datos[6]);
+                            $('#cp_direccionRUC').text(datos[7]);
+                            //$('#emision').text(datos[8]);
+                        }
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+    <!-- end script de obtener datos por RUC-->
 
 </body>
 

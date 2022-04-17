@@ -74,7 +74,7 @@ $user = $this->d['user'];
                             <!--- end boton de busqueda en 3 columnas-->
                             <div class="table-responsive">
                                 <table class="table table-striped table-sm table-centered mb-0">
-                                    <thead class="table-dark">
+                                    <thead class="table-dark" style="text-align: center;">
                                         <tr>
                                             <th>Producto</th>
                                             <th>Precio U.</th>
@@ -207,36 +207,25 @@ $user = $this->d['user'];
                                 </table>
                             </div> <!-- end table-responsive-->
 
-                            <div class="row mt-4">
-                                <div class="col-md-6"></div>
-                                <div class="col-md-6">
-                                    <!--- Cart Total -->
-                                    <div class="cart-total">
-                                        <table class="table table-sm table-borderless">
-                                            <tbody>
-                                                <tr>
-                                                    <td><strong>Subtotal</strong></td>
-                                                    <td><span>$499.90</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Impuesto (18%)</strong></td>
-                                                    <td>$49.99</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><Strong>Descuento</Strong></td>
-                                                    <td><input class="col-md-6" type="number"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Total</strong></td>
-                                                    <td>$549.89</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div> <!-- end cart-total -->
+                            <div class="mb-4 mt-3" style="text-align: right;">
+                                <div class="row mb-2">
+                                    <div class="col-md-9"><strong>Subtotal</strong></div>
+                                    <div class="col-md-3">$499.90</div>
                                 </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-9"><strong>Impuesto (18%)</strong></div>
+                                    <div class="col-md-3">$49.99</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-9"><strong>Descuento</strong></div>
+                                    <div class="col-md-3"><input class="form-control form-control-sm text-right discount-input" type="number"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-9"><h4 class="font-weight-bold">Importe total</h4></div>
+                                    <div class="col-md-3">$549.89</div>
+                                </div>
+
                             </div>
-
-
                             <!-- action buttons-->
                             <div class="row mt-4">
                                 <div class="col-sm-6">
@@ -258,7 +247,11 @@ $user = $this->d['user'];
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="header-title mb-3">Facturación</h4>
+                            <div class="position-relative mb-3">
+                                <label class="d-block p-1 bg-dark" for="titleproveedor">
+                                    <h4 class="header-title m-2 text-light text-center">Facturación</h4>
+                                </label>
+                            </div>
 
                             <div class="table-responsive">
                                 <table class="table mb-0">
@@ -294,38 +287,37 @@ $user = $this->d['user'];
                     </div>
 
                     <div class="card">
-                        <div class="card-body">
-                            <h4 class="header-title mb-3">Proveedor</h4>
-
-                            <div class="table-responsive">
-                                <table class="table mb-0">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th>Description</th>
-                                            <th>Price</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Grand Total :</td>
-                                            <td>$1641</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Shipping Charge :</td>
-                                            <td>$23</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Estimated Tax : </td>
-                                            <td>$19.22</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Total :</th>
-                                            <th>$1683.22</th>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="card-body" style="font-size: 12.5px;">
+                            <div class="position-relative mb-3">
+                                <label class="d-block p-1 bg-dark" for="titleproveedor">
+                                    <h4 class="header-title m-2 text-light text-center">Proveedor</h4>
+                                </label>
                             </div>
-                            <!-- end table-responsive -->
+                            <div class="position-relative mb-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Buscar producto" id="buscarProducto">
+                                    <button class="btn btn-outline-secondary mdi mdi-account-search" type="button" id="btnBuscarProducto" style="font-size: 18px;"></button>
+                                </div>
+                                <a href="javascript:void(0);" class="float-right" style="float: right; display:none; ">Nuevo proveedor</a>
+                            </div>
+
+                            <div class="position-relative mb-3">
+                                <div class="form-group row required mt-3 mb-2">
+                                    <div class="col-sm-4"><strong class="mdi mdi-account"> Nombre</strong></div>
+                                    <div class="col-sm-8">HIPERMERCADOS TOTTUS S.A</div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <div class="col-sm-4"><strong class="mdi mdi-card-account-details"> RUC</strong></div>
+                                    <div class="col-sm-8">20508565934</div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-4"><strong class="mdi mdi-map-marker"> Dirección</strong></div>
+                                    <div class="col-sm-8">AV. ANGAMOS ESTE NRO. 1805 INT. P10 - LIMA LIMA SURQUILLO</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <a href="javascript:void(0);" class="float-right" style="float: right; /*display:none;*/ ">Editar proveedor</a>
+                            </div>
 
                         </div>
                     </div>
@@ -462,35 +454,6 @@ $user = $this->d['user'];
         }
     </script>
 
-    <script type="text/javascript">
-        function precio_venta() {
-            var profit = $("#profit").val(); //ganancia
-            var buying_price = $("#buying_price").val();
-
-            console.log(profit);
-            console.log(buying_price);
-
-            var parametros = {
-                "profit": profit,
-                "buying_price": buying_price
-            };
-            /*$.ajax({
-                dataType: "json",
-                type: "POST",
-                url: './ajax/precio.php',
-                data: parametros,
-                success: function(data) {
-                    //$("#datos").html(data).fadeIn('slow');
-                    $.each(data, function(index, element) {
-                        var precio = element.precio;
-                        $("#selling_price").val(precio);
-                    });
-
-
-                }
-            })*/
-        }
-    </script>
 </body>
 
 </html>

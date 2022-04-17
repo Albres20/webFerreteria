@@ -78,8 +78,8 @@ $categorias = $this->d['categorias'];
                             </div>
 
                             <div class="table-responsive">
-                                <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable">
-                                    <thead class="table-light">
+                                <table class="table table-striped table-centered w-100 dt-responsive nowrap" id="products-datatable">
+                                    <thead class="table-dark">
                                         <tr>
                                             <th class="all" style="width: 20px;">
                                                 <div class="form-check">

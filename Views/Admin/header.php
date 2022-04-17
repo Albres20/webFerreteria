@@ -34,7 +34,7 @@
                        <div class="collapse" id="sidebarHYTcompras">
                            <ul class="side-nav-second-level">
                                <li>
-                                   <a href="#">Nueva compra</a>
+                                   <a href="nuevaCompra">Nueva compra</a>
                                </li>
                                <li>
                                    <a href="#">Historial de compras</a>

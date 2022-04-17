@@ -74,8 +74,8 @@ $usuarios = $this->d['usuarios'];
                             </div>
 
                             <div class="table-responsive">
-                                <table class="table table-centered w-100 dt-responsive nowrap" id="users-datatable">
-                                    <thead class="table-light">
+                                <table class="table table-striped table-centered w-100 dt-responsive nowrap" id="users-datatable">
+                                    <thead class="table-dark">
                                         <tr>
                                             <th class="all" style="width: 20px;">
                                                 <div class="form-check">
@@ -104,7 +104,14 @@ $usuarios = $this->d['usuarios'];
                                                     </div>
                                                 </td>
                                                 <?php echo '<td>' . $usuario['usuario']->getId() . '</td>' ?>
-                                                <?php echo '<td>' . $usuario['usuario']->getUsername() . '</td>' ?>
+                                                <td class="table-user">
+                                                    <?php if ($usuario['usuario']->getPhoto() != "") {
+                                                        echo '<img src="' . URL . RQ . 'image/usuarios/' . $usuario['usuario']->getPhoto() . '" alt="user-img" title="user-img" class="me-2 rounded-circle">'. $usuario['usuario']->getUsername().'';
+                                                    } else {
+                                                        echo '<img src="' . URL . RQ . 'image/usuarios/default-user-image.png" alt="user-img" title="user-img" class="me-2 rounded-circle">'. $usuario['usuario']->getUsername().'';
+                                                    }
+                                                    ?>
+                                                </td>
                                                 <?php echo '<td>' . $usuario['usuario']->getFullname() . '</td>' ?>
                                                 <?php echo '<td>' . $usuario['usuario']->getEmail() . '</td>' ?>
                                                 <?php echo '<td>' . $usuario['usuario']->getRole() . '</td>' ?>

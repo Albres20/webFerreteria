@@ -77,8 +77,8 @@ $clientes = $this->d['clientes'];
                                 </div>
 
                                 <div class="table-responsive">
-                                    <table class="table table-centered w-100 dt-responsive nowrap" id="clienteproveedor-datatable">
-                                        <thead class="table-light">
+                                    <table class="table table-striped table-centered w-100 dt-responsive nowrap" id="clienteproveedor-datatable">
+                                        <thead class="table-dark">
                                             <tr>
                                                 <th class="all" style="width: 20px;">
                                                     <div class="form-check">

@@ -20,6 +20,11 @@
             "role": "admin"
         },
         {
+            "site": "nuevaCompra",
+            "access": "private",
+            "role": "admin"
+        },
+        {
             "site": "ventas",
             "access": "private",
             "role": "admin"

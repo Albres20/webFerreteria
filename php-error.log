@@ -1,0 +1,52 @@
+[18-Apr-2022 01:00:30 Europe/Berlin] Hello, errors!
+[18-Apr-2022 01:00:30 Europe/Berlin] SessionController::validateSession()
+[18-Apr-2022 01:00:30 Europe/Berlin] sessionController::getUserSessionData(): moises
+[18-Apr-2022 01:00:30 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[18-Apr-2022 01:00:30 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/nuevaCompra, url => nuevaCompra
+[18-Apr-2022 01:00:30 Europe/Berlin] sessionController::isPublic(): currentURL => nuevaCompra
+[18-Apr-2022 01:00:30 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/nuevaCompra, url => nuevaCompra
+[18-Apr-2022 01:00:30 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[18-Apr-2022 01:00:30 Europe/Berlin] sessionController::getUserSessionData(): moises
+[18-Apr-2022 01:00:30 Europe/Berlin] Gestion de Nueva Compra ::constructor() 
+[18-Apr-2022 01:00:30 Europe/Berlin] Gestion de Nueva Compra ::RENDER() 
+[18-Apr-2022 01:00:30 Europe/Berlin] Hello, errors!
+[18-Apr-2022 01:00:30 Europe/Berlin] Hello, errors!
+[18-Apr-2022 01:00:30 Europe/Berlin] Hello, errors!
+[18-Apr-2022 01:00:30 Europe/Berlin] Hello, errors!
+[18-Apr-2022 01:00:59 Europe/Berlin] Hello, errors!
+[18-Apr-2022 01:00:59 Europe/Berlin] SessionController::validateSession()
+[18-Apr-2022 01:00:59 Europe/Berlin] sessionController::getUserSessionData(): moises
+[18-Apr-2022 01:00:59 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[18-Apr-2022 01:00:59 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/nuevaCompra, url => nuevaCompra
+[18-Apr-2022 01:00:59 Europe/Berlin] sessionController::isPublic(): currentURL => nuevaCompra
+[18-Apr-2022 01:00:59 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/nuevaCompra, url => nuevaCompra
+[18-Apr-2022 01:00:59 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[18-Apr-2022 01:00:59 Europe/Berlin] sessionController::getUserSessionData(): moises
+[18-Apr-2022 01:00:59 Europe/Berlin] Gestion de Nueva Compra ::constructor() 
+[18-Apr-2022 01:00:59 Europe/Berlin] Gestion de Nueva Compra ::RENDER() 
+[18-Apr-2022 01:00:59 Europe/Berlin] Hello, errors!
+[18-Apr-2022 01:00:59 Europe/Berlin] Hello, errors!
+[18-Apr-2022 01:00:59 Europe/Berlin] Hello, errors!
+[18-Apr-2022 01:00:59 Europe/Berlin] Hello, errors!
+[18-Apr-2022 01:01:02 Europe/Berlin] Hello, errors!
+[18-Apr-2022 01:01:02 Europe/Berlin] SessionController::validateSession()
+[18-Apr-2022 01:01:02 Europe/Berlin] sessionController::getUserSessionData(): moises
+[18-Apr-2022 01:01:02 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[18-Apr-2022 01:01:02 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/historialCotizaciones, url => historialCotizaciones
+[18-Apr-2022 01:01:02 Europe/Berlin] sessionController::isPublic(): currentURL => historialCotizaciones
+[18-Apr-2022 01:01:02 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/historialCotizaciones, url => historialCotizaciones
+[18-Apr-2022 01:01:02 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[18-Apr-2022 01:01:02 Europe/Berlin] sessionController::getUserSessionData(): moises
+[18-Apr-2022 01:01:02 Europe/Berlin] Gestion de Nueva Cotizaciones ::constructor() 
+[18-Apr-2022 01:01:02 Europe/Berlin] Gestion de Nueva Cotizaciones ::RENDER() 
+[18-Apr-2022 01:01:19 Europe/Berlin] Hello, errors!
+[18-Apr-2022 01:01:19 Europe/Berlin] SessionController::validateSession()
+[18-Apr-2022 01:01:19 Europe/Berlin] sessionController::getUserSessionData(): moises
+[18-Apr-2022 01:01:19 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[18-Apr-2022 01:01:19 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/historialCotizaciones, url => historialCotizaciones
+[18-Apr-2022 01:01:19 Europe/Berlin] sessionController::isPublic(): currentURL => historialCotizaciones
+[18-Apr-2022 01:01:19 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/historialCotizaciones, url => historialCotizaciones
+[18-Apr-2022 01:01:19 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[18-Apr-2022 01:01:19 Europe/Berlin] sessionController::getUserSessionData(): moises
+[18-Apr-2022 01:01:19 Europe/Berlin] Gestion de Nueva Cotizaciones ::constructor() 
+[18-Apr-2022 01:01:19 Europe/Berlin] Gestion de Nueva Cotizaciones ::RENDER() 

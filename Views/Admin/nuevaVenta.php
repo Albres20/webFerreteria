@@ -45,10 +45,10 @@ $user = $this->d['user'];
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="admin">Inicio</a></li>
-                                <li class="breadcrumb-item active">Nueva Compra</li>
+                                <li class="breadcrumb-item active">Nueva Venta</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Nueva Compra</h4>
+                        <h4 class="page-title">Nueva Venta</h4>
                     </div>
                 </div>
                 <div id="main-container">
@@ -233,7 +233,7 @@ $user = $this->d['user'];
                             <!-- action buttons-->
                             <div class="row mt-4">
                                 <div class="col-sm-6">
-                                    <a href="historialCompras" class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
+                                    <a href="historialVentas" class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
                                         <i class="mdi mdi-arrow-left"></i> Regresar </a>
                                 </div> <!-- end col -->
                                 <div class="col-sm-6">
@@ -257,18 +257,19 @@ $user = $this->d['user'];
                                 </label>
                             </div>
                             <div class="position-relative mb-3">
-                                <div class="input-group" id="datepicker4">
-                                    <select class="form-select form-control-sm">
-                                        <option value="01">Factura</option>
-                                        <option value="02">Boleta</option>
-                                    </select>
-                                    <input class="form-control form-control-sm" type="text" name="numerofacturacion" id="numerofacturacion" placeholder="N° Boleta/Factura">
-                                    <input type="text" class="form-control form-control-sm" data-provide="datepicker" data-date-autoclose="true" data-date-container="#datepicker4" placeholder="Fecha">
-                                    <!-- <input type="text" class="form-control date" id="birthdatepicker" data-toggle="date-picker" data-single-date-picker="true"> -->
+                                <div class="row">
+                                    <!---->
+                                    <div class="col-md-6 d-grid">
+                                        <label class="btn btn-secondary" for="option-1">
+                                            <input type="radio" name="cp_tipodocum" id="option-1" autocomplete="off" value="RUC"> Boleta
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 d-grid">
+                                        <label class="btn btn-secondary" for="option-2">
+                                            <input type="radio" name="cp_tipodocum" id="option-2" autocomplete="off" value="DNI"> Factura
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="position-relative mb-3">
-                                <input type="file" id="example-fileinput" class="form-control form-control-sm">
                             </div>
                             <div class="position-relative mb-2">
                                 <h6 class="d-inline-block"><strong>Total</strong></h6>
@@ -316,15 +317,15 @@ $user = $this->d['user'];
                         <div class="card-body" style="font-size: 12.5px;">
                             <div class="position-relative mb-3">
                                 <label class="d-block p-1 bg-dark" for="titleproveedor">
-                                    <h4 class="header-title m-2 text-light text-center">Proveedor</h4>
+                                    <h4 class="header-title m-2 text-light text-center">Cliente</h4>
                                 </label>
                             </div>
                             <div class="position-relative mb-3">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Buscar producto" id="buscarProducto">
+                                    <input type="text" class="form-control" placeholder="Buscar por nombre, RUC o DNI" id="buscarProducto">
                                     <button class="btn btn-outline-secondary mdi mdi-account-search" type="button" id="btnBuscarProducto" style="font-size: 18px;"></button>
                                 </div>
-                                <a href="javascript:void(0);" class="float-right" style="float: right; display:none; ">Nuevo proveedor</a>
+                                <a href="javascript:void(0);" class="float-right" style="float: right; display:none; ">Nuevo cliente</a>
                             </div>
 
                             <div class="position-relative mb-3">
@@ -333,7 +334,7 @@ $user = $this->d['user'];
                                     <div class="col-sm-8">HIPERMERCADOS TOTTUS S.A</div>
                                 </div>
                                 <div class="form-group row mb-2">
-                                    <div class="col-sm-4"><strong class="mdi mdi-card-account-details"> RUC</strong></div>
+                                    <div class="col-sm-4"><strong class="mdi mdi-card-account-details"> DNI</strong></div>
                                     <div class="col-sm-8">20508565934</div>
                                 </div>
                                 <div class="form-group row">
@@ -342,7 +343,7 @@ $user = $this->d['user'];
                                 </div>
                             </div>
                             <div class="text-right">
-                                <a href="javascript:void(0);" class="float-right" style="float: right; /*display:none;*/ ">Editar proveedor</a>
+                                <a href="javascript:void(0);" class="float-right" style="float: right; /*display:none;*/ ">Editar cliente</a>
                             </div>
 
                         </div>
@@ -407,78 +408,6 @@ $user = $this->d['user'];
     <!-- sweetalert2 js -->
     <script src="<?php echo URL . RQ ?>js/sweetalert2/sweetalert2.all.js"></script>
 
-    <!-- <script src=" php js/tablausuarios.js"></script> -->
-    <script type="text/javascript">
-        (function() {
-            function filePreview(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function(e) {
-                        $('#imagePreview').attr('src', e.target.result);
-                    }
-
-                    /*reader.onload = function(e) {
-                        $('#imagePreview').html("src='" + e.target.result + "'");
-                    }*/
-
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-
-            $('#inputImage').change(function(el) {
-                if (LimitAttach(this, 1))
-                    filePreview(this);
-            });
-        })();
-    </script>
-
-    <script type="text/javascript">
-        function LimitAttach(tField, iType) {
-            file = tField.value;
-
-            var fileSize = $('#inputImage')[0].files[0].size;
-            var siezekiloByte = parseInt(fileSize / 1024);
-            if (siezekiloByte > $('#inputImage').attr('size')) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'El tamaño del archivo no debe superar los ' + $('#inputImage').attr('size') + ' Kb',
-                });
-                return false;
-                setTimeout("location.reload()", 2000);
-            }
-
-            if (iType == 1) {
-                extArray = new Array(".jpeg", ".jpe", ".gif", ".jpg", ".png");
-            }
-            allowSubmit = false;
-            if (!file) return false;
-            while (file.indexOf("\\") != -1) file = file.slice(file.indexOf("\\") + 1);
-            ext = file.slice(file.indexOf(".")).toLowerCase();
-            for (var i = 0; i < extArray.length; i++) {
-                if (extArray[i] == ext) {
-                    allowSubmit = true;
-                    break;
-                }
-            }
-            if (allowSubmit) {
-                return true
-            } else {
-                tField.value = "";
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Solo se permiten archivos con extensiones: ' + extArray.join(', '),
-                });
-                //MENSAJE = "Usted sólo puede subir archivos con extensiones " + (extArray.join(" ")) + "\n";
-                //$("#mensaje").html(MENSAJE);
-                //$("#warning-alert-modal").modal('show');
-                //alert("Usted sólo puede subir archivos con extensiones " + (extArray.join(" ")) + "\n Reiniciando Formulario");
-                return false;
-                setTimeout("location.reload()", 2000);
-            }
-        }
-    </script>
 
 </body>
 

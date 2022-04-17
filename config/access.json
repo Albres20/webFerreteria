@@ -25,7 +25,22 @@
             "role": "admin"
         },
         {
-            "site": "ventas",
+            "site": "historialCompras",
+            "access": "private",
+            "role": "admin"
+        },
+        {
+            "site": "nuevaVenta",
+            "access": "private",
+            "role": "admin"
+        },
+        {
+            "site": "historialVentas",
+            "access": "private",
+            "role": "admin"
+        },
+        {
+            "site": "historialCotizaciones",
             "access": "private",
             "role": "admin"
         },

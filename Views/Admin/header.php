@@ -37,7 +37,7 @@
                                    <a href="nuevaCompra">Nueva compra</a>
                                </li>
                                <li>
-                                   <a href="#">Historial de compras</a>
+                                   <a href="historialCompras">Historial de compras</a>
                                </li>
                            </ul>
                        </div>
@@ -52,10 +52,10 @@
                        <div class="collapse" id="sidebarHYTventas">
                            <ul class="side-nav-second-level">
                                <li>
-                                   <a href="#">Nueva venta</a>
+                                   <a href="nuevaVenta">Nueva venta</a>
                                </li>
                                <li>
-                                   <a href="#">Historial de ventas</a>
+                                   <a href="historialVentas">Historial de ventas</a>
                                </li>
                                <li>
                                    <a href="#">Seguimiento de venta</a>
@@ -64,7 +64,7 @@
                                    <a href="#">Facturación</a>
                                </li>
                                <li>
-                                   <a href="#">Cotizaciones <span class="badge rounded-pill badge-success-lighten font-10 float-end">New</span></a>
+                                   <a href="historialCotizaciones">Cotizaciones <span class="badge rounded-pill badge-success-lighten font-10 float-end">New</span></a>
                                </li>
                            </ul>
                        </div>

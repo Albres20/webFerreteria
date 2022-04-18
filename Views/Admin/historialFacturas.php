@@ -46,10 +46,10 @@ $user = $this->d['user'];
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="admin">Inicio</a></li>
-                                <li class="breadcrumb-item active">Historial de Ventas</li>
+                                <li class="breadcrumb-item active">Historial de Facturas</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Historial de Ventas</h4>
+                        <h4 class="page-title">Historial de Facturas</h4>
                     </div>
                 </div>
                 <div id="main-container">
@@ -63,9 +63,7 @@ $user = $this->d['user'];
                     <div class="card">
                         <div class="card-body">
                             <div class="row mb-2">
-                                <div class="col-sm-8">
-                                    <a href="nuevaVenta" role="button" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nueva Venta</a>
-                                </div>
+                                <div class="col-sm-8"></div>
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <div class="input-group-text">
@@ -85,13 +83,12 @@ $user = $this->d['user'];
                                                     <label class="form-check-label" for="customCheck1">&nbsp;</label>
                                                 </div>
                                             </th>
-                                            <th data-sort="" class="all">N° Venta</th>
+                                            <th data-sort="" class="all">Documento</th>
+                                            <th data-sort="">Tipo</th>
+                                            <th data-sort="">Fecha</th>
                                             <th data-sort="">Cliente</th>
                                             <th data-sort="">Total</th>
-                                            <th data-sort="">Fecha</th>
-                                            <th data-sort="">Docs</th>
-                                            <th data-sort="">Usuario</th>
-                                            <th data-sort="">Seguimiento</th>
+                                            <th data-sort="">Estado</th>
                                             <th style="width: 85px;">Acciones</th>
                                         </tr>
                                     </thead>

@@ -40,7 +40,22 @@
             "role": "admin"
         },
         {
+            "site": "historialFacturas",
+            "access": "private",
+            "role": "admin"
+        },
+        {
+            "site": "nuevaCotizacion",
+            "access": "private",
+            "role": "admin"
+        },
+        {
             "site": "historialCotizaciones",
+            "access": "private",
+            "role": "admin"
+        },
+        {
+            "site": "seguimiento",
             "access": "private",
             "role": "admin"
         },

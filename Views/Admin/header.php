@@ -57,11 +57,11 @@
                                <li>
                                    <a href="historialVentas">Historial de ventas</a>
                                </li>
-                               <li>
+                               <!-- <li>
                                    <a href="#">Seguimiento de venta</a>
-                               </li>
+                               </li> -->
                                <li>
-                                   <a href="#">Facturación</a>
+                                   <a href="historialFacturas">Facturación</a>
                                </li>
                                <li>
                                    <a href="historialCotizaciones">Cotizaciones <span class="badge rounded-pill badge-success-lighten font-10 float-end">New</span></a>

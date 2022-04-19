@@ -66,10 +66,11 @@ $user = $this->d['user'];
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Buscar producto" id="buscarProducto">
+                                        <input id="buscarProductoCompra" name="buscarProductoCompra" type="search" placeholder="Buscar producto por nombre o código" class="form-control" style="border-radius: 0px;">
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button" id="btnBuscarProducto">Agregar</button>
+                                            <button class="btn btn-outline-danger" type="button" id="btnBuscarProducto">Agregar</button>
                                         </div>
+                                        <div id="listaProductoCompra" class="tt-menu" style="display: none;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -79,8 +80,8 @@ $user = $this->d['user'];
                                     <thead class="table-dark" style="text-align: center;">
                                         <tr>
                                             <th>Producto</th>
-                                            <th>Precio U.</th>
                                             <th>Cantidad</th>
+                                            <th>Precio U.</th>
                                             <th>Impuesto 18%</th>
                                             <th>Subtotal</th>
                                             <th>Total</th>
@@ -215,7 +216,7 @@ $user = $this->d['user'];
                                     <div class="col-md-3">$499.90</div>
                                 </div>
                                 <div class="row mb-2">
-                                    <div class="col-md-9"><strong>Impuesto (18%)</strong></div>
+                                    <div class="col-md-9"><strong>IGV</strong></div>
                                     <div class="col-md-3">$49.99</div>
                                 </div>
                                 <div class="row mb-2">
@@ -322,7 +323,7 @@ $user = $this->d['user'];
                             <div class="position-relative mb-3">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Buscar producto" id="buscarProducto">
-                                    <button class="btn btn-outline-secondary mdi mdi-account-search" type="button" id="btnBuscarProducto" style="font-size: 18px;"></button>
+                                    <button class="btn btn-outline-danger mdi mdi-account-search" type="button" id="btnBuscarProducto" style="font-size: 18px;"></button>
                                 </div>
                                 <a href="javascript:void(0);" class="float-right" style="float: right; display:none; ">Nuevo proveedor</a>
                             </div>
@@ -479,6 +480,8 @@ $user = $this->d['user'];
             }
         }
     </script>
+
+    <script type="text/javascript" src="<?php echo URL . RQ ?>js/busquedaprod.js"></script>
 
 </body>
 

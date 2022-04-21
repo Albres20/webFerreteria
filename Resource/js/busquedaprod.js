@@ -7,8 +7,10 @@ $(document).ready(function() {
             $.ajax({
                 type: "POST",
                 url: "resource/php/busquedaprodajax.php",
-                data: {
-                    search: busqueda
+                data: 'search=' + busqueda,
+                beforesend: function() {
+                    $('#listaProductoCompra').show();
+                    $('#listaProductoCompra').html('<div class="spinner-border text-danger" role="status"></div>');
                 },
                 success: function(data) {
                     $("#listaProductoCompra").html(data).show();
@@ -20,3 +22,8 @@ $(document).ready(function() {
         }
     });
 });
+
+function selectCountry(val) {
+    $("#buscarProductoCompra").val(val);
+    $("#listaProductoCompra").hide();
+}

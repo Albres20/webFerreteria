@@ -23,6 +23,22 @@ class NuevaCompra extends SessionController{
         //$this->view->render('admin/usuarios');
     }
 
+    function mostrarTablaProductosCompra(){
+        if(!$_REQUEST['search']){
+            $search = $_REQUEST['search'];
+            $productomodel = new ProductosModel();
+            $productos = $productomodel->getProductosBySearch($search);
+            ?>
+            <ul id="product-list">
+            <?php
+            foreach($productos as $producto){
+                ?>
+                <li onClick="selectCountry('<?php echo $producto["productos_name"]; ?>');"><?php echo $producto["productos_name"]; ?></li>
+                <?php } ?>
+                </ul>
+                <?php
+        }
+    }
 
     function newClienteProveedor(){
         error_log('Admin::newClienteProveedor()');

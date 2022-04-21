@@ -143,6 +143,20 @@
             }
         }
 
+        public function getProductosBySearch($search){
+
+            try{
+                $query = $this->query('SELECT * FROM productos WHERE productos_nombre LIKE "%'.$search.'%" ORDER BY productos_nombre LIMIT 0,6');
+    
+                $data = $query->fetchAll(PDO::FETCH_ASSOC);
+
+                return $data;
+    
+            }catch(PDOException $e){
+                echo $e;
+            }
+        }
+
         public function delete($id){
             try{
                 $query = $this->prepare('DELETE FROM productos WHERE id = :id');

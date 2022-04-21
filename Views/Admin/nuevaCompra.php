@@ -66,7 +66,7 @@ $user = $this->d['user'];
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="input-group mb-3">
-                                        <input id="buscarProductoCompra" name="buscarProductoCompra" type="search" placeholder="Buscar producto por nombre o código" class="form-control" style="border-radius: 0px;">
+                                        <input id="buscarProductoCompra" name="buscarProductoCompra" type="search" placeholder="Buscar producto por nombre o código" class="form-control" style="border-radius: 0px;" autocomplete="off">
                                         <div class="input-group-append">
                                             <button class="btn btn-outline-danger" type="button" id="btnBuscarProducto">Agregar</button>
                                         </div>
@@ -481,7 +481,51 @@ $user = $this->d['user'];
         }
     </script>
 
-    <script type="text/javascript" src="<?php echo URL . RQ ?>js/busquedaprod.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //$('#listaProductoCompra').hide();
+            $("#buscarProductoCompra").keyup(function() {
+                var busqueda = $(this).val();
+                var url = "<?php echo URL . RQ ?>";
+                //var listaproductos = 'busqueda=' + busqueda;
+                if (busqueda != '') {
+                    console.log("entra antes de ajax");
+                    $.ajax({
+                        type: "POST",
+                        url: url + "php/buscarproductoajax.php",
+                        data: {
+                            funcion: "funcion1"
+                        },
+                        dataType: "JSON",
+                        success: function(response) {
+                            console.log("entra despues de ajax");
+                            var len = response.length;
+                            for (var i = 0; i < len; i++) {
+                                var productos_codigo = response[i].productos_codigo;
+                                var productos_nombre = response[i].productos_nombre;
+                                var productos_cantidad = response[i].productos_cantidad;
+
+                                var tr_str = "<tr>" +
+                                    "<td align='left'>" + productos_codigo + "</td>" +
+                                    "<td align='left'>" + productos_nombre + "</td>" +
+                                    "<td align='left'>" + productos_cantidad + "</td>" +
+                                    "</tr>";
+                                $("#listaProductoCompra").append(tr_str);
+                                $("#listaProductoCompra").show();
+                            }
+                            console.log(res);
+                            //$("#listaProductoCompra").html(data);
+                            //$('#listaProductoCompra').show();
+                        }
+                    });
+                } else {
+                    console.log('no hay nada');
+                    $("#listaProductoCompra").hide();
+                    $("#listaProductoCompra").html('');
+                }
+            });
+        });
+    </script>
 
 </body>
 

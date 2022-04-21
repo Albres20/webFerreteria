@@ -20,6 +20,8 @@ class Success{
     const SUCCESS_ADMIN_NEWCATEGORY = "7085d129f6bae935bc430885bbf2a25e";
     
     const SUCCESS_CLIENTE_NEWUSER = "2be8ec3653049b96e4faaf9b058050af";
+
+    const SUCCESS_ADMIN_DELETEUSER = "be76225b21ae9972f5ea1bbc805eb348";
     
     private $successList = [];
 
@@ -39,6 +41,8 @@ class Success{
             Success::SUCCESS_ADMIN_NEWCATEGORY => "Categoria registrada correctamente",
 
             Success::SUCCESS_CLIENTE_NEWUSER => "Cliente / Proveedor registrado correctamente",
+
+            Success::SUCCESS_ADMIN_DELETEUSER => "Usuario eliminado correctamente",
         ];
     }
 

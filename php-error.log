@@ -1,0 +1,66 @@
+[21-Apr-2022 15:56:41 Europe/Berlin] Hello, errors!
+[21-Apr-2022 15:56:41 Europe/Berlin] SessionController::validateSession()
+[21-Apr-2022 15:56:41 Europe/Berlin] sessionController::getUserSessionData(): moises
+[21-Apr-2022 15:56:41 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[21-Apr-2022 15:56:41 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[21-Apr-2022 15:56:41 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[21-Apr-2022 15:56:41 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[21-Apr-2022 15:56:41 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[21-Apr-2022 15:56:41 Europe/Berlin] sessionController::getUserSessionData(): moises
+[21-Apr-2022 15:56:41 Europe/Berlin] Gestion de usuarios ::constructor() 
+[21-Apr-2022 15:56:41 Europe/Berlin] Gestion de usuarios::RENDER() 
+[21-Apr-2022 15:56:41 Europe/Berlin] SessionController::validateSession()
+[21-Apr-2022 15:56:41 Europe/Berlin] sessionController::getUserSessionData(): moises
+[21-Apr-2022 15:56:41 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[21-Apr-2022 15:56:41 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[21-Apr-2022 15:56:41 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[21-Apr-2022 15:56:41 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[21-Apr-2022 15:56:41 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[21-Apr-2022 15:56:41 Europe/Berlin] sessionController::getUserSessionData(): moises
+[21-Apr-2022 15:56:41 Europe/Berlin] Gestion de usuarios ::constructor() 
+[21-Apr-2022 15:56:41 Europe/Berlin] Admin::newUsuarios()
+[21-Apr-2022 15:56:41 Europe/Berlin] ExistPOST: No existe el parametro username
+[21-Apr-2022 16:07:27 Europe/Berlin] Hello, errors!
+[21-Apr-2022 16:07:27 Europe/Berlin] SessionController::validateSession()
+[21-Apr-2022 16:07:27 Europe/Berlin] sessionController::getUserSessionData(): moises
+[21-Apr-2022 16:07:27 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[21-Apr-2022 16:07:27 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[21-Apr-2022 16:07:27 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[21-Apr-2022 16:07:27 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[21-Apr-2022 16:07:27 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[21-Apr-2022 16:07:27 Europe/Berlin] sessionController::getUserSessionData(): moises
+[21-Apr-2022 16:07:27 Europe/Berlin] Gestion de usuarios ::constructor() 
+[21-Apr-2022 16:07:27 Europe/Berlin] Gestion de usuarios::RENDER() 
+[21-Apr-2022 16:07:27 Europe/Berlin] SessionController::validateSession()
+[21-Apr-2022 16:07:27 Europe/Berlin] sessionController::getUserSessionData(): moises
+[21-Apr-2022 16:07:27 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[21-Apr-2022 16:07:27 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[21-Apr-2022 16:07:27 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[21-Apr-2022 16:07:27 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[21-Apr-2022 16:07:27 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[21-Apr-2022 16:07:27 Europe/Berlin] sessionController::getUserSessionData(): moises
+[21-Apr-2022 16:07:27 Europe/Berlin] Gestion de usuarios ::constructor() 
+[21-Apr-2022 16:07:27 Europe/Berlin] Admin::newUsuarios()
+[21-Apr-2022 16:07:27 Europe/Berlin] ExistPOST: No existe el parametro username
+[21-Apr-2022 16:10:29 Europe/Berlin] Hello, errors!
+[21-Apr-2022 16:10:29 Europe/Berlin] SessionController::validateSession()
+[21-Apr-2022 16:10:29 Europe/Berlin] sessionController::getUserSessionData(): moises
+[21-Apr-2022 16:10:29 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[21-Apr-2022 16:10:29 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[21-Apr-2022 16:10:29 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[21-Apr-2022 16:10:29 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[21-Apr-2022 16:10:29 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[21-Apr-2022 16:10:29 Europe/Berlin] sessionController::getUserSessionData(): moises
+[21-Apr-2022 16:10:29 Europe/Berlin] Gestion de usuarios ::constructor() 
+[21-Apr-2022 16:10:29 Europe/Berlin] Gestion de usuarios::RENDER() 
+[21-Apr-2022 16:10:29 Europe/Berlin] SessionController::validateSession()
+[21-Apr-2022 16:10:29 Europe/Berlin] sessionController::getUserSessionData(): moises
+[21-Apr-2022 16:10:29 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[21-Apr-2022 16:10:29 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[21-Apr-2022 16:10:29 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[21-Apr-2022 16:10:29 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[21-Apr-2022 16:10:29 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[21-Apr-2022 16:10:29 Europe/Berlin] sessionController::getUserSessionData(): moises
+[21-Apr-2022 16:10:29 Europe/Berlin] Gestion de usuarios ::constructor() 
+[21-Apr-2022 16:10:29 Europe/Berlin] Admin::newUsuarios()
+[21-Apr-2022 16:10:29 Europe/Berlin] ExistPOST: No existe el parametro username

@@ -23,19 +23,6 @@ class Usuarios extends SessionController{
         //$this->view->render('admin/usuarios');
     }
 
-    // private function getUsuariosDB(){
-    //     $res = [];
-
-    //     $userModel = new UserModel();
-    //     $users = $userModel->getAll();
-
-    //     $res['count-users'] = count($users);
-    //     return $res;
-    // }
-    // function createUsuarios(){
-    //     $this->view->render('admin/crearusuariomodal');
-    // }
-
     // devuelve el JSON para las llamadas AJAX
     function getUsuariosJSON()
     {
@@ -96,6 +83,30 @@ class Usuarios extends SessionController{
         //$res = array_values(array_unique($res));
 
         return $res;
+    }
+    /////////////////////////////////////////////
+    //ACTUALIZAR USUARIO
+    /////////////////////////////////////////////
+
+    function updateUsuario(){}
+
+    function delete($params){
+        error_log("usuarios::delete()");
+        
+        if($params === NULL) $this->redirect('usuarios', ['error' => Errors::ERROR_ADMIN_DELETEUSER]);
+        $id = $params[0];
+        error_log("usuarios::delete() id = " . $id);
+        $userModel = new UserModel();
+        //$res = $userModel->delete($id);
+
+        if($userModel->existsID($id)){
+            $userModel->delete($id);
+            $this->redirect('usuarios', ['success' => Success::SUCCESS_ADMIN_DELETEUSER]);
+            //$this->redirect('usuarios', ['success' => Success::SUCCESS_EXPENSES_DELETE]);
+        }else{
+            $this->redirect('usuarios', ['error' => Errors::ERROR_ADMIN_DELETEUSER]);
+            //$this->redirect('usuarios', ['error' => Errors::ERROR_ADMIN_NEWCATEGORY_EXISTS]);
+        }
     }
 }
 

@@ -39,6 +39,8 @@ class Errors{
     const ERROR_CLIENTENOM_NEWUSER_EXISTS      = "8b89a8f6c838503a06cb31285358db07";
     const ERROR_SIGNUP_NEWCLIENTE_FAILED       = "4b652e6611c638275e33cb1e6e3fd53e";
 
+    const ERROR_ADMIN_DELETEUSER               = "ef29f2baaee1461dc27bfc9aeec25290";
+
 
     private $errorsList = [];
 
@@ -77,6 +79,8 @@ class Errors{
             Errors::ERROR_CLIENTENUM_NEWUSER_EXISTS => 'El número de documento ya existe, selecciona otro',
             Errors::ERROR_CLIENTENOM_NEWUSER_EXISTS => 'El nombre de cliente / proveedor ya existe, selecciona otro',
             Errors::ERROR_SIGNUP_NEWCLIENTE_FAILED => 'Hubo un error al intentar registrar. Intenta de nuevo',
+
+            Errors::ERROR_ADMIN_DELETEUSER         => 'Hubo un error al intentar eliminar el usuario',
         ];
     }
 

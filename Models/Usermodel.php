@@ -239,6 +239,22 @@ class UserModel extends Model implements IModel{
         }
     }
 
+    public function existsID($id){
+        try{
+            $query = $this->prepare('SELECT id FROM usuarios WHERE id = :id');
+            $query->execute( ['id' => $id]);
+            
+            if($query->rowCount() > 0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(PDOException $e){
+            echo $e;
+            return false;
+        }
+    }
+
     public function from($array){
         $this->id = $array['id'];
         $this->username = $array['username'];

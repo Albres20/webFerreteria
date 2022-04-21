@@ -123,9 +123,8 @@ $usuarios = $this->d['usuarios'];
                                                 <?php } ?>
 
                                                 <td class="table-action">
-                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                    <a href="http://localhost/webFerreteria/usuarios/delete/<?php echo $usuario['usuario']->getId(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                    <a role="button" data-bs-toggle="modal" data-bs-target="#modalEditarUsuario" class="action-icon" title="Actualizar usuario"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="http://localhost/webFerreteria/usuarios/delete/<?php echo $usuario['usuario']->getId(); ?> " title="Eliminar usuario" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -257,6 +256,81 @@ $usuarios = $this->d['usuarios'];
 
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+    <!--=====================================
+    MODAL EDITAR USUARIO
+    ======================================-->
+    <!-- Standard modal -->
+    <div id="modalEditarUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="formupdateuser" name="formupdateuser" action="usuarios/updateUsuario" class="needs-validation" method="POST" novalidate>
+
+                    <div class="modal-header modal-colored-header bg-danger">
+                        <h4 class="modal-title" id="primary-header-modalLabel">Editar usuario</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="position-relative mb-3">
+                            <label class="form-label" for="validationTooltipUsername">Usuario</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                                <input type="text" class="form-control" id="validationTooltipUsername" name="username" placeholder="Usuario" aria-describedby="validationTooltipUsernamePrepend" required>
+                                <div class="invalid-tooltip">
+                                    Proporcine un nombre de usuario único y válido.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-relative mb-3">
+                            <label class="form-label" for="validationTooltip02">Nombre Completo</label>
+                            <input type="text" class="form-control" id="validationTooltip02" name="fullname" placeholder="Nombre Completo" required>
+                            <div class="invalid-tooltip">
+                                Proporcione su nombre completo.
+                            </div>
+                        </div>
+                        <div class="position-relative mb-3">
+                            <label class="form-label" for="validationTooltip03">Correo</label>
+                            <input type="text" class="form-control" id="validationTooltip03" name="email" placeholder="Correo" required>
+                            <div class="invalid-tooltip">
+                                Proporcione un correo válido.
+                            </div>
+                        </div>
+                        <div class="position-relative mb-3">
+                            <label class="form-label" for="validationTooltip04">Acceso</label>
+                            <select class="form-select" id="validationTooltip04" name="role" required>
+                                <option value="">Seleccione una opción</option>
+                                <option value="admin">Administrador</option>
+                                <option value="logistica">Logistica</option>
+                                <option value="caja">Cajero</option>
+                            </select>
+                            <div class="invalid-tooltip">
+                                Proporcione un acceso de usuario válido.
+                            </div>
+                        </div>
+                        <div class="position-relative mb-3">
+                            <label class="form-label" for="validationTooltip05">Estado</label>
+                            <select class="form-select" id="validationTooltip05" name="estado" required>
+                                <option value="">Seleccione una opción</option>
+                                <option value="1">Activo</option>
+                                <option value="0">Inactivo</option>
+                            </select>
+                            <div class="invalid-tooltip">
+                                Proporcione un estado de usuario válido.
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-danger">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    
 
 
     </div>

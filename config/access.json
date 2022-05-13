@@ -83,6 +83,11 @@
             "site": "perfil",
             "access": "private",
             "role": "admin"
+        },
+        {
+            "site": "configuracion",
+            "access": "private",
+            "role": "admin"
         }
     ],
 

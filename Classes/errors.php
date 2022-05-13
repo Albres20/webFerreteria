@@ -41,6 +41,11 @@ class Errors{
 
     const ERROR_ADMIN_DELETEUSER               = "ef29f2baaee1461dc27bfc9aeec25290";
 
+    const ERROR_EMPRESA_UPDATEPHOTO_FORMAT    = "53f3554f0533aa9f20fbf46bd5328430";
+    const ERROR_EMPRESA_UPDATEPHOTO       = "dfb4dc6544b0dae81ea132de667b2a5d";
+    const ERROR_EMPRESA_UPDATENAME        = "98217b0c263b136bf14925994ca7a0aa";
+    const ERROR_EMPRESA_UPDATEDIRECCION  = "fbf456a4c3eca1362a4282fc3e5430e3";
+
 
     private $errorsList = [];
 
@@ -81,6 +86,11 @@ class Errors{
             Errors::ERROR_SIGNUP_NEWCLIENTE_FAILED => 'Hubo un error al intentar registrar. Intenta de nuevo',
 
             Errors::ERROR_ADMIN_DELETEUSER         => 'Hubo un error al intentar eliminar el usuario',
+
+            Errors::ERROR_EMPRESA_UPDATEPHOTO_FORMAT => 'El archivo no es una imagen',
+            Errors::ERROR_EMPRESA_UPDATEPHOTO       => 'Hubo un error al actualizar la foto',
+            Errors::ERROR_EMPRESA_UPDATENAME        => 'Hubo un error al actualizar el nombre o razon social',
+            Errors::ERROR_EMPRESA_UPDATEDIRECCION  => 'Hubo un error al actualizar la dirección',
         ];
     }
 

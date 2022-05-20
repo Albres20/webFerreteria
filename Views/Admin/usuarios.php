@@ -62,7 +62,7 @@ $usuarios = $this->d['usuarios'];
                         <div class="card-body">
                             <div class="row mb-2">
                                 <div class="col-sm-4">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarUsuario" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo usuario</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalCRUD" class="btn btn-danger mb-2" value="btnNuevo"><i class="mdi mdi-plus-circle me-2"></i> Nuevo usuario</button>
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="text-sm-end">
@@ -122,10 +122,7 @@ $usuarios = $this->d['usuarios'];
                                                     <?php echo '<td><span class="badge bg-danger">Inactivo</span></td>' ?>
                                                 <?php } ?>
 
-                                                <td class="table-action">
-                                                    <a role="button" data-bs-toggle="modal" data-bs-target="#modalEditarUsuario" class="action-icon" title="Actualizar usuario"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                    <a href="http://localhost/webFerreteria/usuarios/delete/<?php echo $usuario['usuario']->getId(); ?> " title="Eliminar usuario" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                                </td>
+                                                <td class="table-action"></td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
@@ -168,16 +165,16 @@ $usuarios = $this->d['usuarios'];
     <!-- End Page content -->
     <!-- ============================================================== -->
     <!--=====================================
-    MODAL AGREGAR USUARIO
+    MODAL USUARIO
     ======================================-->
     <!-- Standard modal -->
-    <div id="modalAgregarUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
+    <div id="modalCRUD" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form id="formnewuser" name="formnewuser" action="usuarios/newUsuarios" class="needs-validation" method="POST" novalidate>
+                <form id="formuser" class="needs-validation" method="POST" novalidate>
 
                     <div class="modal-header modal-colored-header bg-danger">
-                        <h4 class="modal-title" id="primary-header-modalLabel">Nuevo usuario</h4>
+                        <h4 class="modal-title" id="primary-header-modalLabel"></h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
@@ -191,7 +188,7 @@ $usuarios = $this->d['usuarios'];
                                 </div>
                             </div>
                         </div>
-                        <div class="position-relative mb-3">
+                        <div class="position-relative mb-3 passw">
                             <label class="form-label" for="validationTooltip01">Mostrar/Ocultar contraseña</label>
                             <div class="input-group">
                                 <input type="password" class="form-control" id="validationTooltip01" name="password" placeholder="Contraseña" required>
@@ -242,85 +239,7 @@ $usuarios = $this->d['usuarios'];
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-danger">Guardar</button>
-                        </div>
-                    </div>
-                    <?php
-                    //$newusuarios = newUsuarios();
-                    $crearUsuario = new Usuarios();
-                    $crearUsuario->newUsuarios();
-
-                    ?>
-                </form>
-            </div><!-- /.modal-content -->
-
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <!--=====================================
-    MODAL EDITAR USUARIO
-    ======================================-->
-    <!-- Standard modal -->
-    <div id="modalEditarUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form id="formupdateuser" name="formupdateuser" action="usuarios/updateUsuario" class="needs-validation" method="POST" novalidate>
-
-                    <div class="modal-header modal-colored-header bg-danger">
-                        <h4 class="modal-title" id="primary-header-modalLabel">Editar usuario</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltipUsername">Usuario</label>
-                            <div class="input-group">
-                                <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-                                <input type="text" class="form-control" id="validationTooltipUsername" name="username" placeholder="Usuario" aria-describedby="validationTooltipUsernamePrepend" required>
-                                <div class="invalid-tooltip">
-                                    Proporcine un nombre de usuario único y válido.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip02">Nombre Completo</label>
-                            <input type="text" class="form-control" id="validationTooltip02" name="fullname" placeholder="Nombre Completo" required>
-                            <div class="invalid-tooltip">
-                                Proporcione su nombre completo.
-                            </div>
-                        </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip03">Correo</label>
-                            <input type="text" class="form-control" id="validationTooltip03" name="email" placeholder="Correo" required>
-                            <div class="invalid-tooltip">
-                                Proporcione un correo válido.
-                            </div>
-                        </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip04">Acceso</label>
-                            <select class="form-select" id="validationTooltip04" name="role" required>
-                                <option value="">Seleccione una opción</option>
-                                <option value="admin">Administrador</option>
-                                <option value="logistica">Logistica</option>
-                                <option value="caja">Cajero</option>
-                            </select>
-                            <div class="invalid-tooltip">
-                                Proporcione un acceso de usuario válido.
-                            </div>
-                        </div>
-                        <div class="position-relative mb-3">
-                            <label class="form-label" for="validationTooltip05">Estado</label>
-                            <select class="form-select" id="validationTooltip05" name="estado" required>
-                                <option value="">Seleccione una opción</option>
-                                <option value="1">Activo</option>
-                                <option value="0">Inactivo</option>
-                            </select>
-                            <div class="invalid-tooltip">
-                                Proporcione un estado de usuario válido.
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-danger">Guardar</button>
+                            <button type="submit" class="btn btnGuardar">Guardar</button>
                         </div>
                     </div>
                 </form>
@@ -328,10 +247,6 @@ $usuarios = $this->d['usuarios'];
 
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-
-
-    
-
 
     </div>
     <!-- END wrapper -->
@@ -351,7 +266,8 @@ $usuarios = $this->d['usuarios'];
     <script src="<?php echo URL . RQ ?>assets/js/vendor/responsive.bootstrap5.min.js"></script>
     <script src="<?php echo URL . RQ ?>assets/js/vendor/dataTables.checkboxes.min.js"></script>
 
-    <!-- third party js ends -->
+    <!-- sweetalert2 -->
+    <script src="<?php echo URL . RQ ?>js/sweetalert2/sweetalert2.all.js"></script>
 
     <!-- demo app -->
     <script src="<?php echo URL . RQ ?>assets/js/pages/demo.users.js"></script>

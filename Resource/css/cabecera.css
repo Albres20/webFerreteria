@@ -1,194 +1,33 @@
-* {
-    margin: 0px;
-    padding: 0px;
+/* ESTILOS GENERALES */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
 }
 
-header .contenedor {
-    background: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-header .contenedor .nombreTitulo {
-    color: rgb(255, 255, 255);
-    font-size: 50px;
-    width: 22%;
-    margin-top: 30px;
-}
-
-header .contenedor .logo {
-    margin-top: 30px;
-}
-
-header .contenedor .logo img {
-    width: 150px;
-    padding: 0px 0px;
-    filter: brightness(1500%);
-}
-
-header .franjaInferior {
-    background: #000692;
-    height: 30px;
-    margin-bottom: 0px;
-}
-
-
-/*Cuerpo*/
-
-body .contenedorCuerpo {
-    margin-top: 0px;
-    background: url("../image/fondoLogin.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+body {
+    background: url(../image/herramientas.jpg) no-repeat center center fixed;
     background-size: cover;
-    display: flex;
-    justify-content: center;
 }
 
-body .contenedorCuerpo .contenedorLogin {
-    background: rgba(0, 0, 0, .5);
-    width: 30%;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    border-radius: 30px;
+#particles-js {
+	height: 100vh; 
+	width: 100%;
+    position: fixed;
+    z-index: -1;
 }
 
-body .contenedorCuerpo .contenedorLogin .logoLogin {
-    justify-content: center;
-    text-align: center;
-    margin-top: 50px;
+body .container img{
+    padding-top: 85px;
+    padding-bottom: 85px;
+}
+.detalleImagen{
+    background: rgb(35, 8, 88);
+    
+    border-top: #fff solid 0.1px;
+    border-left: #fff solid 0.1px;
+    border-bottom: #fff solid 0.1px;
+    border-radius: 20px 0px 0px 25px;
+    
 }
 
-body .contenedorCuerpo .contenedorLogin .logoLogin img:hover {
-    width: 310px;
-}
-
-body .contenedorCuerpo .contenedorLogin .form {
-    margin: 20px 10px;
-    text-align: center;
-}
-
-body .contenedorCuerpo .contenedorLogin .form .user {
-    width: 100%;
-    display: inline-block;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 20px;
-}
-
-body .contenedorCuerpo .contenedorLogin .form .pass {
-    width: 100%;
-    display: inline-block;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 20px;
-}
-
-body .contenedorCuerpo .contenedorLogin .form .btn {
-    width: 100%;
-    display: inline-block;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 70px;
-}
-
-body .contenedorCuerpo .contenedorLogin .form button {
-    width: 40%;
-    height: 40px;
-    border-radius: 12px;
-    background: rgba(223, 89, 32, 2.0);
-    border: none;
-    color: white;
-    font-size: 25px;
-}
-
-body .contenedorCuerpo .contenedorLogin .form input {
-    width: 50%;
-    height: 40px;
-    border-radius: 12px;
-    text-align: center;
-    border: none;
-}
-
-
-/*pie de pagina*/
-
-.footer-style {
-    padding-top: 20px;
-    background: rgb(0, 0, 0);
-}
-
-footer {
-    color: white;
-}
-
-@media(max-width: 1370px) {
-    header .contenedor .nombreTitulo {
-        color: rgb(255, 255, 255);
-        font-size: 35px;
-        width: 22%;
-        margin-top: 20px;
-    }
-    header .contenedor .logo {
-        margin-top: 0px;
-    }
-    header .contenedor .logo img {
-        width: 150px;
-        padding: 0px 0px;
-        filter: brightness(1500%);
-    }
-    body .contenedorCuerpo .contenedorLogin {
-        background: rgba(0, 0, 0, .5);
-        width: 25%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        border-radius: 30px;
-    }
-    body .contenedorCuerpo .contenedorLogin .logoLogin {
-        justify-content: center;
-        text-align: center;
-        margin-top: 20px;
-    }
-    body .contenedorCuerpo .contenedorLogin .logoLogin img {
-        width: 200px;
-    }
-    body .contenedorCuerpo .contenedorLogin .logoLogin img:hover {
-        width: 210px;
-        text-align: center;
-        justify-content: center;
-        margin-bottom: -5px;
-    }
-    body .contenedorCuerpo .contenedorLogin .form input {
-        width: 80%;
-        height: 40px;
-        border-radius: 12px;
-        text-align: center;
-        border: none;
-    }
-    body .contenedorCuerpo .contenedorLogin .form .btn {
-        width: 100%;
-        display: inline-block;
-        justify-content: center;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    body .contenedorCuerpo .contenedorLogin .form button {
-        width: 50%;
-        height: 40px;
-        border-radius: 12px;
-        background: rgba(223, 89, 32, 2.0);
-        border: none;
-        color: white;
-        font-size: 20px;
-    }
-}
-
-@media(min-width: 1920px) {
-    footer {
-        height: calc(100vh - 130px - 120px);
-    }
-}

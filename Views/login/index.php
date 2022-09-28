@@ -1,106 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+    <title>Hyt-Trading</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="<?php echo URL.RQ?>image/logoht.png">
+    <meta content="Hyt-Trading" name="author">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="<?php echo URL . RQ ?>assets/images/favicon.ico">
     
     <title>Hyt-Trading</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo URL.RQ?>css/bootstrap/bootstrap.min.css">
+    <!-- App css -->
+    <link href="<?php echo URL . RQ ?>assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo URL . RQ ?>assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
+    <link href="<?php echo URL . RQ ?>assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
     <!-- cabecera -->
-    <link rel="stylesheet" href="<?php echo URL.RQ?>css/cabecera.css">
+    <link href="<?php echo URL.RQ?>css/cabecera.css" rel="stylesheet">
     
 </head>
-<body>
-
-    <header>
-
-            <section class="contenedor">
-                <div class="nombreTitulo">
-                    TRADING E.I.R.L.
-                </div>
-                <div class="logo">
-                    <img src="https://hyt-trading.com/wp-content/uploads/2021/03/hyt-logo-inicio.png" >
-                </div>
-            </section>
-            <section class="franjaInferior">
-                
-            </section>
-    </header>
-    <section class="contenedorCuerpo">
-        <section class="contenedorLogin">
-            <div class="logoLogin">
-                <img src="https://hyt-trading.com/wp-content/uploads/2021/03/hyt-logo-inicio.png" width="300px">
-            </div>
-            <?php $this->showMessages();?>
-            <form action="<?php echo constant('URL'); ?>login/authenticate" method="POST" id="Session" name="Session" class="form">
-                <div><?php (isset($this->errorMessage))?  $this->errorMessage : '' ?></div>
-                <div class="user">
-                    <input name="username" id="username" type="text" placeholder="Usuario" autocomplete="off">
-                </div>
-                <div class="pass">
-                    <input name="password" id="password" type="password" placeholder="Contraseña">
-                </div>
-                <a href="#">¿Olvidé mi contraseña?</a>
-                <div class="btn">
-                    <button id="btnLogin" type="submit">Iniciar Sesión</button>
-                </div>
-                
-            </form>
-            
-        </section>
-    </section>
-    <footer class="text-center footer-style">
+<body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    <!-- ID Particles.js -->
+    <div id="particles-js"></div>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 footer-col">
-                <div class="localizacion">
-                        <i class="fa-solid fa-location-dot"></i>
+        <div class="row vh-100 align-items-center justify-content-center">
+            <div class="col-sm-8 col-md-6 col-lg-4 text-white  shadow detalleImagen d-none d-sm-block  d-sm-none d-md-block">
+                <div class="row justify-content-center align-items-center">
+                    <img src="https://hyt-trading.com/wp-content/uploads/2021/03/hyt-logo-inicio.png" alt="">
                 </div>
-                <ul class="list-inline">
-                    <li>
-                        <a  target="_blank" href="#" class="btn-social btn-outline"></a>Av. Jamaica Mza.M Lote 3<br>Urb. San Agustín 2da Etapa, Comas
-                    </li>
-                </ul>
-
             </div>
-            <div class="col-md-4 footer-col">
-                <div class="telefono">
-                    <i class="fa-solid fa-phone"></i>
+            <div class="col-sm-8 col-md-6 col-lg-4 bg-dark text-white rounded p-4 shadow">
+                <div class="row justify-content-center mb-4">
+                    <h3>TRADING E.I.R.L.</h3>
+                    <form action="<?php echo constant('URL'); ?>login/authenticate" method="POST" id="Session" name="Session" class="form">
+                        <div><?php (isset($this->errorMessage))?  $this->errorMessage : '' ?></div>
+                        <div class="mb-4">
+                            <label for="username" class="form-label">Usuario:</label>
+                            <input name="username" class="form-control" id="username" type="text" autocomplete="off">
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="form-label">Contraseña:</label>
+                            <div class="input-group input-group-merge">
+                                <input name="password" class="form-control" id="password" type="password">
+                                <div class="input-group-text" data-password="false">
+                                    <span class="password-eye"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="remember">
+                            <label for="remember" class="form-check-label">Recordar</label>
+                        </div>
+                        <button id="btnLogin" type="submit" class="btn btn-warning w-100">Iniciar Sesión</button>
+                    </form>
+                    <p class="mt-4 text-center"><a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+                    </p>
                 </div>
-                <ul class="list-inline">
-                    <li>
-                        <a  target="_blank" href="#" class="btn-social btn-outline"></a>987330113
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4 footer-col">
-                <div class="email">
-                    <i class="fa-solid fa-envelope"></i>
-                </div>
-                <ul class="list-inline">
-                    <li>
-                        <a  target="_blank" href="#" class="btn-social btn-outline"></a>ventas@hyt-trading.com
-                    </li>
-                </ul>
-
-
             </div>
         </div>
     </div>
-</footer>
 
     <!--=====================================
     PLUGINS DE JAVASCRIPT
     ======================================-->
-    <!-- bootstrap -->
-    <script src="<?php echo URL.RQ?>js/bootstrap/bootstrap.min.js"></script>
-    <!-- jQuery 3 -->
-    <script src="<?php echo URL.RQ?>js/jquery/dist/jquery.min.js"></script>
-    <!-- SweetAlert 2 -->
-    <script src="<?php echo URL.RQ?>js/sweetalert2/sweetalert2.all.js"></script>
-    <script src="https://kit.fontawesome.com/47fb3045a9.js" crossorigin="anonymous"></script>
+    <!-- bundle -->
+    <script src="<?php echo URL . RQ ?>assets/js/vendor.min.js"></script>
+    <script src="<?php echo URL . RQ ?>assets/js/app.min.js"></script>
+    <!-- particles.js -->
+    <script src="<?php echo URL.RQ?>js/login/particles.min.js"></script>
+    <script src="<?php echo URL.RQ?>js/login/app.js"></script>
+
 </body>
 </html>

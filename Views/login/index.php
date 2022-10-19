@@ -31,6 +31,7 @@
                 <div class="row justify-content-center mb-4">
                     <h3>TRADING E.I.R.L.</h3>
                     <form action="<?php echo constant('URL'); ?>login/authenticate" method="POST" id="Session" name="Session" class="form">
+                        <?php $this->showMessages();?>
                         <div><?php (isset($this->errorMessage))?  $this->errorMessage : '' ?></div>
                         <div class="mb-4">
                             <label for="username" class="form-label">Usuario:</label>

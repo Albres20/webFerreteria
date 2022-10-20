@@ -1,0 +1,183 @@
+[20-Oct-2022 03:43:05 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:05 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:43:05 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:05 Europe/Berlin] sessionController::validateSession(): username:marcos - role: caja
+[20-Oct-2022 03:43:05 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/nuevaVenta, url => nuevaVenta
+[20-Oct-2022 03:43:05 Europe/Berlin] sessionController::isPublic(): currentURL => nuevaVenta
+[20-Oct-2022 03:43:05 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/nuevaVenta, url => nuevaVenta
+[20-Oct-2022 03:43:05 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[20-Oct-2022 03:43:05 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:05 Europe/Berlin] Gestion de Nueva Venta ::constructor() 
+[20-Oct-2022 03:43:05 Europe/Berlin] Gestion de Nueva Venta ::RENDER() 
+[20-Oct-2022 03:43:05 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:05 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:43:05 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:05 Europe/Berlin] sessionController::validateSession(): username:marcos - role: caja
+[20-Oct-2022 03:43:05 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/caja, url => caja
+[20-Oct-2022 03:43:05 Europe/Berlin] sessionController::isPublic(): currentURL => caja
+[20-Oct-2022 03:43:05 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/caja, url => caja
+[20-Oct-2022 03:43:05 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[20-Oct-2022 03:43:05 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:05 Europe/Berlin] Caja::constructor() 
+[20-Oct-2022 03:43:05 Europe/Berlin] Caja::RENDER() 
+[20-Oct-2022 03:43:19 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:19 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:43:19 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:19 Europe/Berlin] sessionController::validateSession(): username:marcos - role: caja
+[20-Oct-2022 03:43:19 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[20-Oct-2022 03:43:19 Europe/Berlin] sessionController::isPublic(): currentURL => usuarios
+[20-Oct-2022 03:43:19 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/usuarios, url => usuarios
+[20-Oct-2022 03:43:19 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[20-Oct-2022 03:43:19 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:19 Europe/Berlin] Gestion de usuarios ::constructor() 
+[20-Oct-2022 03:43:19 Europe/Berlin] Gestion de usuarios::RENDER() 
+[20-Oct-2022 03:43:19 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:19 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:43:19 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:19 Europe/Berlin] sessionController::validateSession(): username:marcos - role: caja
+[20-Oct-2022 03:43:19 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/caja, url => caja
+[20-Oct-2022 03:43:19 Europe/Berlin] sessionController::isPublic(): currentURL => caja
+[20-Oct-2022 03:43:19 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/caja, url => caja
+[20-Oct-2022 03:43:19 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[20-Oct-2022 03:43:19 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:19 Europe/Berlin] Caja::constructor() 
+[20-Oct-2022 03:43:19 Europe/Berlin] Caja::RENDER() 
+[20-Oct-2022 03:43:25 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:25 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:43:25 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:25 Europe/Berlin] sessionController::validateSession(): username:marcos - role: caja
+[20-Oct-2022 03:43:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[20-Oct-2022 03:43:25 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[20-Oct-2022 03:43:25 Europe/Berlin] SessionController::validateSession() => sitio público, redirige al main de cada rol
+[20-Oct-2022 03:43:25 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:25 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:43:25 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:25 Europe/Berlin] sessionController::validateSession(): username:marcos - role: caja
+[20-Oct-2022 03:43:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/caja, url => caja
+[20-Oct-2022 03:43:25 Europe/Berlin] sessionController::isPublic(): currentURL => caja
+[20-Oct-2022 03:43:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/caja, url => caja
+[20-Oct-2022 03:43:25 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[20-Oct-2022 03:43:25 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:25 Europe/Berlin] Caja::constructor() 
+[20-Oct-2022 03:43:25 Europe/Berlin] Caja::RENDER() 
+[20-Oct-2022 03:43:32 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:37 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:37 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:43:37 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:37 Europe/Berlin] sessionController::validateSession(): username:marcos - role: caja
+[20-Oct-2022 03:43:37 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[20-Oct-2022 03:43:37 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[20-Oct-2022 03:43:37 Europe/Berlin] SessionController::validateSession() => sitio público, redirige al main de cada rol
+[20-Oct-2022 03:43:37 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:37 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:43:37 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:37 Europe/Berlin] sessionController::validateSession(): username:marcos - role: caja
+[20-Oct-2022 03:43:37 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/caja, url => caja
+[20-Oct-2022 03:43:37 Europe/Berlin] sessionController::isPublic(): currentURL => caja
+[20-Oct-2022 03:43:37 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/caja, url => caja
+[20-Oct-2022 03:43:37 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[20-Oct-2022 03:43:37 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:37 Europe/Berlin] Caja::constructor() 
+[20-Oct-2022 03:43:37 Europe/Berlin] Caja::RENDER() 
+[20-Oct-2022 03:43:44 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:44 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:43:44 Europe/Berlin] sessionController::getUserSessionData(): marcos
+[20-Oct-2022 03:43:44 Europe/Berlin] sessionController::validateSession(): username:marcos - role: caja
+[20-Oct-2022 03:43:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logout, url => logout
+[20-Oct-2022 03:43:44 Europe/Berlin] sessionController::isPublic(): currentURL => logout
+[20-Oct-2022 03:43:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logout, url => logout
+[20-Oct-2022 03:43:44 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[20-Oct-2022 03:43:44 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:44 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:43:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[20-Oct-2022 03:43:44 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[20-Oct-2022 03:43:44 Europe/Berlin] SessionController::validateSession() public page
+[20-Oct-2022 03:43:58 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:58 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login/authenticate, url => login
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[20-Oct-2022 03:43:58 Europe/Berlin] SessionController::validateSession() redirect al login
+[20-Oct-2022 03:43:58 Europe/Berlin] ExistPOST: Existen parámetros
+[20-Oct-2022 03:43:58 Europe/Berlin] login: inicio
+[20-Oct-2022 03:43:58 Europe/Berlin] login: user id 90
+[20-Oct-2022 03:43:58 Europe/Berlin] login: user estado valido 90 -> 1
+[20-Oct-2022 03:43:58 Europe/Berlin] login: password ok
+[19-Oct-2022 20:43:58 America/Bogota] Login::authenticate() passed
+[19-Oct-2022 20:43:58 America/Bogota] sessionController::initialize(): user: ana
+[19-Oct-2022 20:43:58 America/Bogota] sessionController::authorizeAccess(): role: logistica
+[20-Oct-2022 03:43:58 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:58 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::validateSession(): username:ana - role: logistica
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[20-Oct-2022 03:43:58 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:43:58 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:43:58 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::validateSession(): username:ana - role: logistica
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logistica, url => logistica
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::isPublic(): currentURL => logistica
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logistica, url => logistica
+[20-Oct-2022 03:43:58 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[20-Oct-2022 03:43:58 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:43:58 Europe/Berlin] Logistica::constructor()
+[20-Oct-2022 03:43:58 Europe/Berlin] Logistica::RENDER() 
+[20-Oct-2022 03:44:08 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:44:08 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:44:08 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:44:08 Europe/Berlin] sessionController::validateSession(): username:ana - role: logistica
+[20-Oct-2022 03:44:08 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/nuevaVenta, url => nuevaVenta
+[20-Oct-2022 03:44:08 Europe/Berlin] sessionController::isPublic(): currentURL => nuevaVenta
+[20-Oct-2022 03:44:08 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/nuevaVenta, url => nuevaVenta
+[20-Oct-2022 03:44:08 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[20-Oct-2022 03:44:08 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:44:08 Europe/Berlin] Gestion de Nueva Venta ::constructor() 
+[20-Oct-2022 03:44:08 Europe/Berlin] Gestion de Nueva Venta ::RENDER() 
+[20-Oct-2022 03:44:08 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:44:08 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:44:08 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:44:08 Europe/Berlin] sessionController::validateSession(): username:ana - role: logistica
+[20-Oct-2022 03:44:08 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logistica, url => logistica
+[20-Oct-2022 03:44:08 Europe/Berlin] sessionController::isPublic(): currentURL => logistica
+[20-Oct-2022 03:44:08 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logistica, url => logistica
+[20-Oct-2022 03:44:08 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[20-Oct-2022 03:44:08 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:44:08 Europe/Berlin] Logistica::constructor()
+[20-Oct-2022 03:44:08 Europe/Berlin] Logistica::RENDER() 
+[20-Oct-2022 03:44:15 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:44:15 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::validateSession(): username:ana - role: logistica
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/categorias, url => categorias
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::isPublic(): currentURL => categorias
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/categorias, url => categorias
+[20-Oct-2022 03:44:15 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:44:15 Europe/Berlin] Gestion de categorias ::constructor() 
+[20-Oct-2022 03:44:15 Europe/Berlin] Gestion de categorias::RENDER() 
+[20-Oct-2022 03:44:15 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::validateSession(): username:ana - role: logistica
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/categorias, url => categorias
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::isPublic(): currentURL => categorias
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/categorias, url => categorias
+[20-Oct-2022 03:44:15 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[20-Oct-2022 03:44:15 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\webFerreteria\views\admin\header.php:22) in C:\xampp\htdocs\webFerreteria\classes\sessionController.php on line 167
+[20-Oct-2022 03:44:15 Europe/Berlin] Hello, errors!
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:44:15 Europe/Berlin] Gestion de categorias ::constructor() 
+[20-Oct-2022 03:44:15 Europe/Berlin] Admin::newCategorias()
+[20-Oct-2022 03:44:15 Europe/Berlin] ExistPOST: No existe el parametro categorias_nombre
+[20-Oct-2022 03:44:15 Europe/Berlin] SessionController::validateSession()
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::validateSession(): username:ana - role: logistica
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logistica, url => logistica
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::isPublic(): currentURL => logistica
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logistica, url => logistica
+[20-Oct-2022 03:44:15 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[20-Oct-2022 03:44:15 Europe/Berlin] sessionController::getUserSessionData(): ana
+[20-Oct-2022 03:44:15 Europe/Berlin] Logistica::constructor()
+[20-Oct-2022 03:44:15 Europe/Berlin] Logistica::RENDER() 

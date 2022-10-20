@@ -24,26 +24,7 @@
                            <span> Inicio </span>
                        </a>
                    </li>
-                    <?php if ($user->getRole() == 'admin') { ?>
-                   <li class="side-nav-item">
-                       <a data-bs-toggle="collapse" href="#sidebarHYTcompras" aria-expanded="false" aria-controls="sidebarHYTcompras" class="side-nav-link">
-                           <i class="uil-wallet"></i>
-                           <span> Compras </span>
-                           <span class="menu-arrow"></span>
-                       </a>
-                       <div class="collapse" id="sidebarHYTcompras">
-                           <ul class="side-nav-second-level">
-                               <li>
-                                   <a href="nuevaCompra">Nueva compra</a>
-                               </li>
-                               <li>
-                                   <a href="historialCompras">Historial de compras</a>
-                               </li>
-                           </ul>
-                       </div>
-                   </li>
-                    <?php } ?>
-                    <?php if ($user->getRole() == 'admin' || $user->getRole() == 'caja') { ?>
+
                    <li class="side-nav-item">
                        <a data-bs-toggle="collapse" href="#sidebarHYTventas" aria-expanded="false" aria-controls="sidebarHYTventas" class="side-nav-link">
                            <i class="uil-shopping-cart-alt"></i>
@@ -61,68 +42,48 @@
                                <!-- <li>
                                    <a href="#">Seguimiento de venta</a>
                                </li> -->
-                               <?php if ($user->getRole() == 'admin') { ?>
                                <li>
                                    <a href="historialFacturas">Facturación</a>
                                </li>
-                               <?php } ?>
                                <li>
                                    <a href="historialCotizaciones">Cotizaciones <span class="badge rounded-pill badge-success-lighten font-10 float-end">New</span></a>
                                </li>
                            </ul>
                        </div>
                    </li>
-                   <?php } ?>
-                   <?php if ($user->getRole() == 'admin' || $user->getRole() == 'logistica') { ?>
+
                    <li class="side-nav-item">
                        <a href="productos" class="side-nav-link">
                            <i class="uil-tag-alt"></i>
                            <span> Productos </span>
                        </a>
                    </li>
-                   
                    <li class="side-nav-item">
                        <a href="categorias" class="side-nav-link">
                            <i class="uil-bag"></i>
                            <span> Categorias </span>
                        </a>
                    </li>
-                   <?php } ?>
                    <li class="side-nav-item">
                        <a href="clienteProveedor" class="side-nav-link">
                            <i class="uil-user-square"></i>
                            <span> Clientes / Proveedores </span>
                        </a>
                    </li>
-                   <?php if ($user->getRole() == 'admin') { ?>
+
                    <li class="side-nav-item">
                        <a href="#" class="side-nav-link">
                            <i class="uil-chart"></i>
                            <span> Reportes </span>
                        </a>
                    </li>
-                   
-                   <li class="side-nav-item">
-                       <a href="usuarios" class="side-nav-link">
-                           <i class="uil-users-alt"></i>
-                           <span> Usuarios </span>
-                       </a>
-                   </li>
-                   <?php } ?>
+
                    <li class="side-nav-item">
                        <a href="./perfil" class="side-nav-link">
                            <i class="uil-user"></i>
                            <span> Perfil </span>
                        </a>
                    </li>
-                   <?php if ($user->getRole() == 'admin') { ?>
-                   <li class="side-nav-item">
-                       <a href="configuracion" class="side-nav-link">
-                           <i class="uil-bright"></i>
-                           <span> Configuración </span>
-                       </a>
-                   </li>
-                   <?php } ?>
 
                </ul>
                <!-- End Sidebar -->

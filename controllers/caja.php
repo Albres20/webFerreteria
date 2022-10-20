@@ -26,7 +26,9 @@ class Caja extends SessionController{
             'maxExpensesThisMonth' => $maxExpensesThisMonth,
             'categories'           => $categories
         ]);*/
-        $this->view->render('caja/index');
+        $this->view->render('caja/index', [
+            'user' => $this->user
+        ]);
     }
     
     //obtiene la lista de expenses y $n tiene el número de expenses por transacción

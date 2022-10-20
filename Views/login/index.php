@@ -52,7 +52,7 @@
                         </div>
                         <button id="btnLogin" type="submit" class="btn btn-warning w-100">Iniciar Sesión</button>
                     </form>
-                    <p class="mt-4 text-center"><a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+                    <p class="mt-4 text-center"><a href="recoverpw" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
                     </p>
                 </div>
             </div>

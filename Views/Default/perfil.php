@@ -31,7 +31,7 @@ $user = $this->d['user'];
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
     <!-- Begin page -->
     <div class="wrapper">
-        <?php include_once 'header.php'; ?>
+        <?php include 'header.php'; ?>
         <!-- end Topbar -->
 
         <!-- Start Content-->
@@ -225,7 +225,7 @@ $user = $this->d['user'];
                 <div class="col-md-6">
                     <script>
                         document.write(new Date().getFullYear())
-                    </script> © Hyper - Coderthemes.com
+                    </script> © Hyt - Trading
                 </div>
                 <div class="col-md-6">
                     <div class="text-md-end footer-links d-none d-md-block">

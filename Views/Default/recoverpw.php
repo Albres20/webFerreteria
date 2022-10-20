@@ -27,23 +27,38 @@
                         <!-- Logo -->
                         <div class="card-header text-center bg-dark">
                             <a href="#">
-                                <span><img src="<?php echo URL . RQ ?>image/logoht.png" alt="logo" height="90"></span>
+                                <span><img src="<?php echo URL . RQ ?>image/logoht.png" alt="logo" height="80"></span>
                             </a>
                         </div>
 
                         <div class="card-body p-4">
-                            <div class="text-center">
-                                <h1 class="text-error" style="color:#6c757d;">4<i class="mdi mdi-emoticon-sad"></i>4</h1>
-                                <h4 class="text-uppercase text-danger mt-3">Página no encontrada</h4>
-                                <p class="text-muted mt-3">Parece que te has equivocado de camino. No te preocupes... eso
-                                    nos pasa a los mejores. Aquí está un
-                                    pequeño consejo que podría ayudarte a retomar el rumbo.</p>
 
-                                <a class="btn btn-dark mt-3" href="<?php echo URL ?>"><i class="mdi mdi-reply"></i> Regresa a casa</a>
+                            <div class="text-center w-75 m-auto">
+                                <h4 class="text-dark-50 text-center mt-0 fw-bold">Restablecer la contraseña</h4>
+                                <p class="text-muted mb-4">Ingrese su dirección de correo electrónico y le enviaremos un correo electrónico con instrucciones para restablecer su contraseña.</p>
                             </div>
+
+                            <form action="#">
+                                <div class="mb-3">
+                                    <label for="emailaddress" class="form-label">Correo electrónico</label>
+                                    <input class="form-control" type="email" id="emailaddress" required="" placeholder="Introduce tu correo electrónico">
+                                </div>
+
+                                <div class="mb-0 text-center">
+                                    <button class="btn btn-dark" type="submit">Restablecer la contraseña</button>
+                                </div>
+                            </form>
                         </div> <!-- end card-body-->
                     </div>
                     <!-- end card -->
+
+                    <div class="row mt-3">
+                        <div class="col-12 text-center">
+                            <p class="text-muted">Regresar a <a href="login" class="text-muted ms-1"><b>Iniciar Sesión</b></a></p>
+                        </div> <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
                 </div> <!-- end col -->
             </div>
             <!-- end row -->

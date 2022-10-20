@@ -1,9 +1,11 @@
 <?php
+
 /**
  * Controlador que también maneja las sesiones
  */
-class SessionController extends Controller{
-    
+class SessionController extends Controller
+{
+
     private $userSession;
     private $username;
     private $userid;
@@ -12,29 +14,34 @@ class SessionController extends Controller{
     private $sites;
 
     private $user;
- 
-    function __construct(){
+
+    function __construct()
+    {
         parent::__construct();
 
         $this->init();
     }
 
-    public function getUserSession(){
+    public function getUserSession()
+    {
         return $this->userSession;
     }
 
-    public function getUsername(){
+    public function getUsername()
+    {
         return $this->username;
     }
 
-    public function getUserId(){
+    public function getUserId()
+    {
         return $this->userid;
     }
 
     /**
      * Inicializa el parser para leer el .json
      */
-    private function init(){
+    private function init()
+    {
         //se crea nueva sesión
         $this->session = new Session();
         //se carga el archivo json con la configuración de acceso
@@ -50,7 +57,8 @@ class SessionController extends Controller{
     /**
      * Abre el archivo JSON y regresa el resultado decodificado
      */
-    private function getJSONFileConfig(){
+    private function getJSONFileConfig()
+    {
         $string = file_get_contents("config/access.json");
         $json = json_decode($string, true);
 
@@ -61,40 +69,41 @@ class SessionController extends Controller{
      * Implementa el flujo de autorización
      * para entrar a las páginas
      */
-    function validateSession(){
+    function validateSession()
+    {
         error_log('SessionController::validateSession()');
         //Si existe la sesión
-        if($this->existsSession()){
+        if ($this->existsSession()) {
             $role = $this->getUserSessionData()->getRole();
 
             error_log("sessionController::validateSession(): username:" . $this->user->getUsername() . " - role: " . $this->user->getRole());
-            if($this->isPublic()){
+            if ($this->isPublic()) {
                 $this->redirectDefaultSiteByRole($role);
-                error_log( "SessionController::validateSession() => sitio público, redirige al main de cada rol" );
-            }else{
-                if($this->isAuthorized($role)){
-                    error_log( "SessionController::validateSession() => autorizado, lo deja pasar" );
+                error_log("SessionController::validateSession() => sitio público, redirige al main de cada rol");
+            } else {
+                if ($this->isAuthorized($role)) {
+                    error_log("SessionController::validateSession() => autorizado, lo deja pasar");
                     //si el usuario está en una página de acuerdo
                     // a sus permisos termina el flujo
-                }else{
-                    error_log( "SessionController::validateSession() => no autorizado, redirige al main de cada rol" );
+                } else {
+                    error_log("SessionController::validateSession() => no autorizado, redirige al main de cada rol");
                     // si el usuario no tiene permiso para estar en
                     // esa página lo redirije a la página de inicio
                     $this->redirectDefaultSiteByRole($role);
                 }
             }
-        }else{
+        } else {
             //No existe ninguna sesión
             //se valida si el acceso es público o no
-            if($this->isPublic()){
+            if ($this->isPublic()) {
                 error_log('SessionController::validateSession() public page');
                 //la pagina es publica
                 //no pasa nada
-            }else{
+            } else {
                 //la página no es pública
                 //redirect al login
                 error_log('SessionController::validateSession() redirect al login');
-                header('location: '. constant('URL') . '');
+                header('location: ' . constant('URL') . '');
             }
         }
     }
@@ -102,18 +111,20 @@ class SessionController extends Controller{
      * Valida si existe sesión, 
      * si es verdadero regresa el usuario actual
      */
-    function existsSession(){
-        if(!$this->session->exists()) return false;
-        if($this->session->getCurrentUser() == NULL) return false;
+    function existsSession()
+    {
+        if (!$this->session->exists()) return false;
+        if ($this->session->getCurrentUser() == NULL) return false;
 
         $userid = $this->session->getCurrentUser();
 
-        if($userid) return true;
+        if ($userid) return true;
 
         return false;
     }
 
-    function getUserSessionData(){
+    function getUserSessionData()
+    {
         $id = $this->session->getCurrentUser();
         $this->user = new UserModel();
         $this->user->get($id);
@@ -121,75 +132,86 @@ class SessionController extends Controller{
         return $this->user;
     }
 
-    public function initialize($user){
+    public function initialize($user)
+    {
         error_log("sessionController::initialize(): user: " . $user->getUsername());
         $this->session->setCurrentUser($user->getId());
         $this->authorizeAccess($user->getRole());
     }
 
-    private function isPublic(){
+    private function isPublic()
+    {
         $currentURL = $this->getCurrentPage();
         error_log("sessionController::isPublic(): currentURL => " . $currentURL);
-        $currentURL = preg_replace( "/\?.*/", "", $currentURL); //omitir get info
-        for($i = 0; $i < sizeof($this->sites); $i++){
-            if($currentURL === $this->sites[$i]['site'] && $this->sites[$i]['access'] === 'public'){
+        $currentURL = preg_replace("/\?.*/", "", $currentURL); //omitir get info
+        for ($i = 0; $i < sizeof($this->sites); $i++) {
+            if ($currentURL === $this->sites[$i]['site'] && $this->sites[$i]['access'] === 'public') {
                 return true;
             }
         }
         return false;
     }
 
-    private function redirectDefaultSiteByRole($role){
+    private function redirectDefaultSiteByRole($role)
+    {
         $url = '';
-        for($i = 0; $i < sizeof($this->sites); $i++){
-            if($this->sites[$i]['role'] === $role){
-                $url = '/webFerreteria/'.$this->sites[$i]['site'];
-            break;
+        for ($i = 0; $i < sizeof($this->sites); $i++) {
+            for ($j = 0; $j < 3; $j++) {
+                if ($this->sites[$i]['role'][$j] === $role) {
+                    //$url = '/webFerreteria/' . $this->sites[$i]['site'];
+                    $url = '/webFerreteria/' . $this->sites[$i]['role'][$j];
+                    break;
+                }
             }
         }
-        header('location: '.$url);
-        
+        header('location: ' . $url);
     }
 
-    private function isAuthorized($role){
+    private function isAuthorized($role)
+    {
         $currentURL = $this->getCurrentPage();
-        $currentURL = preg_replace( "/\?.*/", "", $currentURL); //omitir get info
-        
-        for($i = 0; $i < sizeof($this->sites); $i++){
-            if($currentURL === $this->sites[$i]['site'] && $this->sites[$i]['role'] === $role){
-                return true;
+        $currentURL = preg_replace("/\?.*/", "", $currentURL); //omitir get info
+
+        for ($i = 0; $i < sizeof($this->sites); $i++) {
+            for ($j = 0; $j < 3; $j++) {
+                if ($currentURL === $this->sites[$i]['site'] && $this->sites[$i]['role'][$j] === $role) {
+                    return true;
+                }
             }
+            /*if($currentURL === $this->sites[$i]['site'] && $this->sites[$i]['role'][$i] === $role){
+                return true;
+            }*/
         }
         return false;
     }
 
-    private function getCurrentPage(){
-        
+    private function getCurrentPage()
+    {
+
         $actual_link = trim("$_SERVER[REQUEST_URI]");
         $url = explode('/', $actual_link);
         error_log("sessionController::getCurrentPage(): actualLink =>" . $actual_link . ", url => " . $url[2]);
         return $url[2];
     }
 
-    function authorizeAccess($role){
+    function authorizeAccess($role)
+    {
         error_log("sessionController::authorizeAccess(): role: $role");
-        switch($role){
+        switch ($role) {
             case 'caja':
                 $this->redirect($this->defaultSites['caja']);
-            break;
+                break;
             case 'logistica':
                 $this->redirect($this->defaultSites['logistica']);
             case 'admin':
                 $this->redirect($this->defaultSites['admin']);
-            break;
+                break;
             default:
         }
     }
 
-    function logout(){
+    function logout()
+    {
         $this->session->closeSession();
     }
 }
-
-
-?>

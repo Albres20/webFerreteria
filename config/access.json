@@ -2,92 +2,97 @@
     "sites": [{
             "site": "",
             "access": "public",
-            "role": ""
+            "role": ["", "", ""]
+        },
+        {
+            "site": "recoverpw",
+            "access": "public",
+            "role": ["", "", ""]
         },
         {
             "site": "caja",
             "access": "private",
-            "role": "caja"
+            "role": ["caja", " ", " "]
         },
         {
             "site": "logistica",
             "access": "private",
-            "role": "logistica"
+            "role": [" ", "logistica", " "]
         },
         {
             "site": "admin",
             "access": "private",
-            "role": "admin"
+            "role": [" ", " ", "admin"]
         },
         {
             "site": "nuevaCompra",
             "access": "private",
-            "role": "admin"
+            "role": [" ", " ", "admin"]
         },
         {
             "site": "historialCompras",
             "access": "private",
-            "role": "admin"
+            "role": [" ", " ", "admin"]
         },
         {
             "site": "nuevaVenta",
             "access": "private",
-            "role": "admin"
+            "role": [" ", " ", "admin"]
         },
         {
             "site": "historialVentas",
             "access": "private",
-            "role": "admin"
+            "role": [" ", " ", "admin"]
         },
         {
             "site": "historialFacturas",
             "access": "private",
-            "role": "admin"
+            "role": [" ", " ", "admin"]
         },
         {
             "site": "nuevaCotizacion",
             "access": "private",
-            "role": "admin"
+            "role": [" ", " ", "admin"]
         },
         {
             "site": "historialCotizaciones",
             "access": "private",
-            "role": "admin"
+            "role": [" ", " ", "admin"]
         },
         {
             "site": "seguimiento",
             "access": "private",
-            "role": "admin"
+            "role": [" ", " ", "admin"]
         },
         {
             "site": "productos",
             "access": "private",
-            "role": "admin"
+            "role": [" ", " ", "admin"]
         },
         {
             "site": "categorias",
             "access": "private",
-            "role": "admin"
+            "role": [" ", " ", "admin"]
         },
         {
             "site": "usuarios",
             "access": "private",
-            "role": "admin"
+            "role": [" ", " ", "admin"]
         },
         {
             "site": "clienteProveedor",
             "access": "private",
-            "role": "admin"
+            "role": ["caja", "logistica", "admin"]
         },
         {
             "site": "perfil",
             "access": "private",
-            "role": "admin"
+            "role": ["caja", "logistica", "admin"]
         },
         {
             "site": "configuracion",
             "access": "private",
-            "role": "admin"
+            "role": [" ", " ", "admin"]
         }
     ],
 

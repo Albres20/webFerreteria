@@ -24,7 +24,7 @@
         <!-- Begin page -->
         <div class="wrapper">
 
-                    <?php include_once 'header.php'; ?>
+                    <?php include 'header.php'; ?>
                     
                     <!-- end Topbar -->
 

@@ -1,0 +1,15 @@
+/* ESTILOS GENERALES */
+
+body {
+    background: url(../image/herramientas.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#particles-js {
+	height: 100vh; 
+	width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+

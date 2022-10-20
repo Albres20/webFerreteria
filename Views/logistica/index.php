@@ -7,7 +7,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Caja - Hyt-Trading</title>
+        <title>Logistica - Hyt-Trading</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Hyt-Trading" name="author">
         <!-- App favicon -->

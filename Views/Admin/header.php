@@ -2,7 +2,7 @@
        <div class="leftside-menu">
 
            <!-- LOGO -->
-           <a href="admin" class="logo text-center logo-light">
+           <a href="<?php echo $user->getRole(); ?>" class="logo text-center logo-light">
                <span class="logo-lg">
                    <img src="<?php echo URL . RQ ?>image/logoht.png" alt="" height="80">
                </span>
@@ -19,7 +19,7 @@
                <ul class="side-nav">
 
                    <li class="side-nav-item">
-                       <a href="admin" class="side-nav-link">
+                       <a href="<?php echo $user->getRole(); ?>" class="side-nav-link">
                            <i class="uil-home-alt"></i>
                            <span> Inicio </span>
                        </a>

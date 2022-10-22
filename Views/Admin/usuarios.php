@@ -218,9 +218,9 @@ $usuarios = $this->d['usuarios'];
                             <label class="form-label" for="validationTooltip04">Acceso</label>
                             <select class="form-select" id="validationTooltip04" name="role" required>
                                 <option value="">Seleccione una opción</option>
-                                <option value="admin">Administrador</option>
-                                <option value="logistica">Logistica</option>
-                                <option value="caja">Cajero</option>
+                                <option class="fw-bold" value="admin">Administrador</option>
+                                <option class="fw-bold" value="logistica">Logistica</option>
+                                <option class="fw-bold" value="caja">Cajero</option>
                             </select>
                             <div class="invalid-tooltip">
                                 Proporcione un acceso de usuario válido.
@@ -230,8 +230,8 @@ $usuarios = $this->d['usuarios'];
                             <label class="form-label" for="validationTooltip05">Estado</label>
                             <select class="form-select" id="validationTooltip05" name="estado" required>
                                 <option value="">Seleccione una opción</option>
-                                <option value="1">Activo</option>
-                                <option value="0">Inactivo</option>
+                                <option class="text-success fw-bold" value="1">Activo</option>
+                                <option class="text-danger fw-bold"value="0">Inactivo</option>
                             </select>
                             <div class="invalid-tooltip">
                                 Proporcione un estado de usuario válido.

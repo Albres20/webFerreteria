@@ -8,10 +8,11 @@ class Errors{
     
     //const ERROR_ADMIN_NEWCATEGORY_EXISTS = "El nombre de la categoría ya existe, intenta otra";
     const ERROR_ADMIN_NEWUSER_EXISTS        = "1f8f0ae8963b16403c3ec9ebb851f156";
+    const ERROR_ADMIN_UPDATEUSER            = "521a88b3fd90100f1d352020e1464693";
     const ERROR_EXPENSES_DELETE                 = "8f48a0845b4f8704cb7e8b00d4981233";
     const ERROR_EXPENSES_NEWEXPENSE             = "8f48a0845b4f8704cb7e8b00d4981233";
     const ERROR_EXPENSES_NEWEXPENSE_EMPTY       = "a5bcd7089d83f45e17e989fbc86003ed";
-    const ERROR_USER_UPDATEBUDGET               = "e99ab11bbeec9f63fb16f46133de85ec";
+    const ERROR_USERS_UPDATEUSER                = "a540ab32c9299917d15fca7d4c5e83b8";
     const ERROR_USER_UPDATEBUDGET_EMPTY         = "807f75bf7acec5aa86993423b6841407";
     const ERROR_USER_UPDATENAME_EMPTY           = "0f0735f8603324a7bca482debdf088fa";
     const ERROR_USER_UPDATENAME                 = "98217b0c263b136bf14925994ca7a0aa";
@@ -53,10 +54,11 @@ class Errors{
     {
         $this->errorsList = [
             Errors::ERROR_ADMIN_NEWUSER_EXISTS      => 'El nombre de usuario ya existe, intenta de nuevo',
+            Errors::ERROR_ADMIN_UPDATEUSER          => 'No se pudo actualizar el usuario',
             Errors::ERROR_EXPENSES_DELETE           => 'Hubo un problema el eliminar el gasto, inténtalo de nuevo',
             Errors::ERROR_EXPENSES_NEWEXPENSE       => 'Hubo un problema al crear el gasto, inténtalo de nuevo',
             Errors::ERROR_EXPENSES_NEWEXPENSE_EMPTY => 'Los campos no pueden estar vacíos',
-            Errors::ERROR_USER_UPDATEBUDGET         => 'No se puede actualizar el presupuesto',
+            Errors::ERROR_USERS_UPDATEUSER         => 'No se puede actualizar el usuario',
             Errors::ERROR_USER_UPDATEBUDGET_EMPTY   => 'El presupuesto no puede estar vacio o ser negativo',
             Errors::ERROR_USER_UPDATENAME_EMPTY     => 'El nombre no puede estar vacio o ser negativo',
             Errors::ERROR_USER_UPDATENAME           => 'No se puede actualizar los datos personales',

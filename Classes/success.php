@@ -7,6 +7,7 @@ class Success{
     //operation
     
     const SUCCESS_ADMIN_NEWUSER     = "f52228665c4f14c8695b194f670b0ef1";
+    const SUCCESS_ADMIN_UPDATEUSER = "5792fc4c2ecad7183008c0c0a3ca66ee";
     const SUCCESS_EXPENSES_DELETE       = "fcd919285d5759328b143801573ec47d";
     const SUCCESS_EXPENSES_NEWEXPENSE   = "fbbd0f23184e820e1df466abe6102955";
     const SUCCESS_USER_UPDATEDATOS     = "2ee085ac8828407f4908e4d134195e5c";
@@ -33,6 +34,7 @@ class Success{
     {
         $this->successList = [
             Success::SUCCESS_ADMIN_NEWUSER => "Nuevo usuario creado correctamente",
+            Success::SUCCESS_ADMIN_UPDATEUSER => "Usuario actualizado correctamente",
             Success::SUCCESS_EXPENSES_DELETE => "Gasto eliminado correctamente",
             Success::SUCCESS_EXPENSES_NEWEXPENSE => "Nuevo gasto registrado correctamente",
             Success::SUCCESS_USER_UPDATEDATOS => "Datos personales actualizados correctamente",

@@ -88,7 +88,39 @@ class Usuarios extends SessionController{
     //ACTUALIZAR USUARIO
     /////////////////////////////////////////////
 
-    function updateUsuario(){}
+    function updateUsuario($params){
+        if($params === NULL) $this->redirect('usuarios', ['error' => Errors::ERROR_USERS_UPDATEUSER]);
+        $id = $params[0];
+        error_log("usuarios::delete() id = " . $id);
+        error_log('usuarios::updateUsuario()');
+        if($this->existPOST(['username', 'fullname', 'email', 'role', 'estado'])){
+            $username = $this->getPost('username');
+            $fullname = $this->getPost('fullname');
+            $email = $this->getPost('email');
+            $role = $this->getPost('role');
+            $estado = $this->getPost('estado');
+
+            $userModel = new UserModel();
+            $userModel->setId($id);
+            $userModel->setUsername($username);
+            $userModel->setFullname($fullname);
+            $userModel->setEmail($email);
+            $userModel->setRole($role);
+            $userModel->setEstado($estado);
+
+            if($userModel->update()){
+                error_log('Admin::updateUsuario() => usuario actualizado' . $id);
+                $this->redirect('usuarios', ['success' => Success::SUCCESS_ADMIN_UPDATEUSER]);
+            }else{
+                //error
+                $this->redirect('usuarios', ['error' => Errors::ERROR_ADMIN_UPDATEUSER]);
+            }
+        }else{
+            //'No se puede actualizar los datos del usuario'
+            $this->redirect('usuarios', ['error' => Errors::ERROR_ADMIN_UPDATEUSER]);
+            return;
+        }
+    }
 
     function delete($params){
         error_log("usuarios::delete()");

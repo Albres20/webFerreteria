@@ -97,7 +97,7 @@ $usuarios = $this->d['usuarios'];
                                             //showError('Datos no disponibles por el momento.');
                                         }
                                         foreach ($usuarios as $usuario) { ?>
-                                            <tr>
+                                            <tr id="fila-<?php echo $usuario['usuario']->getId()?>">
                                                 <td>
                                                     <div class="form-check">
                                                         <label class="form-check-label" for="customCheck2">&nbsp;</label>
@@ -106,9 +106,9 @@ $usuarios = $this->d['usuarios'];
                                                 <?php echo '<td>' . $usuario['usuario']->getId() . '</td>' ?>
                                                 <td class="table-user">
                                                     <?php if ($usuario['usuario']->getPhoto() != "") {
-                                                        echo '<img src="' . URL . RQ . 'image/usuarios/' . $usuario['usuario']->getPhoto() . '" alt="user-img" title="user-img" class="me-2 rounded-circle">'. $usuario['usuario']->getUsername().'';
+                                                        echo '<img src="' . URL . RQ . 'image/usuarios/' . $usuario['usuario']->getPhoto() . '" alt="user-img" title="user-img" class="me-2 rounded-circle">' . $usuario['usuario']->getUsername() . '';
                                                     } else {
-                                                        echo '<img src="' . URL . RQ . 'image/usuarios/default-user-image.png" alt="user-img" title="user-img" class="me-2 rounded-circle">'. $usuario['usuario']->getUsername().'';
+                                                        echo '<img src="' . URL . RQ . 'image/usuarios/default-user-image.png" alt="user-img" title="user-img" class="me-2 rounded-circle">' . $usuario['usuario']->getUsername() . '';
                                                     }
                                                     ?>
                                                 </td>
@@ -122,7 +122,10 @@ $usuarios = $this->d['usuarios'];
                                                     <?php echo '<td><span class="badge bg-danger">Inactivo</span></td>' ?>
                                                 <?php } ?>
 
-                                                <td class="table-action"></td>
+                                                <td class="table-action">
+                                                    <button class='action-icon' title='Actualizar usuario' onclick="editarUsuario('<?php echo $usuario['usuario']->getId() ?>');" id="<?php echo $usuario['usuario']->getId() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
+                                                    <a role="button" class='action-icon' title='Eliminar usuario' onclick="eliminarUsuario('<?php echo $usuario['usuario']->getId() ?>');" id="<?php echo $usuario['usuario']->getId() ?>" > <i class='mdi mdi-delete'></i></a>
+                                                </td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
@@ -165,7 +168,7 @@ $usuarios = $this->d['usuarios'];
     <!-- End Page content -->
     <!-- ============================================================== -->
     <!--=====================================
-    MODAL USUARIO
+    MODAL NUEVO USUARIO
     ======================================-->
     <!-- Standard modal -->
     <div id="modalCRUD" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
@@ -231,7 +234,7 @@ $usuarios = $this->d['usuarios'];
                             <select class="form-select" id="validationTooltip05" name="estado" required>
                                 <option value="">Seleccione una opción</option>
                                 <option class="text-success fw-bold" value="1">Activo</option>
-                                <option class="text-danger fw-bold"value="0">Inactivo</option>
+                                <option class="text-danger fw-bold" value="0">Inactivo</option>
                             </select>
                             <div class="invalid-tooltip">
                                 Proporcione un estado de usuario válido.
@@ -247,9 +250,6 @@ $usuarios = $this->d['usuarios'];
 
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-
-    </div>
-    <!-- END wrapper -->
 
 
     <div class="rightbar-overlay"></div>
@@ -270,7 +270,7 @@ $usuarios = $this->d['usuarios'];
     <script src="<?php echo URL . RQ ?>js/sweetalert2/sweetalert2.all.js"></script>
 
     <!-- demo app -->
-    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.users.js"></script>
+    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.usuarios.js"></script>
     <!-- end demo js-->
     <!-- <script src="<? //php echo URL . RQ 
                         ?>js/tablausuarios.js"></script> -->

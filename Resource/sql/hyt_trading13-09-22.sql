@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `categorias`
 --
+create database hyt_trading;
+use hyt_trading;
 
 CREATE TABLE `categorias` (
   `categorias_id` int(11) NOT NULL,

@@ -97,7 +97,7 @@ $usuarios = $this->d['usuarios'];
                                             //showError('Datos no disponibles por el momento.');
                                         }
                                         foreach ($usuarios as $usuario) { ?>
-                                            <tr id="fila-<?php echo $usuario['usuario']->getId()?>">
+                                            <tr id="fila-<?php echo $usuario['usuario']->getId() ?>">
                                                 <td>
                                                     <div class="form-check">
                                                         <label class="form-check-label" for="customCheck2">&nbsp;</label>
@@ -124,7 +124,7 @@ $usuarios = $this->d['usuarios'];
 
                                                 <td class="table-action">
                                                     <button class='action-icon' title='Actualizar usuario' onclick="editarUsuario('<?php echo $usuario['usuario']->getId() ?>');" id="<?php echo $usuario['usuario']->getId() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
-                                                    <a role="button" class='action-icon' title='Eliminar usuario' onclick="eliminarUsuario('<?php echo $usuario['usuario']->getId() ?>');" id="<?php echo $usuario['usuario']->getId() ?>" > <i class='mdi mdi-delete'></i></a>
+                                                    <a role="button" class='action-icon' title='Eliminar usuario' onclick="eliminarUsuario('<?php echo $usuario['usuario']->getId() ?>');" id="<?php echo $usuario['usuario']->getId() ?>"> <i class='mdi mdi-delete'></i></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -152,9 +152,9 @@ $usuarios = $this->d['usuarios'];
                 </div>
                 <div class="col-md-6">
                     <div class="text-md-end footer-links d-none d-md-block">
-                        <a href="javascript: void(0);">About</a>
-                        <a href="javascript: void(0);">Support</a>
-                        <a href="javascript: void(0);">Contact Us</a>
+                        <a href="javascript: void(0);">Acerca de</a>
+                        <a href="javascript: void(0);">Soporte</a>
+                        <a href="javascript: void(0);">Contáctenos</a>
                     </div>
                 </div>
             </div>

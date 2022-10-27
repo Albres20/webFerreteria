@@ -23,21 +23,6 @@ class Usuarios extends SessionController{
         //$this->view->render('admin/usuarios');
     }
 
-    // devuelve el JSON para las llamadas AJAX
-    function getUsuariosJSON()
-    {
-            header('Content-Type: application/json');
-            $res = [];
-            $userModel = new UserModel();
-            $users = $userModel->getAll();
-    
-            foreach ($users as $user) {
-                array_push($res, $user->toArray());
-            }
-            
-            echo json_encode($res);
-    }
-
     function newUsuarios(){
         error_log('Admin::newUsuarios()');
         if($this->existPOST(['username', 'password', 'fullname', 'email', 'role', 'estado'])){
@@ -91,7 +76,7 @@ class Usuarios extends SessionController{
     function updateUsuario($params){
         if($params === NULL) $this->redirect('usuarios', ['error' => Errors::ERROR_USERS_UPDATEUSER]);
         $id = $params[0];
-        error_log("usuarios::delete() id = " . $id);
+        error_log("usuarios::updateUsuario() id = " . $id);
         error_log('usuarios::updateUsuario()');
         if($this->existPOST(['username', 'fullname', 'email', 'role', 'estado'])){
             $username = $this->getPost('username');
@@ -101,7 +86,8 @@ class Usuarios extends SessionController{
             $estado = $this->getPost('estado');
 
             $userModel = new UserModel();
-            $userModel->setId($id);
+            //$userModel->setId($id); // no es necesario
+            $userModel->get($id);
             $userModel->setUsername($username);
             $userModel->setFullname($fullname);
             $userModel->setEmail($email);
@@ -109,7 +95,7 @@ class Usuarios extends SessionController{
             $userModel->setEstado($estado);
 
             if($userModel->update()){
-                error_log('Admin::updateUsuario() => usuario actualizado' . $id);
+                error_log('Admin::updateUsuario() => usuario actualizado: ' . $userModel->getId());
                 $this->redirect('usuarios', ['success' => Success::SUCCESS_ADMIN_UPDATEUSER]);
             }else{
                 //error

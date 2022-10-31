@@ -66,7 +66,7 @@ $categorias = $this->d['categorias'];
                         <div class="card-body">
                             <div class="row mb-2">
                                 <div class="col-sm-4">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarProducto" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nuevo producto</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalCRUD" class="btn btn-danger mb-2" value="btnNuevoProd"><i class="mdi mdi-plus-circle me-2"></i> Nuevo producto </button>
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="text-sm-end">
@@ -101,7 +101,7 @@ $categorias = $this->d['categorias'];
                                             //showError('Datos no disponibles por el momento.');
                                         }
                                         foreach ($productos as $producto) { ?>
-                                            <tr>
+                                            <tr id="fila-<?php echo $producto['producto']->getproductos_id() ?>">
                                                 <td>
                                                     <div class="form-check">
                                                         <label class="form-check-label" for="customCheck2">&nbsp;</label>
@@ -125,8 +125,8 @@ $categorias = $this->d['categorias'];
                                                 <?php echo '<td><span class="badge badge-outline rounded-pill" style="background-color:' . $producto['producto']->getcategorias_color() . '">' . $producto['producto']->getcategorias_nombre() . '</span>' ?>
                                                 <td class="table-action">
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                    <a href="http://localhost/webFerreteria/prductos/delete/<?php echo $producto['producto']->getproductos_id(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                    <button class='action-icon' title='Actualizar producto' onclick="editarProducto('<?php echo $producto['producto']->getproductos_id() ?>');" id="<?php echo $producto['producto']->getproductos_id() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
+                                                    <a role="button" class='action-icon' title='Eliminar producto' onclick="eliminarProducto('<?php echo $producto['producto']->getproductos_id() ?>');" id="<?php echo $producto['producto']->getproductos_id() ?>"> <i class='mdi mdi-delete'></i></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -170,16 +170,16 @@ $categorias = $this->d['categorias'];
     <!-- End Page content -->
     <!-- ============================================================== -->
     <!--=====================================
-    MODAL AGREGAR PRODUCTO
+    MODAL PRODUCTO
     ======================================-->
     <!-- Standard modal -->
-    <div id="modalAgregarProducto" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+    <div id="modalCRUD" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <form id="formnewproduct" name="formnewuser" action="productos/newProductos" class="needs-validation" method="POST" enctype="multipart/form-data" novalidate>
+                <form id="formproduct" class="needs-validation" method="POST" enctype="multipart/form-data" novalidate>
 
                     <div class="modal-header modal-colored-header bg-danger">
-                        <h4 class="modal-title" id="standard-modalLabel">Nuevo Producto</h4>
+                        <h4 class="modal-title" id="standard-modalLabel"></h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
@@ -283,12 +283,6 @@ $categorias = $this->d['categorias'];
                             <button type="submit" class="btn btn-danger">Guardar</button>
                         </div>
                     </div>
-                    <?php
-                    //$newusuarios = newUsuarios();
-                    //$crearProducto = new Productos();
-                    //$crearProducto->newProductos();
-
-                    ?>
                 </form>
             </div><!-- /.modal-content -->
 
@@ -314,13 +308,13 @@ $categorias = $this->d['categorias'];
     <script src="<?php echo URL . RQ ?>assets/js/vendor/responsive.bootstrap5.min.js"></script>
     <script src="<?php echo URL . RQ ?>assets/js/vendor/dataTables.checkboxes.min.js"></script>
     <!-- demo app -->
-    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.products.js"></script>
+    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.productos.js"></script>
     <!-- end demo js-->
 
     <!-- sweetalert2 js -->
     <script src="<?php echo URL . RQ ?>js/sweetalert2/sweetalert2.all.js"></script>
 
-    <!-- <script src=" php js/tablausuarios.js"></script> -->
+    <!-- previsualizar la imagen -->
     <script type="text/javascript">
         (function() {
             function filePreview(input) {
@@ -344,7 +338,7 @@ $categorias = $this->d['categorias'];
             });
         })();
     </script>
-
+    <!-- tamaño y tipo de imagen a cargar -->
     <script type="text/javascript">
         function LimitAttach(tField, iType) {
             file = tField.value;
@@ -392,7 +386,7 @@ $categorias = $this->d['categorias'];
             }
         }
     </script>
-
+    <!-- funcion de calcular ganancia en base a precio venta (inconcluso) -->
     <script type="text/javascript">
         function precio_venta() {
             var profit = $("#profit").val(); //ganancia

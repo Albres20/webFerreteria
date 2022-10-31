@@ -168,7 +168,7 @@ $usuarios = $this->d['usuarios'];
     <!-- End Page content -->
     <!-- ============================================================== -->
     <!--=====================================
-    MODAL NUEVO USUARIO
+    MODAL USUARIO
     ======================================-->
     <!-- Standard modal -->
     <div id="modalCRUD" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">

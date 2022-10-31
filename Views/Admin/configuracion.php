@@ -256,9 +256,9 @@ $empresa = $this->d['empresa'];
                 </div>
                 <div class="col-md-6">
                     <div class="text-md-end footer-links d-none d-md-block">
-                        <a href="javascript: void(0);">About</a>
-                        <a href="javascript: void(0);">Support</a>
-                        <a href="javascript: void(0);">Contact Us</a>
+                        <a href="javascript: void(0);">Acerca de</a>
+                        <a href="javascript: void(0);">Soporte</a>
+                        <a href="javascript: void(0);">Contáctenos</a>
                     </div>
                 </div>
             </div>
@@ -285,6 +285,7 @@ $empresa = $this->d['empresa'];
     <script src="<?php echo URL . RQ ?>assets/js/app.min.js"></script>
     <!-- sweetalert2 js -->
     <script src="<?php echo URL . RQ ?>js/sweetalert2/sweetalert2.all.js"></script>
+    <!-- previsualizar la imagen -->
     <script type="text/javascript">
         (function() {
             function filePreview(input) {
@@ -308,7 +309,7 @@ $empresa = $this->d['empresa'];
             });
         })();
     </script>
-
+    <!-- validacion de imagen -->
     <script type="text/javascript">
         function LimitAttach(tField, iType) {
             file = tField.value;

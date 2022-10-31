@@ -159,8 +159,8 @@
 
         public function delete($id){
             try{
-                $query = $this->prepare('DELETE FROM productos WHERE id = :id');
-                $query->execute([ 'id' => $id]);
+                $query = $this->prepare('DELETE FROM productos WHERE productos_id = :productos_id');
+                $query->execute([ 'productos_id' => $id]);
                 return true;
             }catch(PDOException $e){
                 echo $e;
@@ -196,6 +196,22 @@
             try{
                 $query = $this->prepare('SELECT productos_codigo FROM productos WHERE productos_codigo = :productos_codigo');
                 $query->execute( ['productos_codigo' => $codigo]);
+                
+                if($query->rowCount() > 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }catch(PDOException $e){
+                echo $e;
+                return false;
+            }
+        }
+
+        public function existsID($id){
+            try{
+                $query = $this->prepare('SELECT productos_id FROM productos WHERE productos_id = :productos_id');
+                $query->execute( ['productos_id' => $id]);
                 
                 if($query->rowCount() > 0){
                     return true;

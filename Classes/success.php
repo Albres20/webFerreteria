@@ -16,6 +16,7 @@ class Success{
     const SUCCESS_USER_UPDATEPHOTO       = "edabc9e4581fee3f0056fff4685ee9a8";
     const SUCCESS_SIGNUP_NEWUSER       = "8281e04ed52ccfc13820d0f6acb0985a";
 
+    const SUCCESS_ADMIN_DELETEPRODUCT = "016b5539c195ca7d60057809b89368b1";
     const SUCCESS_PRODUCT_UPDATEPHOTO = "8fc5692cfd8a119c5c102207cbfdcde8";
     const SUCCESS_SIGNUP_NEWPRODUCT = "058511c88c073a0adf1fb3d67529c0c9";
     const SUCCESS_ADMIN_NEWCATEGORY = "7085d129f6bae935bc430885bbf2a25e";
@@ -42,6 +43,7 @@ class Success{
             Success::SUCCESS_USER_UPDATEPHOTO => "Imagen de usuario actualizada correctamente",
             Success::SUCCESS_SIGNUP_NEWUSER => "Usuario registrado correctamente",
 
+            success::SUCCESS_ADMIN_DELETEPRODUCT => "Producto eliminado correctamente",
             Success::SUCCESS_PRODUCT_UPDATEPHOTO => "Imagen de producto actualizada correctamente",
             Success::SUCCESS_SIGNUP_NEWPRODUCT => "Producto registrado correctamente",
             Success::SUCCESS_ADMIN_NEWCATEGORY => "Categoria registrada correctamente",

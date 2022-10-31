@@ -211,5 +211,24 @@
             }
             
         }
+
+        function delete($params){
+            error_log("productos::delete()");
+            
+            if($params === NULL) $this->redirect('productos', ['error' => Errors::ERROR_ADMIN_DELETEPRODUCT]);
+            $id = $params[0];
+            error_log("productos::delete() id = " . $id);
+            $productosModel = new ProductosModel();
+            //$res = $userModel->delete($id);
+    
+            if($productosModel->existsID($id)){
+                $productosModel->delete($id);
+                $this->redirect('productos', ['success' => Success::SUCCESS_ADMIN_DELETEPRODUCT]);
+                //$this->redirect('usuarios', ['success' => Success::SUCCESS_EXPENSES_DELETE]);
+            }else{
+                $this->redirect('productos', ['error' => Errors::ERROR_ADMIN_DELETEPRODUCT]);
+                //$this->redirect('usuarios', ['error' => Errors::ERROR_ADMIN_NEWCATEGORY_EXISTS]);
+            }
+        }
     }
 ?>

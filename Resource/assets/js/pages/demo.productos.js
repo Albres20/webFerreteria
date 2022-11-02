@@ -27,6 +27,8 @@ $(document).ready(function() {
             console.log(valueBottom);
             $("#formproduct").trigger("reset");
             $("#formproduct").attr("action", "productos/newProductos");
+            $("#inputImage").prop("disabled", false);
+            $(".imgprodct").show();
 
             if (document.getElementsByClassName("bg-primary")) {
                 $(".modal-header").removeClass("bg-primary");
@@ -61,8 +63,12 @@ function editarProducto(id) {
     var preciocompra = fila.find("td").eq().text();
     var ganancia = fila.find("td").eq().text();
     var precioventa = fila.find("td").eq(4).text();
+    precioventa = precioventa.replace("S/", "");
     var stock = fila.find("td").eq(5).text();
 
+    $("#inputImage").prop("disabled", true);
+    $(".imgprodct").hide();
+    
     $("#codigopd").val(codigo);
     $("#nombre").val(nombre);
     $("#imagePreview").attr("src", imagen);

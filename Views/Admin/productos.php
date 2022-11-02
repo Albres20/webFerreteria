@@ -254,7 +254,7 @@ $categorias = $this->d['categorias'];
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-md-6 col-lg-4 imgprodct">
                                 <div class="col position-relative mb-3">
                                     <!-- File Upload -->
                                     <label class="form-label" for="validationTooltip05">Imagen</label>

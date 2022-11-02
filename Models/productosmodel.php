@@ -96,18 +96,20 @@
 
         public function get($id){
             try{
-                $query = $this->prepare('SELECT * FROM productos WHERE id = :id');
-                $query->execute([ 'id' => $id]);
+                $query = $this->prepare('SELECT * FROM productos WHERE productos_id = :productos_id');
+                $query->execute([ 'productos_id' => $id]);
                 $producto = $query->fetch(PDO::FETCH_ASSOC);
 
-                $this->id = $producto['id'];
-                $this->codigo = $producto['codigo'];
-                $this->nombre = $producto['nombre'];
-                $this->precio_compra = $producto['precio_compra'];
-                $this->precio_venta = $producto['precio_venta'];
-                $this->stock = $producto['stock'];
-                $this->imagen = $producto['imagen'];
-                $this->idcategoria = $producto['idcategoria'];
+                $this->id = $producto['productos_id'];
+                $this->codigo = $producto['productos_codigo'];
+                $this->nombre = $producto['productos_nombre'];
+                $this->marca = $producto['productos_marca'];
+                $this->precio_compra = $producto['productos_preccompra'];
+                $this->ganancia = $producto['productos_ganancia'];
+                $this->precio_venta = $producto['productos_precventa'];
+                $this->stock = $producto['productos_cantidad'];
+                $this->imagen = $producto['productos_imagen'];
+                $this->idcategoria = $producto['productos_idcategorias'];
 
                 return $this;
             }catch(PDOException $e){
@@ -170,25 +172,25 @@
 
         public function update(){
             try{
-                $query = $this->prepare('UPDATE productos SET codigo = :codigo, nombre = :nombre, precio_compra = :precio_compra, precio_venta = :precio_venta, stock = :stock, imagen = :imagen, idcategoria = :idcategoria WHERE id = :id');
+                $query = $this->prepare('UPDATE productos SET productos_codigo = :productos_codigo, productos_nombre = :productos_nombre,
+                productos_marca = :productos_marca, productos_preccompra = :productos_preccompra, productos_ganancia = :productos_ganancia,
+                productos_precventa = :productos_precventa, productos_cantidad = :productos_cantidad, productos_imagen = :productos_imagen,
+                productos_idcategorias = :productos_idcategorias WHERE productos_id = :productos_id');
                 $query->execute([
-                    'codigo' => $this->codigo,
-                    'nombre' => $this->nombre,
-                    'precio_compra' => $this->precio_compra,
-                    'precio_venta' => $this->precio_venta,
-                    'stock' => $this->stock,
-                    'imagen' => $this->imagen,
-                    'idcategoria' => $this->idcategoria,
-                    'id' => $this->id
+                    'productos_id' => $this->id,
+                    'productos_codigo' => $this->codigo,
+                    'productos_nombre' => $this->nombre,
+                    'productos_preccompra' => $this->precio_compra,
+                    'productos_ganancia' => $this->ganancia,
+                    'productos_precventa' => $this->precio_venta,
+                    'productos_cantidad' => $this->stock,
+                    'productos_imagen' => $this->imagen,
+                    'productos_idcategorias' => $this->idcategoria
                 ]);
-
-                if($query->rowCount() > 0){
-                    return true;
-                }else{
-                    return false;
-                }
+                return true;
             }catch(PDOException $e){
-                return NULL;
+                echo $e;
+                return false;
             }
         }
 

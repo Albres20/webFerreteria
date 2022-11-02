@@ -34,6 +34,8 @@ class Errors{
     const ERROR_PRODUCT_SIZEPHOTO                = "177fe6532a554bf5322c0462db2d8d67";
     const ERROR_SIGNUP_NEWPRODUCT_EXISTS         = "b2a3c9a3e0e891e27689c40a15f263be";
     const ERROR_SIGNUP_NEWPRODUCT                = "c049877d530419271c1578fe7553d215";
+    const ERROR_PRODUCTS_UPDATEPRODUCT           = "e30704298d0a720dab3a209b9fd15bde";
+    const ERROR_PRODUCTS_UPDATEDATOS            = "d8b486411f53620e4e155a5d30ef63f9";
     const ERROR_ADMIN_NEWCATEGORY_EXISTS         = "680fa880f3d1afea9c53c84305eb9af3";
     const ERROR_ADMIN_DELETEPRODUCT              = "f854143580e95938a09a470d8cf06797";
 
@@ -81,7 +83,9 @@ class Errors{
             Errors::ERROR_PRODUCT_SIZEPHOTO         => 'La foto debe ser menor a 2MB',
             Errors::ERROR_SIGNUP_NEWPRODUCT_EXISTS  => 'El nombre de producto ya existe, selecciona otro',
             Errors::ERROR_SIGNUP_NEWPRODUCT        => 'Hubo un error al intentar registrar. Intenta de nuevo',
+            Errors::ERROR_PRODUCTS_UPDATEPRODUCT   => 'Hubo un error al intentar actualizar el producto. Intenta de nuevo',
             Errors::ERROR_ADMIN_DELETEPRODUCT      => 'Hubo un error al intentar eliminar el producto. Intenta de nuevo',
+            Errors::ERROR_PRODUCTS_UPDATEDATOS    => 'Hubo un error al intentar actualizar los datos. Intenta de nuevo',
 
             Errors::ERROR_ADMIN_NEWCATEGORY_EXISTS  => 'La categoría ya existe, selecciona otra',
 

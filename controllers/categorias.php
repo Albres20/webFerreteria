@@ -23,6 +23,26 @@
         //$this->view->render('admin/usuarios');
         }
 
+        function newCategorias(){
+            error_log('Admin::newCategorias()');
+            if($this->existPOST(['categorias_nombre', 'categorias_color'])){
+                $categorias_nombre = $this->getPost('categorias_nombre');
+                $categorias_color = $this->getPost('categorias_color');
+
+                $categoriasModel = new CategoriasModel();
+
+                if(!$categoriasModel->exists($categorias_nombre)){
+                    $categoriasModel->setCategorias_nombre($categorias_nombre);
+                    $categoriasModel->setCategorias_color($categorias_color);
+                    $categoriasModel->save();
+                    error_log('Admin::newCategorias() => new categoria creada');
+                    $this->redirect('categorias', ['success' => Success::SUCCESS_ADMIN_NEWCATEGORY]);
+                }else{
+                    $this->redirect('categorias', ['error' => Errors::ERROR_ADMIN_NEWCATEGORY_EXISTS]);
+                }
+            }
+        }
+
         private function getCategoriasDB(){
             $res = [];
 
@@ -66,24 +86,52 @@
     
             return ($res);
         }
+        /////////////////////////////////////////////
+        //ACTUALIZAR CATEGORIA
+        /////////////////////////////////////////////
 
-        function newCategorias(){
-            error_log('Admin::newCategorias()');
+        function updateCategoria($params){
+            if($params === NULL) $this->redirect('categorias', ['error' => Errors::ERROR_CATEGORIAS_UPDATECATEGORIA]);
+            $id = $params[0];
+            error_log("categorias::updateCategoria() id = " . $id);
+            error_log('categorias::updateCategoria()');
             if($this->existPOST(['categorias_nombre', 'categorias_color'])){
                 $categorias_nombre = $this->getPost('categorias_nombre');
                 $categorias_color = $this->getPost('categorias_color');
-
+    
                 $categoriasModel = new CategoriasModel();
 
-                if(!$categoriasModel->exists($categorias_nombre)){
-                    $categoriasModel->setCategorias_nombre($categorias_nombre);
-                    $categoriasModel->setCategorias_color($categorias_color);
-                    $categoriasModel->save();
-                    error_log('Admin::newCategorias() => new categoria creada');
-                    $this->redirect('categorias', ['success' => Success::SUCCESS_ADMIN_NEWCATEGORY]);
+                $categoriasModel->get($id);
+                $categoriasModel->setCategorias_nombre($categorias_nombre);
+                $categoriasModel->setCategorias_color($categorias_color);
+    
+                if($categoriasModel->update()){
+                    error_log('Admin::updateCategoria() => categoria actualizado: ' . $categoriasModel->getId());
+                    $this->redirect('categorias', ['success' => Success::SUCCESS_ADMIN_UPDATECATEGORIA]);
                 }else{
-                    $this->redirect('categorias', ['error' => Errors::ERROR_ADMIN_NEWCATEGORY_EXISTS]);
+                    //error
+                    $this->redirect('categorias', ['error' => Errors::ERROR_ADMIN_UPDATECATEGORIA]);
                 }
+            }else{
+                //'No se puede actualizar los datos de la categoria'
+                $this->redirect('categorias', ['error' => Errors::ERROR_ADMIN_UPDATECATEGORIA]);
+                return;
+            }
+        }
+
+        function delete($params){
+            error_log("categorias::delete()");
+            
+            if($params === NULL) $this->redirect('categorias', ['error' => Errors::ERROR_ADMIN_DELETECATEGORIA]);
+            $id = $params[0];
+            error_log("categorias::delete() id = " . $id);
+            $categoriasModel = new CategoriasModel();
+    
+            if($categoriasModel->existsID($id)){
+                $categoriasModel->delete($id);
+                $this->redirect('categorias', ['success' => Success::SUCCESS_ADMIN_DELETECATEGORIA]);
+            }else{
+                $this->redirect('categorias', ['error' => Errors::ERROR_ADMIN_DELETECATEGORIA]);
             }
         }
     }

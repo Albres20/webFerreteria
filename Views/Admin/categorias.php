@@ -66,7 +66,7 @@ $stats = $this->d['stats'];
                         <div class="card-body">
                             <div class="row mb-2">
                                 <div class="col-sm-4">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarCategoria" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Nueva Categoria</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarCategoria" class="btn btn-danger mb-2" value="btnNuevo"><i class="mdi mdi-plus-circle me-2"></i> Nueva Categoria</button>
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="text-sm-end">

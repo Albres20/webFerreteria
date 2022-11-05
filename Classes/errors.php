@@ -36,6 +36,9 @@ class Errors{
     const ERROR_SIGNUP_NEWPRODUCT                = "c049877d530419271c1578fe7553d215";
     const ERROR_PRODUCTS_UPDATEPRODUCT           = "e30704298d0a720dab3a209b9fd15bde";
     const ERROR_PRODUCTS_UPDATEDATOS            = "d8b486411f53620e4e155a5d30ef63f9";
+
+    const ERROR_CATEGORIAS_UPDATECATEGORIA      = "1314834cef311fd06b1b6e21930e9575";
+    const ERROR_ADMIN_DELETECATEGORIA          = "a977262f1a22dc88bb0db1ba693ccf18";
     const ERROR_ADMIN_NEWCATEGORY_EXISTS         = "680fa880f3d1afea9c53c84305eb9af3";
     const ERROR_ADMIN_DELETEPRODUCT              = "f854143580e95938a09a470d8cf06797";
 
@@ -87,7 +90,9 @@ class Errors{
             Errors::ERROR_ADMIN_DELETEPRODUCT      => 'Hubo un error al intentar eliminar el producto. Intenta de nuevo',
             Errors::ERROR_PRODUCTS_UPDATEDATOS    => 'Hubo un error al intentar actualizar los datos. Intenta de nuevo',
 
+            Errors::ERROR_CATEGORIAS_UPDATECATEGORIA => 'Hubo un error al intentar actualizar la categoria. Intenta de nuevo',
             Errors::ERROR_ADMIN_NEWCATEGORY_EXISTS  => 'La categoría ya existe, selecciona otra',
+            Errors::ERROR_ADMIN_DELETECATEGORIA    => 'Hubo un error al intentar eliminar la categoria. Intenta de nuevo',
 
             Errors::ERROR_CLIENTENUM_NEWUSER_EXISTS => 'El número de documento ya existe, selecciona otro',
             Errors::ERROR_CLIENTENOM_NEWUSER_EXISTS => 'El nombre de cliente / proveedor ya existe, selecciona otro',

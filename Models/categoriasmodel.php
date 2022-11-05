@@ -43,13 +43,15 @@
             }
         }
         
-        public function get($categorias_id){
+        public function get($id){
             try{
                 $query = $this->prepare('SELECT * FROM categorias WHERE categorias_id = :categorias_id');
-                $query->execute([ 'categorias_id' => $categorias_id]);
+                $query->execute([ 'categorias_id' => $id]);
                 $category = $query->fetch(PDO::FETCH_ASSOC);
     
-                $this->from($category);
+                $this->categorias_id = $category['categorias_id'];
+                $this->categorias_nombre = $category['categorias_nombre'];
+                $this->categorias_color = $category['categorias_color'];
     
                 return $this;
             }catch(PDOException $e){
@@ -70,9 +72,10 @@
             try{
                 $query = $this->db->connect()->prepare('UPDATE categorias SET categorias_nombre = :categorias_nombre, categorias_color = :categorias_color WHERE categorias_id = :categorias_id');
                 $query->execute([
+                    'categorias_id' => $this->categorias_id,
                     'categorias_nombre' => $this->categorias_nombre, 
                     'categorias_color' => $this->categorias_color
-                ]);
+                    ]);
                 return true;
             }catch(PDOException $e){
                 echo $e;
@@ -94,6 +97,22 @@
                 }
             }catch(PDOException $e){
                 error_log($e);
+                return false;
+            }
+        }
+
+        public function existsID($id){
+            try{
+                $query = $this->prepare('SELECT categorias_id FROM categorias WHERE categorias_id = :categorias_id');
+                $query->execute( ['categorias_id' => $id]);
+                
+                if($query->rowCount() > 0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }catch(PDOException $e){
+                echo $e;
                 return false;
             }
         }

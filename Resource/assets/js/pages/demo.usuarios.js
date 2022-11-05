@@ -93,7 +93,7 @@ function eliminarUsuario(id) {
         reverseButtons: true
     }).then((result) => {
         if (result.value) {
-            var url = "http://localhost/webFerreteria/";
+            var url = "http://localhost:8080/webFerreteria/";
             location.href = url + "usuarios/delete/" + id;
             /*$.post("usuarios/delete/"+id, function (status) {
                 location.reload();

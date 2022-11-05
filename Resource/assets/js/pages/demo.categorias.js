@@ -25,48 +25,39 @@ $(document).ready(function() {
         //nueva categoria
         if (valueBottom == 'btnNuevo') {
             console.log(valueBottom);
-            $("#formnewuser").trigger("reset");
-            $("#formnewuser").attr("action", "categorias/newCategorias");
-            $("#validationTooltip02").prop("disabled", false);
-            $(".passw").show();
+            $("#formnewcatg").trigger("reset");
+            $("#formnewcatg").attr("action", "categorias/newCategorias");
             if (document.getElementsByClassName("bg-primary")) {
                 $(".modal-header").removeClass("bg-primary");
                 $(".btnGuardar").removeClass("btn-primary");
             }
             $(".modal-header").addClass("bg-danger");
             $(".btnGuardar").addClass("btn-danger");
-            $(".modal-title").text("Nuevo Usuario");
+            $(".modal-title").text("Nueva Categoria");
         }
     });
 });
 
 function editarCategoria(id) {
     console.log(id);
-    $("#formnewuser").trigger("reset");
-    $("#formnewuser").attr("action", "categorias/newCategorias"+id);
+    $("#formnewcatg").trigger("reset");
+    $("#formnewcatg").attr("action", "categorias/updateCategoria/"+id);
     //capturar la primera fila para editar o borrar el registro
     var fila = $("#fila-" + id).closest("tr");
     //console.log(fila);
     var categorias_nombre = fila.find("td").eq(2).text();
-    //quitar los espacios en blanco de username
-    categorias_nombre = categorias_nombre.trim();
-    var categorias_color = fila.find("td").eq(3).text();
-    //estado = estado.trim();
-    //console.log(estado);
-    //$("#validationTooltipUsername").val(username);
-    //$("#validationTooltipUsername").prop("disabled", true);
-    //$("#validationTooltip01").prop("disabled", true);
-    $(".passw").hide();
-    $("#validationTooltip02").val(categorias_nombre);
+    var categorias_color = fila.find("td").find(".progress-sm").attr("data-color");
 
-    //$(".modal-header").removeclass("bg-danger");
+    $("#validationTooltip02").val(categorias_nombre);
+    $("#example-color").val(categorias_color);
+
     if (document.getElementsByClassName("bg-danger")) {
         $(".modal-header").removeClass("bg-danger");
         $(".btnGuardar").removeClass("btn-danger");
     }
     $(".modal-header").addClass("bg-primary");
     $(".btnGuardar").addClass("btn-primary");
-    $(".modal-title").text("Editar Usuario");
+    $(".modal-title").text("Editar Categoria");
     $("#modalAgregarCategoria").modal("show");
 }
 
@@ -84,7 +75,7 @@ function eliminarCategoria(id) {
         reverseButtons: true
     }).then((result) => {
         if (result.value) {
-            var url = "http://localhost/webFerreteria/";
+            var url = "http://localhost:8080/webFerreteria/";
             location.href = url + "categorias/delete/" + id;
             /*$.post("usuarios/delete/"+id, function (status) {
                 location.reload();

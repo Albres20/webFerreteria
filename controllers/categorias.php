@@ -94,27 +94,27 @@
             if($params === NULL) $this->redirect('categorias', ['error' => Errors::ERROR_CATEGORIAS_UPDATECATEGORIA]);
             $id = $params[0];
             error_log("categorias::updateCategoria() id = " . $id);
-            error_log('categorias::updateCategoria()');
             if($this->existPOST(['categorias_nombre', 'categorias_color'])){
                 $categorias_nombre = $this->getPost('categorias_nombre');
                 $categorias_color = $this->getPost('categorias_color');
     
                 $categoriasModel = new CategoriasModel();
-
                 $categoriasModel->get($id);
+                error_log('categorias::updateCategoria() => categoria: '. $categoriasModel->getcategorias_color());
                 $categoriasModel->setCategorias_nombre($categorias_nombre);
                 $categoriasModel->setCategorias_color($categorias_color);
+                error_log('categorias::updateCategoria() => categoria actualizada: '. $categoriasModel->getcategorias_color());
     
                 if($categoriasModel->update()){
-                    error_log('Admin::updateCategoria() => categoria actualizado: ' . $categoriasModel->getId());
-                    $this->redirect('categorias', ['success' => Success::SUCCESS_ADMIN_UPDATECATEGORIA]);
+                    error_log('Admin::updateCategoria() => categoria actualizado: ' . $categoriasModel->getcategorias_id());
+                    $this->redirect('categorias', ['success' => Success::SUCCESS_ADMIN_UPDATECATEGORY]);
                 }else{
                     //error
-                    $this->redirect('categorias', ['error' => Errors::ERROR_ADMIN_UPDATECATEGORIA]);
+                    $this->redirect('categorias', ['error' => Errors::ERROR_CATEGORIAS_UPDATECATEGORIA]);
                 }
             }else{
                 //'No se puede actualizar los datos de la categoria'
-                $this->redirect('categorias', ['error' => Errors::ERROR_ADMIN_UPDATECATEGORIA]);
+                $this->redirect('categorias', ['error' => Errors::ERROR_CATEGORIAS_UPDATECATEGORIA]);
                 return;
             }
         }

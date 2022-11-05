@@ -95,7 +95,7 @@ $stats = $this->d['stats'];
                                     </thead>
                                     <tbody id="databody">
                                         <?php foreach ($categorias as $categoria) { ?>
-                                            <tr>
+                                            <tr id="fila-<?php echo $categoria['categoria']->getcategorias_id() ?>">
                                                 <td>
                                                     <div class="form-check">
                                                         <label class="form-check-label" for="customCheck2">&nbsp;</label>
@@ -103,18 +103,18 @@ $stats = $this->d['stats'];
                                                 </td>
                                                 <?php echo '<td>' . $categoria['categoria']->getcategorias_id() . '</td>' ?>
                                                 <?php echo '<td>' . $categoria['categoria']->getcategorias_nombre() . '</td>' ?>
-                                                <?php echo '<td><div class="progress progress-sm" style="background-color:' . $categoria['categoria']->getcategorias_color() . '">
+                                                <?php echo '<td><div class="progress progress-sm" data-color="'. $categoria['categoria']->getcategorias_color().'" style="background-color:' . $categoria['categoria']->getcategorias_color() . '">
                                                                     <div class="progress-bar progress-lg" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                                                 </div>
                                                             </td>' ?>
                                                 <?php echo '<td>' . $categoria['categoria']->getcategorias_id() . '</td>' ?>
 
                                                 <td class="table-action">
-                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                    <a href="http://localhost/webFerreteria/categorias/delete/<?php echo $categoria['categoria']->getcategorias_id(); ?>" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                    <button class='action-icon' title='Actualizar categoria' onclick="editarCategoria('<?php echo $categoria['categoria']->getcategorias_id() ?>');" id="<?php echo $categoria['categoria']->getcategorias_id() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
+                                                    <a role="button" class='action-icon' title='Eliminar categoria' onclick="eliminarCategoria('<?php echo $categoria['categoria']->getcategorias_id() ?>');" id="<?php echo $categoria['categoria']->getcategorias_id() ?>"> <i class='mdi mdi-delete'></i></a>
                                                 </td>
-                                            <?php } ?>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -161,7 +161,7 @@ $stats = $this->d['stats'];
     <div id="modalAgregarCategoria" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form id="formnewuser" name="formnewuser" action="categorias/newCategorias" class="needs-validation" method="POST" novalidate>
+                <form id="formnewcatg" name="formnewcatg" class="needs-validation" method="POST" novalidate>
 
                     <div class="modal-header modal-colored-header bg-danger">
                         <h4 class="modal-title" id="primary-header-modalLabel">Nueva Categoria</h4>
@@ -187,11 +187,6 @@ $stats = $this->d['stats'];
                             <button type="submit" class="btn btn-danger">Guardar</button>
                         </div>
                     </div>
-                    <?php
-                        $crearCategoria = new Categorias();
-                        $crearCategoria->newCategorias();
-
-                    ?>
                 </form>
             </div><!-- /.modal-content -->
 
@@ -217,7 +212,7 @@ $stats = $this->d['stats'];
     <script src="<?php echo URL . RQ ?>assets/js/vendor/responsive.bootstrap5.min.js"></script>
     <script src="<?php echo URL . RQ ?>assets/js/vendor/dataTables.checkboxes.min.js"></script>
     <!-- demo app -->
-    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.categories.js"></script>
+    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.categorias.js"></script>
     <!-- end demo js-->
 
     <!-- sweetalert2 js -->

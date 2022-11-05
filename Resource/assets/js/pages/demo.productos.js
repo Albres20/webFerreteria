@@ -106,7 +106,7 @@ function eliminarProducto(id) {
         reverseButtons: true
     }).then((result) => {
         if (result.value) {
-            var url = "http://localhost/webFerreteria/";
+            var url = "http://localhost:8080/webFerreteria/";
             location.href = url + "productos/delete/" + id;
             /*$.post("usuarios/delete/"+id, function (status) {
                 location.reload();

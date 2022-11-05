@@ -21,6 +21,8 @@ class Success{
     const SUCCESS_PRODUCT_UPDATE = "83987dfafbf6f4d452130c6a6aebffe8";
     const SUCCESS_SIGNUP_NEWPRODUCT = "058511c88c073a0adf1fb3d67529c0c9";
     const SUCCESS_ADMIN_NEWCATEGORY = "7085d129f6bae935bc430885bbf2a25e";
+    const SUCCESS_ADMIN_UPDATECATEGORY = "20fa9453ba6b7524a6665d40e5c05f66";
+    const SUCCESS_ADMIN_DELETECATEGORIA = "195cf6568b96216d77e77caaf3870898";
     
     const SUCCESS_CLIENTE_NEWUSER = "2be8ec3653049b96e4faaf9b058050af";
 
@@ -49,6 +51,8 @@ class Success{
             Success::SUCCESS_PRODUCT_UPDATE => "Producto actualizado correctamente",
             Success::SUCCESS_SIGNUP_NEWPRODUCT => "Producto registrado correctamente",
             Success::SUCCESS_ADMIN_NEWCATEGORY => "Categoria registrada correctamente",
+            Success::SUCCESS_ADMIN_UPDATECATEGORY => "Categoria actualizada correctamente",
+            Success::SUCCESS_ADMIN_DELETECATEGORIA => "Categoria eliminada correctamente",
 
             Success::SUCCESS_CLIENTE_NEWUSER => "Cliente / Proveedor registrado correctamente",
 

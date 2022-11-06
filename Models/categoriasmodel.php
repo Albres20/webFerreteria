@@ -60,7 +60,7 @@
         }
         public function delete($categorias_id){
             try{
-                $query = $this->db->connect()->prepare('DELETE FROM categorias WHERE categorias_id = :categorias_id');
+                $query = $this->prepare('DELETE FROM categorias WHERE categorias_id = :categorias_id');
                 $query->execute([ 'categorias_id' => $categorias_id]);
                 return true;
             }catch(PDOException $e){
@@ -70,7 +70,7 @@
         }
         public function update(){
             try{
-                $query = $this->db->connect()->prepare('UPDATE categorias SET categorias_nombre = :categorias_nombre, categorias_color = :categorias_color WHERE categorias_id = :categorias_id');
+                $query = $this->prepare('UPDATE categorias SET categorias_nombre = :categorias_nombre, categorias_color = :categorias_color WHERE categorias_id = :categorias_id');
                 $query->execute([
                     'categorias_id' => $this->categorias_id,
                     'categorias_nombre' => $this->categorias_nombre, 

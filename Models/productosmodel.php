@@ -44,6 +44,11 @@
             //$this->codigo = '';
             //$this->nombre = '';
             //$this->marca = '';
+            $this->precio_compra = 0.00;
+            $this->precio_venta = 0.00;
+            $this->ganancia = 0.00;
+            $this->stock = 0;
+            $this->idcategoria = 1;
 
             //$this->agregado = '';
         }
@@ -172,24 +177,26 @@
 
         public function update(){
             try{
-                $query = $this->prepare('UPDATE productos SET productos_codigo = :productos_codigo, productos_nombre = :productos_nombre,
-                productos_marca = :productos_marca, productos_preccompra = :productos_preccompra, productos_ganancia = :productos_ganancia,
-                productos_precventa = :productos_precventa, productos_cantidad = :productos_cantidad, productos_imagen = :productos_imagen,
+                $query = $this->prepare('UPDATE productos SET productos_codigo = :productos_codigo, productos_nombre = :productos_nombre, 
+                productos_marca = :productos_marca, productos_preccompra = :productos_preccompra, productos_ganancia = :productos_ganancia, 
+                productos_precventa = :productos_precventa, productos_cantidad = :productos_cantidad, productos_imagen = :productos_imagen, 
                 productos_idcategorias = :productos_idcategorias WHERE productos_id = :productos_id');
                 $query->execute([
-                    'productos_id' => $this->id,
                     'productos_codigo' => $this->codigo,
                     'productos_nombre' => $this->nombre,
+                    'productos_marca' => $this->marca,
                     'productos_preccompra' => $this->precio_compra,
                     'productos_ganancia' => $this->ganancia,
                     'productos_precventa' => $this->precio_venta,
                     'productos_cantidad' => $this->stock,
                     'productos_imagen' => $this->imagen,
-                    'productos_idcategorias' => $this->idcategoria
+                    'productos_idcategorias' => $this->idcategoria,
+                    'productos_id' => $this->id
                 ]);
                 return true;
+
             }catch(PDOException $e){
-                echo $e;
+                error_log('PRODUCTOSMODEL::update->PDOException ' . $e);
                 return false;
             }
         }

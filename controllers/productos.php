@@ -84,7 +84,7 @@ class Productos extends SessionController
     {
         error_log('Admin::newProductos()');
         if ($this->existPOST([
-            'productos_codigo', 'productos_nombre', 'productos_marca', 'productos_preccompra', 'productos_ganancia',
+            'productos_codigo', 'productos_nombre', 'productos_marca', 'productos_preccompra',
             'productos_precventa', 'productos_cantidad', 'productos_idcategorias'
         ])) {
 
@@ -93,7 +93,6 @@ class Productos extends SessionController
             $nombre = $this->getPost('productos_nombre');
             $marca = $this->getPost('productos_marca');
             $precio_compra = $this->getPost('productos_preccompra');
-            $ganancia = $this->getPost('productos_ganancia');
             $precio_venta = $this->getPost('productos_precventa');
             $stock = $this->getPost('productos_cantidad');
             //$imagen = $this->getPost('productos_imagen');
@@ -150,7 +149,7 @@ class Productos extends SessionController
             $productosModel->setMarca($marca);
             $productosModel->setPrecioCompra($precio_compra);
             $productosModel->setPrecioVenta($precio_venta);
-            $productosModel->setGanancia($ganancia);
+            $productosModel->setGanancia(0);
             $productosModel->setStock($stock);
             $productosModel->setImagen($ruta);
             $productosModel->setidCategoria($categoria);
@@ -228,34 +227,77 @@ class Productos extends SessionController
         error_log("productos::updateProductos() id = " . $id);
 
         if ($this->existPOST([
-            'productos_codigo', 'productos_nombre', 'productos_marca', 'productos_preccompra', 'productos_ganancia',
-            'productos_precventa', 'productos_cantidad', 'productos_idcategorias'
-        ])) {
+            'productos_codigo', 'productos_nombre', 'productos_marca', 'productos_preccompra',
+            'productos_precventa', 'productos_cantidad', 'productos_idcategorias'])) {
             $codigo = $this->getPost('productos_codigo');
             //json_encode($codigo);
             $nombre = $this->getPost('productos_nombre');
             $marca = $this->getPost('productos_marca');
             $precio_compra = $this->getPost('productos_preccompra');
-            $ganancia = $this->getPost('productos_ganancia');
             $precio_venta = $this->getPost('productos_precventa');
             $stock = $this->getPost('productos_cantidad');
             //$imagen = $this->getPost('productos_imagen'); solo actualizare los datos
             $categoria = $this->getPost('productos_idcategorias');
 
+            $ruta = "";
 
+            //$this->updatePhoto();
+            $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
             $productosModel = new ProductosModel();
+            //error_log("Admin::newProductos() :: productosModel -> ". $_FILES['productos_imagen']['name']);
+
+            if (isset($_FILES["productos_imagen"]["tmp_name"]) && in_array($_FILES["productos_imagen"]["type"], $permitidos)) {
+
+                $photo = $_FILES['productos_imagen'];
+
+                $target_dir = RQ . "image/imgproductos/";
+                $extarr = explode('.', $photo["name"]);
+                $filename = $extarr[sizeof($extarr) - 2];
+                $ext = $extarr[sizeof($extarr) - 1];
+                $hash = md5(Date('Ymdgi') . $filename) . '.' . $ext;
+                $target_file = $target_dir . $hash;
+                $uploadOk = 1;
+                $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+                $check = getimagesize($photo["tmp_name"]);
+                if ($check !== false) {
+                    //echo "File is an image - " . $check["mime"] . ".";
+                    $uploadOk = 1;
+                } else {
+                    //echo "File is not an image.";
+                    $uploadOk = 0;
+                }
+
+                if ($uploadOk == 0) {
+                    //echo "Sorry, your file was not uploaded.";
+                    $this->redirect('productos', ['error' => Errors::ERROR_USER_UPDATEPHOTO_FORMAT]);
+                    // if everything is ok, try to upload file
+                } else {
+                    if (move_uploaded_file($photo["tmp_name"], $target_file)) {
+
+                        //$this->model->updatePhoto($hash, $this->user->getId());
+                        $ruta = $hash;
+
+                        $this->redirect('productos', ['success' => Success::SUCCESS_PRODUCT_UPDATEPHOTO]);
+                    } else {
+                        $this->redirect('productos', ['error' => Errors::ERROR_PRODUCT_UPDATEPHOTO]);
+                    }
+                }
+            }
+
             $productosModel->get($id);
+            error_log("productos::Productos() :: productosModel -> " . $productosModel->getId() . " - " . $productosModel->getCodigo() . " - " . $productosModel->getNombre() . " - " . $productosModel->getMarca() . " - " . $productosModel->getPrecioCompra() . " - " . $productosModel->getPrecioVenta() . " - " . $productosModel->getStock() . " - " . $productosModel->getImagen() . " - " . $productosModel->getIdCategoria());
             $productosModel->setCodigo($codigo);
             $productosModel->setNombre($nombre);
             $productosModel->setMarca($marca);
             $productosModel->setPrecioCompra($precio_compra);
             $productosModel->setPrecioVenta($precio_venta);
-            $productosModel->setGanancia($ganancia);
+            //$productosModel->setGanancia(0);
             $productosModel->setStock($stock);
-            //$productosModel->setImagen($ruta);
+            $productosModel->setImagen($ruta);
             $productosModel->setidCategoria($categoria);
 
-            //error_log("productos::updateProductos() :: productosModel -> " . $productosModel->getPrecioCompra());
+            error_log("productos::updateProductos() :: productosModel -> " . $productosModel->getId() . " - " . $productosModel->getCodigo() . " - " . $productosModel->getNombre() . " - " . $productosModel->getMarca() . " - " . $productosModel->getPrecioCompra() . " - " . $productosModel->getPrecioVenta() . " - " . $productosModel->getStock() . " - " . $productosModel->getImagen() . " - " . $productosModel->getIdCategoria());
 
             if ($productosModel->update()){
                 error_log('Admin::updateProductos() => producto actualizado: ' . $productosModel->getId());

@@ -28,6 +28,7 @@ $(document).ready(function() {
             $("#formproduct").trigger("reset");
             $("#formproduct").attr("action", "productos/newProductos");
             //$("#inputImage").prop("disabled", false);
+            $("#imagePreview").attr("src", "resource/image/imgproductos/default-product.png");
             //$(".imgprodct").show();
 
             if (document.getElementsByClassName("bg-primary")) {
@@ -52,19 +53,22 @@ function editarProducto(id) {
     var codigo = fila.find("td").eq(1).text();
     var imagen = fila.find("td").eq(2).find("img").attr("src");
     //acortar direccion de imagen
-    var imagen = imagen.substring(31);
+    imagen = imagen.substring(36);
     console.log(imagen);
     var nombre = fila.find("td").eq(2).text();
     //quitar los espacios en blanco de nombre
     var nombre = nombre.trim();
     var marca = fila.find("td").eq(3).text();
-    var categoria = fila.find("td").eq(6).text();
+    var categoria = fila.find("td").eq().text();
     //console.log(categoria);
-    var preciocompra = fila.find("td").eq().text();
-    var ganancia = fila.find("td").eq().text();
-    var precioventa = fila.find("td").eq(4).text();
+    var preciocompra = fila.find("td").eq(4).text();
+    preciocompra = preciocompra.replace("S/", "");
+    preciocompra = parseFloat(preciocompra).toFixed(2);
+    var precioventa = fila.find("td").eq(5).text();
     precioventa = precioventa.replace("S/", "");
-    var stock = fila.find("td").eq(5).text();
+    //dar formato a 2 decimales
+    precioventa = parseFloat(precioventa).toFixed(2);
+    var stock = fila.find("td").eq(6).text();
 
     //$("#inputImage").prop("disabled", true);
     //$(".imgprodct").hide();
@@ -72,10 +76,10 @@ function editarProducto(id) {
     $("#codigopd").val(codigo);
     $("#nombre").val(nombre);
     $("#imagePreview").attr("src", imagen);
+    //$("#inputImage").val(imagen);
     $("#marca").val(marca);
     $("#categoria").val(categoria);
     $("#buying_price").val(preciocompra);
-    $("#profit").val(ganancia);
     $("#selling_price").val(precioventa);
     $("#stock").val(stock);
     

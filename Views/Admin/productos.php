@@ -89,6 +89,7 @@ $categorias = $this->d['categorias'];
                                             <th data-sort="" class="all">Codigo</th>
                                             <th data-sort="">Producto</th>
                                             <th data-sort="">Marca</th>
+                                            <th data-sort="">Prec. Compra</th>
                                             <th data-sort="">Prec. Venta</th>
                                             <th data-sort="">Stock</th>
                                             <th data-sort="">Categoria</th>
@@ -120,6 +121,7 @@ $categorias = $this->d['categorias'];
                                                     ?>
                                                 </td>
                                                 <?php echo '<td>' . $producto['producto']->getproductos_marca() . '</td>' ?>
+                                                <?php echo '<td> S/ ' . $producto['producto']->getproductos_preccompra() . '</td>' ?>
                                                 <?php echo '<td> S/ ' . $producto['producto']->getproductos_precventa() . '</td>' ?>
                                                 <?php echo '<td>' . $producto['producto']->getproductos_cantidad() . '</td>' ?>
                                                 <?php echo '<td><span class="badge badge-outline rounded-pill" style="background-color:' . $producto['producto']->getcategorias_color() . '">' . $producto['producto']->getcategorias_nombre() . '</span>' ?>
@@ -223,7 +225,7 @@ $categorias = $this->d['categorias'];
                                     <div class="col-md-6 col-lg-6">
                                         <div class="mb-3">
                                             <label class="form-label" for="buying_price">Precio de compra</label>
-                                            <input class="form-control" data-toggle="touchspin" id="buying_price" name="productos_preccompra" type="text" data-step="0.1" data-decimals="2" data-bts-prefix="S/" pattern="\d+(\.\d{2})?" title="precio con 2 decimales" onkeyup="precio_venta();" autocomplete="off" required>
+                                            <input class="form-control" data-toggle="touchspin" id="buying_price" name="productos_preccompra" type="text" data-step="0.1" data-decimals="2" data-bts-prefix="S/" pattern="\d+(\.\d{2})?" title="precio con 2 decimales" autocomplete="off" required>
                                             <div class="invalid-tooltip">
                                                 Proporcione un precio de compra válido.
                                             </div>
@@ -231,21 +233,15 @@ $categorias = $this->d['categorias'];
                                     </div>
                                     <div class="col-md-6 col-lg-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="profit">Ganancia</label>
-                                            <input class="form-control" data-toggle="touchspin" id="profit" name="productos_ganancia" type="text" data-step="0.1" data-decimals="2" data-bts-prefix="S/" pattern="\d+(\.\d{2})?" title="precio con 2 decimales" onkeyup="precio_venta();" autocomplete="off" required>
+                                            <label class="form-label" for="selling_price">Precio de venta</label>
+                                            <input class="form-control" data-toggle="touchspin" id="selling_price" name="productos_precventa" type="text" data-step="0.1" data-decimals="2" data-bts-prefix="S/" pattern="\d+(\.\d{2})?" title="precio con 2 decimales" autocomplete="off" required>
                                             <div class="invalid-tooltip">
-                                                Proporcione una ganancia válida.
+                                                Proporcione un precio de venta válido.
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="position-relative mb-3 col-lg-9">
-                                    <label class="form-label" for="selling_price">Precio de venta</label>
-                                    <input class="form-control" data-toggle="touchspin" id="selling_price" name="productos_precventa" type="text" data-step="0.1" data-decimals="2" data-bts-prefix="S/" pattern="\d+(\.\d{2})?" title="precio con 2 decimales" autocomplete="off" required>
-                                    <div class="invalid-tooltip">
-                                        Proporcione un precio de venta válido.
-                                    </div>
-                                </div>
+
                                 <div class="position-relative mb-3 col-lg-9">
                                     <label class="form-label" for="stock">Stock inicial</label>
                                     <input class="form-control" data-toggle="touchspin" id="stock" name="productos_cantidad" type="text" pattern="\d{1,11}" title="cantidad del producto" maxlength="11" autocomplete="off" required>
@@ -308,7 +304,7 @@ $categorias = $this->d['categorias'];
     <script src="<?php echo URL . RQ ?>assets/js/vendor/responsive.bootstrap5.min.js"></script>
     <script src="<?php echo URL . RQ ?>assets/js/vendor/dataTables.checkboxes.min.js"></script>
     <!-- demo app -->
-    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.productos.js"></script>
+    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.products.js"></script>
     <!-- end demo js-->
 
     <!-- sweetalert2 js -->
@@ -384,36 +380,6 @@ $categorias = $this->d['categorias'];
                 return false;
                 setTimeout("location.reload()", 2000);
             }
-        }
-    </script>
-    <!-- funcion de calcular ganancia en base a precio venta (inconcluso) -->
-    <script type="text/javascript">
-        function precio_venta() {
-            var profit = $("#profit").val(); //ganancia
-            var buying_price = $("#buying_price").val();
-
-            console.log(profit);
-            console.log(buying_price);
-
-            var parametros = {
-                "profit": profit,
-                "buying_price": buying_price
-            };
-            /*$.ajax({
-                dataType: "json",
-                type: "POST",
-                url: './ajax/precio.php',
-                data: parametros,
-                success: function(data) {
-                    //$("#datos").html(data).fadeIn('slow');
-                    $.each(data, function(index, element) {
-                        var precio = element.precio;
-                        $("#selling_price").val(precio);
-                    });
-
-
-                }
-            })*/
         }
     </script>
 </body>

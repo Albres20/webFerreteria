@@ -5,7 +5,7 @@
     define('HOST', 'localhost');
     define('DB', 'hyt_trading');
     define('USER', 'root');
-    define('PASSWORD', "");
+    define('PASSWORD', "1234");
     define('CHARSET', 'utf8mb4');
 
     define('DFT', 'default/');

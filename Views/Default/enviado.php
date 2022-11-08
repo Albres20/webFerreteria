@@ -35,20 +35,10 @@
 
                             <div class="text-center w-75 m-auto">
                                 <h4 class="text-dark-50 text-center mt-0 fw-bold">Restablecer la contraseña</h4>
-                                <p class="text-muted mb-4">Ingrese su dirección de correo electrónico y le enviaremos un correo electrónico con instrucciones para restablecer su contraseña.</p>
+                                <p class="text-muted mb-4">Hemos enviado su contraseña a su correo </p>
                             </div>
 
-                            <form action="recoverpw/enviarCorreo" method="POST">
-                            <?php $this->showMessages();?>
-                                <div class="mb-3">
-                                    <label for="emailaddress" class="form-label">Correo electrónico</label>
-                                    <input class="form-control" type="email" id="emailaddress" name ="emailaddress" required="" placeholder="Introduce tu correo electrónico">
-                                </div>
-
-                                <div class="mb-0 text-center">
-                                    <button class="btn btn-dark" type="submit">Restablecer la contraseña</button>
-                                </div>
-                            </form>
+                            
                         </div> <!-- end card-body-->
                     </div>
                     <!-- end card -->

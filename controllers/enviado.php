@@ -1,6 +1,6 @@
 <?php
 
-class Recoverpw extends SessionController{
+class Enviado extends SessionController{
 
     private $user;
 
@@ -14,27 +14,21 @@ class Recoverpw extends SessionController{
         $actual_link = trim("$_SERVER[REQUEST_URI]");
         $url = explode('/', $actual_link);
         $this->view->errorMessage = '';
-        $this->view->render('Default/recoverpw');
+        $this->view->render('Default/enviado');
     }
     function enviarCorreo(){
         if( $this->existPOST(['emailaddress']) ){
             $username = $this->getPost('emailaddress');
-            $recover=new EnviadoModel();        
             error_log($username);
-            if($recover->send($username)){
-                echo "<script> alert('Contraseña enviado creo1');</script>";
-            }
-            else{
-                echo "<script> alert('Contraseña No enviada creo1');</script>";
-            }
-
-            
+            $user = $this->model->send($username);
+            //$this->redirect('', ['error' => Errors::ERROR_LOGIN_AUTHENTICATE_DATA]);
+            echo "<script> alert('Contraseña enviado creo1');</script>";
             
         }
         else{
-            echo "<script> alert('No cargo correo');</script>";
+            echo "<script> alert('Contraseña enviado creo2');</script>";
         }
-    } 
+    }    
 
 }
 

@@ -10,6 +10,11 @@
             "role": ["", "", ""]
         },
         {
+            "site": "enviado",
+            "access": "public",
+            "role": ["", "", ""]
+        },
+        {
             "site": "caja",
             "access": "private",
             "role": ["caja", " ", " "]

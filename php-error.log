@@ -1,36 +1,267 @@
-[05-Nov-2022 23:36:19 Europe/Berlin] Hello, errors!
-[05-Nov-2022 23:36:20 Europe/Berlin] SessionController::validateSession()
-[05-Nov-2022 23:36:20 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
-[05-Nov-2022 23:36:20 Europe/Berlin] sessionController::isPublic(): currentURL => 
-[05-Nov-2022 23:36:20 Europe/Berlin] SessionController::validateSession() public page
-[05-Nov-2022 23:37:54 Europe/Berlin] Hello, errors!
-[05-Nov-2022 23:37:54 Europe/Berlin] SessionController::validateSession()
-[05-Nov-2022 23:37:54 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
-[05-Nov-2022 23:37:54 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
-[05-Nov-2022 23:37:54 Europe/Berlin] SessionController::validateSession() public page
-[05-Nov-2022 23:37:54 Europe/Berlin] RecuperarContraseña::constructor()
-[05-Nov-2022 23:37:54 Europe/Berlin] RecuperarContraseña::RENDER() 
-[05-Nov-2022 23:38:11 Europe/Berlin] Hello, errors!
-[05-Nov-2022 23:38:11 Europe/Berlin] SessionController::validateSession()
-[05-Nov-2022 23:38:11 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw?, url => recoverpw?
-[05-Nov-2022 23:38:11 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw?
-[05-Nov-2022 23:38:11 Europe/Berlin] SessionController::validateSession() public page
-[05-Nov-2022 23:38:11 Europe/Berlin] RecuperarContraseña::constructor()
-[05-Nov-2022 23:38:11 Europe/Berlin] RecuperarContraseña::RENDER() 
-[06-Nov-2022 00:09:45 Europe/Berlin] Hello, errors!
-[06-Nov-2022 00:09:45 Europe/Berlin] SessionController::validateSession()
-[06-Nov-2022 00:09:45 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login, url => login
-[06-Nov-2022 00:09:45 Europe/Berlin] sessionController::isPublic(): currentURL => login
-[06-Nov-2022 00:09:45 Europe/Berlin] SessionController::validateSession() redirect al login
-[06-Nov-2022 00:09:45 Europe/Berlin] Hello, errors!
-[06-Nov-2022 00:09:45 Europe/Berlin] SessionController::validateSession()
-[06-Nov-2022 00:09:45 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
-[06-Nov-2022 00:09:45 Europe/Berlin] sessionController::isPublic(): currentURL => 
-[06-Nov-2022 00:09:45 Europe/Berlin] SessionController::validateSession() public page
-[06-Nov-2022 20:05:42 Europe/Berlin] Hello, errors!
-[06-Nov-2022 20:05:42 Europe/Berlin] SessionController::validateSession()
-[06-Nov-2022 20:05:42 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw?, url => recoverpw?
-[06-Nov-2022 20:05:42 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw?
-[06-Nov-2022 20:05:42 Europe/Berlin] SessionController::validateSession() public page
-[06-Nov-2022 20:05:42 Europe/Berlin] RecuperarContraseña::constructor()
-[06-Nov-2022 20:05:42 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 03:55:42 Europe/Berlin] Hello, errors!
+[08-Nov-2022 03:55:42 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 03:55:42 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 03:55:42 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 03:55:42 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 03:55:42 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 03:55:42 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 03:55:43 Europe/Berlin] Hello, errors!
+[08-Nov-2022 03:55:43 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 03:55:43 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 03:55:43 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 03:55:43 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 03:55:43 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 03:55:43 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 03:55:44 Europe/Berlin] Hello, errors!
+[08-Nov-2022 03:55:44 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 03:55:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 03:55:44 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 03:55:44 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 03:55:44 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 03:55:44 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 03:55:54 Europe/Berlin] Hello, errors!
+[08-Nov-2022 03:55:54 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 03:55:54 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw/enviarCorreo, url => recoverpw
+[08-Nov-2022 03:55:54 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 03:55:54 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 03:55:54 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 03:55:54 Europe/Berlin] ExistPOST: Existen parámetros
+[08-Nov-2022 03:55:54 Europe/Berlin] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, object given in C:\xampp\htdocs\webFerreteria\Models\enviarmodel.php on line 17
+[08-Nov-2022 03:59:13 Europe/Berlin] Hello, errors!
+[08-Nov-2022 03:59:14 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 03:59:14 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw/index.html, url => recoverpw
+[08-Nov-2022 03:59:14 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 03:59:14 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 03:59:14 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 03:59:14 Europe/Berlin] Hello, errors!
+[08-Nov-2022 03:59:14 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 03:59:14 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 03:59:14 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 03:59:14 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 03:59:14 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 03:59:14 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 03:59:15 Europe/Berlin] Hello, errors!
+[08-Nov-2022 03:59:15 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 03:59:15 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 03:59:15 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 03:59:15 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 03:59:15 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 03:59:15 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 03:59:18 Europe/Berlin] Hello, errors!
+[08-Nov-2022 03:59:18 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 03:59:18 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw/enviarCorreo, url => recoverpw
+[08-Nov-2022 03:59:18 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 03:59:18 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 03:59:18 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 03:59:18 Europe/Berlin] ExistPOST: Existen parámetros
+[08-Nov-2022 03:59:18 Europe/Berlin] david.pablo@unmsm.edu.pe
+[08-Nov-2022 03:59:18 Europe/Berlin] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, object given in C:\xampp\htdocs\webFerreteria\Models\enviarmodel.php on line 17
+[08-Nov-2022 03:59:20 Europe/Berlin] Hello, errors!
+[08-Nov-2022 03:59:20 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 03:59:20 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw/index.html, url => recoverpw
+[08-Nov-2022 03:59:20 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 03:59:20 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 03:59:20 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:01:51 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:01:51 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:01:51 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 04:01:51 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:01:51 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:01:51 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:01:51 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 04:01:52 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:01:53 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:01:53 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 04:01:53 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:01:53 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:01:53 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:01:53 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 04:01:53 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:01:53 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:01:53 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 04:01:53 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:01:53 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:01:53 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:01:53 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 04:01:53 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:01:53 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:01:53 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 04:01:53 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:01:53 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:01:53 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:01:53 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 04:01:54 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:01:54 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:01:54 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 04:01:54 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:01:54 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:01:54 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:01:54 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 04:01:54 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:01:54 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:01:54 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 04:01:54 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:01:54 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:01:54 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:01:54 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 04:01:57 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:01:57 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:01:57 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw/enviarCorreo, url => recoverpw
+[08-Nov-2022 04:01:57 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:01:57 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:01:57 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:01:57 Europe/Berlin] ExistPOST: Existen parámetros
+[08-Nov-2022 04:01:57 Europe/Berlin] david.pablo@unmsm.edu.pe
+[08-Nov-2022 04:01:57 Europe/Berlin] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, array given in C:\xampp\htdocs\webFerreteria\Models\enviarmodel.php on line 17
+[08-Nov-2022 04:01:59 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:01:59 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:01:59 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw/index.html, url => recoverpw
+[08-Nov-2022 04:01:59 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:01:59 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:01:59 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:02:39 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:02:39 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:02:39 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 04:02:39 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:02:39 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:02:39 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:02:39 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 04:02:40 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:02:40 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:02:40 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 04:02:40 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:02:40 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:02:40 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:02:40 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 04:02:41 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:02:41 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:02:41 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 04:02:41 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:02:41 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:02:41 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:02:41 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 04:02:43 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:02:43 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:02:43 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw/enviarCorreo, url => recoverpw
+[08-Nov-2022 04:02:43 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:02:43 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:02:43 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:02:43 Europe/Berlin] ExistPOST: Existen parámetros
+[08-Nov-2022 04:02:43 Europe/Berlin] david.pablo@unmsm.edu.pe
+[08-Nov-2022 04:02:43 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\xampp\htdocs\webFerreteria\Models\enviarmodel.php on line 17
+[08-Nov-2022 04:02:43 Europe/Berlin] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, array given in C:\xampp\htdocs\webFerreteria\Models\enviarmodel.php on line 18
+[08-Nov-2022 04:05:50 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:05:50 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:05:50 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 04:05:50 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:05:50 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:05:50 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:05:50 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 04:05:50 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:05:50 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:05:50 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[08-Nov-2022 04:05:50 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[08-Nov-2022 04:05:50 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:05:51 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:05:51 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:05:51 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[08-Nov-2022 04:05:51 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[08-Nov-2022 04:05:51 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:05:52 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:05:52 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:05:52 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 04:05:52 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:05:52 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:05:52 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:05:52 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 04:05:54 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:05:54 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:05:54 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[08-Nov-2022 04:05:54 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[08-Nov-2022 04:05:54 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:05:56 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:05:56 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:05:56 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 04:05:56 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:05:56 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:05:56 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:05:56 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 04:05:58 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:05:58 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:05:58 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw/enviarCorreo, url => recoverpw
+[08-Nov-2022 04:05:58 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:05:58 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:05:58 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:05:58 Europe/Berlin] ExistPOST: Existen parámetros
+[08-Nov-2022 04:05:58 Europe/Berlin] david.pablo@unmsm.edu.pe
+[08-Nov-2022 04:05:58 Europe/Berlin] PHP Warning:  error_log() expects parameter 1 to be string, array given in C:\xampp\htdocs\webFerreteria\Models\enviarmodel.php on line 17
+[08-Nov-2022 04:05:58 Europe/Berlin] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, array given in C:\xampp\htdocs\webFerreteria\Models\enviarmodel.php on line 18
+[08-Nov-2022 04:06:06 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:06:06 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:06:06 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw/index.html, url => recoverpw
+[08-Nov-2022 04:06:06 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:06:06 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:06:06 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:12:51 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:12:51 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:12:51 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[08-Nov-2022 04:12:51 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[08-Nov-2022 04:12:51 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:12:51 Europe/Berlin] RecuperarContraseña::constructor()
+[08-Nov-2022 04:12:51 Europe/Berlin] RecuperarContraseña::RENDER() 
+[08-Nov-2022 04:12:53 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:12:53 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:12:53 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login, url => login
+[08-Nov-2022 04:12:53 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[08-Nov-2022 04:12:53 Europe/Berlin] SessionController::validateSession() redirect al login
+[08-Nov-2022 04:12:53 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:12:53 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:12:53 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[08-Nov-2022 04:12:53 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[08-Nov-2022 04:12:53 Europe/Berlin] SessionController::validateSession() public page
+[08-Nov-2022 04:13:02 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:13:02 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:13:02 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login/authenticate, url => login
+[08-Nov-2022 04:13:02 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[08-Nov-2022 04:13:02 Europe/Berlin] SessionController::validateSession() redirect al login
+[08-Nov-2022 04:13:02 Europe/Berlin] ExistPOST: Existen parámetros
+[08-Nov-2022 04:13:02 Europe/Berlin] login: inicio
+[08-Nov-2022 04:13:02 Europe/Berlin] login: user id 92
+[08-Nov-2022 04:13:02 Europe/Berlin] login: user estado valido 92 -> 1
+[08-Nov-2022 04:13:02 Europe/Berlin] login: password ok
+[07-Nov-2022 22:13:02 America/Bogota] Login::authenticate() passed
+[07-Nov-2022 22:13:02 America/Bogota] sessionController::initialize(): user: moises
+[07-Nov-2022 22:13:02 America/Bogota] sessionController::authorizeAccess(): role: admin
+[08-Nov-2022 04:13:02 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:13:02 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:13:02 Europe/Berlin] sessionController::getUserSessionData(): moises
+[08-Nov-2022 04:13:02 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[08-Nov-2022 04:13:02 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[08-Nov-2022 04:13:02 Europe/Berlin] sessionController::isPublic(): currentURL => admin
+[08-Nov-2022 04:13:02 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/admin, url => admin
+[08-Nov-2022 04:13:02 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[08-Nov-2022 04:13:02 Europe/Berlin] sessionController::getUserSessionData(): moises
+[08-Nov-2022 04:13:13 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:13:13 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:13:13 Europe/Berlin] sessionController::getUserSessionData(): moises
+[08-Nov-2022 04:13:13 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[08-Nov-2022 04:13:13 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/perfil, url => perfil
+[08-Nov-2022 04:13:13 Europe/Berlin] sessionController::isPublic(): currentURL => perfil
+[08-Nov-2022 04:13:13 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/perfil, url => perfil
+[08-Nov-2022 04:13:13 Europe/Berlin] SessionController::validateSession() => autorizado, lo deja pasar
+[08-Nov-2022 04:13:13 Europe/Berlin] sessionController::getUserSessionData(): moises
+[08-Nov-2022 04:13:13 Europe/Berlin] Gestion de perfil ::constructor() 
+[08-Nov-2022 04:13:13 Europe/Berlin] Gestion de perfil::RENDER() 
+[08-Nov-2022 04:26:47 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:26:47 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:26:47 Europe/Berlin] sessionController::getUserSessionData(): moises
+[08-Nov-2022 04:26:47 Europe/Berlin] sessionController::validateSession(): username:moises - role: admin
+[08-Nov-2022 04:26:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logout, url => logout
+[08-Nov-2022 04:26:47 Europe/Berlin] sessionController::isPublic(): currentURL => logout
+[08-Nov-2022 04:26:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/logout, url => logout
+[08-Nov-2022 04:26:47 Europe/Berlin] SessionController::validateSession() => no autorizado, redirige al main de cada rol
+[08-Nov-2022 04:26:47 Europe/Berlin] Hello, errors!
+[08-Nov-2022 04:26:47 Europe/Berlin] SessionController::validateSession()
+[08-Nov-2022 04:26:47 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[08-Nov-2022 04:26:47 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[08-Nov-2022 04:26:47 Europe/Berlin] SessionController::validateSession() public page

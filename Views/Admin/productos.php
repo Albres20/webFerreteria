@@ -47,7 +47,7 @@ $categorias = $this->d['categorias'];
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="admin">Inicio</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo $user->getRole(); ?>">Inicio</a></li>
                                 <li class="breadcrumb-item active">Productos</li>
                             </ol>
                         </div>
@@ -146,24 +146,7 @@ $categorias = $this->d['categorias'];
     </div> <!-- content -->
 
     <!-- Footer Start -->
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script> © Hyt - Trading
-                </div>
-                <div class="col-md-6">
-                    <div class="text-md-end footer-links d-none d-md-block">
-                        <a href="javascript: void(0);">About</a>
-                        <a href="javascript: void(0);">Support</a>
-                        <a href="javascript: void(0);">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include 'footer.php'; ?>
     <!-- end Footer -->
 
 
@@ -276,7 +259,7 @@ $categorias = $this->d['categorias'];
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-danger">Guardar</button>
+                            <button type="submit" class="btn btnGuardar">Guardar</button>
                         </div>
                     </div>
                 </form>

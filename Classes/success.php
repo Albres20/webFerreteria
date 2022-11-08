@@ -8,6 +8,7 @@ class Success{
     
     const SUCCESS_ADMIN_NEWUSER     = "f52228665c4f14c8695b194f670b0ef1";
     const SUCCESS_ADMIN_UPDATEUSER = "5792fc4c2ecad7183008c0c0a3ca66ee";
+    const SUCCESS_ADMIN_DELETEUSER = "be76225b21ae9972f5ea1bbc805eb348";
     const SUCCESS_EXPENSES_DELETE       = "fcd919285d5759328b143801573ec47d";
     const SUCCESS_EXPENSES_NEWEXPENSE   = "fbbd0f23184e820e1df466abe6102955";
     const SUCCESS_USER_UPDATEDATOS     = "2ee085ac8828407f4908e4d134195e5c";
@@ -25,8 +26,7 @@ class Success{
     const SUCCESS_ADMIN_DELETECATEGORIA = "195cf6568b96216d77e77caaf3870898";
     
     const SUCCESS_CLIENTE_NEWUSER = "2be8ec3653049b96e4faaf9b058050af";
-
-    const SUCCESS_ADMIN_DELETEUSER = "be76225b21ae9972f5ea1bbc805eb348";
+    const SUCCESS_ADMIN_CLIENTEDELETE = "d9c260e3d763cc1639a7129ff84bf613";
 
     const SUCCESS_EMPRESA_UPDATEPHOTO = "4d23b94932c9e77056c6f10868f5d5b1";
     const SUCCESS_EMPRESA_UPDATEDATOS = "d8e79eb94050d26047d6f8cf56ad243b";
@@ -39,6 +39,7 @@ class Success{
         $this->successList = [
             Success::SUCCESS_ADMIN_NEWUSER => "Nuevo usuario creado correctamente",
             Success::SUCCESS_ADMIN_UPDATEUSER => "Usuario actualizado correctamente",
+            Success::SUCCESS_ADMIN_DELETEUSER => "Usuario eliminado correctamente",
             Success::SUCCESS_EXPENSES_DELETE => "Gasto eliminado correctamente",
             Success::SUCCESS_EXPENSES_NEWEXPENSE => "Nuevo gasto registrado correctamente",
             Success::SUCCESS_USER_UPDATEDATOS => "Datos personales actualizados correctamente",
@@ -55,8 +56,7 @@ class Success{
             Success::SUCCESS_ADMIN_DELETECATEGORIA => "Categoria eliminada correctamente",
 
             Success::SUCCESS_CLIENTE_NEWUSER => "Cliente / Proveedor registrado correctamente",
-
-            Success::SUCCESS_ADMIN_DELETEUSER => "Usuario eliminado correctamente",
+            Success::SUCCESS_ADMIN_CLIENTEDELETE => "Cliente / Proveedor eliminado correctamente",
 
             Success::SUCCESS_EMPRESA_UPDATEPHOTO => "Imagen de empresa actualizada correctamente",
             Success::SUCCESS_EMPRESA_UPDATEDATOS => "Datos de empresa actualizados correctamente",

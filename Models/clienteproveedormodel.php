@@ -17,7 +17,7 @@ class ClienteProveedorModel extends Model implements IModel{
         parent::__construct();
 
         $this->cp_telefono = "000-0000";
-        $this->cp_datosadicionales = "";
+        $this->cp_datosadicionales = "Ninguno";
         //$this->agregado = '';
     }
 
@@ -37,9 +37,7 @@ class ClienteProveedorModel extends Model implements IModel{
                 'cp_correo' => $this->cp_correo,
                 'cp_datosadicionales' => $this->cp_datosadicionales
                 ]);
-                if($query->rowCount()) return true;
-
-                return false;
+            return true;
             }catch(PDOException $e){
                 return false;
         }
@@ -70,7 +68,7 @@ class ClienteProveedorModel extends Model implements IModel{
      */
     public function get($id){
         try{
-            $query = $this->prepare('SELECT * FROM usuarios WHERE id = :id');
+            $query = $this->prepare('SELECT * FROM clienteproveedor WHERE id = :id');
             $query->execute([ 'id' => $id]);
             $user = $query->fetch(PDO::FETCH_ASSOC);
 
@@ -91,8 +89,8 @@ class ClienteProveedorModel extends Model implements IModel{
 
     public function delete($id){
         try{
-            $query = $this->prepare('DELETE FROM cliente-proveedor WHERE id = :id');
-            $query->execute([ 'id' => $id]);
+            $query = $this->prepare('DELETE FROM clienteproveedor WHERE cp_id = :cp_id');
+            $query->execute([ 'cp_id' => $id]);
             return true;
         }catch(PDOException $e){
             echo $e;
@@ -141,6 +139,22 @@ class ClienteProveedorModel extends Model implements IModel{
         try{
             $query = $this->prepare('SELECT cp_nombrelegal FROM clienteproveedor WHERE cp_nombrelegal = :cp_nombrelegal');
             $query->execute( ['cp_nombrelegal' => $cp_nombrelegal]);
+            
+            if($query->rowCount() > 0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(PDOException $e){
+            echo $e;
+            return false;
+        }
+    }
+
+    public function existsID($id){
+        try{
+            $query = $this->prepare('SELECT cp_id FROM clienteproveedor WHERE cp_id = :cp_id');
+            $query->execute( ['cp_id' => $id]);
             
             if($query->rowCount() > 0){
                 return true;

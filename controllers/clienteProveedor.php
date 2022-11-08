@@ -17,26 +17,10 @@ class ClienteProveedor extends SessionController{
             'user' => $this->user,
             'clientes' => $this->getClienteDB(),
         ]);
-        /*$this->view->render('admin/usuarios', [
-            "usuarios" => $usuarios
-        ]);*/
-        //$this->view->render('admin/usuarios');
     }
-
-    // private function getUsuariosDB(){
-    //     $res = [];
-
-    //     $userModel = new UserModel();
-    //     $users = $userModel->getAll();
-
-    //     $res['count-users'] = count($users);
-    //     return $res;
-    // }
-    // function createUsuarios(){
-    //     $this->view->render('admin/crearusuariomodal');
-    // }
-
-
+    /////////////////////////////////////////////
+    //NUEVO CLIENTE
+    /////////////////////////////////////////////
     function newClienteProveedor(){
         error_log('Admin::newClienteProveedor()');
         if ($_REQUEST['cp_tipodocum'] != "SIN DOCUMENTO") {
@@ -118,6 +102,30 @@ class ClienteProveedor extends SessionController{
         }
     }
     
+    /////////////////////////////////////////////
+    //ACTUALIZAR CLIENTE / PROVEEDOR
+    /////////////////////////////////////////////
+    function updateCliente(){}
+
+    /////////////////////////////////////////////
+    //ELIMINAR CLIENTE
+    /////////////////////////////////////////////
+    function delete($params){
+        error_log("cliente/proveedor::delete()");
+        
+        if($params === NULL) $this->redirect('clienteProveedor', ['error' => Errors::ERROR_ADMIN_CLIENTEDELETE]);
+        $id = $params[0];
+        error_log("cliente/proveedor::delete() id = " . $id);
+        $clienteprovModel = new ClienteProveedorModel();
+
+        if($clienteprovModel->existsID($id)){
+            $clienteprovModel->delete($id);
+            $this->redirect('clienteProveedor', ['success' => Success::SUCCESS_ADMIN_CLIENTEDELETE]);
+        }else{
+            $this->redirect('clienteProveedor', ['error' => Errors::ERROR_ADMIN_CLIENTEDELETE]);
+        }
+    }
+
     function getClienteDB(){
         $res = [];
         $CreateClienteProveedorModel = new ClienteProveedorModel();
@@ -136,6 +144,8 @@ class ClienteProveedor extends SessionController{
 
         return $res;
     }
+
+
 }
 
 ?>

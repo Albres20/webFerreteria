@@ -2,29 +2,27 @@
 
 class UserModel extends Model implements IModel{
 
-    private $id;
-    private $username;
-    private $password;
-    private $fullname;
-    private $email;
-    private $role;
-    private $photo;
-    private $estado;
-    //private $ultimo_login;
-    //private $agregado;
+    private $usr_codigo;
+    private $usr_nombre;
+    private $usr_password;
+    private $usr_fullname;
+    private $usr_email;
+    private $usr_photo;
+    private $usr_estado;
+    private $rol_id;
+    private $ultima_sesion;
+    private $usr_agregado;
 
     public function __construct(){
         parent::__construct();
 
-        $this->username = '';
-        $this->password = '';
-        $this->fullname = '';
-        $this->email = '';
-        $this->role = '';
-        $this->photo = '';
-        $this->estado = 1;
-        $this->ultimo_login = '';
-        //$this->agregado = '';
+        $this->usr_nombre = '';
+        $this->usr_password = '';
+        $this->usr_fullname = '';
+        $this->usr_email = '';
+        $this->rol_id = 3;
+        $this->usr_photo = '';
+        //$this->usr_agregado = '';
     }
 
     function updateRole($role, $iduser){
@@ -145,18 +143,20 @@ class UserModel extends Model implements IModel{
         $items = [];
 
         try{
-            $query = $this->query('SELECT * FROM usuarios');
+            $query = $this->query('SELECT * FROM usuario');
 
             while($p = $query->fetch(PDO::FETCH_ASSOC)){
                 $item = new UserModel();
-                $item->setId($p['id']);
-                $item->setUsername($p['username']);
-                $item->setPassword($p['password'], false);
-                $item->setFullname($p['fullname']);
-                $item->setEmail($p['email']);
-                $item->setRole($p['role']);
-                $item->setPhoto($p['photo']);
-                $item->setEstado($p['estado']);
+                $item->setusr_codigo($p['usr_codigo']);
+                $item->setusr_nombre($p['usr_nombre']);
+                $item->setusr_password($p['usr_password'], false);
+                $item->setusr_fullname($p['usr_fullname']);
+                $item->setusr_email($p['usr_email']);
+                $item->setrol_id($p['rol_id']);
+                $item->setusr_photo($p['usr_photo']);
+                $item->setusr_estado($p['usr_estado']);
+                $item->setusr_ultima_sesion($p['usr_ultima_sesion']);
+                $item->setusr_agregado($p['usr_agregado']);
                 array_push($items, $item);
             }
             return $items;
@@ -172,18 +172,19 @@ class UserModel extends Model implements IModel{
      */
     public function get($id){
         try{
-            $query = $this->prepare('SELECT * FROM usuarios WHERE id = :id');
-            $query->execute([ 'id' => $id]);
+            $query = $this->prepare('SELECT * FROM usuario WHERE usr_codigo = :usr_codigo');
+            $query->execute([ 'usr_codigo' => $id]);
             $user = $query->fetch(PDO::FETCH_ASSOC);
 
-            $this->id = $user['id'];
-            $this->username = $user['username'];
-            $this->password = $user['password'];
-            $this->fullname = $user['fullname'];
-            $this->email = $user['email'];
-            $this->role = $user['role'];
-            $this->photo = $user['photo'];
-            $this->estado = $user['estado'];
+            $this->usr_codigo = $user['usr_codigo'];
+            $this->usr_nombre = $user['usr_nombre'];
+            $this->usr_password = $user['usr_password'];
+            $this->usr_fullname = $user['usr_fullname'];
+            $this->usr_email = $user['usr_email'];
+            $this->rol_id = $user['rol_id'];
+            $this->usr_photo = $user['usr_photo'];
+            $this->usr_ultima_sesion = $user['usr_ultima_sesion'];
+            $this->usr_agregado = $user['usr_agregado'];
 
             return $this;
         }catch(PDOException $e){
@@ -255,15 +256,40 @@ class UserModel extends Model implements IModel{
         }
     }
 
+    public function actualizarfecha_login(){
+        
+        date_default_timezone_set('America/Bogota');
+
+        $fecha = date('Y-m-d');
+        $hora = date('H:i:s');
+
+        $fechaActual = $fecha.' '.$hora;
+        
+        try{
+            $query = $this->prepare('UPDATE usuario SET usr_ultima_sesion = :val WHERE usr_codigo = :id');
+            $query->execute(['val' => $fechaActual, 'id' => $this->usr_codigo]);
+
+            if($query->rowCount() == 1){
+                return true;
+            }else{
+                return false;
+            }
+        
+        }catch(PDOException $e){
+            return NULL;
+        }
+    }
+
     public function from($array){
-        $this->id = $array['id'];
-        $this->username = $array['username'];
-        $this->password = $array['password'];
-        $this->fullname = $array['fullname'];
-        $this->email = $array['email'];
-        $this->role = $array['role'];
-        $this->photo = $array['photo'];
-        $this->estado = $array['estado']; //verifica el estado agarrando consulta el db
+        $this->usr_codigo = $array['usr_codigo'];
+        $this->usr_nombre = $array['usr_nombre'];
+        $this->usr_password = $array['usr_password'];
+        $this->usr_fullname = $array['usr_fullname'];
+        $this->usr_email = $array['usr_email'];
+        $this->usr_photo = $array['usr_photo'];
+        $this->usr_estado = $array['usr_estado']; //verifica el estado agarrando consulta el db
+        $this->rol_id = $array['rol_id'];
+        $this->usr_agregado = $array['usr_agregado'];
     }
 
     public function toArray(){
@@ -286,34 +312,34 @@ class UserModel extends Model implements IModel{
 
     /****************************************************************    */
 
-    public function setId($id){             $this->id = $id;}
-    public function setUsername($username){ $this->username = $username;}
+    public function setusr_codigo($id){             $this->usr_codigo = $id;}
+    public function setusr_nombre($username){ $this->usr_nombre = $username;}
     //FIXME: validar si se requiere el parametro de hash
-    public function setPassword($password, $hash = true){ 
+    public function setusr_password($password, $hash = true){ 
         if($hash){
-            $this->password = $this->getHashedPassword($password);
+            $this->usr_password = $this->getHashedPassword($password);
         }else{
-            $this->password = $password;
+            $this->usr_password = $password;
         }
     }
-    public function setFullname($fullname){ $this->fullname = $fullname;}
-    public function setEmail($email){       $this->email = $email;}
-    public function setRole($role){         $this->role = $role;}
-    public function setPhoto($photo){       $this->photo = $photo;}
-    public function setEstado($estado){     $this->estado = $estado;}
-    //public function setUltimo_login($ultimo_login){ $this->ultimo_login = $ultimo_login;}
-    //public function setAgregado($agregado){ $this->agregado = $agregado;}
+    public function setusr_fullname($fullname){ $this->usr_fullname = $fullname;}
+    public function setusr_email($email){       $this->usr_email = $email;}
+    public function setrol_id($role){         $this->rol_id = $role;}
+    public function setusr_photo($photo){       $this->usr_photo = $photo;}
+    public function setusr_estado($estado){     $this->usr_estado = $estado;}
+    public function setusr_ultima_sesion($ultimo_login){ $this->usr_ultima_sesion = $ultimo_login;}
+    public function setusr_agregado($agregado){ $this->usr_agregado = $agregado;}
 
-    public function getId(){                return $this->id;}
-    public function getUsername(){          return $this->username;}
-    public function getPassword(){          return $this->password;}
-    public function getFullname(){          return $this->fullname;}
-    public function getEmail(){             return $this->email;}
-    public function getRole(){              return $this->role;}
-    public function getPhoto(){             return $this->photo;}
-    public function getEstado(){            return $this->estado;}
-    //public function getUltimo_login(){      return $this->ultimo_login;}
-    //public function getAgregado(){          return $this->agregado;}
+    public function getusr_codigo(){          return $this->usr_codigo;}
+    public function getusr_nombre(){          return $this->usr_nombre;}
+    public function getusr_password(){        return $this->usr_password;}
+    public function getusr_fullname(){        return $this->usr_fullname;}
+    public function getusr_email(){           return $this->usr_email;}
+    public function getrol_id(){              return $this->rol_id;}
+    public function getusr_photo(){           return $this->usr_photo;}
+    public function getusr_estado(){          return $this->usr_estado;}
+    public function getusr_ultima_sesion(){   return $this->usr_ultima_sesion;}
+    public function getusr_agregado(){        return $this->usr_agregado;}
 }
 
 ?>

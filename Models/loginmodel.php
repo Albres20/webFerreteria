@@ -6,13 +6,13 @@ class LoginModel extends Model{
         parent::__construct();
     }
 
-    public function login($username, $password){
+    public function login($usr_nombre, $usr_password){
         // insertar datos en la BD
         error_log("login: inicio");
         try{
             //$query = $this->db->connect()->prepare('SELECT * FROM users WHERE username = :username');
-            $query = $this->prepare('SELECT * FROM usuarios WHERE username = :username');
-            $query->execute(['username' => $username]);
+            $query = $this->prepare('SELECT * FROM usuario WHERE usr_nombre = :usr_nombre');
+            $query->execute(['usr_nombre' => $usr_nombre]);
             
             if($query->rowCount() == 1){
 
@@ -21,22 +21,23 @@ class LoginModel extends Model{
                 $user = new UserModel();
                 $user->from($item);
 
-                error_log('login: user id '.$user->getId());
+                error_log('login: user id '.$user->getusr_codigo());
 
-                if(password_verify($password, $user->getPassword())){
+                if(password_verify($usr_password, $user->getusr_password())){
 
-                    if($user->getEstado() == 1){
-                        error_log('login: user estado valido '.$user->getId(). " -> " .$user->getEstado());
+                    if($user->getusr_estado() == "A"){
+                        error_log('login: user estado valido '.$user->getusr_codigo(). " -> " .$user->getusr_estado());
                         error_log('login: password ok');
                         //actualizamos la fecha del login del usuario
-                        $this->actualizarfecha_login($user->getId());
+                        //if($user->actualizarfecha_login()){
+                            //error_log('login: fecha login actualizada');
                         return $user;
                     }else{
-                        error_log('login: user estado invalido '.$user->getId(). " -> " .$user->getEstado());
+                        error_log('login: user estado invalido '.$user->getusr_codigo(). " -> " .$user->getusr_estado());
                         return NULL;
                     }
                     //return ['id' => $item['id'], 'username' => $item['username'], 'role' => $item['role']];
-                    //return $user->getId();
+                    //return $user->getusr_codigo();
                 }else{
                     return NULL;
                 }
@@ -44,35 +45,7 @@ class LoginModel extends Model{
         }catch(PDOException $e){
             return NULL;
         }
-    }
-
-    public function actualizarfecha_login($iduser){
-        
-        date_default_timezone_set('America/Bogota');
-
-        $fecha = date('Y-m-d');
-        $hora = date('H:i:s');
-
-        $fechaActual = $fecha.' '.$hora;
-        
-        try{
-            $query = $this->prepare('UPDATE usuarios SET ultimo_login = :val WHERE id = :id');
-            $query->execute(['val' => $fechaActual, 'id' => $iduser]);
-
-            if($query->rowCount() > 0){
-                return true;
-                error_log('login: actualizar fecha login en :'.$fechaActual);
-            }else{
-                return false;
-            }
-        
-        }catch(PDOException $e){
-            return NULL;
-        }
-    }
-
-    
-
+    } 
 }
 
 ?>

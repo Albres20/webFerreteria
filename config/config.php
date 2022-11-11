@@ -3,10 +3,10 @@
     const VIEWS='views/';
 
     define('HOST', 'localhost');
-    define('DB', 'hyt_trading');
+    define('DB', 'venta');
     define('USER', 'root');
-    define('PASSWORD', "");
-    define('CHARSET', 'utf8mb4');
+    define('PASSWORD', "qwerty");
+    define('CHARSET', 'utf8');
 
     define('DFT', 'default/');
     define('RQ', 'resource/');

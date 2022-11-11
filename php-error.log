@@ -1,0 +1,217 @@
+[10-Nov-2022 22:47:54 Europe/Berlin] Hello, errors!
+[10-Nov-2022 22:47:54 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 22:47:54 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login/authenticate, url => login
+[10-Nov-2022 22:47:54 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[10-Nov-2022 22:47:54 Europe/Berlin] SessionController::validateSession() redirect al login
+[10-Nov-2022 22:47:54 Europe/Berlin] ExistPOST: Existen parámetros
+[10-Nov-2022 22:47:54 Europe/Berlin] login: inicio
+[10-Nov-2022 22:47:54 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\webFerreteria\library\model.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\models\loginmodel.php(14): Model->prepare('SELECT * FROM u...')
+#1 C:\xampp\htdocs\webFerreteria\controllers\login.php(31): LoginModel->login('admin', '12345')
+#2 C:\xampp\htdocs\webFerreteria\library\app.php(52): Login->authenticate()
+#3 C:\xampp\htdocs\webFerreteria\index.php(39): App->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\library\model.php on line 16
+[10-Nov-2022 22:47:55 Europe/Berlin] Hello, errors!
+[10-Nov-2022 22:47:55 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 22:47:55 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[10-Nov-2022 22:47:55 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[10-Nov-2022 22:47:55 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 22:48:10 Europe/Berlin] Hello, errors!
+[10-Nov-2022 22:48:10 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 22:48:10 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login/authenticate, url => login
+[10-Nov-2022 22:48:10 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[10-Nov-2022 22:48:10 Europe/Berlin] SessionController::validateSession() redirect al login
+[10-Nov-2022 22:48:10 Europe/Berlin] ExistPOST: Existen parámetros
+[10-Nov-2022 22:48:10 Europe/Berlin] login: inicio
+[10-Nov-2022 22:48:10 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\webFerreteria\library\model.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\models\loginmodel.php(14): Model->prepare('SELECT * FROM u...')
+#1 C:\xampp\htdocs\webFerreteria\controllers\login.php(31): LoginModel->login('admin', 'qwerty')
+#2 C:\xampp\htdocs\webFerreteria\library\app.php(52): Login->authenticate()
+#3 C:\xampp\htdocs\webFerreteria\index.php(39): App->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\library\model.php on line 16
+[10-Nov-2022 22:48:11 Europe/Berlin] Hello, errors!
+[10-Nov-2022 22:48:11 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 22:48:11 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[10-Nov-2022 22:48:11 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[10-Nov-2022 22:48:11 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 22:49:22 Europe/Berlin] Hello, errors!
+[10-Nov-2022 22:49:22 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 22:49:22 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[10-Nov-2022 22:49:22 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[10-Nov-2022 22:49:22 Europe/Berlin] SessionController::validateSession() redirect al login
+[10-Nov-2022 22:49:22 Europe/Berlin] RecuperarContraseña::constructor()
+[10-Nov-2022 22:49:22 Europe/Berlin] RecuperarContraseña::RENDER() 
+[10-Nov-2022 22:49:23 Europe/Berlin] Hello, errors!
+[10-Nov-2022 22:49:23 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 22:49:23 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[10-Nov-2022 22:49:23 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[10-Nov-2022 22:49:23 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 22:49:59 Europe/Berlin] Hello, errors!
+[10-Nov-2022 22:49:59 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 22:49:59 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[10-Nov-2022 22:49:59 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[10-Nov-2022 22:49:59 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 22:50:02 Europe/Berlin] Hello, errors!
+[10-Nov-2022 22:50:02 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 22:50:02 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/recoverpw, url => recoverpw
+[10-Nov-2022 22:50:02 Europe/Berlin] sessionController::isPublic(): currentURL => recoverpw
+[10-Nov-2022 22:50:02 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 22:50:02 Europe/Berlin] RecuperarContraseña::constructor()
+[10-Nov-2022 22:50:02 Europe/Berlin] RecuperarContraseña::RENDER() 
+[10-Nov-2022 22:50:05 Europe/Berlin] Hello, errors!
+[10-Nov-2022 22:50:05 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 22:50:05 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login, url => login
+[10-Nov-2022 22:50:05 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[10-Nov-2022 22:50:05 Europe/Berlin] SessionController::validateSession() redirect al login
+[10-Nov-2022 22:50:05 Europe/Berlin] Hello, errors!
+[10-Nov-2022 22:50:05 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 22:50:05 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[10-Nov-2022 22:50:05 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[10-Nov-2022 22:50:05 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 23:47:12 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:47:12 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:47:12 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[10-Nov-2022 23:47:12 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[10-Nov-2022 23:47:12 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 23:47:23 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:47:23 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:47:23 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login/authenticate, url => login
+[10-Nov-2022 23:47:23 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[10-Nov-2022 23:47:23 Europe/Berlin] SessionController::validateSession() redirect al login
+[10-Nov-2022 23:47:23 Europe/Berlin] ExistPOST: Existen parámetros
+[10-Nov-2022 23:47:23 Europe/Berlin] login: inicio
+[10-Nov-2022 23:47:23 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\webFerreteria\library\model.php:16
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\models\loginmodel.php(14): Model->prepare('SELECT * FROM u...')
+#1 C:\xampp\htdocs\webFerreteria\controllers\login.php(31): LoginModel->login('admin', '12345')
+#2 C:\xampp\htdocs\webFerreteria\library\app.php(52): Login->authenticate()
+#3 C:\xampp\htdocs\webFerreteria\index.php(39): App->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\library\model.php on line 16
+[10-Nov-2022 23:47:23 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:47:23 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:47:23 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[10-Nov-2022 23:47:23 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[10-Nov-2022 23:47:23 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 23:50:02 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:50:02 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:50:02 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[10-Nov-2022 23:50:02 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[10-Nov-2022 23:50:02 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 23:50:12 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:50:12 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:50:12 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login/authenticate, url => login
+[10-Nov-2022 23:50:12 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[10-Nov-2022 23:50:12 Europe/Berlin] SessionController::validateSession() redirect al login
+[10-Nov-2022 23:50:12 Europe/Berlin] ExistPOST: Existen parámetros
+[10-Nov-2022 23:50:12 Europe/Berlin] login: inicio
+[10-Nov-2022 23:50:12 Europe/Berlin] login: user id 001
+[10-Nov-2022 23:50:13 Europe/Berlin] Login::authenticate() username and/or password wrong
+[10-Nov-2022 23:50:13 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:50:13 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:50:13 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/?error=bcbe63ed8464684af6945ad8a89f76f8, url => ?error=bcbe63ed8464684af6945ad8a89f76f8
+[10-Nov-2022 23:50:13 Europe/Berlin] sessionController::isPublic(): currentURL => ?error=bcbe63ed8464684af6945ad8a89f76f8
+[10-Nov-2022 23:50:13 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 23:50:13 Europe/Berlin] View::handleError() existsKey =>Nombre de usuario y/o password incorrectos
+[10-Nov-2022 23:51:29 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:51:29 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:51:29 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login/authenticate, url => login
+[10-Nov-2022 23:51:29 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[10-Nov-2022 23:51:29 Europe/Berlin] SessionController::validateSession() redirect al login
+[10-Nov-2022 23:51:29 Europe/Berlin] ExistPOST: Existen parámetros
+[10-Nov-2022 23:51:29 Europe/Berlin] login: inicio
+[10-Nov-2022 23:51:29 Europe/Berlin] login: user id 001
+[10-Nov-2022 23:51:29 Europe/Berlin] Login::authenticate() username and/or password wrong
+[10-Nov-2022 23:51:30 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:51:30 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:51:30 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/?error=bcbe63ed8464684af6945ad8a89f76f8, url => ?error=bcbe63ed8464684af6945ad8a89f76f8
+[10-Nov-2022 23:51:30 Europe/Berlin] sessionController::isPublic(): currentURL => ?error=bcbe63ed8464684af6945ad8a89f76f8
+[10-Nov-2022 23:51:30 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 23:51:30 Europe/Berlin] View::handleError() existsKey =>Nombre de usuario y/o password incorrectos
+[10-Nov-2022 23:53:19 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:53:19 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:53:19 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[10-Nov-2022 23:53:19 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[10-Nov-2022 23:53:19 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 23:53:25 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:53:25 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:53:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login/authenticate, url => login
+[10-Nov-2022 23:53:25 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[10-Nov-2022 23:53:25 Europe/Berlin] SessionController::validateSession() redirect al login
+[10-Nov-2022 23:53:25 Europe/Berlin] ExistPOST: Existen parámetros
+[10-Nov-2022 23:53:25 Europe/Berlin] login: inicio
+[10-Nov-2022 23:53:25 Europe/Berlin] login: user id 001
+[10-Nov-2022 23:53:25 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function getusr_codigo() on null in C:\xampp\htdocs\webFerreteria\controllers\login.php:32
+Stack trace:
+#0 C:\xampp\htdocs\webFerreteria\library\app.php(52): Login->authenticate()
+#1 C:\xampp\htdocs\webFerreteria\index.php(39): App->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\webFerreteria\controllers\login.php on line 32
+[10-Nov-2022 23:53:25 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:53:25 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:53:25 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[10-Nov-2022 23:53:25 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[10-Nov-2022 23:53:25 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 23:55:56 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:55:57 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:55:57 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[10-Nov-2022 23:55:57 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[10-Nov-2022 23:55:57 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 23:56:05 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:56:05 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:56:05 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login/authenticate, url => login
+[10-Nov-2022 23:56:05 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[10-Nov-2022 23:56:05 Europe/Berlin] SessionController::validateSession() redirect al login
+[10-Nov-2022 23:56:05 Europe/Berlin] ExistPOST: Existen parámetros
+[10-Nov-2022 23:56:05 Europe/Berlin] login: inicio
+[10-Nov-2022 23:56:05 Europe/Berlin] login: user id 001
+[10-Nov-2022 23:56:06 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\webFerreteria\controllers\login.php on line 32
+[10-Nov-2022 23:56:06 Europe/Berlin] Login::authenticate() userrrrrrrrrrr: Array
+[10-Nov-2022 23:56:06 Europe/Berlin] Login::authenticate() username and/or password wrong
+[10-Nov-2022 23:56:06 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:56:06 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:56:06 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/?error=bcbe63ed8464684af6945ad8a89f76f8, url => ?error=bcbe63ed8464684af6945ad8a89f76f8
+[10-Nov-2022 23:56:06 Europe/Berlin] sessionController::isPublic(): currentURL => ?error=bcbe63ed8464684af6945ad8a89f76f8
+[10-Nov-2022 23:56:06 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 23:56:06 Europe/Berlin] View::handleError() existsKey =>Nombre de usuario y/o password incorrectos
+[10-Nov-2022 23:56:51 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:56:51 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:56:51 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login/authenticate, url => login
+[10-Nov-2022 23:56:51 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[10-Nov-2022 23:56:51 Europe/Berlin] SessionController::validateSession() redirect al login
+[10-Nov-2022 23:56:51 Europe/Berlin] ExistPOST: Existen parámetros
+[10-Nov-2022 23:56:51 Europe/Berlin] login: inicio
+[10-Nov-2022 23:56:51 Europe/Berlin] login: user id 001
+[10-Nov-2022 23:56:51 Europe/Berlin] Login::authenticate() userrrrrrrrrrr: 
+[10-Nov-2022 23:56:51 Europe/Berlin] Login::authenticate() username and/or password wrong
+[10-Nov-2022 23:56:51 Europe/Berlin] Hello, errors!
+[10-Nov-2022 23:56:51 Europe/Berlin] SessionController::validateSession()
+[10-Nov-2022 23:56:51 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/?error=bcbe63ed8464684af6945ad8a89f76f8, url => ?error=bcbe63ed8464684af6945ad8a89f76f8
+[10-Nov-2022 23:56:51 Europe/Berlin] sessionController::isPublic(): currentURL => ?error=bcbe63ed8464684af6945ad8a89f76f8
+[10-Nov-2022 23:56:51 Europe/Berlin] SessionController::validateSession() public page
+[10-Nov-2022 23:56:51 Europe/Berlin] View::handleError() existsKey =>Nombre de usuario y/o password incorrectos
+[11-Nov-2022 00:55:34 Europe/Berlin] Hello, errors!
+[11-Nov-2022 00:55:34 Europe/Berlin] SessionController::validateSession()
+[11-Nov-2022 00:55:34 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/, url => 
+[11-Nov-2022 00:55:34 Europe/Berlin] sessionController::isPublic(): currentURL => 
+[11-Nov-2022 00:55:34 Europe/Berlin] SessionController::validateSession() public page
+[11-Nov-2022 00:55:44 Europe/Berlin] Hello, errors!
+[11-Nov-2022 00:55:44 Europe/Berlin] SessionController::validateSession()
+[11-Nov-2022 00:55:44 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/login/authenticate, url => login
+[11-Nov-2022 00:55:44 Europe/Berlin] sessionController::isPublic(): currentURL => login
+[11-Nov-2022 00:55:44 Europe/Berlin] SessionController::validateSession() redirect al login
+[11-Nov-2022 00:55:44 Europe/Berlin] ExistPOST: Existen parámetros
+[11-Nov-2022 00:55:44 Europe/Berlin] login: inicio
+[11-Nov-2022 00:55:44 Europe/Berlin] login: user id 001
+[11-Nov-2022 00:55:44 Europe/Berlin] Login::authenticate() userrrrrrrrrrr: 
+[11-Nov-2022 00:55:44 Europe/Berlin] Login::authenticate() username and/or password wrong
+[11-Nov-2022 00:55:45 Europe/Berlin] Hello, errors!
+[11-Nov-2022 00:55:45 Europe/Berlin] SessionController::validateSession()
+[11-Nov-2022 00:55:45 Europe/Berlin] sessionController::getCurrentPage(): actualLink =>/webFerreteria/?error=bcbe63ed8464684af6945ad8a89f76f8, url => ?error=bcbe63ed8464684af6945ad8a89f76f8
+[11-Nov-2022 00:55:45 Europe/Berlin] sessionController::isPublic(): currentURL => ?error=bcbe63ed8464684af6945ad8a89f76f8
+[11-Nov-2022 00:55:45 Europe/Berlin] SessionController::validateSession() public page
+[11-Nov-2022 00:55:45 Europe/Berlin] View::handleError() existsKey =>Nombre de usuario y/o password incorrectos

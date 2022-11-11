@@ -74,9 +74,9 @@ class SessionController extends Controller
         error_log('SessionController::validateSession()');
         //Si existe la sesión
         if ($this->existsSession()) {
-            $role = $this->getUserSessionData()->getRole();
+            $role = $this->getUserSessionData()->getrol_id();
 
-            error_log("sessionController::validateSession(): username:" . $this->user->getUsername() . " - role: " . $this->user->getRole());
+            error_log("sessionController::validateSession(): username:" . $this->user->getusr_nombre() . " - role: " . $this->user->getrol_id());
             if ($this->isPublic()) {
                 $this->redirectDefaultSiteByRole($role);
                 error_log("SessionController::validateSession() => sitio público, redirige al main de cada rol");
@@ -128,15 +128,15 @@ class SessionController extends Controller
         $id = $this->session->getCurrentUser();
         $this->user = new UserModel();
         $this->user->get($id);
-        error_log("sessionController::getUserSessionData(): " . $this->user->getUsername());
+        error_log("sessionController::getUserSessionData(): " . $this->user->getusr_nombre());
         return $this->user;
     }
 
     public function initialize($user)
     {
-        error_log("sessionController::initialize(): user: " . $user->getUsername());
-        $this->session->setCurrentUser($user->getId());
-        $this->authorizeAccess($user->getRole());
+        error_log("sessionController::initialize(): user: " . $user->getusr_nombre());
+        $this->session->setCurrentUser($user->getusr_codigo());
+        $this->authorizeAccess($user->getrol_id());
     }
 
     private function isPublic()
@@ -198,13 +198,13 @@ class SessionController extends Controller
     {
         error_log("sessionController::authorizeAccess(): role: $role");
         switch ($role) {
-            case 'caja':
-                $this->redirect($this->defaultSites['caja']);
-                break;
-            case 'logistica':
-                $this->redirect($this->defaultSites['logistica']);
-            case 'admin':
+            case 1:
                 $this->redirect($this->defaultSites['admin']);
+                break;
+            case 2:
+                $this->redirect($this->defaultSites['logistica']);
+            case 3:
+                $this->redirect($this->defaultSites['caja']);
                 break;
             default:
         }

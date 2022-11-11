@@ -16,11 +16,11 @@ class Login extends SessionController{
 
     function authenticate(){
         if( $this->existPOST(['username', 'password']) ){
-            $username = $this->getPost('username');
-            $password = $this->getPost('password');
+            $usr_nombre = $this->getPost('username');
+            $usr_password = $this->getPost('password');
 
             //validate data
-            if($username == '' || empty($username) || $password == '' || empty($password)){
+            if($usr_nombre == '' || empty($usr_nombre) || $usr_password == '' || empty($usr_password)){
                 //$this->errorAtLogin('Campos vacios');
                 error_log('Login::authenticate() empty');
                 $this->redirect('', ['error' => Errors::ERROR_LOGIN_AUTHENTICATE_EMPTY]);
@@ -28,14 +28,15 @@ class Login extends SessionController{
             }
             // si el login es exitoso regresa solo el ID del usuario
             
-            $user = $this->model->login($username, $password);
-
+            $user = $this->model->login($usr_nombre, $usr_password);
+            error_log( 'Login::authenticate() userrrrrrrrrrr: ' . $user);
             if($user != NULL){
                 // inicializa el proceso de las sesiones
                 error_log('Login::authenticate() passed');    
                 $this->initialize($user);
             }else{
                 //error al registrar, que intente de nuevo
+                error_log('Login::authenticate() el user es null');
                 //$this->errorAtLogin('Nombre de usuario y/o password incorrecto');
                 error_log('Login::authenticate() username and/or password wrong');
                 $this->redirect('', ['error' => Errors::ERROR_LOGIN_AUTHENTICATE_DATA]);

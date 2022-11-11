@@ -10,5 +10,5 @@
 
     define('DFT', 'default/');
     define('RQ', 'resource/');
-    define('URL', 'http://localhost:8080/webFerreteria/');
+    define('URL', 'http://localhost/webFerreteria/');
 ?>

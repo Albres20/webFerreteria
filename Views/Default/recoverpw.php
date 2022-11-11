@@ -38,10 +38,15 @@
                                 <p class="text-muted mb-4">Ingrese su dirección de correo electrónico y le enviaremos un correo electrónico con instrucciones para restablecer su contraseña.</p>
                             </div>
 
-                            <form action="#">
+                            <!-- <form action="recoverpw.php" method="POST">
+                                <input type="text" name="email" value="" placeholder="email" /> <br />
+                                <input type="submit" value="Recordar contraseña" />
+                            </form> -->
+
+                            <form action="recoverpw.php" method="POST">
                                 <div class="mb-3">
                                     <label for="emailaddress" class="form-label">Correo electrónico</label>
-                                    <input class="form-control" type="email" id="emailaddress" required="" placeholder="Introduce tu correo electrónico">
+                                    <input class="form-control" type="email" name="email" value="" id="emailaddress" required="" placeholder="Introduce tu correo electrónico">
                                 </div>
 
                                 <div class="mb-0 text-center">

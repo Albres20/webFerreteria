@@ -31,6 +31,8 @@ class Success{
     const SUCCESS_EMPRESA_UPDATEPHOTO = "4d23b94932c9e77056c6f10868f5d5b1";
     const SUCCESS_EMPRESA_UPDATEDATOS = "d8e79eb94050d26047d6f8cf56ad243b";
     const SUCCESS_EMPRESA_UPDATEDIRECCION = "3b9ddb95c9d9a2aa9538b6f0d6c2bea6";
+
+    const SUCCESS_EMAIL_SEND = "74772f9091024b1c5aa4a52f0faa907b";
     
     private $successList = [];
 
@@ -61,6 +63,8 @@ class Success{
             Success::SUCCESS_EMPRESA_UPDATEPHOTO => "Imagen de empresa actualizada correctamente",
             Success::SUCCESS_EMPRESA_UPDATEDATOS => "Datos de empresa actualizados correctamente",
             Success::SUCCESS_EMPRESA_UPDATEDIRECCION => "Dirección de empresa actualizada correctamente",
+
+            Success::SUCCESS_EMAIL_SEND => "Correo enviado a su bandeja de entrada",
         ];
     }
 

@@ -118,6 +118,23 @@ class UserModel extends Model implements IModel{
         }
     }
 
+    function recoverPassword($new, $email){
+        try{
+            $hash = password_hash($new, PASSWORD_DEFAULT, ['cost' => 10]);
+            $query = $this->prepare('UPDATE usuario SET usr_password = :val WHERE usr_email = :usr_email');
+            $query->execute(['val' => $hash, 'usr_email' => $email]);
+
+            if($query->rowCount() > 0){
+                return true;
+            }else{
+                return false;
+            }
+        
+        }catch(PDOException $e){
+            return NULL;
+        }
+    }
+
     /*****************************************************************************       */
 
     public function save(){

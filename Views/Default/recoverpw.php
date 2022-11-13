@@ -38,12 +38,14 @@
                                 <p class="text-muted mb-4">Ingrese su dirección de correo electrónico y le enviaremos un correo electrónico con instrucciones para restablecer su contraseña.</p>
                             </div>
 
-                            <form action="#">
-                                <div class="mb-3">
-                                    <label for="emailaddress" class="form-label">Correo electrónico</label>
-                                    <input class="form-control" type="email" id="emailaddress" required="" placeholder="Introduce tu correo electrónico">
+                            <form class="needs-validation" action="recoverpw/recuperar" method="POST" novalidate>
+                                <div class="position-relative mb-3">
+                                    <label for="useremail" class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="useremail" name="email" placeholder="Introduce tu correo electrónico" autocomplete="off" required>
+                                    <div class="invalid-tooltip">
+                                        Proporcione un correo válido.
+                                    </div>
                                 </div>
-
                                 <div class="mb-0 text-center">
                                     <button class="btn btn-dark" type="submit">Restablecer la contraseña</button>
                                 </div>

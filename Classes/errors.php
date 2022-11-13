@@ -54,6 +54,8 @@ class Errors{
     const ERROR_EMPRESA_UPDATENAME        = "98217b0c263b136bf14925994ca7a0aa";
     const ERROR_EMPRESA_UPDATEDIRECCION  = "fbf456a4c3eca1362a4282fc3e5430e3";
 
+    const ERROR_EMAIL_NOT_FOUND = "48cfc4305e0f1086486eb0a30a455282";
+
 
     private $errorsList = [];
 
@@ -106,6 +108,8 @@ class Errors{
             Errors::ERROR_EMPRESA_UPDATEPHOTO       => 'Hubo un error al actualizar la foto',
             Errors::ERROR_EMPRESA_UPDATENAME        => 'Hubo un error al actualizar el nombre o razon social',
             Errors::ERROR_EMPRESA_UPDATEDIRECCION  => 'Hubo un error al actualizar la dirección',
+
+            Errors::ERROR_EMAIL_NOT_FOUND => 'El email no existe en la base de datos',
         ];
     }
 

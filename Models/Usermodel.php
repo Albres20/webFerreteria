@@ -20,7 +20,7 @@ class UserModel extends Model implements IModel{
         $this->usr_password = '';
         $this->usr_fullname = '';
         $this->usr_email = '';
-        $this->rol_id = 3;
+        $this->rol_id = 2;
         $this->usr_photo = '';
         //$this->usr_agregado = '';
     }
@@ -122,15 +122,18 @@ class UserModel extends Model implements IModel{
 
     public function save(){
         try{
-            $query = $this->prepare('INSERT INTO usuarios (username, password, fullname, email, role, photo, estado) VALUES(:username, :password, :fullname, :email, :role, :photo, :estado)');
+            $query = $this->prepare('INSERT INTO usuario (usr_codigo, usr_nombre, usr_password, usr_fullname, usr_email, usr_photo, usr_estado, usr_agregado, rol_id) 
+            VALUES(:usr_codigo, :usr_nombre, :usr_password, :usr_fullname, :usr_email, :usr_photo, :usr_estado, :usr_agregado, :rol_id)');
             $query->execute([
-                'username'  => $this->username, 
-                'password'  => $this->password,
-                'fullname'  => $this->fullname,
-                'email'     => $this->email,
-                'role'      => $this->role,
-                'photo'     => $this->photo,
-                'estado'    => $this->estado
+                'usr_codigo' => $this->usr_codigo,
+                'usr_nombre'  => $this->usr_nombre, 
+                'usr_password'  => $this->usr_password,
+                'usr_fullname'  => $this->usr_fullname,
+                'usr_email'     => $this->usr_email,
+                'usr_photo'      => $this->usr_photo,
+                'usr_estado'     => $this->usr_estado,
+                'usr_agregado'   => $this->usr_agregado,
+                'rol_id'    => $this->rol_id
                 ]);
             return true;
         }catch(PDOException $e){
@@ -226,8 +229,8 @@ class UserModel extends Model implements IModel{
 
     public function exists($username){
         try{
-            $query = $this->prepare('SELECT username FROM usuarios WHERE username = :username');
-            $query->execute( ['username' => $username]);
+            $query = $this->prepare('SELECT usr_nombre FROM usuario WHERE usr_nombre = :usr_nombre');
+            $query->execute( ['usr_nombre' => $username]);
             
             if($query->rowCount() > 0){
                 return true;
@@ -336,6 +339,16 @@ class UserModel extends Model implements IModel{
     public function getusr_fullname(){        return $this->usr_fullname;}
     public function getusr_email(){           return $this->usr_email;}
     public function getrol_id(){              return $this->rol_id;}
+    public function getrol_nombre(){
+        try {
+            $query = $this->prepare('SELECT rol_nombre FROM rol WHERE rol_id = :id');
+            $query->execute(['id' => $this->rol_id]);
+            $rol = $query->fetch(PDO::FETCH_ASSOC);
+            return $rol['rol_nombre'];
+        } catch (PDOException $e) {
+            return NULL;
+        }
+    }
     public function getusr_photo(){           return $this->usr_photo;}
     public function getusr_estado(){          return $this->usr_estado;}
     public function getusr_ultima_sesion(){   return $this->usr_ultima_sesion;}

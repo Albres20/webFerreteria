@@ -27,9 +27,7 @@ class Login extends SessionController{
                 return;
             }
             // si el login es exitoso regresa solo el ID del usuario
-            
             $user = $this->model->login($usr_nombre, $usr_password);
-            error_log( 'Login::authenticate() userrrrrrrrrrr: ' . $user);
             if($user != NULL){
                 // inicializa el proceso de las sesiones
                 error_log('Login::authenticate() passed');    

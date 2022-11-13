@@ -53,20 +53,25 @@ function editarUsuario(id) {
     var fullname = fila.find("td").eq(3).text();
     var email = fila.find("td").eq(4).text();
     var acceso = fila.find("td").eq(5).text();
+    var arrayacceso = ["administrador", "cajero", "logistica"];
     var estado = fila.find("td").eq(6).text();
     estado = estado.trim();
-    console.log(estado);
     $("#validationTooltipUsername").val(username);
     //$("#validationTooltipUsername").prop("disabled", true);
     $("#validationTooltip01").prop("disabled", true);
     $(".passw").hide();
     $("#validationTooltip02").val(fullname);
     $("#validationTooltip03").val(email);
-    $("#validationTooltip04").val(acceso);
+    for (var i = 0; i < arrayacceso.length; i++) {
+        if (acceso == arrayacceso[i]) {
+            //traer el indice del array
+            $("#validationTooltip04").val(arrayacceso.indexOf(arrayacceso[i]) + 1);
+        }
+    }
     if(estado == "Activo"){
-        $("#validationTooltip05").val(1);
+        $("#validationTooltip05").val("A");
     }else{
-        $("#validationTooltip05").val(0);
+        $("#validationTooltip05").val("I");
     }
     //$(".modal-header").removeclass("bg-danger");
     if (document.getElementsByClassName("bg-danger")) {

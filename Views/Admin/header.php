@@ -2,7 +2,7 @@
        <div class="leftside-menu">
 
            <!-- LOGO -->
-           <a href="<?php echo $user->getRole(); ?>" class="logo text-center logo-light">
+           <a href="<?php echo $user->getrol_nombre(); ?>" class="logo text-center logo-light">
                <span class="logo-lg">
                    <img src="<?php echo URL . RQ ?>image/logoht.png" alt="" height="80">
                </span>
@@ -19,7 +19,7 @@
                <ul class="side-nav">
 
                    <li class="side-nav-item">
-                       <a href="<?php echo $user->getRole(); ?>" class="side-nav-link">
+                       <a href="<?php echo $user->getrol_nombre(); ?>" class="side-nav-link">
                            <i class="uil-home-alt"></i>
                            <span> Inicio </span>
                        </a>
@@ -141,16 +141,16 @@
                        <li class="dropdown notification-list">
                            <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                <span class="account-user-avatar">
-                                   <?php if ($user->getPhoto() != "") {
-                                        echo '<img src="' . URL . RQ . 'image/usuarios/' . $user->getPhoto() . '" alt="user-image" class="rounded-circle">';
+                                   <?php if ($user->getusr_photo() != "") {
+                                        echo '<img src="' . URL . RQ . 'image/usuarios/' . $user->getusr_photo() . '" alt="user-image" class="rounded-circle">';
                                     } else {
                                         echo '<img src="' . URL . RQ . 'image/usuarios/default-user-image.png" alt="user-image" class="rounded-circle">';
                                     }
                                     ?>
                                </span>
                                <span>
-                                   <span class="account-user-name"><?php echo $user->getFullname(); ?></span>
-                                   <span class="account-position"><?php echo $user->getRole(); ?></span>
+                                   <span class="account-user-name"><?php echo $user->getusr_fullname(); ?></span>
+                                   <span class="account-position"><?php echo $user->getrol_nombre(); ?></span>
                                </span>
                            </a>
                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">

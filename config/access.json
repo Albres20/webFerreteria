@@ -20,7 +20,7 @@
             "role": [2, "", ""]
         },
         {
-            "site": "admin",
+            "site": "administrador",
             "access": "private",
             "role": [1, "", ""]
         },
@@ -99,6 +99,6 @@
     "default-sites": {
         "caja": "caja",
         "logistica": "logistica",
-        "admin": "admin"
+        "admin": "administrador"
     }
 }

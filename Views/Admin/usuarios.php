@@ -43,7 +43,7 @@ $usuarios = $this->d['usuarios'];
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="<?php echo $user->getRole(); ?>">Inicio</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo $user->getrol_nombre(); ?>">Inicio</a></li>
                                 <li class="breadcrumb-item active">Usuarios</li>
                             </ol>
                         </div>
@@ -97,34 +97,34 @@ $usuarios = $this->d['usuarios'];
                                             //showError('Datos no disponibles por el momento.');
                                         }
                                         foreach ($usuarios as $usuario) { ?>
-                                            <tr id="fila-<?php echo $usuario['usuario']->getId() ?>">
+                                            <tr id="fila-<?php echo $usuario['usuario']->getusr_codigo() ?>">
                                                 <td>
                                                     <div class="form-check">
                                                         <label class="form-check-label" for="customCheck2">&nbsp;</label>
                                                     </div>
                                                 </td>
-                                                <?php echo '<td>' . $usuario['usuario']->getId() . '</td>' ?>
+                                                <?php echo '<td>' . $usuario['usuario']->getusr_codigo() . '</td>' ?>
                                                 <td class="table-user">
-                                                    <?php if ($usuario['usuario']->getPhoto() != "") {
-                                                        echo '<img src="' . URL . RQ . 'image/usuarios/' . $usuario['usuario']->getPhoto() . '" alt="user-img" title="user-img" class="me-2 rounded-circle">' . $usuario['usuario']->getUsername() . '';
+                                                    <?php if ($usuario['usuario']->getusr_photo() != "") {
+                                                        echo '<img src="' . URL . RQ . 'image/usuarios/' . $usuario['usuario']->getusr_photo() . '" alt="user-img" title="user-img" class="me-2 rounded-circle">' . $usuario['usuario']->getusr_nombre() . '';
                                                     } else {
-                                                        echo '<img src="' . URL . RQ . 'image/usuarios/default-user-image.png" alt="user-img" title="user-img" class="me-2 rounded-circle">' . $usuario['usuario']->getUsername() . '';
+                                                        echo '<img src="' . URL . RQ . 'image/usuarios/default-user-image.png" alt="user-img" title="user-img" class="me-2 rounded-circle">' . $usuario['usuario']->getusr_nombre() . '';
                                                     }
                                                     ?>
                                                 </td>
-                                                <?php echo '<td>' . $usuario['usuario']->getFullname() . '</td>' ?>
-                                                <?php echo '<td>' . $usuario['usuario']->getEmail() . '</td>' ?>
-                                                <?php echo '<td>' . $usuario['usuario']->getRole() . '</td>' ?>
+                                                <?php echo '<td>' . $usuario['usuario']->getusr_fullname() . '</td>' ?>
+                                                <?php echo '<td>' . $usuario['usuario']->getusr_email() . '</td>' ?>
+                                                <?php echo '<td>' . $usuario['usuario']->getrol_nombre() . '</td>' ?>
 
-                                                <?php if ($usuario['usuario']->getEstado() == 1) { ?>
+                                                <?php if ($usuario['usuario']->getusr_estado() == "A") { ?>
                                                     <?php echo '<td><span class="badge bg-success">Activo</span>' ?>
                                                 <?php } else { ?>
                                                     <?php echo '<td><span class="badge bg-danger">Inactivo</span></td>' ?>
                                                 <?php } ?>
 
                                                 <td class="table-action">
-                                                    <button class='action-icon' title='Actualizar usuario' onclick="editarUsuario('<?php echo $usuario['usuario']->getId() ?>');" id="<?php echo $usuario['usuario']->getId() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
-                                                    <a role="button" class='action-icon' title='Eliminar usuario' onclick="eliminarUsuario('<?php echo $usuario['usuario']->getId() ?>');" id="<?php echo $usuario['usuario']->getId() ?>"> <i class='mdi mdi-delete'></i></a>
+                                                    <button class='action-icon' title='Actualizar usuario' onclick="editarUsuario('<?php echo $usuario['usuario']->getusr_codigo() ?>');" id="<?php echo $usuario['usuario']->getusr_codigo() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
+                                                    <a role="button" class='action-icon' title='Eliminar usuario' onclick="eliminarUsuario('<?php echo $usuario['usuario']->getusr_codigo() ?>');" id="<?php echo $usuario['usuario']->getusr_codigo() ?>"> <i class='mdi mdi-delete'></i></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -204,9 +204,9 @@ $usuarios = $this->d['usuarios'];
                             <label class="form-label" for="validationTooltip04">Acceso</label>
                             <select class="form-select" id="validationTooltip04" name="role" required>
                                 <option value="">Seleccione una opción</option>
-                                <option class="fw-bold" value="admin">Administrador</option>
-                                <option class="fw-bold" value="logistica">Logistica</option>
-                                <option class="fw-bold" value="caja">Cajero</option>
+                                <option class="fw-bold" value="1">Administrador</option>
+                                <option class="fw-bold" value="3">Logistica</option>
+                                <option class="fw-bold" value="2">Cajero</option>
                             </select>
                             <div class="invalid-tooltip">
                                 Proporcione un acceso de usuario válido.
@@ -216,8 +216,8 @@ $usuarios = $this->d['usuarios'];
                             <label class="form-label" for="validationTooltip05">Estado</label>
                             <select class="form-select" id="validationTooltip05" name="estado" required>
                                 <option value="">Seleccione una opción</option>
-                                <option class="text-success fw-bold" value="1">Activo</option>
-                                <option class="text-danger fw-bold" value="0">Inactivo</option>
+                                <option class="text-success fw-bold" value="A">Activo</option>
+                                <option class="text-danger fw-bold" value="I">Inactivo</option>
                             </select>
                             <div class="invalid-tooltip">
                                 Proporcione un estado de usuario válido.

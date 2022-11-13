@@ -29,9 +29,13 @@ class LoginModel extends Model{
                         error_log('login: user estado valido '.$user->getusr_codigo(). " -> " .$user->getusr_estado());
                         error_log('login: password ok');
                         //actualizamos la fecha del login del usuario
-                        //if($user->actualizarfecha_login()){
-                            //error_log('login: fecha login actualizada');
-                        return $user;
+                        if($user->actualizarfecha_login()){
+                            error_log('login: fecha login actualizada');
+                            return $user;
+                        }else{
+                            error_log('login: error al actualizar fecha login');
+                            return NULL;
+                        }
                     }else{
                         error_log('login: user estado invalido '.$user->getusr_codigo(). " -> " .$user->getusr_estado());
                         return NULL;

@@ -36,12 +36,14 @@ class Usuarios extends SessionController{
             $userModel = new UserModel();
 
             if(!$userModel->exists($username)){
-                $userModel->setUsername($username);
-                $userModel->setPassword($password);
-                $userModel->setFullname($fullname);
-                $userModel->setEmail($email);
-                $userModel->setRole($role);
-                $userModel->setEstado($estado);
+                $userModel->setusr_codigo('004');
+                $userModel->setusr_nombre($username);
+                $userModel->setusr_password($password);
+                $userModel->setusr_fullname($fullname);
+                $userModel->setusr_email($email);
+                $userModel->setrol_id($role);
+                $userModel->setusr_estado($estado);
+                $userModel->setusr_agregado(date('Y-m-d H:i:s'));
                 $userModel->save();
                 error_log('Admin::newUsuarios() => new usuario creado');
                 $this->redirect('usuarios', ['success' => Success::SUCCESS_ADMIN_NEWUSER]);
@@ -88,14 +90,14 @@ class Usuarios extends SessionController{
             $userModel = new UserModel();
             //$userModel->setId($id); // no es necesario
             $userModel->get($id);
-            $userModel->setUsername($username);
-            $userModel->setFullname($fullname);
-            $userModel->setEmail($email);
-            $userModel->setRole($role);
-            $userModel->setEstado($estado);
+            $userModel->setusr_nombre($username);
+            $userModel->setusr_fullname($fullname);
+            $userModel->setusr_email($email);
+            $userModel->setrol_id($role);
+            $userModel->setusr_estado($estado);
 
             if($userModel->update()){
-                error_log('Admin::updateUsuario() => usuario actualizado: ' . $userModel->getId());
+                error_log('Admin::updateUsuario() => usuario actualizado: ' . $userModel->getusr_codigo());
                 $this->redirect('usuarios', ['success' => Success::SUCCESS_ADMIN_UPDATEUSER]);
             }else{
                 //error

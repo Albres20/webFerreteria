@@ -107,10 +107,10 @@ class UserModel extends Model implements IModel{
 
     function comparePasswords($current, $userid){
         try{
-            $query = $this->db->connect()->prepare('SELECT id, password FROM usuarios WHERE id = :id');
-            $query->execute(['id' => $userid]);
+            $query = $this->prepare('SELECT usr_codigo, usr_password FROM usuario WHERE usr_codigo = :usr_codigo');
+            $query->execute(['usr_codigo' => $userid]);
             
-            if($row = $query->fetch(PDO::FETCH_ASSOC)) return password_verify($current, $row['password']);
+            if($row = $query->fetch(PDO::FETCH_ASSOC)) return password_verify($current, $row['usr_password']);
 
             return NULL;
         }catch(PDOException $e){
@@ -201,10 +201,11 @@ class UserModel extends Model implements IModel{
             $this->usr_password = $user['usr_password'];
             $this->usr_fullname = $user['usr_fullname'];
             $this->usr_email = $user['usr_email'];
-            $this->rol_id = $user['rol_id'];
             $this->usr_photo = $user['usr_photo'];
+            $this->usr_estado = $user['usr_estado'];
             $this->usr_ultima_sesion = $user['usr_ultima_sesion'];
             $this->usr_agregado = $user['usr_agregado'];
+            $this->rol_id = $user['rol_id'];
 
             return $this;
         }catch(PDOException $e){
@@ -214,8 +215,8 @@ class UserModel extends Model implements IModel{
 
     public function delete($id){
         try{
-            $query = $this->prepare('DELETE FROM usuarios WHERE id = :id');
-            $query->execute([ 'id' => $id]);
+            $query = $this->prepare('DELETE FROM usuario WHERE usr_codigo = :usr_codigo');
+            $query->execute([ 'usr_codigo' => $id]);
             return true;
         }catch(PDOException $e){
             echo $e;
@@ -225,21 +226,22 @@ class UserModel extends Model implements IModel{
 
     public function update(){
         try{
-            $query = $this->prepare('UPDATE usuarios SET username = :username, password = :password, fullname = :fullname, email = :email, role = :role, photo = :photo, estado = :estado WHERE id = :id');
+            $query = $this->prepare('UPDATE usuario SET usr_nombre = :usr_nombre, usr_password = :usr_password, usr_fullname = :usr_fullname, 
+            usr_email = :usr_email, usr_photo = :usr_photo, usr_estado = :usr_estado, rol_id = :rol_id WHERE usr_codigo = :usr_codigo');
             $query->execute([
-                'id'        => $this->id,
-                'username' => $this->username, 
-                'password' => $this->password,
-                'fullname' => $this->fullname,
-                'email'    => $this->email,
-                'role'     => $this->role,
-                'photo' => $this->photo,
-                'estado' => $this->estado
+                'usr_codigo' => $this->usr_codigo,
+                'usr_nombre' => $this->usr_nombre, 
+                'usr_password' => $this->usr_password,
+                'usr_fullname' => $this->usr_fullname,
+                'usr_email'    => $this->usr_email,
+                'usr_photo'     => $this->usr_photo,
+                'usr_estado' => $this->usr_estado,
+                'rol_id' => $this->rol_id
 
                 ]);
             return true;
         }catch(PDOException $e){
-            echo $e;
+            error_log('UserModel::update->PDOException ' . $e);
             return false;
         }
     }
@@ -262,8 +264,8 @@ class UserModel extends Model implements IModel{
 
     public function existsID($id){
         try{
-            $query = $this->prepare('SELECT id FROM usuarios WHERE id = :id');
-            $query->execute( ['id' => $id]);
+            $query = $this->prepare('SELECT usr_codigo FROM usuario WHERE usr_codigo = :usr_codigo');
+            $query->execute( ['usr_codigo' => $id]);
             
             if($query->rowCount() > 0){
                 return true;

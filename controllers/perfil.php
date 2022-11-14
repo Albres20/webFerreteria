@@ -24,15 +24,12 @@ require_once 'models/usermodel.php';
 
 
         function updateDatosPersonales(){
-            if($this->existPOST(['nombre','apellido', 'email'])){
-            
-    
+            if($this->existPOST(['nombre','apellido', 'email'])){    
                 $name = $this->getPost('nombre');
                 $lastname = $this->getPost('apellido');
                 $fullname = $name . " " . $lastname;
                 $email = $this->getPost('email');
                 //$photos = $this->getPost('user_imagen');
-
                 $ruta ="";
                 $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
 
@@ -73,10 +70,9 @@ require_once 'models/usermodel.php';
                     }
                 }
 
-                
-                $this->user->setFullname($fullname);
-                $this->user->setEmail($email);
-                $this->user->setPhoto($ruta);
+                $this->user->setusr_fullname($fullname);
+                $this->user->setusr_email($email);
+                $this->user->setusr_photo($ruta);
                  
                 if($this->user->update()){
                     $this->redirect('perfil', ['success' => Success::SUCCESS_USER_UPDATEDATOS]);
@@ -86,7 +82,7 @@ require_once 'models/usermodel.php';
                 }
             }else{
                 //'No se puede actualizar los datos personales'
-                $this->redirect('perfil', ['error' => Errors::ERROR_USER_UPDATENAME]);
+                $this->redirect('perfil', ['error' => Errors::ERROR_USER_UPDATEDATOSPERSONALES]);
                 return;
             }
         }
@@ -112,10 +108,10 @@ require_once 'models/usermodel.php';
     
             //validar que el current es el mismo que el guardado
             $newHash = new UserModel();
-            $newHash->comparePasswords($current, $this->user->getId());
+            $newHash->comparePasswords($current, $this->user->getusr_codigo());
             if($newHash != NULL){
                 //si lo es actualizar con el nuevo
-                $this->user->setPassword($new, true);
+                $this->user->setusr_password($new, true);
                 
                 if($this->user->update()){
                     $this->redirect('perfil', ['success' => Success::SUCCESS_USER_UPDATEPASSWORD]);

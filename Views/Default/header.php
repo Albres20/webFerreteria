@@ -2,7 +2,7 @@
        <div class="leftside-menu">
 
            <!-- LOGO -->
-           <a href="<?php echo $user->getRole(); ?>" class="logo text-center logo-light">
+           <a href="<?php echo $user->getrol_nombre(); ?>" class="logo text-center logo-light">
                <span class="logo-lg">
                    <img src="<?php echo URL . RQ ?>image/logoht.png" alt="" height="80">
                </span>
@@ -19,12 +19,12 @@
                <ul class="side-nav">
 
                    <li class="side-nav-item">
-                       <a href="<?php echo $user->getRole(); ?>" class="side-nav-link">
+                       <a href="<?php echo $user->getrol_nombre(); ?>" class="side-nav-link">
                            <i class="uil-home-alt"></i>
                            <span> Inicio </span>
                        </a>
                    </li>
-                    <?php if ($user->getRole() == 'admin') { ?>
+                    <?php if ($user->getrol_id() == 1) { ?>
                    <li class="side-nav-item">
                        <a data-bs-toggle="collapse" href="#sidebarHYTcompras" aria-expanded="false" aria-controls="sidebarHYTcompras" class="side-nav-link">
                            <i class="uil-wallet"></i>
@@ -43,7 +43,7 @@
                        </div>
                    </li>
                     <?php } ?>
-                    <?php if ($user->getRole() == 'admin' || $user->getRole() == 'caja') { ?>
+                    <?php if ($user->getrol_id() == 1 || $user->getrol_id() == 2) { ?>
                    <li class="side-nav-item">
                        <a data-bs-toggle="collapse" href="#sidebarHYTventas" aria-expanded="false" aria-controls="sidebarHYTventas" class="side-nav-link">
                            <i class="uil-shopping-cart-alt"></i>
@@ -61,7 +61,7 @@
                                <!-- <li>
                                    <a href="#">Seguimiento de venta</a>
                                </li> -->
-                               <?php if ($user->getRole() == 'admin') { ?>
+                               <?php if ($user->getrol_id() == 'admin') { ?>
                                <li>
                                    <a href="historialFacturas">Facturación</a>
                                </li>
@@ -73,7 +73,7 @@
                        </div>
                    </li>
                    <?php } ?>
-                   <?php if ($user->getRole() == 'admin' || $user->getRole() == 'logistica') { ?>
+                   <?php if ($user->getrol_id() == 1 || $user->getrol_id() == 3) { ?>
                    <li class="side-nav-item">
                        <a href="productos" class="side-nav-link">
                            <i class="uil-tag-alt"></i>
@@ -94,7 +94,7 @@
                            <span> Clientes / Proveedores </span>
                        </a>
                    </li>
-                   <?php if ($user->getRole() == 'admin') { ?>
+                   <?php if ($user->getrol_id() == 1) { ?>
                    <li class="side-nav-item">
                        <a href="#" class="side-nav-link">
                            <i class="uil-chart"></i>
@@ -115,7 +115,7 @@
                            <span> Perfil </span>
                        </a>
                    </li>
-                   <?php if ($user->getRole() == 'admin') { ?>
+                   <?php if ($user->getrol_id() == 1) { ?>
                    <li class="side-nav-item">
                        <a href="configuracion" class="side-nav-link">
                            <i class="uil-bright"></i>
@@ -148,16 +148,16 @@
                        <li class="dropdown notification-list">
                            <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                <span class="account-user-avatar">
-                                   <?php if ($user->getPhoto() != "") {
-                                        echo '<img src="' . URL . RQ . 'image/usuarios/' . $user->getPhoto() . '" alt="user-image" class="rounded-circle">';
+                                   <?php if ($user->getusr_photo() != "") {
+                                        echo '<img src="' . URL . RQ . 'image/usuarios/' . $user->getusr_photo() . '" alt="user-image" class="rounded-circle">';
                                     } else {
                                         echo '<img src="' . URL . RQ . 'image/usuarios/default-user-image.png" alt="user-image" class="rounded-circle">';
                                     }
                                     ?>
                                </span>
                                <span>
-                                   <span class="account-user-name"><?php echo $user->getFullname(); ?></span>
-                                   <span class="account-position"><?php echo $user->getRole(); ?></span>
+                                   <span class="account-user-name"><?php echo $user->getusr_fullname(); ?></span>
+                                   <span class="account-position"><?php echo $user->getrol_nombre(); ?></span>
                                </span>
                            </a>
                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">

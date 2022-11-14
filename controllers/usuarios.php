@@ -78,7 +78,7 @@ class Usuarios extends SessionController{
     function updateUsuario($params){
         if($params === NULL) $this->redirect('usuarios', ['error' => Errors::ERROR_USERS_UPDATEUSER]);
         $id = $params[0];
-        error_log("usuarios::updateUsuario() id = " . $id);
+        error_log("usuarios::updateUsuario() codigo = " . $id);
         error_log('usuarios::updateUsuario()');
         if($this->existPOST(['username', 'fullname', 'email', 'role', 'estado'])){
             $username = $this->getPost('username');
@@ -115,7 +115,7 @@ class Usuarios extends SessionController{
         
         if($params === NULL) $this->redirect('usuarios', ['error' => Errors::ERROR_ADMIN_DELETEUSER]);
         $id = $params[0];
-        error_log("usuarios::delete() id = " . $id);
+        error_log("usuarios::delete() codigo = " . $id);
         $userModel = new UserModel();
         //$res = $userModel->delete($id);
 

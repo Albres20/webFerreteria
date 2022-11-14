@@ -43,7 +43,7 @@ $user = $this->d['user'];
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="<?php echo $user->getRole(); ?>">Inicio</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo $user->getrol_nombre(); ?>">Inicio</a></li>
                                 <li class="breadcrumb-item active">Perfil</li>
                             </ol>
                         </div>
@@ -60,24 +60,24 @@ $user = $this->d['user'];
                 <div class="col-xl-4 col-lg-5">
                     <div class="card text-center">
                         <div class="card-body">
-                            <?php if ($user->getPhoto() != "") {
-                                echo '<img src="' . URL . RQ . 'image/usuarios/' . $user->getPhoto() . '" class="rounded-circle avatar-xl img-thumbnail" alt="profile-image">';
+                            <?php if ($user->getusr_photo() != "") {
+                                echo '<img src="' . URL . RQ . 'image/usuarios/' . $user->getusr_photo() . '" class="rounded-circle avatar-xl img-thumbnail" alt="profile-image">';
                             } else {
                                 echo '<img src="' . URL . RQ . 'image/usuarios/default-user-image.png" class="rounded-circle avatar-xl img-thumbnail" alt="profile-image">';
                             }
                             ?>
-                            <h4 class="mb-0 mt-2"><?php echo $user->getFullname(); ?></h4>
+                            <h4 class="mb-0 mt-2"><?php echo $user->getusr_fullname(); ?></h4>
 
                             <div class="text-start mt-3">
                                 <h4 class="font-13 text-uppercase">Información Personal :</h4>
 
-                                <p class="text-muted mb-1 font-13"><strong>Usuario :</strong> <span class="ms-2"><?php echo $user->getUsername(); ?></span></p>
+                                <p class="text-muted mb-1 font-13"><strong>Usuario :</strong> <span class="ms-2"><?php echo $user->getusr_nombre(); ?></span></p>
 
-                                <p class="text-muted mb-2 font-13"><strong>Nombre Completo :</strong> <span class="ms-2"><?php echo $user->getFullname(); ?></span></p>
+                                <p class="text-muted mb-2 font-13"><strong>Nombre Completo :</strong> <span class="ms-2"><?php echo $user->getusr_fullname(); ?></span></p>
 
-                                <p class="text-muted mb-2 font-13"><strong>Correo Electrónico :</strong><span class="ms-2"><?php echo $user->getEmail(); ?></span></p>
+                                <p class="text-muted mb-2 font-13"><strong>Correo Electrónico :</strong><span class="ms-2"><?php echo $user->getusr_email(); ?></span></p>
 
-                                <p class="text-muted mb-1 font-13"><strong>Acceso :</strong> <span class="ms-2"><?php echo $user->getRole(); ?></span></p>
+                                <p class="text-muted mb-1 font-13"><strong>Acceso: </strong> <span class="ms-2"><?php echo $user->getrol_nombre(); ?></span></p>
                             </div>
 
                         </div> <!-- end card-body -->
@@ -124,7 +124,7 @@ $user = $this->d['user'];
 
                                                 <div class="mb-3">
                                                     <label for="useremail" class="form-label">Correo Electrónico</label>
-                                                    <input type="email" class="form-control" id="useremail" name="email" placeholder="Ingrese el correo" value="<?php echo $user->getEmail(); ?>" required>
+                                                    <input type="email" class="form-control" id="useremail" name="email" placeholder="Ingrese el correo" value="<?php echo $user->getusr_email(); ?>" required>
                                                 </div>
                                                 <div class="invalid-tooltip">
                                                     Proporcione un correo válido.

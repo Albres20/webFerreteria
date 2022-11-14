@@ -32,7 +32,8 @@
                         </div>
 
                         <div class="card-body p-4">
-
+                            <?php $this->showMessages(); ?>
+                            <div><?php (isset($this->errorMessage)) ?  $this->errorMessage : '' ?></div>
                             <div class="text-center w-75 m-auto">
                                 <h4 class="text-dark-50 text-center mt-0 fw-bold">Restablecer la contraseña</h4>
                                 <p class="text-muted mb-4">Ingrese su dirección de correo electrónico y le enviaremos un correo electrónico con instrucciones para restablecer su contraseña.</p>

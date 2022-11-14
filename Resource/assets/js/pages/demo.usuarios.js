@@ -56,6 +56,8 @@ function editarUsuario(id) {
     var arrayacceso = ["administrador", "cajero", "logistica"];
     var estado = fila.find("td").eq(6).text();
     estado = estado.trim();
+    // console.log(estado);
+    // console.log(acceso);
     $("#validationTooltipUsername").val(username);
     //$("#validationTooltipUsername").prop("disabled", true);
     $("#validationTooltip01").prop("disabled", true);
@@ -66,6 +68,7 @@ function editarUsuario(id) {
         if (acceso == arrayacceso[i]) {
             //traer el indice del array
             $("#validationTooltip04").val(arrayacceso.indexOf(arrayacceso[i]) + 1);
+            // console.log(arrayacceso.indexOf(arrayacceso[i]) + 1);
         }
     }
     if(estado == "Activo"){

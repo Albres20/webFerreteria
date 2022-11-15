@@ -29,7 +29,7 @@ class Productos extends SessionController
     /* function getCategoryList(){
             $res = [];
             $joinExpensesCategoriesModel = new JoinExpensesCategoriesModel();
-            $expenses = $joinExpensesCategoriesModel->getAll($this->user->getId());
+            $expenses = $joinExpensesCategoriesModel->getAll($this->user->getprd_codigo());
     
             foreach ($expenses as $expense) {
                 array_push($res, $expense->getNameCategory());
@@ -63,7 +63,7 @@ class Productos extends SessionController
     {
         $res = [];
 
-        $joinproductoscategoriasModel = new JoinProductosCategoriasModel();
+        $joinproductoscategoriasModel = new Productosmodel();
         $productos = $joinproductoscategoriasModel->getAll();
 
         foreach ($productos as $producto) {
@@ -134,7 +134,7 @@ class Productos extends SessionController
                 } else {
                     if (move_uploaded_file($photo["tmp_name"], $target_file)) {
 
-                        //$this->model->updatePhoto($hash, $this->user->getId());
+                        //$this->model->updatePhoto($hash, $this->user->getprd_codigo());
                         $ruta = $hash;
 
                         $this->redirect('productos', ['success' => Success::SUCCESS_PRODUCT_UPDATEPHOTO]);
@@ -144,16 +144,15 @@ class Productos extends SessionController
                 }
             }
 
-            $productosModel->setCodigo($codigo);
-            $productosModel->setNombre($nombre);
-            $productosModel->setMarca($marca);
-            $productosModel->setPrecioCompra($precio_compra);
-            $productosModel->setPrecioVenta($precio_venta);
-            $productosModel->setGanancia(0);
-            $productosModel->setStock($stock);
-            $productosModel->setImagen($ruta);
-            $productosModel->setidCategoria($categoria);
-            error_log('Admin::newProductos() supuestos en la db por set -> ' . $productosModel->getCodigo() . ' - ' . $productosModel->getNombre() . ' - ' . $productosModel->getMarca() . ' - ' . $productosModel->getPrecioCompra() . ' - ' . $productosModel->getPrecioVenta() . ' - ' . $productosModel->getGanancia() . ' - ' . $productosModel->getStock() . ' - ' . $productosModel->getImagen() . ' - ' . $productosModel->getidCategoria());
+            $productosModel->setprd_codigo($codigo);
+            $productosModel->setprd_nombre($nombre);
+            $productosModel->setdpr_marca($marca);
+            $productosModel->setdpr_prec_compra($precio_compra);
+            $productosModel->setdpr_prec_prod($precio_venta);
+            $productosModel->setdpr_stock($stock);
+            $productosModel->setprd_imagen($ruta);
+            $productosModel->setcat_id($categoria);
+           // error_log('Admin::newProductos() supuestos en la db por set -> ' . $productosModel->getprd_codigo() . ' - ' . $productosModel->getNombre() . ' - ' . $productosModel->getMarca() . ' - ' . $productosModel->getPrecioCompra() . ' - ' . $productosModel->getPrecioVenta() . ' - ' . $productosModel->getGanancia() . ' - ' . $productosModel->getStock() . ' - ' . $productosModel->getImagen() . ' - ' . $productosModel->getprd_codigoCategoria());
 
             if ($productosModel->exists($codigo)) {
                 //$this->errorAtSignup('Error al registrar el producto. Escribe un nombre o codigo diferente');
@@ -209,7 +208,7 @@ class Productos extends SessionController
             } else {
                 if (move_uploaded_file($photo["tmp_name"], $target_file)) {
 
-                    //$this->model->updatePhoto($hash, $this->user->getId());
+                    //$this->model->updatePhoto($hash, $this->user->getprd_codigo());
 
                     $this->redirect('productos', ['success' => Success::SUCCESS_PRODUCT_UPDATEPHOTO]);
                 } else {
@@ -275,7 +274,7 @@ class Productos extends SessionController
                 } else {
                     if (move_uploaded_file($photo["tmp_name"], $target_file)) {
 
-                        //$this->model->updatePhoto($hash, $this->user->getId());
+                        //$this->model->updatePhoto($hash, $this->user->getprd_codigo());
                         $ruta = $hash;
 
                         $this->redirect('productos', ['success' => Success::SUCCESS_PRODUCT_UPDATEPHOTO]);
@@ -286,21 +285,21 @@ class Productos extends SessionController
             }
 
             $productosModel->get($id);
-            error_log("productos::Productos() :: productosModel -> " . $productosModel->getId() . " - " . $productosModel->getCodigo() . " - " . $productosModel->getNombre() . " - " . $productosModel->getMarca() . " - " . $productosModel->getPrecioCompra() . " - " . $productosModel->getPrecioVenta() . " - " . $productosModel->getStock() . " - " . $productosModel->getImagen() . " - " . $productosModel->getIdCategoria());
-            $productosModel->setCodigo($codigo);
-            $productosModel->setNombre($nombre);
-            $productosModel->setMarca($marca);
-            $productosModel->setPrecioCompra($precio_compra);
-            $productosModel->setPrecioVenta($precio_venta);
+            //error_log("productos::Productos() :: productosModel -> " . $productosModel->getprd_codigo() . " - " . $productosModel->getprd_codigo() . " - " . $productosModel->getNombre() . " - " . $productosModel->getMarca() . " - " . $productosModel->getPrecioCompra() . " - " . $productosModel->getPrecioVenta() . " - " . $productosModel->getStock() . " - " . $productosModel->getImagen() . " - " . $productosModel->getprd_codigoCategoria());
+            $productosModel->setprd_codigo($codigo);
+            $productosModel->setprd_nombre($nombre);
+            $productosModel->setdpr_marca($marca);
+            $productosModel->setdpr_prec_compra($precio_compra);
+            $productosModel->setdpr_prec_prod($precio_venta);
             //$productosModel->setGanancia(0);
-            $productosModel->setStock($stock);
-            $productosModel->setImagen($ruta);
-            $productosModel->setidCategoria($categoria);
+            $productosModel->setdpr_stock($stock);
+            $productosModel->setprd_imagen($ruta);
+            $productosModel->setcat_id($categoria);
 
-            error_log("productos::updateProductos() :: productosModel -> " . $productosModel->getId() . " - " . $productosModel->getCodigo() . " - " . $productosModel->getNombre() . " - " . $productosModel->getMarca() . " - " . $productosModel->getPrecioCompra() . " - " . $productosModel->getPrecioVenta() . " - " . $productosModel->getStock() . " - " . $productosModel->getImagen() . " - " . $productosModel->getIdCategoria());
+            //error_log("productos::updateProductos() :: productosModel -> " . $productosModel->getprd_codigo() . " - " . $productosModel->getprd_codigo() . " - " . $productosModel->getNombre() . " - " . $productosModel->getMarca() . " - " . $productosModel->getPrecioCompra() . " - " . $productosModel->getPrecioVenta() . " - " . $productosModel->getStock() . " - " . $productosModel->getImagen() . " - " . $productosModel->getprd_codigoCategoria());
 
             if ($productosModel->update()){
-                error_log('Admin::updateProductos() => producto actualizado: ' . $productosModel->getId());
+                error_log('Admin::updateProductos() => producto actualizado: ' . $productosModel->getprd_codigo());
                 $this->redirect('productos', ['success' => Success::SUCCESS_PRODUCT_UPDATE]);
             } else {
                 // Error al actualizar el producto. Inténtalo más tarde

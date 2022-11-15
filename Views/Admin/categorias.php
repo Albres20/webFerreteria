@@ -47,7 +47,7 @@ $stats = $this->d['stats'];
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="<?php echo $user->getRole(); ?>">Inicio</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo $user->getrol_nombre(); ?>">Inicio</a></li>
                                 <li class="breadcrumb-item active">Categorias</li>
                             </ol>
                         </div>
@@ -95,23 +95,23 @@ $stats = $this->d['stats'];
                                     </thead>
                                     <tbody id="databody">
                                         <?php foreach ($categorias as $categoria) { ?>
-                                            <tr id="fila-<?php echo $categoria['categoria']->getcategorias_id() ?>">
+                                            <tr id="fila-<?php echo $categoria['categoria']->getcat_id() ?>">
                                                 <td>
                                                     <div class="form-check">
                                                         <label class="form-check-label" for="customCheck2">&nbsp;</label>
                                                     </div>
                                                 </td>
-                                                <?php echo '<td>' . $categoria['categoria']->getcategorias_id() . '</td>' ?>
-                                                <?php echo '<td>' . $categoria['categoria']->getcategorias_nombre() . '</td>' ?>
-                                                <?php echo '<td><div class="progress progress-sm" data-color="'. $categoria['categoria']->getcategorias_color().'" style="background-color:' . $categoria['categoria']->getcategorias_color() . '">
+                                                <?php echo '<td>' . $categoria['categoria']->getcat_id() . '</td>' ?>
+                                                <?php echo '<td>' . $categoria['categoria']->getcat_nombre() . '</td>' ?>
+                                                <?php echo '<td><div class="progress progress-sm" data-color="'. $categoria['categoria']->getcat_color().'" style="background-color:' . $categoria['categoria']->getcat_color() . '">
                                                                     <div class="progress-bar progress-lg" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                                                 </div>
                                                             </td>' ?>
-                                                <?php echo '<td>' . $categoria['categoria']->getcategorias_id() . '</td>' ?>
+                                                <?php echo '<td>' . $categoria['categoria']->getprd_cantidad() . '</td>' ?>
 
                                                 <td class="table-action">
-                                                    <button class='action-icon' title='Actualizar categoria' onclick="editarCategoria('<?php echo $categoria['categoria']->getcategorias_id() ?>');" id="<?php echo $categoria['categoria']->getcategorias_id() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
-                                                    <a role="button" class='action-icon' title='Eliminar categoria' onclick="eliminarCategoria('<?php echo $categoria['categoria']->getcategorias_id() ?>');" id="<?php echo $categoria['categoria']->getcategorias_id() ?>"> <i class='mdi mdi-delete'></i></a>
+                                                    <button class='action-icon' title='Actualizar categoria' onclick="editarCategoria('<?php echo $categoria['categoria']->getcat_id() ?>');" id="<?php echo $categoria['categoria']->getcat_id() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
+                                                    <a role="button" class='action-icon' title='Eliminar categoria' onclick="eliminarCategoria('<?php echo $categoria['categoria']->getcat_id() ?>');" id="<?php echo $categoria['categoria']->getcat_id() ?>"> <i class='mdi mdi-delete'></i></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>

@@ -44,7 +44,7 @@ $clientes = $this->d['clientes'];
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="<?php echo $user->getRole(); ?>">Inicio</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo $user->getrol_nombre(); ?>">Inicio</a></li>
                                 <li class="breadcrumb-item active"> Clientes / Proveedores </li>
                             </ol>
                         </div>
@@ -100,21 +100,21 @@ $clientes = $this->d['clientes'];
                                                 //showError('Datos no disponibles por el momento.');
                                             }
                                             foreach ($clientes as $cliente) { ?>
-                                                <tr id="fila-<?php echo $cliente['cliente']->getcp_id() ?>">
+                                                <tr id="fila-<?php echo $cliente['cliente']->cpr_id() ?>">
                                                     <td>
                                                         <div class="form-check">
                                                             <label class="form-check-label" for="customCheck2">&nbsp;</label>
                                                         </div>
                                                     </td>
-                                                    <?php echo '<td>' . $cliente['cliente']->getcp_id() . '</td>' ?>
-                                                    <?php echo '<td>' . $cliente['cliente']->getcp_nombrelegal() . '</td>' ?>
-                                                    <?php echo '<td>' . $cliente['cliente']->getcp_tipodocum() . ' - ' . $cliente['cliente']->getcp_numdocum() . '</td>' ?>
+                                                    <?php echo '<td>' . $cliente['cliente']->cpr_id() . '</td>' ?>
+                                                    <?php echo '<td>' . $cliente['cliente']->cpr_nombre() . '</td>' ?>
+                                                    <?php echo '<td>' . $cliente['cliente']->cpr_tipodocum() . ' - ' . $cliente['cliente']->cpr_numdoc() . '</td>' ?>
                                                     <?php echo '<td>' . $cliente['cliente']->getcp_tipo() . '</td>' ?>
-                                                    <?php echo '<td> <i class="uil uil-map-marker-alt"></i>' . $cliente['cliente']->getcp_direccion() . '</td>' ?>
-                                                    <?php echo '<td> <i class="uil uil-phone"></i> ' . $cliente['cliente']->getcp_telefono() . '</td>' ?>
+                                                    <?php echo '<td> <i class="uil uil-map-marker-alt"></i>' . $cliente['cliente']->cpr_direccion() . '</td>' ?>
+                                                    <?php echo '<td> <i class="uil uil-phone"></i> ' . $cliente['cliente']->cpr_telefono() . '</td>' ?>
                                                     <td class="table-action">
-                                                        <button class='action-icon' title='Actualizar cliente / proveedor' onclick="editarCliente('<?php echo $cliente['cliente']->getcp_id() ?>');" id="<?php echo $cliente['cliente']->getcp_id() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
-                                                        <a role="button" class='action-icon' title='Eliminar cliente / proveedor' onclick="eliminarCliente('<?php echo $cliente['cliente']->getcp_id() ?>');" id="<?php echo $cliente['cliente']->getcp_id() ?>"> <i class='mdi mdi-delete'></i></a>
+                                                        <button class='action-icon' title='Actualizar cliente / proveedor' onclick="editarCliente('<?php echo $cliente['cliente']->cpr_id() ?>');" id="<?php echo $cliente['cliente']->cpr_id() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
+                                                        <a role="button" class='action-icon' title='Eliminar cliente / proveedor' onclick="eliminarCliente('<?php echo $cliente['cliente']->cpr_id() ?>');" id="<?php echo $cliente['cliente']->cpr_id() ?>"> <i class='mdi mdi-delete'></i></a>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -398,7 +398,7 @@ $clientes = $this->d['clientes'];
 
                 ruc = $('#cp_numdocumRUC').val();
                 var url = '<?php echo URL . RQ ?>php/consulta_sunat.php';
-                //console.log(ruc);
+                console.log(ruc);
                 //$('.ajaxgif').removeClass('hide');
                 $.ajax({
                     type: 'POST',
@@ -409,9 +409,11 @@ $clientes = $this->d['clientes'];
                         //$('.ajaxgif').addClass('hide');
                         if (ruc.length < 11) {
                             $('#span11RUC').show(); //ruc menor de 11 dígitos
+                            console.log('ruc menor de 11 dígitos');
                         } else if (r.numeroDocumento == ruc) {
-                            $('#cp_nombrelegalRUC').val(r.nombre);
-                            $('#cp_direccionRUC').val(r.direccion);
+                            console.log('ruc correcto');
+                            $('#cp_nombrelegal').val(r.nombre);
+                            $('#cp_direccion').val(r.direccion);
                             $('#inputAdditionalData').val(r.estado);
                         } else {
                             $('#spanerrorRUC').show(); //ruc no encontrado
@@ -446,7 +448,7 @@ $clientes = $this->d['clientes'];
                         if (dni.length < 8) {
                             $('#span11DNI').show(); //dni menor de 8 dígitos
                         } else if (r.numeroDocumento == dni) {
-                            $('#cp_nombrelegalDNI').val(r.nombre);
+                            $('#cp_nombrelegal').val(r.nombre);
                             $('#inputAdditionalData').val(r.estado);
                         } else {
                             $('#spanerrorDNI').show(); //dni no encontrado

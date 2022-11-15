@@ -2,22 +2,19 @@
 
 class ClienteProveedorModel extends Model implements IModel{
 
-    private $cp_id;
-    private $cp_tipodocum;
-    private $cp_numdocum;
-    private $cp_nombrelegal;
-    private $cp_direccion;
-    private $cp_tipo;
-    private $cp_telefono;
-    private $cp_correo;
-    private $cp_datosadicionales;
-    //private $fecha;
+    private $cpr_id;
+    private $cpr_tipodocum;//
+    private $cpr_numdoc;
+    private $cpr_nombre;//
+    private $cpr_direccion;
+    private $cpr_tipo;//
+    private $cpr_telefono;
+    private $cpr_correo;
+    private $cpr_datosadicionales;//
+    private $cpr_fechacreacion;
 
     public function __construct(){
         parent::__construct();
-
-        $this->cp_telefono = "000-0000";
-        $this->cp_datosadicionales = "Ninguno";
         //$this->agregado = '';
     }
 
@@ -25,17 +22,17 @@ class ClienteProveedorModel extends Model implements IModel{
 
     public function save(){
         try{
-            $query = $this->prepare('INSERT INTO clienteproveedor (cp_tipodocum, cp_numdocum, cp_nombrelegal, cp_direccion, cp_tipo, cp_telefono, cp_correo, cp_datosadicionales) 
-            VALUES (:cp_tipodocum, :cp_numdocum, :cp_nombrelegal, :cp_direccion, :cp_tipo, :cp_telefono, :cp_correo, :cp_datosadicionales)');
+            $query = $this->prepare('INSERT INTO clientes (cpr_tipodocum, cpr_numdoc, cpr_nombre, cpr_direccion, cpr_tipo, cpr_telefono, cpr_correo, cpr_datosadicionales) 
+            VALUES (:cpr_tipodocum, :cpr_numdoc, :cpr_nombre, :cpr_direccion, :cpr_tipo, :cpr_telefono, :cpr_correo, :cpr_datosadicionales)');
             $query->execute([
-                'cp_tipodocum' => $this->cp_tipodocum,
-                'cp_numdocum' => $this->cp_numdocum,
-                'cp_nombrelegal' => $this->cp_nombrelegal,
-                'cp_direccion' => $this->cp_direccion,
-                'cp_tipo' => $this->cp_tipo,
-                'cp_telefono' => $this->cp_telefono,
-                'cp_correo' => $this->cp_correo,
-                'cp_datosadicionales' => $this->cp_datosadicionales
+                'cpr_tipodocum' => $this->cpr_tipodocum,
+                'cpr_numdoc' => $this->cpr_numdoc,
+                'cpr_nombre' => $this->cpr_nombre,
+                'cpr_direccion' => $this->cpr_direccion,
+                'cpr_tipo' => $this->cpr_tipo,
+                'cpr_telefono' => $this->cpr_telefono,
+                'cpr_correo' => $this->cpr_correo,
+                'cpr_datosadicionales' => $this->cpr_datosadicionales
                 ]);
             return true;
             }catch(PDOException $e){
@@ -47,7 +44,7 @@ class ClienteProveedorModel extends Model implements IModel{
         $items = [];
 
         try{
-            $query = $this->query('SELECT * FROM clienteproveedor');
+            $query = $this->query('SELECT * FROM clientes');
 
             while($p = $query->fetch(PDO::FETCH_ASSOC)){
                 $item = new ClienteProveedorModel();
@@ -68,7 +65,7 @@ class ClienteProveedorModel extends Model implements IModel{
      */
     public function get($id){
         try{
-            $query = $this->prepare('SELECT * FROM clienteproveedor WHERE id = :id');
+            $query = $this->prepare('SELECT * FROM clientes WHERE id = :id');
             $query->execute([ 'id' => $id]);
             $user = $query->fetch(PDO::FETCH_ASSOC);
 
@@ -89,8 +86,8 @@ class ClienteProveedorModel extends Model implements IModel{
 
     public function delete($id){
         try{
-            $query = $this->prepare('DELETE FROM clienteproveedor WHERE cp_id = :cp_id');
-            $query->execute([ 'cp_id' => $id]);
+            $query = $this->prepare('DELETE FROM clientes WHERE cpr_id = :cpr_id');
+            $query->execute([ 'cpr_id' => $id]);
             return true;
         }catch(PDOException $e){
             echo $e;
@@ -100,7 +97,7 @@ class ClienteProveedorModel extends Model implements IModel{
 
     public function update(){
         try{
-            $query = $this->prepare('UPDATE usuarios SET username = :username, password = :password, fullname = :fullname, email = :email, role = :role, photo = :photo, estado = :estado WHERE id = :id');
+            $query = $this->prepare('UPDATE clientes SET username = :username, password = :password, fullname = :fullname, email = :email, role = :role, photo = :photo, estado = :estado WHERE id = :id');
             $query->execute([
                 'id'        => $this->id,
                 'username' => $this->username, 
@@ -119,10 +116,10 @@ class ClienteProveedorModel extends Model implements IModel{
         }
     }
 
-    public function existsNUM($cp_numdocum){
+    public function existsNUM($cpr_numdoc){
         try{
-            $query = $this->prepare('SELECT cp_numdocum FROM clienteproveedor WHERE cp_numdocum = :cp_numdocum');
-            $query->execute( ['cp_numdocum' => $cp_numdocum]);
+            $query = $this->prepare('SELECT cpr_numdoc FROM clientes WHERE cpr_numdoc = :cpr_numdoc');
+            $query->execute( ['cpr_numdoc' => $cpr_numdoc]);
             
             if($query->rowCount() > 0){
                 return true;
@@ -135,10 +132,10 @@ class ClienteProveedorModel extends Model implements IModel{
         }
     }
 
-    public function existsNOM($cp_nombrelegal){
+    public function existsNOM($cpr_nombre){
         try{
-            $query = $this->prepare('SELECT cp_nombrelegal FROM clienteproveedor WHERE cp_nombrelegal = :cp_nombrelegal');
-            $query->execute( ['cp_nombrelegal' => $cp_nombrelegal]);
+            $query = $this->prepare('SELECT cpr_nombre FROM clientes WHERE cpr_nombre = :cpr_nombre');
+            $query->execute( ['cpr_nombre' => $cpr_nombre]);
             
             if($query->rowCount() > 0){
                 return true;
@@ -153,8 +150,8 @@ class ClienteProveedorModel extends Model implements IModel{
 
     public function existsID($id){
         try{
-            $query = $this->prepare('SELECT cp_id FROM clienteproveedor WHERE cp_id = :cp_id');
-            $query->execute( ['cp_id' => $id]);
+            $query = $this->prepare('SELECT cpr_id FROM clientes WHERE cpr_id = :cpr_id');
+            $query->execute( ['cpr_id' => $id]);
             
             if($query->rowCount() > 0){
                 return true;
@@ -168,15 +165,15 @@ class ClienteProveedorModel extends Model implements IModel{
     }
 
     public function from($array){
-        $this->cp_id = $array['cp_id'];
-        $this->cp_tipodocum = $array['cp_tipodocum'];
-        $this->cp_numdocum = $array['cp_numdocum'];
-        $this->cp_nombrelegal = $array['cp_nombrelegal'];
-        $this->cp_direccion = $array['cp_direccion'];
-        $this->cp_tipo = $array['cp_tipo'];
-        $this->cp_telefono = $array['cp_telefono'];
-        $this->cp_correo = $array['cp_correo'];
-        $this->cp_datosadicionales = $array['cp_datosadicionales'];
+        $this->cpr_id = $array['cpr_id'];
+        $this->cpr_tipodocum = $array['cpr_tipodocum'];
+        $this->cpr_numdoc = $array['cpr_numdoc'];
+        $this->cpr_nombre = $array['cpr_nombre'];
+        $this->cpr_direccion = $array['cpr_direccion'];
+        $this->cpr_tipo = $array['cpr_tipo'];
+        $this->cpr_telefono = $array['cpr_telefono'];
+        $this->cpr_correo = $array['cpr_correo'];
+        $this->cpr_datosadicionales = $array['cpr_datosadicionales'];
     }
 
     public function toArray(){
@@ -193,30 +190,28 @@ class ClienteProveedorModel extends Model implements IModel{
         return $array;
     }
 
-    private function getHashedPassword($password){
-        return password_hash($password, PASSWORD_DEFAULT, ['cost' => 10]);
-    }
-
     /****************************************************************    */
 
-    public function setcp_id($cp_id){             $this->cp_id = $cp_id;}
-    public function setcp_tipodocum($cp_tipodocum){ $this->cp_tipodocum = $cp_tipodocum;}
-    public function setcp_numdocum($cp_numdocum){ $this->cp_numdocum = $cp_numdocum;}
-    public function setcp_nombrelegal($cp_nombrelegal){ $this->cp_nombrelegal = $cp_nombrelegal;}
-    public function setcp_direccion($cp_direccion){ $this->cp_direccion = $cp_direccion;}
-    public function setcp_tipo($cp_tipo){ $this->cp_tipo = $cp_tipo;}
-    public function setcp_telefono($cp_telefono){ $this->cp_telefono = $cp_telefono;}
-    public function setcp_correo($cp_correo){ $this->cp_correo = $cp_correo;}
-    public function setcp_datosadicionales($cp_datosadicionales){ $this->cp_datosadicionales = $cp_datosadicionales;}
+    public function setcpr_id($cpr_id){             $this->cpr_id = $cpr_id;}
+    public function setcpr_tipodocum($cpr_tipodocum){ $this->cpr_tipodocum = $cpr_tipodocum;}
+    public function setcpr_numdoc($cpr_numdoc){ $this->cpr_numdoc = $cpr_numdoc;}
+    public function setcpr_nombre($cpr_nombre){ $this->cpr_nombre = $cpr_nombre;}
+    public function setcpr_direccion($cpr_direccion){ $this->cpr_direccion = $cpr_direccion;}
+    public function setcpr_tipo($cpr_tipo){ $this->cpr_tipo = $cpr_tipo;}
+    public function setcpr_telefono($cpr_telefono){ $this->cpr_telefono = $cpr_telefono;}
+    public function setcpr_correo($cpr_correo){ $this->cpr_correo = $cpr_correo;}
+    public function setcpr_datosadicionales($cpr_datosadicionales){ $this->cpr_datosadicionales = $cpr_datosadicionales;}
+    public function setcpr_fechacreacion($cpr_fechacreacion){ $this->cpr_fechacreacion = $cpr_fechacreacion;}
 
-    public function getcp_id(){ return $this->cp_id;}
-    public function getcp_tipodocum(){ return $this->cp_tipodocum;}
-    public function getcp_numdocum(){ return $this->cp_numdocum;}
-    public function getcp_nombrelegal(){ return $this->cp_nombrelegal;}
-    public function getcp_direccion(){ return $this->cp_direccion;}
-    public function getcp_tipo(){ return $this->cp_tipo;}
-    public function getcp_telefono(){ return $this->cp_telefono;}
-    public function getcp_correo(){ return $this->cp_correo;}
-    public function getcp_datosadicionales(){ return $this->cp_datosadicionales;}
+    public function getcpr_id(){ return $this->cpr_id;}
+    public function getcpr_tipodocum(){ return $this->cpr_tipodocum;}
+    public function getcpr_numdoc(){ return $this->cpr_numdoc;}
+    public function getcpr_nombre(){ return $this->cpr_nombre;}
+    public function getcpr_direccion(){ return $this->cpr_direccion;}
+    public function getcpr_tipo(){ return $this->cpr_tipo;}
+    public function getcpr_telefono(){ return $this->cpr_telefono;}
+    public function getcpr_correo(){ return $this->cpr_correo;}
+    public function getcpr_datosadicionales(){ return $this->cpr_datosadicionales;}
+    public function getcpr_fechacreacion(){ return $this->cpr_fechacreacion;}
 }
 ?>

@@ -1,57 +1,57 @@
 <?php
 
 class EmpresaModel extends Model{
-    private $empresa_id;
-    private $empresa_nombre;
-    private $empresa_sector;
-    private $empresa_tipo;
-    private $empresa_correo;
-    private $empresa_telefono;
-    private $empresa_logo;
-    private $empresa_region;
-    private $empresa_provincia;
-    private $empresa_distrito;
-    private $empresa_direccion;
+    private $emp_id;
+    private $emp_nombre;
+    private $emp_sector;
+    private $emp_tipo;
+    private $emp_correo;
+    private $emp_telefono;
+    private $emp_logo;
+    private $emp_region;
+    private $emp_provincia;
+    private $emp_distrito;
+    private $emp_direccion;
 
     public function __construct(){
         parent::__construct();
     }
 
-    public function getEmpresaId(){return $this->empresa_id;}
-    public function getEmpresaNombre(){return $this->empresa_nombre;}
-    public function getEmpresaSector(){return $this->empresa_sector;}
-    public function getEmpresaTipo(){return $this->empresa_tipo;}
-    public function getEmpresaEmail(){return $this->empresa_correo;}
-    public function getEmpresaTelefono(){return $this->empresa_telefono;}
-    public function getEmpresaImagen(){return $this->empresa_logo;}
-    public function getEmpresaRegion(){return $this->empresa_region;}
-    public function getEmpresaProvincia(){return $this->empresa_provincia;}
-    public function getEmpresaDistrito(){return $this->empresa_distrito;}
-    public function getEmpresaDireccion(){return $this->empresa_direccion;}
+    public function getEmpresaId(){return $this->emp_id;}
+    public function getEmpresaNombre(){return $this->emp_nombre;}
+    public function getEmpresaSector(){return $this->emp_sector;}
+    public function getEmpresaTipo(){return $this->emp_tipo;}
+    public function getEmpresaEmail(){return $this->emp_correo;}
+    public function getEmpresaTelefono(){return $this->emp_telefono;}
+    public function getEmpresaImagen(){return $this->emp_logo;}
+    public function getEmpresaRegion(){return $this->emp_region;}
+    public function getEmpresaProvincia(){return $this->emp_provincia;}
+    public function getEmpresaDistrito(){return $this->emp_distrito;}
+    public function getEmpresaDireccion(){return $this->emp_direccion;}
 
-    public function setEmpresaNombre($empresa_nombre){$this->empresa_nombre = $empresa_nombre;}
-    public function setEmpresaSector($empresa_sector){$this->empresa_sector = $empresa_sector;}
-    public function setEmpresaTipo($empresa_tipo){$this->empresa_tipo = $empresa_tipo;}
-    public function setEmpresaEmail($empresa_correo){$this->empresa_correo = $empresa_correo;}
-    public function setEmpresaTelefono($empresa_telefono){$this->empresa_telefono = $empresa_telefono;}
-    public function setEmpresaImagen($empresa_logo){$this->empresa_logo = $empresa_logo;}
-    public function setEmpresaRegion($empresa_region){$this->empresa_region = $empresa_region;}
-    public function setEmpresaProvincia($empresa_provincia){$this->empresa_provincia = $empresa_provincia;}
-    public function setEmpresaDistrito($empresa_distrito){$this->empresa_distrito = $empresa_distrito;}
-    public function setEmpresaDireccion($empresa_direccion){$this->empresa_direccion = $empresa_direccion;}
+    public function setEmpresaNombre($emp_nombre){$this->emp_nombre = $emp_nombre;}
+    public function setEmpresaSector($emp_sector){$this->emp_sector = $emp_sector;}
+    public function setEmpresaTipo($emp_tipo){$this->emp_tipo = $emp_tipo;}
+    public function setEmpresaEmail($emp_correo){$this->emp_correo = $emp_correo;}
+    public function setEmpresaTelefono($emp_telefono){$this->emp_telefono = $emp_telefono;}
+    public function setEmpresaImagen($emp_logo){$this->emp_logo = $emp_logo;}
+    public function setEmpresaRegion($emp_region){$this->emp_region = $emp_region;}
+    public function setEmpresaProvincia($emp_provincia){$this->emp_provincia = $emp_provincia;}
+    public function setEmpresaDistrito($emp_distrito){$this->emp_distrito = $emp_distrito;}
+    public function setEmpresaDireccion($emp_direccion){$this->emp_direccion = $emp_direccion;}
 
     function updateEmpresa(){
         try{
-            $query = $this->prepare('UPDATE empresa SET empresa_nombre = :empresa_nombre, empresa_sector = :empresa_sector, empresa_tipo = :empresa_tipo, 
-            empresa_correo = :empresa_correo, empresa_telefono = :empresa_telefono, empresa_logo = :empresa_logo WHERE empresa_id = :empresa_id');
+            $query = $this->prepare('UPDATE empresa SET emp_nombre = :emp_nombre, emp_sector = :emp_sector, emp_tipo = :emp_tipo, 
+            emp_correo = :emp_correo, emp_telefono = :emp_telefono, emp_logo = :emp_logo WHERE emp_id = :emp_id');
             $query->execute([
-                'empresa_id' => 1,
-                'empresa_nombre' => $this->empresa_nombre,
-                'empresa_sector' => $this->empresa_sector,
-                'empresa_tipo' => $this->empresa_tipo,
-                'empresa_correo' => $this->empresa_correo,
-                'empresa_telefono' => $this->empresa_telefono,
-                'empresa_logo' => $this->empresa_logo
+                'emp_id' => 1,
+                'emp_nombre' => $this->emp_nombre,
+                'emp_sector' => $this->emp_sector,
+                'emp_tipo' => $this->emp_tipo,
+                'emp_correo' => $this->emp_correo,
+                'emp_telefono' => $this->emp_telefono,
+                'emp_logo' => $this->emp_logo
 
                 ]);
             return true;
@@ -63,14 +63,14 @@ class EmpresaModel extends Model{
 
     function updateEmpresaDireccion(){
         try{
-            $query = $this->prepare('UPDATE empresa SET empresa_region = :empresa_region, empresa_provincia = :empresa_provincia, empresa_distrito = :empresa_distrito, 
-            empresa_direccion = :empresa_direccion WHERE empresa_id = :empresa_id');
+            $query = $this->prepare('UPDATE empresa SET emp_region = :emp_region, emp_provincia = :emp_provincia, emp_distrito = :emp_distrito, 
+            emp_direccion = :emp_direccion WHERE emp_id = :emp_id');
             $query->execute([
-                'empresa_id' => 1,
-                'empresa_region' => $this->empresa_region,
-                'empresa_provincia' => $this->empresa_provincia,
-                'empresa_distrito' => $this->empresa_distrito,
-                'empresa_direccion' => $this->empresa_direccion
+                'emp_id' => 1,
+                'emp_region' => $this->emp_region,
+                'emp_provincia' => $this->emp_provincia,
+                'emp_distrito' => $this->emp_distrito,
+                'emp_direccion' => $this->emp_direccion
                 ]);
             return true;
         }catch(PDOException $e){
@@ -81,21 +81,21 @@ class EmpresaModel extends Model{
 
     function getEmpresa(){
         try{
-            $query = $this->prepare('SELECT * FROM empresa WHERE empresa_id = :empresa_id');
-            $query->execute([ 'empresa_id' => 1]);
+            $query = $this->prepare('SELECT * FROM empresa WHERE emp_id = :emp_id');
+            $query->execute([ 'emp_id' => 1]);
             $empresa = $query->fetch(PDO::FETCH_ASSOC);
             
-            $this->empresa_id = $empresa['empresa_id'];
-            $this->empresa_nombre = $empresa['empresa_nombre'];
-            $this->empresa_sector = $empresa['empresa_sector'];
-            $this->empresa_tipo = $empresa['empresa_tipo'];
-            $this->empresa_correo = $empresa['empresa_correo'];
-            $this->empresa_telefono = $empresa['empresa_telefono'];
-            $this->empresa_logo = $empresa['empresa_logo'];
-            $this->empresa_region = $empresa['empresa_region'];
-            $this->empresa_provincia = $empresa['empresa_provincia'];
-            $this->empresa_distrito = $empresa['empresa_distrito'];
-            $this->empresa_direccion = $empresa['empresa_direccion'];
+            $this->emp_id = $empresa['emp_id'];
+            $this->emp_nombre = $empresa['emp_nombre'];
+            $this->emp_sector = $empresa['emp_sector'];
+            $this->emp_tipo = $empresa['emp_tipo'];
+            $this->emp_correo = $empresa['emp_correo'];
+            $this->emp_telefono = $empresa['emp_telefono'];
+            $this->emp_logo = $empresa['emp_logo'];
+            $this->emp_region = $empresa['emp_region'];
+            $this->emp_provincia = $empresa['emp_provincia'];
+            $this->emp_distrito = $empresa['emp_distrito'];
+            $this->emp_direccion = $empresa['emp_direccion'];
             
             return $this;
         }catch(PDOException $e){

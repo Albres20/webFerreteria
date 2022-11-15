@@ -1,8 +1,9 @@
 <?php
     class CategoriasModel extends Model implements IModel{
-        private $categorias_id;
-        private $categorias_nombre;
-        private $categorias_color;
+        private $cat_id;
+        private $cat_nombre;
+        private $cat_color;
+        private $prd_cantidad;
     
         public function __construct(){
             parent::__construct();
@@ -10,10 +11,10 @@
     
         public function save(){
             try{
-                $query = $this->prepare('INSERT INTO categorias (categorias_nombre, categorias_color) VALUES(:categorias_nombre, :categorias_color)');
+                $query = $this->prepare('INSERT INTO categoria (cat_nombre, cat_color) VALUES(:cat_nombre, :cat_color)');
                 $query->execute([
-                    'categorias_nombre' => $this->categorias_nombre, 
-                    'categorias_color' => $this->categorias_color
+                    'cat_nombre' => $this->cat_nombre, 
+                    'cat_color' => $this->cat_color
                 ]);
                 if($query->rowCount()) return true;
     
@@ -27,7 +28,12 @@
             $items = [];
     
             try{
-                $query = $this->query('SELECT * FROM categorias');
+                $query = $this->query('SELECT categoria.cat_id, categoria.cat_nombre, categoria.cat_color, count(productos.cat_id) 
+                as  prd_cantidad
+                FROM categoria
+                LEFT JOIN productos 
+                on categoria.cat_id = productos.cat_id
+                GROUP BY categoria.cat_id');
     
                 while($p = $query->fetch(PDO::FETCH_ASSOC)){
                     $item = new CategoriasModel();
@@ -45,23 +51,23 @@
         
         public function get($id){
             try{
-                $query = $this->prepare('SELECT * FROM categorias WHERE categorias_id = :categorias_id');
-                $query->execute([ 'categorias_id' => $id]);
+                $query = $this->prepare('SELECT * FROM categoria WHERE cat_id = :cat_id');
+                $query->execute([ 'cat_id' => $id]);
                 $category = $query->fetch(PDO::FETCH_ASSOC);
     
-                $this->categorias_id = $category['categorias_id'];
-                $this->categorias_nombre = $category['categorias_nombre'];
-                $this->categorias_color = $category['categorias_color'];
+                $this->cat_id = $category['cat_id'];
+                $this->cat_nombre = $category['cat_nombre'];
+                $this->cat_color = $category['cat_color'];
     
                 return $this;
             }catch(PDOException $e){
                 return false;
             }
         }
-        public function delete($categorias_id){
+        public function delete($cat_id){
             try{
-                $query = $this->prepare('DELETE FROM categorias WHERE categorias_id = :categorias_id');
-                $query->execute([ 'categorias_id' => $categorias_id]);
+                $query = $this->prepare('DELETE FROM categoria WHERE cat_id = :cat_id');
+                $query->execute([ 'cat_id' => $cat_id]);
                 return true;
             }catch(PDOException $e){
                 echo $e;
@@ -70,11 +76,11 @@
         }
         public function update(){
             try{
-                $query = $this->prepare('UPDATE categorias SET categorias_nombre = :categorias_nombre, categorias_color = :categorias_color WHERE categorias_id = :categorias_id');
+                $query = $this->prepare('UPDATE categoria SET cat_nombre = :cat_nombre, cat_color = :cat_color WHERE cat_id = :cat_id');
                 $query->execute([
-                    'categorias_id' => $this->categorias_id,
-                    'categorias_nombre' => $this->categorias_nombre, 
-                    'categorias_color' => $this->categorias_color
+                    'cat_id' => $this->cat_id,
+                    'cat_nombre' => $this->cat_nombre, 
+                    'cat_color' => $this->cat_color
                     ]);
                 return true;
             }catch(PDOException $e){
@@ -83,16 +89,16 @@
             }
         }
     
-        public function exists($categorias_nombre){
+        public function exists($cat_nombre){
             try{
-                $query = $this->prepare('SELECT categorias_nombre FROM categorias WHERE categorias_nombre = :categorias_nombre');
-                $query->execute( ['categorias_nombre' => $categorias_nombre]);
+                $query = $this->prepare('SELECT cat_nombre FROM categoria WHERE cat_nombre = :cat_nombre');
+                $query->execute( ['cat_nombre' => $cat_nombre]);
                 
                 if($query->rowCount() > 0){
-                    error_log('CategoriasModel::exists() => true');
+                    error_log('CategoriaModel::exists() => true');
                     return true;
                 }else{
-                    error_log('CategoriasModel::exists() => false');
+                    error_log('CategoriaModel::exists() => false');
                     return false;
                 }
             }catch(PDOException $e){
@@ -103,8 +109,8 @@
 
         public function existsID($id){
             try{
-                $query = $this->prepare('SELECT categorias_id FROM categorias WHERE categorias_id = :categorias_id');
-                $query->execute( ['categorias_id' => $id]);
+                $query = $this->prepare('SELECT cat_id FROM categoria WHERE cat_id = :cat_id');
+                $query->execute( ['cat_id' => $id]);
                 
                 if($query->rowCount() > 0){
                     return true;
@@ -118,19 +124,21 @@
         }
     
         public function from($array){
-            $this->categorias_id = $array['categorias_id'];
-            $this->categorias_nombre = $array['categorias_nombre'];
-            $this->categorias_color = $array['categorias_color'];
+            $this->cat_id = $array['cat_id'];
+            $this->cat_nombre = $array['cat_nombre'];
+            $this->cat_color = $array['cat_color'];
+            $this->prd_cantidad = $array['prd_cantidad'];
         }
     
         
     
-        public function setcategorias_id($categorias_id){$this->categorias_id = $categorias_id;}
-        public function setcategorias_nombre($categorias_nombre){$this->categorias_nombre = $categorias_nombre;}
-        public function setcategorias_color($categorias_color){$this->categorias_color = $categorias_color;}
+        public function setcat_id($cat_id){$this->cat_id = $cat_id;}
+        public function setcat_nombre($cat_nombre){$this->cat_nombre = $cat_nombre;}
+        public function setcat_color($cat_color){$this->cat_color = $cat_color;}
     
-        public function getcategorias_id(){return $this->categorias_id;}
-        public function getcategorias_nombre(){ return $this->categorias_nombre;}
-        public function getcategorias_color(){ return $this->categorias_color;}
+        public function getcat_id(){return $this->cat_id;}
+        public function getcat_nombre(){ return $this->cat_nombre;}
+        public function getcat_color(){ return $this->cat_color;}
+        public function getprd_cantidad(){ return $this->prd_cantidad;}
     }
 ?>

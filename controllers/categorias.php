@@ -32,8 +32,8 @@
                 $categoriasModel = new CategoriasModel();
 
                 if(!$categoriasModel->exists($categorias_nombre)){
-                    $categoriasModel->setCategorias_nombre($categorias_nombre);
-                    $categoriasModel->setCategorias_color($categorias_color);
+                    $categoriasModel->setcat_nombre($categorias_nombre);
+                    $categoriasModel->setcat_color($categorias_color);
                     $categoriasModel->save();
                     error_log('Admin::newCategorias() => new categoria creada');
                     $this->redirect('categorias', ['success' => Success::SUCCESS_ADMIN_NEWCATEGORY]);
@@ -100,13 +100,13 @@
     
                 $categoriasModel = new CategoriasModel();
                 $categoriasModel->get($id);
-                error_log('categorias::updateCategoria() => categoria: '. $categoriasModel->getcategorias_color());
-                $categoriasModel->setCategorias_nombre($categorias_nombre);
-                $categoriasModel->setCategorias_color($categorias_color);
-                error_log('categorias::updateCategoria() => categoria actualizada: '. $categoriasModel->getcategorias_color());
+                error_log('categorias::updateCategoria() => categoria: '. $categoriasModel->getcat_color());
+                $categoriasModel->setcat_nombre($categorias_nombre);
+                $categoriasModel->setcat_color($categorias_color);
+                error_log('categorias::updateCategoria() => categoria actualizada: '. $categoriasModel->getcat_color());
     
                 if($categoriasModel->update()){
-                    error_log('Admin::updateCategoria() => categoria actualizado: ' . $categoriasModel->getcategorias_id());
+                    error_log('Admin::updateCategoria() => categoria actualizado: ' . $categoriasModel->getcat_id());
                     $this->redirect('categorias', ['success' => Success::SUCCESS_ADMIN_UPDATECATEGORY]);
                 }else{
                     //error

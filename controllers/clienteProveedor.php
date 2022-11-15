@@ -37,14 +37,15 @@ class ClienteProveedor extends SessionController{
 
                 $clienteproveedormodel = new ClienteProveedorModel();
 
-                $clienteproveedormodel->setcp_tipodocum($tipodocum);
-                $clienteproveedormodel->setcp_numdocum($numdocum);
-                $clienteproveedormodel->setcp_nombrelegal($nombrelegal);
-                $clienteproveedormodel->setcp_direccion($direccion);
-                $clienteproveedormodel->setcp_tipo($tipo);
-                $clienteproveedormodel->setcp_telefono($telefono);
-                $clienteproveedormodel->setcp_correo($correo);
-                $clienteproveedormodel->setcp_datosadicionales($datosadicionales);
+                $clienteproveedormodel->setcpr_tipodocum($tipodocum);
+                $clienteproveedormodel->setcpr_numdoc($numdocum);
+                $clienteproveedormodel->setcpr_nombre($nombrelegal);
+                $clienteproveedormodel->setcpr_direccion($direccion);
+                $clienteproveedormodel->setcpr_tipo($tipo);
+                $clienteproveedormodel->setcpr_telefono($telefono);
+                $clienteproveedormodel->setcpr_correo($correo);
+                $clienteproveedormodel->setcpr_datosadicionales($datosadicionales);
+                $clienteproveedormodel->setcpr_fechacreacion(date('Y-m-d H:i:s'));
 
                 if($clienteproveedormodel->existsNUM($numdocum)){
                     //$this->errorAtSignup('Error al registrar el producto. Escribe un nombre o codigo diferente');
@@ -75,14 +76,13 @@ class ClienteProveedor extends SessionController{
 
                 $clienteproveedormodel = new ClienteProveedorModel();
                 
-                $clienteproveedormodel->setcp_tipodocum($tipodocum);
-                $clienteproveedormodel->setcp_numdocum(00000000);
-                $clienteproveedormodel->setcp_nombrelegal($nombrelegal);
-                $clienteproveedormodel->setcp_direccion($direccion);
-                $clienteproveedormodel->setcp_tipo($tipo);
-                $clienteproveedormodel->setcp_telefono($telefono);
-                $clienteproveedormodel->setcp_correo($correo);
-                $clienteproveedormodel->setcp_datosadicionales($datosadicionales);
+                $clienteproveedormodel->setcpr_tipodocum($tipodocum);
+                $clienteproveedormodel->setcpr_nombre($nombrelegal);
+                $clienteproveedormodel->setcpr_direccion($direccion);
+                $clienteproveedormodel->setcpr_tipo($tipo);
+                $clienteproveedormodel->setcpr_telefono($telefono);
+                $clienteproveedormodel->setcpr_correo($correo);
+                $clienteproveedormodel->setcpr_datosadicionales($datosadicionales);
 
                 if($clienteproveedormodel->existsNOM($nombrelegal)){
                     //$this->errorAtSignup('Error al registrar el producto. Escribe un nombre o codigo diferente');

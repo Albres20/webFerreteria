@@ -47,7 +47,7 @@ $categorias = $this->d['categorias'];
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="<?php echo $user->getRole(); ?>">Inicio</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo $user->getrol_nombre(); ?>">Inicio</a></li>
                                 <li class="breadcrumb-item active">Productos</li>
                             </ol>
                         </div>
@@ -102,33 +102,33 @@ $categorias = $this->d['categorias'];
                                             //showError('Datos no disponibles por el momento.');
                                         }
                                         foreach ($productos as $producto) { ?>
-                                            <tr id="fila-<?php echo $producto['producto']->getproductos_id() ?>">
+                                            <tr id="fila-<?php echo $producto['producto']->getprd_codigo() ?>">
                                                 <td>
                                                     <div class="form-check">
                                                         <label class="form-check-label" for="customCheck2">&nbsp;</label>
                                                     </div>
                                                 </td>
-                                                <?php echo '<td>' . $producto['producto']->getproductos_codigo() . '</td>' ?>
+                                                <?php echo '<td>' . $producto['producto']->getprd_codigo() . '</td>' ?>
                                                 <td>
-                                                    <?php if ($producto['producto']->getproductos_imagen() != "") {
-                                                        echo '<img src="' . URL . RQ . 'image/imgproductos/' . $producto['producto']->getproductos_imagen() . '" alt="product-img" title="product-img" class="rounded me-3" height="48">';
+                                                    <?php if ($producto['producto']->getprd_imagen() != "") {
+                                                        echo '<img src="' . URL . RQ . 'image/imgproductos/' . $producto['producto']->getprd_imagen() . '" alt="product-img" title="product-img" class="rounded me-3" height="48">';
                                                     } else {
                                                         echo '<img src="' . URL . RQ . 'image/imgproductos/default-product.png" alt="product-img" title="product-img" class="rounded me-3" height="48">';
                                                     }
                                                     echo '<p class="m-0 d-inline-block align-middle font-16">
-                                                                <a href="#" class="text-body">' . $producto['producto']->getproductos_nombre() . '</a>
+                                                                <a href="#" class="text-body">' . $producto['producto']->getprd_nombre() . '</a>
                                                             </p>';
                                                     ?>
                                                 </td>
-                                                <?php echo '<td>' . $producto['producto']->getproductos_marca() . '</td>' ?>
-                                                <?php echo '<td> S/ ' . $producto['producto']->getproductos_preccompra() . '</td>' ?>
-                                                <?php echo '<td> S/ ' . $producto['producto']->getproductos_precventa() . '</td>' ?>
-                                                <?php echo '<td>' . $producto['producto']->getproductos_cantidad() . '</td>' ?>
-                                                <?php echo '<td><span class="badge badge-outline rounded-pill" style="background-color:' . $producto['producto']->getcategorias_color() . '">' . $producto['producto']->getcategorias_nombre() . '</span>' ?>
+                                                <?php echo '<td>' . $producto['producto']->getdpr_marca() . '</td>' ?>
+                                                <?php echo '<td> S/ ' . $producto['producto']->getdpr_prec_compra() . '</td>' ?>
+                                                <?php echo '<td> S/ ' . $producto['producto']->getdpr_prec_prod() . '</td>' ?>
+                                                <?php echo '<td>' . $producto['producto']->getdpr_stock() . '</td>' ?>
+                                                <?php echo '<td><span class="badge badge-outline rounded-pill" style="background-color:' . $producto['producto']->getcat_color() . '">' . $producto['producto']->getcat_nombre() . '</span>' ?>
                                                 <td class="table-action">
                                                     <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                    <button class='action-icon' title='Actualizar producto' onclick="editarProducto('<?php echo $producto['producto']->getproductos_id() ?>');" id="<?php echo $producto['producto']->getproductos_id() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
-                                                    <a role="button" class='action-icon' title='Eliminar producto' onclick="eliminarProducto('<?php echo $producto['producto']->getproductos_id() ?>');" id="<?php echo $producto['producto']->getproductos_id() ?>"> <i class='mdi mdi-delete'></i></a>
+                                                    <button class='action-icon' title='Actualizar producto' onclick="editarProducto('<?php echo $producto['producto']->getprd_codigo() ?>');" id="<?php echo $producto['producto']->getprd_codigo() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
+                                                    <a role="button" class='action-icon' title='Eliminar producto' onclick="eliminarProducto('<?php echo $producto['producto']->getprd_codigo() ?>');" id="<?php echo $producto['producto']->getprd_codigo() ?>"> <i class='mdi mdi-delete'></i></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -196,7 +196,7 @@ $categorias = $this->d['categorias'];
                                     <select class="form-select" id="categoria" name="productos_idcategorias" required>
                                         <option value="">Seleccione una opción</option>
                                         <?php foreach ($categorias as $categoria) { ?>
-                                            <option value="<?php echo $categoria['categoria']->getcategorias_id(); ?>"><?php echo $categoria['categoria']->getcategorias_nombre(); ?></option>
+                                            <option value="<?php echo $categoria['categoria']->getcat_id(); ?>"><?php echo $categoria['categoria']->getcat_nombre(); ?></option>
                                         <?php } ?>
                                     </select>
                                     <a data-v-e66c59b4 href="javascript:void(0);" class="ml-1 float-right">Registrar nueva categoría</a>

@@ -1,6 +1,8 @@
+CREATE DATABASE  IF NOT EXISTS `venta` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `venta`;
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: hyt_trading
+-- Host: 127.0.0.1    Database: venta
 -- ------------------------------------------------------
 -- Server version	8.0.26
 
@@ -18,8 +20,6 @@
 --
 -- Table structure for table `categoria`
 --
-create database hyt_trading;
-use hyt_trading;
 
 DROP TABLE IF EXISTS `categoria`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -268,7 +268,7 @@ CREATE TABLE `rol` (
 
 LOCK TABLES `rol` WRITE;
 /*!40000 ALTER TABLE `rol` DISABLE KEYS */;
-INSERT INTO `rol` VALUES (1,'Administrador','A'),(2,'Cajero','A'),(3,'Logistica','A');
+INSERT INTO `rol` VALUES (1,'administrador','A'),(2,'cajero','A'),(3,'logistica','A');
 /*!40000 ALTER TABLE `rol` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -304,7 +304,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES ('001','admin','1234','LUIS RAMIREZ',NULL,NULL,'A',NULL,NULL,1),('002','cajero1','1234','GUSTAVO HUERTA',NULL,NULL,'A',NULL,NULL,2);
+INSERT INTO `usuario` VALUES ('001','admin','$2y$10$MJD414C1powe7UvzDNb3geLIbMOXa9cyps/RmkrQ4tbAkYLJppprm','LUIS RAMIREZ',NULL,NULL,'A','2022-11-13 22:28:47',NULL,1),('002','cajero1','1234','GUSTAVO HUERTA',NULL,NULL,'A',NULL,NULL,2),('004','paolo','$2y$10$JFewOgvTyQHT3b4vypyaiOVcclNm28PZeB.oRMB7Omf1InDKv7kfi','paolo coronado','dsada@gmail.com','','A',NULL,'2022-11-13 16:25:59',2),('005','moises','$2y$10$L5uo.Hgr7GMDoJ9cBiaF7OEjJb2pAUTdNWhEpKX7LItIfvPA8FnJG','CRISTHOFER VENTURA','cristhoferventurav@gmail.com','139f072a81f00f4a8b28f0569371bb5c.jpg','A','2022-11-14 00:19:46','2022-11-13 22:34:58',1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -372,14 +372,6 @@ LOCK TABLES `ventas_det` WRITE;
 INSERT INTO `ventas_det` VALUES (7.00,2,14.00,NULL,'A','0000000001','P00001');
 /*!40000 ALTER TABLE `ventas_det` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'venta'
---
-
---
--- Dumping routines for database 'venta'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -390,4 +382,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-09 20:13:28
+-- Dump completed on 2022-11-14 19:28:25

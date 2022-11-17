@@ -1,6 +1,6 @@
 <?php
 
-class Caja extends SessionController{
+class Cajero extends SessionController{
 
     private $user;
 
@@ -8,11 +8,11 @@ class Caja extends SessionController{
         parent::__construct();
 
         $this->user = $this->getUserSessionData();
-        error_log("Caja::constructor() ");
+        error_log("Cajero::constructor() ");
     }
 
      function render(){
-        error_log("Caja::RENDER() ");
+        error_log("Cajero::RENDER() ");
         /*$expensesModel          = new ExpensesModel();
         $expenses               = $this->getExpenses(5);
         $totalThisMonth         = $expensesModel->getTotalAmountThisMonth($this->user->getId());

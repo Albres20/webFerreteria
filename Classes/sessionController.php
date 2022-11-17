@@ -74,7 +74,7 @@ class SessionController extends Controller
         error_log('SessionController::validateSession()');
         //Si existe la sesión
         if ($this->existsSession()) {
-            $role = $this->getUserSessionData()->getrol_id();
+            $role = $this->getUserSessionData()->getrol_nombre();
 
             error_log("sessionController::validateSession(): username:" . $this->user->getusr_nombre() . " - role: " . $this->user->getrol_id());
             if ($this->isPublic()) {
@@ -158,8 +158,8 @@ class SessionController extends Controller
         for ($i = 0; $i < sizeof($this->sites); $i++) {
             for ($j = 0; $j < 3; $j++) {
                 if ($this->sites[$i]['role'][$j] === $role) {
-                    //$url = '/webFerreteria/' . $this->sites[$i]['site'];
                     $url = '/webFerreteria/' . $this->sites[$i]['role'][$j];
+                    //$url = '/webFerreteria/' . $this->sites[$i]['site'];
                     break;
                 }
             }
@@ -202,9 +202,9 @@ class SessionController extends Controller
                 $this->redirect($this->defaultSites['admin']);
                 break;
             case 2:
-                $this->redirect($this->defaultSites['logistica']);
+                $this->redirect($this->defaultSites['cajero']);
             case 3:
-                $this->redirect($this->defaultSites['caja']);
+                $this->redirect($this->defaultSites['logistica']);
                 break;
             default:
         }

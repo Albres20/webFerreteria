@@ -61,7 +61,7 @@
                                <!-- <li>
                                    <a href="#">Seguimiento de venta</a>
                                </li> -->
-                               <?php if ($user->getrol_id() == 'admin') { ?>
+                               <?php if ($user->getrol_id() == 1) { ?>
                                <li>
                                    <a href="historialFacturas">Facturación</a>
                                </li>

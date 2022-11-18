@@ -90,7 +90,7 @@
             "role": ["administrador", "logistica", "cajero"]
         },
         {
-            "site": "configuracion",
+            "site": "info",
             "access": "private",
             "role": ["administrador", "", ""]
         }

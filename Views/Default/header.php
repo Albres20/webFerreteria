@@ -117,9 +117,9 @@
                    </li>
                    <?php if ($user->getrol_id() == 1) { ?>
                    <li class="side-nav-item">
-                       <a href="configuracion" class="side-nav-link">
+                       <a href="info" class="side-nav-link">
                            <i class="uil-bright"></i>
-                           <span> Configuración </span>
+                           <span> Información </span>
                        </a>
                    </li>
                    <?php } ?>

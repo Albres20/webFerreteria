@@ -1,40 +1,18 @@
 <?php
-
-if(isset($_GET['funcion']) && !empty($_GET['funcion'])) {
-    $funcion = $_GET['funcion'];
-
-    //En función del parámetro que nos llegue ejecutamos una función u otra
-    switch($funcion) {
-        case 'funcion1': 
-            $a -> mostrarTablaProductosCompra();
-            break;
-        case 'funcion2': 
-            $b -> accion2();
-            break;
-    }
+$producto = $_REQUEST['consulta'];
+$productomodel = new ProductosModel();
+$productos = $productomodel->getProductosBySearch($producto);
+$res = array();
+foreach($productos as $producto){
+    $res[] = array(
+        'estado' => 'success',
+        'codigo' => $producto['prd_codigo'],
+        'nombre' => $producto['prd_nombre'],
+        'stock' => $producto['dpr_stock'],
+        'precio' => $producto['dpr_prec_prod']
+    );
 }
-class Buscarproductoajax {
-
-    function mostrarTablaProductosCompra()
-    {
-        //if(!empty($_REQUEST['buscarProductoCompra'])){
-            $search = $_REQUEST['buscarProductoCompra'];
-            $productomodel = new ProductosModel();
-            $productos = $productomodel->getProductosBySearch($search);
-            $res = array();
-            foreach($productos as $producto){
-                $res[] = array(
-                    'productos_codigo' => $producto['productos_codigo'],
-                    'productos_nombre' => $producto['productos_nombre'],
-                    'productos_cantidad' => $producto['productos_cantidad']
-                );
-            }
-            echo json_encode($res);
-
-        //}
-    }
-}
-$a = new Buscarproductoajax();
-$a -> mostrarTablaProductosCompra();
-
+//mostrar los datos en la vista mediante 
+//return json_encode($res);
+echo json_encode($res);
 ?>

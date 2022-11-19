@@ -66,10 +66,13 @@ $user = $this->d['user'];
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Buscar producto" id="buscarProducto">
+                                        <input type="search" class="form-control" name="consulta" placeholder="Buscar producto" id="buscarProducto">
                                         <div class="input-group-append">
                                             <button class="btn btn-outline-secondary" type="button" id="btnBuscarProducto">Agregar</button>
                                         </div>
+                                    </div>
+                                    <!-- mostrar la lista de los productos encontrados -->
+                                    <div class="list-group" id="resultadoBusqueda">
                                     </div>
                                 </div>
                             </div>
@@ -385,7 +388,7 @@ $user = $this->d['user'];
     <script src="<?php echo URL . RQ ?>assets/js/vendor/responsive.bootstrap5.min.js"></script>
     <script src="<?php echo URL . RQ ?>assets/js/vendor/dataTables.checkboxes.min.js"></script>
     <!-- demo app -->
-    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.products.js"></script>
+    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.new-venta.js"></script>
     <!-- end demo js-->
 
     <!-- sweetalert2 js -->

@@ -131,7 +131,12 @@
         public function getProductosBySearch($search){
 
             try{
-                $query = $this->query('SELECT * FROM productos WHERE productos_prd_nombre LIKE "%'.$search.'%" ORDER BY productos_prd_nombre LIMIT 0,6');
+                $query = $this->query('SELECT productos.prd_codigo, productos.prd_nombre, producto_det.dpr_stock, producto_det.dpr_prec_prod 
+                FROM productos
+                LEFT JOIN producto_det 
+                on productos.prd_codigo = producto_det.prd_codigo 
+                WHERE productos.prd_nombre OR productos.prd_codigo LIKE "%'.$search.'%" ORDER BY productos.prd_nombre LIMIT 0,6');
+                //$query->execute([ 'buscar' => $search]);
     
                 $data = $query->fetchAll(PDO::FETCH_ASSOC);
 

@@ -23,6 +23,28 @@ class NuevaVenta extends SessionController{
         //$this->view->render('admin/usuarios');
     }
 
+    //recoger la consulta de demo.new-venta.js
+    function buscarProducto(){
+        error_log("Gestion de Nueva Venta ::buscarProducto() ");
+        $producto = $_POST['consulta'];
+        error_log("Gestion de Nueva Venta ::buscarProducto() ::producto: ".$producto);
+        $productomodel = new ProductosModel();
+        $productos = $productomodel->getProductosBySearch($producto);
+        $res = array();
+        foreach($productos as $producto){
+            $res[] = array(
+                'estado' => 'success',
+                'codigo' => $producto['prd_codigo'],
+                'nombre' => $producto['prd_nombre'],
+                'stock' => $producto['dpr_stock'],
+                'precio' => $producto['dpr_prec_prod']
+            );
+        }
+        error_log("Gestion de Nueva Venta ::buscarProducto() ::productos: ".json_encode($res));
+        //mostrar los datos en la vista mediante
+        echo json_encode($res);
+        //return json_encode($res);
+    }
 
     function newClienteProveedor(){
         error_log('Admin::newClienteProveedor()');
@@ -40,14 +62,14 @@ class NuevaVenta extends SessionController{
 
                 $clienteproveedormodel = new ClienteProveedorModel();
 
-                $clienteproveedormodel->setcp_tipodocum($tipodocum);
-                $clienteproveedormodel->setcp_numdocum($numdocum);
-                $clienteproveedormodel->setcp_nombrelegal($nombrelegal);
-                $clienteproveedormodel->setcp_direccion($direccion);
-                $clienteproveedormodel->setcp_tipo($tipo);
-                $clienteproveedormodel->setcp_telefono($telefono);
-                $clienteproveedormodel->setcp_correo($correo);
-                $clienteproveedormodel->setcp_datosadicionales($datosadicionales);
+                $clienteproveedormodel->setcpr_tipodocum($tipodocum);
+                $clienteproveedormodel->setcpr_numdoc($numdocum);
+                $clienteproveedormodel->setcpr_nombre($nombrelegal);
+                $clienteproveedormodel->setcpr_direccion($direccion);
+                $clienteproveedormodel->setcpr_tipo($tipo);
+                $clienteproveedormodel->setcpr_telefono($telefono);
+                $clienteproveedormodel->setcpr_correo($correo);
+                $clienteproveedormodel->setcpr_datosadicionales($datosadicionales);
 
                 if($clienteproveedormodel->existsNUM($numdocum)){
                     //$this->errorAtSignup('Error al registrar el producto. Escribe un nombre o codigo diferente');
@@ -78,14 +100,14 @@ class NuevaVenta extends SessionController{
 
                 $clienteproveedormodel = new ClienteProveedorModel();
                 
-                $clienteproveedormodel->setcp_tipodocum($tipodocum);
-                $clienteproveedormodel->setcp_numdocum(00000000);
-                $clienteproveedormodel->setcp_nombrelegal($nombrelegal);
-                $clienteproveedormodel->setcp_direccion($direccion);
-                $clienteproveedormodel->setcp_tipo($tipo);
-                $clienteproveedormodel->setcp_telefono($telefono);
-                $clienteproveedormodel->setcp_correo($correo);
-                $clienteproveedormodel->setcp_datosadicionales($datosadicionales);
+                $clienteproveedormodel->setcpr_tipodocum($tipodocum);
+                $clienteproveedormodel->setcpr_numdoc(00000000);
+                $clienteproveedormodel->setcpr_nombre($nombrelegal);
+                $clienteproveedormodel->setcpr_direccion($direccion);
+                $clienteproveedormodel->setcpr_tipo($tipo);
+                $clienteproveedormodel->setcpr_telefono($telefono);
+                $clienteproveedormodel->setcpr_correo($correo);
+                $clienteproveedormodel->setcpr_datosadicionales($datosadicionales);
 
                 if($clienteproveedormodel->existsNOM($nombrelegal)){
                     //$this->errorAtSignup('Error al registrar el producto. Escribe un nombre o codigo diferente');

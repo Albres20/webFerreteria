@@ -37,21 +37,18 @@ class ClienteProveedor extends SessionController{
 
                 $clienteproveedormodel = new ClienteProveedorModel();
 
-                $clienteproveedormodel->setcpr_tipodocum($tipodocum);
-                $clienteproveedormodel->setcpr_numdoc($numdocum);
-                $clienteproveedormodel->setcpr_nombre($nombrelegal);
-                $clienteproveedormodel->setcpr_direccion($direccion);
-                $clienteproveedormodel->setcpr_tipo($tipo);
-                $clienteproveedormodel->setcpr_telefono($telefono);
-                $clienteproveedormodel->setcpr_correo($correo);
-                $clienteproveedormodel->setcpr_datosadicionales($datosadicionales);
-                $clienteproveedormodel->setcpr_fechacreacion(date('Y-m-d H:i:s'));
+                if(!$clienteproveedormodel->existsNUM($numdocum)){
+                    $clienteproveedormodel->setcpr_tipodocum($tipodocum);
+                    $clienteproveedormodel->setcpr_numdoc($numdocum);
+                    $clienteproveedormodel->setcpr_nombre($nombrelegal);
+                    $clienteproveedormodel->setcpr_direccion($direccion);
+                    $clienteproveedormodel->setcpr_tipo($tipo);
+                    $clienteproveedormodel->setcpr_telefono($telefono);
+                    $clienteproveedormodel->setcpr_correo($correo);
+                    $clienteproveedormodel->setcpr_datosadicionales($datosadicionales);
+                    $clienteproveedormodel->setcpr_fechacreacion(date('Y-m-d H:i:s'));
 
-                if($clienteproveedormodel->existsNUM($numdocum)){
-                    //$this->errorAtSignup('Error al registrar el producto. Escribe un nombre o codigo diferente');
-                    $this->redirect('clienteProveedor', ['error' => Errors::ERROR_CLIENTENUM_NEWUSER_EXISTS]);
-                    //return;
-                }else if($clienteproveedormodel->save()){
+                    $clienteproveedormodel->save();
                     //$this->view->render('login/index');success
                     error_log('Admin::newClienteProveedor() => new cliente / proveedor creado');
                     $this->redirect('clienteProveedor', ['success' => Success::SUCCESS_CLIENTE_NEWUSER]);
@@ -75,20 +72,17 @@ class ClienteProveedor extends SessionController{
                 $datosadicionales = $this->getPost('cp_datosadicionales');
 
                 $clienteproveedormodel = new ClienteProveedorModel();
-                
-                $clienteproveedormodel->setcpr_tipodocum($tipodocum);
-                $clienteproveedormodel->setcpr_nombre($nombrelegal);
-                $clienteproveedormodel->setcpr_direccion($direccion);
-                $clienteproveedormodel->setcpr_tipo($tipo);
-                $clienteproveedormodel->setcpr_telefono($telefono);
-                $clienteproveedormodel->setcpr_correo($correo);
-                $clienteproveedormodel->setcpr_datosadicionales($datosadicionales);
 
-                if($clienteproveedormodel->existsNOM($nombrelegal)){
-                    //$this->errorAtSignup('Error al registrar el producto. Escribe un nombre o codigo diferente');
-                    $this->redirect('clienteProveedor', ['error' => Errors::ERROR_CLIENTENOM_NEWUSER_EXISTS]);
-                    //return;
-                }else if($clienteproveedormodel->save()){
+                if(!$clienteproveedormodel->existsNOM($nombrelegal)){
+                    $clienteproveedormodel->setcpr_tipodocum($tipodocum);
+                    $clienteproveedormodel->setcpr_nombre($nombrelegal);
+                    $clienteproveedormodel->setcpr_direccion($direccion);
+                    $clienteproveedormodel->setcpr_tipo($tipo);
+                    $clienteproveedormodel->setcpr_telefono($telefono);
+                    $clienteproveedormodel->setcpr_correo($correo);
+                    $clienteproveedormodel->setcpr_datosadicionales($datosadicionales);
+
+                    $clienteproveedormodel->save();
                     //$this->view->render('login/index');success
                     error_log('Admin::newClienteProveedor() => new cliente / proveedor creado');
                     $this->redirect('clienteProveedor', ['success' => Success::SUCCESS_CLIENTE_NEWUSER]);
@@ -105,7 +99,83 @@ class ClienteProveedor extends SessionController{
     /////////////////////////////////////////////
     //ACTUALIZAR CLIENTE / PROVEEDOR
     /////////////////////////////////////////////
-    function updateCliente(){}
+    function updateClienteProveedor($params){
+        if($params === NULL) $this->redirect('clienteProveedor', ['error' => Errors::ERROR_CLIENTE_UPDATECLIENTE_FAILED]);
+        $id = $params[0];
+        error_log("clienteProveedor::updateCliente() id = " . $id);
+        if ($_REQUEST['cp_tipodocum'] != "SIN DOCUMENTO") {
+            if($this->existPOST(['cp_tipodocum', 'cp_numdocum','cp_nombrelegal','cp_direccion','cp_tipo','cp_telefono'
+            ,'cp_correo','cp_datosadicionales'])){
+                $tipodocum = $this->getPost('cp_tipodocum');
+                $numdocum = $this->getPost('cp_numdocum');
+                $nombrelegal = $this->getPost('cp_nombrelegal');
+                $direccion = $this->getPost('cp_direccion');
+                $tipo = $this->getPost('cp_tipo');
+                $telefono = $this->getPost('cp_telefono');
+                $correo = $this->getPost('cp_correo');
+                $datosadicionales = $this->getPost('cp_datosadicionales');
+
+                $clienteproveedormodel = new ClienteProveedorModel();
+
+                $clienteproveedormodel->get($id);
+
+                $clienteproveedormodel->setcpr_tipodocum($tipodocum);
+                $clienteproveedormodel->setcpr_numdoc($numdocum);
+                $clienteproveedormodel->setcpr_nombre($nombrelegal);
+                $clienteproveedormodel->setcpr_direccion($direccion);
+                $clienteproveedormodel->setcpr_tipo($tipo);
+                $clienteproveedormodel->setcpr_telefono($telefono);
+                $clienteproveedormodel->setcpr_correo($correo);
+                $clienteproveedormodel->setcpr_datosadicionales($datosadicionales);
+
+                if($clienteproveedormodel->update()){
+                    //$this->view->render('login/index');success
+                    error_log('Admin::updateCliente() => cliente / proveedor actualizado');
+                    $this->redirect('clienteProveedor', ['success' => Success::SUCCESS_CLIENTE_UPDATEUSER]);
+                }else{
+                    // $this->errorAtSignup('Error al registrar el producto. Inténtalo más tarde');
+                    //return;
+                    error_log('Admin::updateCliente() => error al actualizar cliente / proveedor CON DNI O RUC');
+                    $this->redirect('clienteProveedor', ['error' => Errors::ERROR_CLIENTE_UPDATECLIENTE_FAILED]);
+                }
+            }
+        
+        }else{
+            if($this->existPOST('cp_tipodocum','cp_nombrelegal','cp_direccion','cp_tipo','cp_telefono'
+            ,'cp_correo','cp_datosadicionales')){
+                $tipodocum = $this->getPost('cp_tipodocum');
+                $nombrelegal = $this->getPost('cp_nombrelegal');
+                $direccion = $this->getPost('cp_direccion');
+                $tipo = $this->getPost('cp_tipo');
+                $telefono = $this->getPost('cp_telefono');
+                $correo = $this->getPost('cp_correo');
+                $datosadicionales = $this->getPost('cp_datosadicionales');
+
+                $clienteproveedormodel = new ClienteProveedorModel();
+
+                $clienteproveedormodel->get($id);
+                
+                $clienteproveedormodel->setcpr_tipodocum($tipodocum);
+                $clienteproveedormodel->setcpr_nombre($nombrelegal);
+                $clienteproveedormodel->setcpr_direccion($direccion);
+                $clienteproveedormodel->setcpr_tipo($tipo);
+                $clienteproveedormodel->setcpr_telefono($telefono);
+                $clienteproveedormodel->setcpr_correo($correo);
+                $clienteproveedormodel->setcpr_datosadicionales($datosadicionales);
+                
+                if($clienteproveedormodel->update()){
+                    //$this->view->render('login/index');success
+                    error_log('Admin::updateCliente() => cliente / proveedor actualizado');
+                    $this->redirect('clienteProveedor', ['success' => Success::SUCCESS_CLIENTE_UPDATEUSER]);
+                }else{
+                    // $this->errorAtSignup('Error al registrar el producto. Inténtalo más tarde');
+                    //return;
+                    error_log('Admin::updateCliente() => error al actualizar cliente / proveedor SIN DOCUMENTO');
+                    $this->redirect('clienteProveedor', ['error' => Errors::ERROR_CLIENTE_UPDATECLIENTE_FAILED]);
+                }
+            }
+        }
+    }
 
     /////////////////////////////////////////////
     //ELIMINAR CLIENTE
@@ -126,6 +196,9 @@ class ClienteProveedor extends SessionController{
         }
     }
 
+    /////////////////////////////////////////////
+    //OBTENER CLIENTE
+    /////////////////////////////////////////////
     function getClienteDB(){
         $res = [];
         $CreateClienteProveedorModel = new ClienteProveedorModel();

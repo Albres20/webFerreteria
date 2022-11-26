@@ -100,21 +100,21 @@ $clientes = $this->d['clientes'];
                                                 //showError('Datos no disponibles por el momento.');
                                             }
                                             foreach ($clientes as $cliente) { ?>
-                                                <tr id="fila-<?php echo $cliente['cliente']->cpr_id() ?>">
+                                                <tr id="fila-<?php echo $cliente['cliente']->getcpr_id() ?>">
                                                     <td>
                                                         <div class="form-check">
                                                             <label class="form-check-label" for="customCheck2">&nbsp;</label>
                                                         </div>
                                                     </td>
-                                                    <?php echo '<td>' . $cliente['cliente']->cpr_id() . '</td>' ?>
-                                                    <?php echo '<td>' . $cliente['cliente']->cpr_nombre() . '</td>' ?>
-                                                    <?php echo '<td>' . $cliente['cliente']->cpr_tipodocum() . ' - ' . $cliente['cliente']->cpr_numdoc() . '</td>' ?>
-                                                    <?php echo '<td>' . $cliente['cliente']->getcp_tipo() . '</td>' ?>
-                                                    <?php echo '<td> <i class="uil uil-map-marker-alt"></i>' . $cliente['cliente']->cpr_direccion() . '</td>' ?>
-                                                    <?php echo '<td> <i class="uil uil-phone"></i> ' . $cliente['cliente']->cpr_telefono() . '</td>' ?>
+                                                    <?php echo '<td>' . $cliente['cliente']->getcpr_id() . '</td>' ?>
+                                                    <?php echo '<td>' . $cliente['cliente']->getcpr_nombre() . '</td>' ?>
+                                                    <?php echo '<td>' . $cliente['cliente']->getcpr_tipodocum() . ' - ' . $cliente['cliente']->getcpr_numdoc() . '</td>' ?>
+                                                    <?php echo '<td>' . $cliente['cliente']->getcpr_tipo() . '</td>' ?>
+                                                    <?php echo '<td> <i class="uil uil-map-marker-alt"></i>' . $cliente['cliente']->getcpr_direccion() . '</td>' ?>
+                                                    <?php echo '<td> <i class="uil uil-phone"></i> ' . $cliente['cliente']->getcpr_telefono() . '</td>' ?>
                                                     <td class="table-action">
-                                                        <button class='action-icon' title='Actualizar cliente / proveedor' onclick="editarCliente('<?php echo $cliente['cliente']->cpr_id() ?>');" id="<?php echo $cliente['cliente']->cpr_id() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
-                                                        <a role="button" class='action-icon' title='Eliminar cliente / proveedor' onclick="eliminarCliente('<?php echo $cliente['cliente']->cpr_id() ?>');" id="<?php echo $cliente['cliente']->cpr_id() ?>"> <i class='mdi mdi-delete'></i></a>
+                                                        <button class='action-icon' title='Actualizar cliente / proveedor' onclick="editarCliente('<?php echo $cliente['cliente']->getcpr_id() ?>');" id="<?php echo $cliente['cliente']->getcpr_id() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
+                                                        <a role="button" class='action-icon' title='Eliminar cliente / proveedor' onclick="eliminarCliente('<?php echo $cliente['cliente']->getcpr_id() ?>');" id="<?php echo $cliente['cliente']->getcpr_id() ?>"> <i class='mdi mdi-delete'></i></a>
                                                     </td>
                                                 </tr>
                                             <?php } ?>

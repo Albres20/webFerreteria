@@ -86,7 +86,7 @@ $categorias = $this->d['categorias'];
                                                     <label class="form-check-label" for="customCheck1">&nbsp;</label>
                                                 </div>
                                             </th>
-                                            <th data-sort="" class="all">Codigo</th>
+                                            <th data-sort="id" class="all">Codigo</th>
                                             <th data-sort="">Producto</th>
                                             <th data-sort="">Marca</th>
                                             <th data-sort="">Prec. Compra</th>

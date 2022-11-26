@@ -26,6 +26,7 @@ class Success{
     const SUCCESS_ADMIN_DELETECATEGORIA = "195cf6568b96216d77e77caaf3870898";
     
     const SUCCESS_CLIENTE_NEWUSER = "2be8ec3653049b96e4faaf9b058050af";
+    const SUCCESS_CLIENTE_UPDATEUSER = "cd932f000d1c45623c202a35ad614314";
     const SUCCESS_ADMIN_CLIENTEDELETE = "d9c260e3d763cc1639a7129ff84bf613";
 
     const SUCCESS_EMPRESA_UPDATEPHOTO = "4d23b94932c9e77056c6f10868f5d5b1";
@@ -58,6 +59,7 @@ class Success{
             Success::SUCCESS_ADMIN_DELETECATEGORIA => "Categoria eliminada correctamente",
 
             Success::SUCCESS_CLIENTE_NEWUSER => "Cliente / Proveedor registrado correctamente",
+            Success::SUCCESS_CLIENTE_UPDATEUSER => "Cliente / Proveedor actualizado correctamente",
             Success::SUCCESS_ADMIN_CLIENTEDELETE => "Cliente / Proveedor eliminado correctamente",
 
             Success::SUCCESS_EMPRESA_UPDATEPHOTO => "Imagen de empresa actualizada correctamente",

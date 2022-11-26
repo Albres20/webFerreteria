@@ -65,18 +65,19 @@ class ClienteProveedorModel extends Model implements IModel{
      */
     public function get($id){
         try{
-            $query = $this->prepare('SELECT * FROM clientes WHERE id = :id');
-            $query->execute([ 'id' => $id]);
-            $user = $query->fetch(PDO::FETCH_ASSOC);
+            $query = $this->prepare('SELECT * FROM clientes WHERE cpr_id = :cpr_id');
+            $query->execute([ 'cpr_id' => $id]);
+            $cliente = $query->fetch(PDO::FETCH_ASSOC);
 
-            $this->id = $user['id'];
-            $this->username = $user['username'];
-            $this->password = $user['password'];
-            $this->fullname = $user['fullname'];
-            $this->email = $user['email'];
-            $this->role = $user['role'];
-            $this->photo = $user['photo'];
-            $this->estado = $user['estado'];
+            $this->cpr_id = $cliente['cpr_id'];
+            $this->cpr_tipodocum = $cliente['cpr_tipodocum'];
+            $this->cpr_nombre = $cliente['cpr_nombre'];
+            $this->cpr_numdoc = $cliente['cpr_numdoc'];
+            $this->cpr_direccion = $cliente['cpr_direccion'];
+            $this->cpr_tipo = $cliente['cpr_tipo'];
+            $this->cpr_telefono = $cliente['cpr_telefono'];
+            $this->cpr_correo = $cliente['cpr_correo'];
+            $this->cpr_datosadicionales = $cliente['cpr_datosadicionales'];
 
             return $this;
         }catch(PDOException $e){
@@ -97,16 +98,18 @@ class ClienteProveedorModel extends Model implements IModel{
 
     public function update(){
         try{
-            $query = $this->prepare('UPDATE clientes SET username = :username, password = :password, fullname = :fullname, email = :email, role = :role, photo = :photo, estado = :estado WHERE id = :id');
+            $query = $this->prepare('UPDATE clientes SET cpr_tipodocum = :cpr_tipodocum, cpr_nombre = :cpr_nombre, cpr_numdoc = :cpr_numdoc, cpr_direccion = :cpr_direccion, 
+            cpr_tipo = :cpr_tipo, cpr_telefono = :cpr_telefono, cpr_correo = :cpr_correo, cpr_datosadicionales = :cpr_datosadicionales WHERE cpr_id = :cpr_id');
             $query->execute([
-                'id'        => $this->id,
-                'username' => $this->username, 
-                'password' => $this->password,
-                'fullname' => $this->fullname,
-                'email'    => $this->email,
-                'role'     => $this->role,
-                'photo' => $this->photo,
-                'estado' => $this->estado
+                'cpr_id' => $this->cpr_id,
+                'cpr_tipodocum' => $this->cpr_tipodocum,
+                'cpr_nombre' => $this->cpr_nombre,
+                'cpr_numdoc' => $this->cpr_numdoc,
+                'cpr_direccion' => $this->cpr_direccion,
+                'cpr_tipo' => $this->cpr_tipo,
+                'cpr_telefono' => $this->cpr_telefono,
+                'cpr_correo' => $this->cpr_correo,
+                'cpr_datosadicionales' => $this->cpr_datosadicionales
 
                 ]);
             return true;

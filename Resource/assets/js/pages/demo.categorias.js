@@ -15,7 +15,7 @@ $(document).ready(function() {
             [1, "asc"]
         ],
         drawCallback: function() {
-            $(".dataTables_paginate > .pagination").addClass("pagination-rounded"), $("#products-datatable_length label").addClass("form-label")
+            $(".dataTables_paginate > .pagination").addClass("pagination-rounded"), $("#categories-datatable_length label").addClass("form-label")
         }
     });
 

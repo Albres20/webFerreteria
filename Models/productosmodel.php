@@ -25,27 +25,34 @@
         }
 
         public function save(){
-            try{
-                $query = $this->prepare('INSERT INTO productos (productos_prd_codigo, productos_prd_nombre, productos_marca, 
-                productos_preccompra, productos_ganancia, productos_precventa, productos_cantidad, productos_prd_imagen, productos_cat_ids) 
-                VALUES (:productos_prd_codigo, :productos_prd_nombre, :productos_marca, :productos_preccompra, :productos_ganancia, 
-                :productos_precventa, :productos_cantidad, :productos_prd_imagen, :productos_cat_ids)');
+            //$this->beginTransaction();
+            try {
+                $query = $this->prepare('INSERT INTO productos (prd_codigo, prd_nombre, prd_estado, prd_fec_creacion, prd_imagen, cat_id)
+                    VALUES (:prd_codigo, :prd_nombre, :prd_estado, :prd_fec_creacion, :prd_imagen, :cat_id)');
                 $query->execute([
-                    'productos_prd_codigo' => $this->prd_codigo,
-                    'productos_prd_nombre' => $this->prd_nombre,
-                    'productos_marca' => $this->marca,
-                    'productos_preccompra' => $this->precio_compra,
-                    'productos_ganancia' => $this->ganancia,
-                    'productos_precventa' => $this->precio_venta,
-                    'productos_cantidad' => $this->stock,
-                    'productos_prd_imagen' => $this->prd_imagen,
-                    'productos_cat_ids' => $this->cat_id
-
+                    'prd_codigo' => $this->prd_codigo,
+                    'prd_nombre' => $this->prd_nombre,
+                    'prd_estado' => $this->prd_estado,
+                    'prd_fec_creacion' => $this->prd_fec_creacion,
+                    'prd_imagen' => $this->prd_imagen,
+                    'cat_id' => $this->cat_id
                 ]);
-                if($query->rowCount()) return true;
-
-                return false;
-            }catch(PDOException $e){
+                //$dProduct = $this->lastInsertId();
+                $query1 = $this->prepare('INSERT INTO producto_det (dpr_prec_compra, dpr_prec_prod, dpr_stock, dpr_marca, dpr_fec_ult_modificacion, prd_codigo)
+                VALUES (:dpr_prec_compra, :dpr_prec_prod, :dpr_stock, :dpr_marca, :dpr_fec_ult_modificacion, :prd_codigo)');
+                $query1->execute([
+                    'dpr_prec_compra' => $this->dpr_prec_compra,
+                    'dpr_prec_prod' => $this->dpr_prec_prod,
+                    'dpr_stock' => $this->dpr_stock,
+                    'dpr_marca' => $this->dpr_marca,
+                    'dpr_fec_ult_modificacion' => $this->dpr_fec_ult_modificacion,
+                    'prd_codigo' => $this->prd_codigo
+               ]);
+                //$this->commit();
+                return true;
+            } catch (PDOException $e) {
+                //$this->rollback();
+                error_log('MODELS::PRODUCTOSMODEL::SAVE::PDOException ' . $e->getMessage());
                 return false;
             }
         }
@@ -54,7 +61,7 @@
             $items = [];
 
             try{
-                $query = $this->query('SELECT productos.prd_codigo, productos.prd_nombre, producto_det.dpr_marca, 
+                $query = $this->query('SELECT productos.prd_codigo, productos.prd_nombre, productos.prd_imagen, producto_det.dpr_marca, 
                 producto_det.dpr_prec_compra, producto_det.dpr_prec_prod, 
                 producto_det.dpr_stock, categoria.cat_color, categoria.cat_nombre
                 FROM productos
@@ -149,10 +156,14 @@
 
         public function delete($id){
             try{
-                $query = $this->prepare('DELETE FROM productos WHERE productos_id = :productos_id');
-                $query->execute([ 'productos_id' => $id]);
+                $query1 = $this->prepare('DELETE FROM producto_det WHERE prd_codigo = :prd_codigo');
+                $query1->execute([ 'prd_codigo' => $id]);
+
+                $query = $this->prepare('DELETE FROM productos WHERE prd_codigo = :prd_codigo');
+                $query->execute([ 'prd_codigo' => $id]);
                 return true;
             }catch(PDOException $e){
+                error_log('MODELS::PRODUCTOSMODEL::DELETE::PDOException ' . $e->getMessage());
                 echo $e;
                 return false;
             }
@@ -186,24 +197,8 @@
 
         public function exists($prd_codigo){
             try{
-                $query = $this->prepare('SELECT productos_prd_codigo FROM productos WHERE productos_prd_codigo = :productos_prd_codigo');
-                $query->execute( ['productos_prd_codigo' => $prd_codigo]);
-                
-                if($query->rowCount() > 0){
-                    return true;
-                }else{
-                    return false;
-                }
-            }catch(PDOException $e){
-                echo $e;
-                return false;
-            }
-        }
-
-        public function existsID($id){
-            try{
-                $query = $this->prepare('SELECT productos_id FROM productos WHERE productos_id = :productos_id');
-                $query->execute( ['productos_id' => $id]);
+                $query = $this->prepare('SELECT prd_codigo FROM productos WHERE prd_codigo = :prd_codigo');
+                $query->execute( ['prd_codigo' => $prd_codigo]);
                 
                 if($query->rowCount() > 0){
                     return true;
@@ -219,6 +214,7 @@
         public function from($array){
             $this->prd_codigo = $array['prd_codigo'];
             $this->prd_nombre = $array['prd_nombre'];
+            $this->prd_imagen = $array['prd_imagen'];
             $this->dpr_marca = $array['dpr_marca'];
             $this->dpr_prec_compra = $array['dpr_prec_compra'];
             $this->dpr_prec_prod = $array['dpr_prec_prod'];

@@ -167,16 +167,7 @@ class UserModel extends Model implements IModel{
 
             while($p = $query->fetch(PDO::FETCH_ASSOC)){
                 $item = new UserModel();
-                $item->setusr_codigo($p['usr_codigo']);
-                $item->setusr_nombre($p['usr_nombre']);
-                $item->setusr_password($p['usr_password'], false);
-                $item->setusr_fullname($p['usr_fullname']);
-                $item->setusr_email($p['usr_email']);
-                $item->setrol_id($p['rol_id']);
-                $item->setusr_photo($p['usr_photo']);
-                $item->setusr_estado($p['usr_estado']);
-                $item->setusr_ultima_sesion($p['usr_ultima_sesion']);
-                $item->setusr_agregado($p['usr_agregado']);
+                $item->from($p);
                 array_push($items, $item);
             }
             return $items;

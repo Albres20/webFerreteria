@@ -152,7 +152,10 @@ class Productos extends SessionController
             $productosModel->setdpr_stock($stock);
             $productosModel->setprd_imagen($ruta);
             $productosModel->setcat_id($categoria);
-           // error_log('Admin::newProductos() supuestos en la db por set -> ' . $productosModel->getprd_codigo() . ' - ' . $productosModel->getNombre() . ' - ' . $productosModel->getMarca() . ' - ' . $productosModel->getPrecioCompra() . ' - ' . $productosModel->getPrecioVenta() . ' - ' . $productosModel->getGanancia() . ' - ' . $productosModel->getStock() . ' - ' . $productosModel->getImagen() . ' - ' . $productosModel->getprd_codigoCategoria());
+            $productosModel->setprd_fec_creacion(date("Y-m-d H:i:s"));
+            $productosModel->setdpr_fec_ult_modificacion(date("Y-m-d H:i:s"));
+
+            error_log('Admin::newProductos() supuestos en la db por set -> ' . $productosModel->getprd_codigo() . ' - ' . $productosModel->getprd_nombre() . ' - ' . $productosModel->getdpr_marca() . ' - ' . $productosModel->getdpr_prec_compra() . ' - ' . $productosModel->getdpr_prec_prod() . ' - ' . $productosModel->getdpr_stock() . ' - ' . $productosModel->getprd_imagen() . ' - ' . $productosModel->getcat_id());
 
             if ($productosModel->exists($codigo)) {
                 //$this->errorAtSignup('Error al registrar el producto. Escribe un nombre o codigo diferente');
@@ -322,7 +325,7 @@ class Productos extends SessionController
         $productosModel = new ProductosModel();
         //$res = $userModel->delete($id);
 
-        if ($productosModel->existsID($id)) {
+        if ($productosModel->exists($id)) {
             $productosModel->delete($id);
             $this->redirect('productos', ['success' => Success::SUCCESS_ADMIN_DELETEPRODUCT]);
             //$this->redirect('usuarios', ['success' => Success::SUCCESS_EXPENSES_DELETE]);

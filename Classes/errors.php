@@ -44,6 +44,7 @@ class Errors{
     const ERROR_ADMIN_NEWCATEGORY_EXISTS         = "680fa880f3d1afea9c53c84305eb9af3";
     const ERROR_ADMIN_DELETEPRODUCT              = "f854143580e95938a09a470d8cf06797";
 
+    const ERROR_CLIENTE_UPDATECLIENTE_FAILED = "3138d56a5037e46b1ec2e1d740c68970";
     const ERROR_ADMIN_CLIENTEDELETE              = "4de0f87efa737b9dcfa1f49aaa6e41a1";
 
     const ERROR_CLIENTENUM_NEWUSER_EXISTS       = "723050dd6dd920c25ee22714011e3204";
@@ -104,6 +105,7 @@ class Errors{
             Errors::ERROR_CLIENTENOM_NEWUSER_EXISTS => 'El nombre de cliente / proveedor ya existe, selecciona otro',
             Errors::ERROR_SIGNUP_NEWCLIENTE_FAILED => 'Hubo un error al intentar registrar. Intenta de nuevo',
 
+            Errors::ERROR_CLIENTE_UPDATECLIENTE_FAILED => 'Hubo un error al intentar actualizar. Intenta de nuevo',
             Errors::ERROR_ADMIN_CLIENTEDELETE => 'Hubo un error al intentar eliminar el cliente / proveedor. Intenta de nuevo',
 
             Errors::ERROR_EMPRESA_UPDATEPHOTO_FORMAT => 'El archivo no es una imagen',

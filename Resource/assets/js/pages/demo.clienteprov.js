@@ -49,19 +49,19 @@ function editarCliente(id) {
     //capturar la primera fila para editar o borrar el registro
     var fila = $("#fila-" + id).closest("tr");
 
-    var tipodoc = fila.find("td").eq(3).text();
+    var tipodoc = fila.find("td").eq(2).text();
     //capturar antes del guin del string
     var tipodoc = tipodoc.substring(0, tipodoc.indexOf("-") - 1);
-    var numdoc = fila.find("td").eq(3).text();
+    var numdoc = fila.find("td").eq(2).text();
     //capturar a partir del guion del string
     var numdoc = numdoc.substring(numdoc.indexOf("-") + 2);
-    var nombrelegal = fila.find("td").eq(2).text();
-    var direccion = fila.find("td").eq(5).text();
+    var nombrelegal = fila.find("td").eq(1).text();
+    var direccion = fila.find("td").eq(4).text();
     direccion = direccion.trim(); //quitar espacios en blanco
-    var tipo = fila.find("td").eq(4).text();
+    var tipo = fila.find("td").eq(3).text();
     console.log(tipodoc);
     console.log(numdoc);
-    var telefono = fila.find("td").eq(6).text();
+    var telefono = fila.find("td").eq(5).text();
     telefono = telefono.trim(); //quitar espacios en blanco
     // var correo
     // var datosAdicionales

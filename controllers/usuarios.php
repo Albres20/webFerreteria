@@ -36,7 +36,6 @@ class Usuarios extends SessionController{
             $userModel = new UserModel();
 
             if(!$userModel->exists($username)){
-                $userModel->setusr_codigo('005');
                 $userModel->setusr_nombre($username);
                 $userModel->setusr_password($password);
                 $userModel->setusr_fullname($fullname);

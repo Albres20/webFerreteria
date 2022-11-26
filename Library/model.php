@@ -15,6 +15,22 @@ class Model{
     function prepare($query){
         return $this->db->connect()->prepare($query);
     }
+
+    function beginTransaction(){
+        return $this->db->connect()->beginTransaction();
+    }
+
+    function commit(){
+        return $this->db->connect()->commit();
+    }
+
+    function rollback(){
+        return $this->db->connect()->rollback();
+    }
+
+    function lastInsertId(){
+        return $this->db->connect()->lastInsertId();
+    }
 }
 
 ?>

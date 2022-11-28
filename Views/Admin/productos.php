@@ -199,7 +199,7 @@ $categorias = $this->d['categorias'];
                                             <option value="<?php echo $categoria['categoria']->getcat_id(); ?>"><?php echo $categoria['categoria']->getcat_nombre(); ?></option>
                                         <?php } ?>
                                     </select>
-                                    <a data-v-e66c59b4 href="javascript:void(0);" class="ml-1 float-right">Registrar nueva categoría</a>
+                                    <a type="button" data-bs-toggle="modal" data-bs-target="#modalnewCat" value="btnNuevaCateg" class="ml-1 float-right">Registrar nueva categoría</a>
                                     <div class="invalid-tooltip">
                                         Proporcione un categoria válida.
                                     </div>
@@ -260,6 +260,45 @@ $categorias = $this->d['categorias'];
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
                             <button type="submit" class="btn btnGuardar">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+        <!--=====================================
+    MODAL CATEGORIA
+    ======================================-->
+    <!-- Standard modal -->
+    <div id="modalnewCat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="primary-header-modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="formnewcatg" action="productos/newCategoria" class="needs-validation" method="POST" novalidate>
+
+                    <div id="header-modalLabel" class="modal-header modal-colored-header bg-danger">
+                        <h4 class="modal-title" id="primary-header-modalLabel">Nueva Categoria</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="position-relative mb-3">
+                            <label class="form-label" for="validationTooltip02">Nombre</label>
+                            <input type="text" class="form-control" id="validationTooltip02" name="categorias_nombre" placeholder="Nombre" required>
+                            <div class="invalid-tooltip">
+                                Proporcione un nombre válido.
+                            </div>
+                        </div>
+                        <div class="position-relative mb-3">
+                            <label for="example-color" class="form-label">Color</label>
+                            <input class="form-control" id="example-color" type="color" name="categorias_color" value="#FF00FF" required>
+                            <div class="invalid-tooltip">
+                                Proporcione un color válido.
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                            <button id="btngrdmodal" type="submit" class="btn btnGuardar">Guardar</button>
                         </div>
                     </div>
                 </form>

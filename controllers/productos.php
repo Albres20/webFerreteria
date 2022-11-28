@@ -25,19 +25,6 @@ class Productos extends SessionController
             ]);*/
         //$this->view->render('admin/usuarios');
     }
-
-    /* function getCategoryList(){
-            $res = [];
-            $joinExpensesCategoriesModel = new JoinExpensesCategoriesModel();
-            $expenses = $joinExpensesCategoriesModel->getAll($this->user->getprd_codigo());
-    
-            foreach ($expenses as $expense) {
-                array_push($res, $expense->getNameCategory());
-            }
-            $res = array_values(array_unique($res));
-    
-            return $res;
-        }*/
     private function getCategoriasDB()
     {
         $res = [];
@@ -55,7 +42,7 @@ class Productos extends SessionController
             array_push($res, $categoriaarray);
         }
         //$res = array_values(array_unique($res));
-
+        //error_log("Gestion de productos::getCategoriasDB() " . json_encode($res));
         return $res;
     }
 
@@ -153,7 +140,6 @@ class Productos extends SessionController
             $productosModel->setprd_imagen($ruta);
             $productosModel->setcat_id($categoria);
             $productosModel->setprd_fec_creacion(date("Y-m-d H:i:s"));
-            $productosModel->setdpr_fec_ult_modificacion(date("Y-m-d H:i:s"));
 
             error_log('Admin::newProductos() supuestos en la db por set -> ' . $productosModel->getprd_codigo() . ' - ' . $productosModel->getprd_nombre() . ' - ' . $productosModel->getdpr_marca() . ' - ' . $productosModel->getdpr_prec_compra() . ' - ' . $productosModel->getdpr_prec_prod() . ' - ' . $productosModel->getdpr_stock() . ' - ' . $productosModel->getprd_imagen() . ' - ' . $productosModel->getcat_id());
 
@@ -176,48 +162,6 @@ class Productos extends SessionController
             //$this->errorAtSignup('Ingresa nombre de usuario y password');
             //error_log('no existe post de productos -> '.$this->getPost('codigo'). ' - '.$this->getPost('productos_iamgen'));
             $this->redirect('productos', ['error' => Errors::ERROR_SIGNUP_NEWPRODUCT_EXISTS]);
-        }
-    }
-
-    function updatePhoto()
-    {
-        if (isset($_FILES['inputImage'])) {
-
-
-            $photo = $_FILES['inputImage'];
-
-            $target_dir = URL . RQ . "image/imgproductos/";
-            $extarr = explode('.', $photo["name"]);
-            $filename = $extarr[sizeof($extarr) - 2];
-            $ext = $extarr[sizeof($extarr) - 1];
-            $hash = md5(Date('Ymdgi') . $filename) . '.' . $ext;
-            $target_file = $target_dir . $hash;
-            $uploadOk = 1;
-            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-            $check = getimagesize($photo["tmp_name"]);
-            if ($check !== false) {
-                //echo "File is an image - " . $check["mime"] . ".";
-                $uploadOk = 1;
-            } else {
-                //echo "File is not an image.";
-                $uploadOk = 0;
-            }
-
-            if ($uploadOk == 0) {
-                //echo "Sorry, your file was not uploaded.";
-                $this->redirect('productos', ['error' => Errors::ERROR_USER_UPDATEPHOTO_FORMAT]);
-                // if everything is ok, try to upload file
-            } else {
-                if (move_uploaded_file($photo["tmp_name"], $target_file)) {
-
-                    //$this->model->updatePhoto($hash, $this->user->getprd_codigo());
-
-                    $this->redirect('productos', ['success' => Success::SUCCESS_PRODUCT_UPDATEPHOTO]);
-                } else {
-                    $this->redirect('productos', ['error' => Errors::ERROR_PRODUCT_UPDATEPHOTO]);
-                }
-            }
         }
     }
 
@@ -288,20 +232,24 @@ class Productos extends SessionController
             }
 
             $productosModel->get($id);
-            //error_log("productos::Productos() :: productosModel -> " . $productosModel->getprd_codigo() . " - " . $productosModel->getprd_codigo() . " - " . $productosModel->getNombre() . " - " . $productosModel->getMarca() . " - " . $productosModel->getPrecioCompra() . " - " . $productosModel->getPrecioVenta() . " - " . $productosModel->getStock() . " - " . $productosModel->getImagen() . " - " . $productosModel->getprd_codigoCategoria());
+            //error_log("productos::Productos() :: productosModel -> " . $productosModel->getprd_codigo() . " - " . $productosModel->getprd_nombre() . " - " . $productosModel->getdpr_marca() . " - " . $productosModel->getdpr_prec_compra() . " - " . $productosModel->getdpr_prec_prod() . " - " . $productosModel->getdpr_stock() . " - " . $productosModel->getprd_imagen() . " - " . $productosModel->getcat_id());
+            $codigoAnterior = $productosModel->getprd_codigo();
+            error_log("productos::Productos() :: codigo anterior -> " . $codigoAnterior . " - codigo nuevo -> " . $codigo);
+            
             $productosModel->setprd_codigo($codigo);
             $productosModel->setprd_nombre($nombre);
             $productosModel->setdpr_marca($marca);
             $productosModel->setdpr_prec_compra($precio_compra);
             $productosModel->setdpr_prec_prod($precio_venta);
-            //$productosModel->setGanancia(0);
             $productosModel->setdpr_stock($stock);
             $productosModel->setprd_imagen($ruta);
             $productosModel->setcat_id($categoria);
+            $productosModel->setdpr_fec_ult_modificacion(Date('Y-m-d H:i:s'));
 
-            //error_log("productos::updateProductos() :: productosModel -> " . $productosModel->getprd_codigo() . " - " . $productosModel->getprd_codigo() . " - " . $productosModel->getNombre() . " - " . $productosModel->getMarca() . " - " . $productosModel->getPrecioCompra() . " - " . $productosModel->getPrecioVenta() . " - " . $productosModel->getStock() . " - " . $productosModel->getImagen() . " - " . $productosModel->getprd_codigoCategoria());
-
-            if ($productosModel->update()){
+            if($productosModel->exists($codigo) && $codigoAnterior != $codigo){
+                $this->redirect('productos', ['error' => Errors::ERROR_PRODUCT_EXISTS]);
+                
+            }else if ($productosModel->update1($codigoAnterior)){
                 error_log('Admin::updateProductos() => producto actualizado: ' . $productosModel->getprd_codigo());
                 $this->redirect('productos', ['success' => Success::SUCCESS_PRODUCT_UPDATE]);
             } else {
@@ -332,6 +280,30 @@ class Productos extends SessionController
         } else {
             $this->redirect('productos', ['error' => Errors::ERROR_ADMIN_DELETEPRODUCT]);
             //$this->redirect('usuarios', ['error' => Errors::ERROR_ADMIN_NEWCATEGORY_EXISTS]);
+        }
+    }
+
+    //nueva categoria json
+    function newCategoria(){
+        error_log("productos::newCategoria()");
+        $data = [];
+
+        if($this->existPOST(['categorias_nombre', 'categorias_color'])){
+            $categorias_nombre = $this->getPost('categorias_nombre');
+            $categorias_color = $this->getPost('categorias_color');
+
+            $categoriasModel = new CategoriasModel();
+
+            if(!$categoriasModel->exists($categorias_nombre)){
+                $categoriasModel->setcat_nombre($categorias_nombre);
+                $categoriasModel->setcat_color($categorias_color);
+                $categoriasModel->save();
+                error_log('Admin::newCategorias() => new categoria creada');
+                $data['success'] = true;
+            }else{
+                $data['success'] = false;
+            }
+            echo json_encode($data);
         }
     }
 }

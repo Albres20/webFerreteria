@@ -38,6 +38,7 @@ class Errors{
     const ERROR_SIGNUP_NEWPRODUCT                = "c049877d530419271c1578fe7553d215";
     const ERROR_PRODUCTS_UPDATEPRODUCT           = "e30704298d0a720dab3a209b9fd15bde";
     const ERROR_PRODUCTS_UPDATEDATOS            = "d8b486411f53620e4e155a5d30ef63f9";
+    const ERROR_PRODUCT_EXISTS                  = "1c7455bab9d4a61cce607fe7e8cb310c";
 
     const ERROR_CATEGORIAS_UPDATECATEGORIA      = "1314834cef311fd06b1b6e21930e9575";
     const ERROR_ADMIN_DELETECATEGORIA          = "a977262f1a22dc88bb0db1ba693ccf18";
@@ -96,6 +97,7 @@ class Errors{
             Errors::ERROR_PRODUCTS_UPDATEPRODUCT   => 'Hubo un error al intentar actualizar el producto. Intenta de nuevo',
             Errors::ERROR_ADMIN_DELETEPRODUCT      => 'Hubo un error al intentar eliminar el producto. Intenta de nuevo',
             Errors::ERROR_PRODUCTS_UPDATEDATOS    => 'Hubo un error al intentar actualizar los datos. Intenta de nuevo',
+            Errors::ERROR_PRODUCT_EXISTS          => 'El producto ya existe, intenta de nuevo',
 
             Errors::ERROR_CATEGORIAS_UPDATECATEGORIA => 'Hubo un error al intentar actualizar la categoria. Intenta de nuevo',
             Errors::ERROR_ADMIN_NEWCATEGORY_EXISTS  => 'La categoría ya existe, selecciona otra',

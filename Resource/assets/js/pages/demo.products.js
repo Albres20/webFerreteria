@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     "use strict";
     $("#products-datatable").DataTable({
         language: {
@@ -14,7 +14,7 @@ $(document).ready(function() {
         order: [
             [1, "asc"]
         ],
-        drawCallback: function() {
+        drawCallback: function () {
             $(".dataTables_paginate > .pagination").addClass("pagination-rounded"), $("#products-datatable_length label").addClass("form-label")
         }
     });
@@ -40,13 +40,67 @@ $(document).ready(function() {
             $(".modal-title").text("Nuevo Producto");
         }
     });
+
+    $('#modalnewCat').on('show.bs.modal', function (evnt) {
+        var valueBottom = $(evnt.relatedTarget).val();
+        //nueva categoria
+        //if (valueBottom == 'btnNuevaCateg') {
+        console.log(valueBottom);//vacio
+        $("#formnewcatg").trigger("reset");
+        //$("#formnewcatg").attr("action", "productos/newCategoria");
+
+        $("#header-modalLabel").addClass("bg-danger");
+        $("#btngrdmodal").addClass("btn-danger");
+        $("#primary-header-modalLabel").text("Nueva Categoria");
+        //}
+    });
+
+    $("#formnewcatg").submit(function(e) {
+        e.preventDefault();
+        var form = $(this);
+        var url = form.attr("action");
+        var data = form.serialize();
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            success: function(response) {
+                var json = JSON.parse(response);
+                if (json['success'] == true) {
+                    $("#modalnewCat").modal("hide");
+                    $("#formnewcatg").trigger("reset");
+                    $.toast({
+                        heading: "Categoria",
+                        text: "Se ha registrado correctamente",
+                        position: "top-right",
+                        showHideTransition: 'plain',
+                        loaderBg: "#0acf97",
+                        icon: 'success',
+                        hideAfter: 3500,
+                        stack: 6
+                    });
+                } else {
+                    $.toast({
+                        heading: "Categoria",
+                        text: "No se ha registrado correctamente",
+                        position: "top-right",
+                        showHideTransition: 'plain',
+                        loaderBg: "#fa5c7c",
+                        icon: 'error',
+                        hideAfter: 3500,
+                        stack: 6
+                    });
+                }
+            }
+        });    
+    });
 });
 
 //editar producto
 function editarProducto(id) {
     console.log(id);
     $("#formproduct").trigger("reset");
-    $("#formproduct").attr("action", "productos/updateProductos/"+id);
+    $("#formproduct").attr("action", "productos/updateProductos/" + id);
     //capturar la primera fila para editar o borrar el registro
     var fila = $("#fila-" + id).closest("tr");
     //console.log(fila);
@@ -72,17 +126,16 @@ function editarProducto(id) {
 
     //$("#inputImage").prop("disabled", true);
     //$(".imgprodct").hide();
-    
+
     $("#codigopd").val(codigo);
     $("#nombre").val(nombre);
     $("#imagePreview").attr("src", imagen);
     //$("#inputImage").val(imagen);
     $("#marca").val(marca);
-    $("#categoria").val(categoria);
     $("#buying_price").val(preciocompra);
     $("#selling_price").val(precioventa);
     $("#stock").val(stock);
-    
+
 
     //$(".modal-header").removeclass("bg-danger");
     if (document.getElementsByClassName("bg-danger")) {

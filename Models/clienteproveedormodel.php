@@ -119,6 +119,25 @@ class ClienteProveedorModel extends Model implements IModel{
         }
     }
 
+    //new venta
+    public function getClientesBySearch($search){
+        try{
+            $query = $this->query('SELECT cpr_nombre, cpr_tipodocum, cpr_numdoc, cpr_direccion
+            FROM clientes
+            WHERE cpr_nombre LIKE "%'.$search.'%" 
+            or cpr_numdoc LIKE "%'.$search.'%"
+            ORDER BY cpr_numdoc LIMIT 0,6');
+            //$query->execute([ 'buscar' => $search]);
+
+            $data = $query->fetchAll(PDO::FETCH_ASSOC);
+
+            return $data;
+
+        }catch(PDOException $e){
+            echo $e;
+        }
+    }
+
     public function existsNUM($cpr_numdoc){
         try{
             $query = $this->prepare('SELECT cpr_numdoc FROM clientes WHERE cpr_numdoc = :cpr_numdoc');

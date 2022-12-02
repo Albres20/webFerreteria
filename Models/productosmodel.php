@@ -135,7 +135,9 @@
                 FROM productos
                 LEFT JOIN producto_det 
                 on productos.prd_codigo = producto_det.prd_codigo 
-                WHERE productos.prd_nombre OR productos.prd_codigo LIKE "%'.$search.'%" ORDER BY productos.prd_nombre LIMIT 0,6');
+                WHERE productos.prd_nombre LIKE "%'.$search.'%"
+                OR productos.prd_codigo LIKE "%'.$search.'%"
+                ORDER BY productos.prd_nombre LIMIT 0,6');
                 //$query->execute([ 'buscar' => $search]);
     
                 $data = $query->fetchAll(PDO::FETCH_ASSOC);

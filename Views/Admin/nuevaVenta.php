@@ -324,13 +324,12 @@ $user = $this->d['user'];
                                 </label>
                             </div>
                             <div class="position-relative mb-3">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Buscar por nombre, RUC o DNI" id="buscarProducto">
-                                    <button class="btn btn-outline-secondary mdi mdi-account-search" type="button" id="btnBuscarProducto" style="font-size: 18px;"></button>
-                                </div>
+                                <!-- <div class="input-group"> -->
+                                    <input type="text" class="form-control" id="bloodhound" name="consultaCliente" placeholder="Buscar por nombre, RUC o DNI" autocomplete="off">
+                                    <!-- <button class="btn btn-outline-secondary mdi mdi-account-search" type="button" id="btnBuscarProducto" style="font-size: 18px;"></button> -->
+                                <!-- </div> -->
                                 <a href="javascript:void(0);" class="float-right" style="float: right; display:none; ">Nuevo cliente</a>
                             </div>
-
                             <div class="position-relative mb-3">
                                 <div class="form-group row required mt-3 mb-2">
                                     <div class="col-sm-4"><strong class="mdi mdi-account"> Nombre</strong></div>
@@ -380,6 +379,9 @@ $user = $this->d['user'];
     <!-- bundle -->
     <script src="<?php echo URL . RQ ?>assets/js/vendor.min.js"></script>
     <script src="<?php echo URL . RQ ?>assets/js/app.min.js"></script>
+    <!-- Typehead -->
+    <script src="<?php echo URL . RQ ?>assets/js/vendor/handlebars.min.js"></script>
+    <script src="<?php echo URL . RQ ?>assets/js/vendor/typeahead.bundle.min.js"></script>
 
     <!-- third party js -->
     <script src="<?php echo URL . RQ ?>assets/js/vendor/jquery.dataTables.min.js"></script>
@@ -390,10 +392,41 @@ $user = $this->d['user'];
     <!-- demo app -->
     <script src="<?php echo URL . RQ ?>assets/js/pages/demo.new-venta.js"></script>
     <!-- end demo js-->
+    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.typehead.js"></script>
 
     <!-- sweetalert2 js -->
     <script src="<?php echo URL . RQ ?>js/sweetalert2/sweetalert2.all.js"></script>
 
+    <!-- <script>
+        $(document).ready(function() {
+            console.log("ready!");
+            $('#buscarCliente').typeahead({
+                minLength: 1,
+                order: "asc",
+                source: function(query, result) {
+                    console.log("nada");
+                    $.ajax({
+                        url: '<?php echo URL . RQ ?>php/buscarcliente.php',
+                        //url: "nuevaVenta/buscarCliente",
+                        method: "POST",
+                        data: {
+                            query: query
+                        },
+                        dataType: "json",
+                        success: function(data) {
+                            result($.map(data, function(item) {
+                                return item;
+                            }));
+                        },
+                        error: function(XMLHttpRequest, textStatus, errorThrown) {
+                            console.log(textStatus);
+                        }
+
+                    })
+                }
+            });
+        });
+    </script> -->
 
 </body>
 

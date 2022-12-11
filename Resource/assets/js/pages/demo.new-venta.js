@@ -1,121 +1,106 @@
 $(document).ready(function () {
     //leer el input del id = buscarProducto por cada tecla que se presione
-    $('#buscarProducto').keyup(function () {
-        //obtener el valor del input
-        var valor = $(this).val();
-        console.log(valor);
-        //si el valor es diferente de vacio
-        if (valor != "" && valor != " ") {
-            //enviar el valor a la funcion buscarProducto
-            buscarProducto(valor);
-            //limpiar el div con id = resultadoBusqueda
-        } else {
-            //si el valor es vacio, mostrar todos los productos
-            console.log("vacio");
+    $('#buscarProducto').typeahead({
+        hint: true, 
+        highlight: true,
+        minLength: 0,
+        source: function (busqueda, resultado) {
+            $.ajax({
+                url: "nuevaVenta/buscarProducto",
+                data: 'busqueda=' + busqueda,
+                dataType: "json",
+                type: "POST",
+                success: function (data) {
+                    resultado($.map(data, function (item) {
+                        return item;
+                    }));
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
         }
     });
-    console.log("hola");
-    // $('#buscarCliente').typeahead({
-    //     minLength: 1,
-    //     order: "asc",
-    //     source: function (query, result) {
-    //         console.log("nada");
-    //         $.ajax({
-    //             //url: '<?php echo URL . RQ ?>php/consulta_sunat1.php',
-    //             url: "nuevaVenta/buscarCliente",
-    //             method: "POST",
-    //             data: { query: query },
-    //             dataType: "json",
-    //             success: function (data) {
-    //                 result($.map(data, function (item) {
-    //                     return item;
-    //                 }));
-    //             },
-    //             error: function (XMLHttpRequest, textStatus, errorThrown) {
-    //                 console.log(textStatus);
-    //             }
 
-    //         })
-    //     }
-    // });
+    $('#consultaCliente').typeahead({
+        hint: true, 
+        highlight: true,
+        minLength: 0,
+        source: function (busqueda, resultado) {
+            $.ajax({
+                url: "nuevaVenta/buscarCliente",
+                data: 'busqueda=' + busqueda,
+                dataType: "json",
+                type: "POST",
+                success: function (data) {
+                    resultado($.map(data, function (item) {
+                        return item;
+                    }));
+                    $("#btnBuscarProducto").attr('disabled', false);
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+    });
+    //segun el cliente seleccionado, mostrar los datos en un div
+    $('#consultaCliente').change(function () {
+        var cliente = $(this).val();
+        $("#btnNuevoCliente").attr('disabled', false);
+        console.log(cliente);
+        $.ajax({
+            url: "nuevaVenta/mostrarCliente",
+            data: 'cliente=' + cliente,
+            dataType: "json",
+            type: "POST",
+            success: function (data) {
+                //console.log(data);
+                var html = "";
+                html += "<div class='form-group row required mt-3 mb-2'>";
+                html += "<div class='col-sm-4'><strong class='mdi mdi-account'> Nombre</strong></div>";
+                html += "<div class='col-sm-8'>"+ data.nombre + "</div>";
+                html += "</div>";
+                html += "<div class='form-group row mb-2'>";
+                html += "<div class='col-sm-4'><strong class='mdi mdi-card-account-details'>"+" "+ data.tipo +"</strong></div>";
+                html += "<div class='col-sm-8'>"+ data.num +"</div>";
+                html += "</div>";
+                html += "<div class='form-group row'>";
+                html += "<div class='col-sm-4'><strong class='mdi mdi-map-marker'> Dirección</strong></div>";
+                html += "<div class='col-sm-8'>"+ data.dir +"</div>";
+                html += "</div>";
+                html += "<div class='text-right mt-2'>";
+                html += "<a type='button' id='limpiarCliente' class='float-right' style='float: right; /*display:none;*/ '>Elegir otro cliente</a>";
+                html += "</div>";
+                $("#tablaDatoCliente").html(html);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    });
+
+    $('#buscarProducto').change(function () {
+        var producto = $(this).val();
+        console.log(producto);
+        $.ajax({
+            url: "nuevaVenta/mostrarProducto",
+            data: 'producto=' + producto,
+            dataType: "json",
+            type: "POST",
+            success: function (data) {
+                console.log(data);
+                $("#cantidadproducto").val(data.stock);
+                $("#precioproducto").val(data.precio);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    });
+
+    $('#limpiarCliente').click(function(){
+        $('#consultaCliente').val('');
+        $('#tablaDatoCliente').html('');
+      });
 });
-
-function buscarProducto(consulta) {
-    //funcion ajax
-    $.ajax({
-        //metodo
-        type: "POST",
-        //url para enviar la consulta
-        //url: "nuevaVenta/buscarProducto",
-        url: "nuevaVenta/buscarProducto",
-        //tipo de dato que se espera de respuesta en formato json
-        dataType: "json",
-        //informacion a enviar
-        data: 'consulta=' + consulta,
-        //funcion que se ejecuta si la peticion es correcta
-        success: function (response) {
-            //mostrar los productos en el div con id = resultadoBusqueda mediante for
-            var len = response.length;
-            var html = "";
-            for (var i = 0; i < len; i++) {
-                var nombre = response[i].nombre;
-                var precio = response[i].precio;
-                var stock = response[i].stock;
-                var codigo = response[i].codigo;
-                //div con con dropdown
-
-                var html = "<ol class='list-group'>";
-                html += "<li class='list-group-item d-flex justify-content-between align-items-start'>";
-                html += "<div class='ms-2 me-auto'>";
-                html += "<div class='fw-bold'>" + nombre + "</div>";
-                html += codigo + " - " + precio;
-                html += "</div>";
-                html += "<span class='badge bg-primary rounded-pill'>" + stock + "</span>";
-                html += "</li>";
-                html += "</ol>";
-                $("#resultadoBusqueda").append(html);
-            }
-            html = "";
-        }
-    })
-}
-
-function buscarCliente(consulta) {
-    //funcion ajax
-    $.ajax({
-        //metodo
-        type: "POST",
-        //url para enviar la consulta
-        //url: "nuevaVenta/buscarCliente",
-        url: "nuevaVenta/buscarCliente",
-        //tipo de dato que se espera de respuesta en formato json
-        dataType: "json",
-        //informacion a enviar
-        data: 'consultaCliente=' + consulta,
-        //funcion que se ejecuta si la peticion es correcta
-        success: function (response) {
-            //mostrar los productos en el div con id = resultadoBusqueda mediante for
-            var len = response.length;
-            var html = "";
-            for (var i = 0; i < len; i++) {
-                var nombre = response[i].nombre;
-                var tipoDOC = response[i].tipoDOC;
-                var numDOC = response[i].numDOC;
-                var direccion = response[i].direccion;
-                //div con con dropdown
-
-                var html = "<ol class='list-group'>";
-                html += "<li class='list-group-item d-flex justify-content-between align-items-start'>";
-                html += "<div class='ms-2 me-auto'>";
-                html += "<div class='fw-bold'>" + nombre + "</div>";
-                html += tipoDOC + " - " + numDOC;
-                html += "</div>";
-                html += direccion;
-                html += "</li>";
-                html += "</ol>";
-                $("#resultadoBusquedaCliente").append(html);
-            }
-            html = "";
-        }
-    })
-}

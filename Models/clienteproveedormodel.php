@@ -122,19 +122,46 @@ class ClienteProveedorModel extends Model implements IModel{
     //new venta
     public function getClientesBySearch($search){
         try{
-            $query = $this->query('SELECT cpr_nombre, cpr_tipodocum, cpr_numdoc, cpr_direccion
-            FROM clientes
+            $query = $this->query('SELECT * FROM clientes
             WHERE cpr_nombre LIKE "%'.$search.'%" 
             or cpr_numdoc LIKE "%'.$search.'%"
             ORDER BY cpr_numdoc LIMIT 0,6');
             //$query->execute([ 'buscar' => $search]);
 
-            $data = $query->fetchAll(PDO::FETCH_ASSOC);
+            //$resultado = $query->get_result();
 
-            return $data;
+            if($query->rowCount() > 0){
+                while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                    $data[] = $row['cpr_nombre'];
+                    $data[] = $row['cpr_numdoc'];
+                }
+                return $data;
+            }
 
         }catch(PDOException $e){
-            echo $e;
+            echo $e->getMessage();
+        }
+    }
+
+    public function getClienteBuscado($cliente){
+        try{
+            $query = $this->prepare('SELECT cpr_nombre, cpr_tipodocum, cpr_numdoc, cpr_direccion 
+                FROM clientes 
+                WHERE cpr_nombre = :cpr_nombre or cpr_numdoc = :cpr_numdoc');
+            $query->execute([ 'cpr_numdoc' => $cliente, 'cpr_nombre' => $cliente]);
+            
+            if($query->rowCount() > 0){
+                while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                    $data['nombre'] = $row['cpr_nombre'];
+                    $data['tipo'] = $row['cpr_tipodocum'];
+                    $data['num'] = $row['cpr_numdoc'];
+                    $data['dir'] = $row['cpr_direccion'];
+                }
+                return $data;
+            }
+
+        }catch(PDOException $e){
+            echo $e->getMessage();
         }
     }
 

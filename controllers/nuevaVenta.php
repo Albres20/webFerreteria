@@ -26,44 +26,51 @@ class NuevaVenta extends SessionController{
     //recoger la consulta de demo.new-venta.js
     function buscarProducto(){
         error_log("Gestion de Nueva Venta ::buscarProducto() ");
-        $producto = $_POST['consulta'];
-        error_log("Gestion de Nueva Venta ::buscarProducto() ::producto: ".$producto);
+        $palabraclave = strval($_POST['busqueda']);
+        // $busqueda = "{$palabraclave}%";
+        error_log("Gestion de Nueva Venta ::buscarProducto() ::producto: ".$palabraclave);
         $productomodel = new ProductosModel();
-        $productos = $productomodel->getProductosBySearch($producto);
-        $res = array();
-        foreach($productos as $producto){
-            $res[] = array(
-                'estado' => 'success',
-                'codigo' => $producto['prd_codigo'],
-                'nombre' => $producto['prd_nombre'],
-                'stock' => $producto['dpr_stock'],
-                'precio' => $producto['dpr_prec_prod']
-            );
-        }
-        error_log("Gestion de Nueva Venta ::buscarProducto() ::productos: ".json_encode($res));
+        $productos = $productomodel->getProductosBySearch($palabraclave);
+        error_log("Gestion de Nueva Venta ::buscarProducto() ::productos: ".json_encode($productos));
         //mostrar los datos en la vista mediante
-        echo json_encode($res);
+        echo json_encode($productos);
         //return json_encode($res);
     }
 
     function buscarCliente(){
         error_log("Gestion de Nueva Venta ::buscarCliente() ");
-        $cliente = $_POST['query'];
-        error_log("Gestion de Nueva Venta ::buscarCliente() ::cliente: ".$cliente);
+        $palabraclave = strval($_POST['busqueda']);
+        // $busqueda = "{$palabraclave}%";
+        error_log("Gestion de Nueva Venta ::buscarCliente() ::cliente: ".$palabraclave);
         $clientemodel = new ClienteProveedorModel();
-        $clientes = $clientemodel->getClientesBySearch($cliente);
-        $res = array();
-        foreach($clientes as $cliente){
-            $res[] = array(
-                'nombre' => $cliente['cpr_nombre'],
-                'tipoDOC' => $cliente['cpr_tipodocum'],
-                'numDOC' => $cliente['cpr_numdoc'],
-                'direccion' => $cliente['cpr_direccion'],
-            );
-        }
-        error_log("Gestion de Nueva Venta ::buscarCliente() ::clientes: ".json_encode($res));
+        $clientes = $clientemodel->getClientesBySearch($palabraclave);
+        error_log("Gestion de Nueva Venta ::buscarCliente() ::clientes: ".json_encode($clientes));
         //mostrar los datos en la vista mediante
-        echo json_encode($res);
+        echo json_encode($clientes);
+        //return json_encode($res);
+    }
+
+    function mostrarProducto(){
+        error_log("Gestion de Nueva Venta ::mostrarProducto() ");
+        $producto = $_POST['producto'];
+        error_log("Gestion de Nueva Venta ::mostrarProducto() ::producto nombre o codigo: ".$producto);
+        $productomodel = new ProductosModel();
+        $productoBuscado = $productomodel->getProductoBuscado($producto);
+        error_log("Gestion de Nueva Venta ::mostrarProducto() ::producto: ".json_encode($productoBuscado));
+        //mostrar los datos en la vista mediante
+        echo json_encode($productoBuscado);
+        //return json_encode($res);
+    }
+
+    function mostrarCliente(){
+        error_log("Gestion de Nueva Venta ::mostrarCliente() ");
+        $cliente = $_POST['cliente'];
+        error_log("Gestion de Nueva Venta ::mostrarCliente() ::nombre, RUC o DNI: ".$cliente);
+        $clientemodel = new ClienteProveedorModel();
+        $clienteBuscado = $clientemodel->getClienteBuscado($cliente);
+        error_log("Gestion de Nueva Venta ::mostrarCliente() ::cliente: ".json_encode($clienteBuscado));
+        //mostrar los datos en la vista mediante
+        echo json_encode($clienteBuscado);
         //return json_encode($res);
     }
 

@@ -64,15 +64,27 @@ $user = $this->d['user'];
                             <h4 class="header-title mb-3">Agregar Productos</h4>
                             <!--- boton de busqueda en 3 columnas-->
                             <div class="row">
-                                <div class="col-md-12">
-                                    <div class="input-group mb-3">
-                                        <input type="search" class="form-control" name="consulta" placeholder="Buscar producto" id="buscarProducto">
-                                        <div class="input-group-append">
+                                <div class="col-md-5">
+                                    <div class="mb-3">
+                                        <input type="search" class="form-control" name="buscarProducto" placeholder="Buscar producto" id="buscarProducto">
+                                        <!-- <div class="input-group-append">
                                             <button class="btn btn-outline-secondary" type="button" id="btnBuscarProducto">Agregar</button>
-                                        </div>
+                                        </div> -->
                                     </div>
-                                    <!-- mostrar la lista de los productos encontrados -->
-                                    <div class="list-group" id="resultadoBusqueda">
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mb-3">
+                                        <input class="form-control" type="number" name="cantidad" id="cantidadproducto" placeholder="Cantidad">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="mb-3">
+                                        <input class="form-control" type="number" name="precio" id="precioproducto" placeholder="Precio" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="mb-3">
+                                        <button class="btn btn-outline-secondary" type="button" id="btnBuscarProducto">Agregar</button>
                                     </div>
                                 </div>
                             </div>
@@ -323,31 +335,15 @@ $user = $this->d['user'];
                                     <h4 class="header-title m-2 text-light text-center">Cliente</h4>
                                 </label>
                             </div>
-                            <div class="position-relative mb-3">
-                                <!-- <div class="input-group"> -->
-                                    <input type="text" class="form-control" id="bloodhound" name="consultaCliente" placeholder="Buscar por nombre, RUC o DNI" autocomplete="off">
-                                    <!-- <button class="btn btn-outline-secondary mdi mdi-account-search" type="button" id="btnBuscarProducto" style="font-size: 18px;"></button> -->
-                                <!-- </div> -->
-                                <a href="javascript:void(0);" class="float-right" style="float: right; display:none; ">Nuevo cliente</a>
-                            </div>
-                            <div class="position-relative mb-3">
-                                <div class="form-group row required mt-3 mb-2">
-                                    <div class="col-sm-4"><strong class="mdi mdi-account"> Nombre</strong></div>
-                                    <div class="col-sm-8">HIPERMERCADOS TOTTUS S.A</div>
+                            <div class="position-relative mb-4">
+                                <div class="input-group">
+                                    <input type="search" class="form-control" id="consultaCliente" name="consultaCliente" placeholder="Buscar por nombre, RUC o DNI" autocomplete="off">
+                                    <button class="btn btn-outline-secondary mdi mdi-account-search" type="button" id="btnBuscarProducto" style="font-size: 18px;"></button>
                                 </div>
-                                <div class="form-group row mb-2">
-                                    <div class="col-sm-4"><strong class="mdi mdi-card-account-details"> DNI</strong></div>
-                                    <div class="col-sm-8">20508565934</div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-4"><strong class="mdi mdi-map-marker"> Dirección</strong></div>
-                                    <div class="col-sm-8">AV. ANGAMOS ESTE NRO. 1805 INT. P10 - LIMA LIMA SURQUILLO</div>
-                                </div>
+                                <a type="button" data-bs-toggle="modal" data-bs-target="#modalnewCliente" id="btnNuevoCliente" value="btnNuevoCliente" class="float-right mt-2">Nuevo cliente</a>
                             </div>
-                            <div class="text-right">
-                                <a href="javascript:void(0);" class="float-right" style="float: right; /*display:none;*/ ">Editar cliente</a>
+                            <div class="position-relative mb-3" id="tablaDatoCliente">
                             </div>
-
                         </div>
                     </div>
                 </div> <!-- end col -->
@@ -381,7 +377,7 @@ $user = $this->d['user'];
     <script src="<?php echo URL . RQ ?>assets/js/app.min.js"></script>
     <!-- Typehead -->
     <script src="<?php echo URL . RQ ?>assets/js/vendor/handlebars.min.js"></script>
-    <script src="<?php echo URL . RQ ?>assets/js/vendor/typeahead.bundle.min.js"></script>
+    <script type="text/javascript" src="<?php echo URL . RQ ?>assets/js/vendor/typeahead.js"></script>
 
     <!-- third party js -->
     <script src="<?php echo URL . RQ ?>assets/js/vendor/jquery.dataTables.min.js"></script>
@@ -391,38 +387,29 @@ $user = $this->d['user'];
     <script src="<?php echo URL . RQ ?>assets/js/vendor/dataTables.checkboxes.min.js"></script>
     <!-- demo app -->
     <script src="<?php echo URL . RQ ?>assets/js/pages/demo.new-venta.js"></script>
-    <!-- end demo js-->
-    <script src="<?php echo URL . RQ ?>assets/js/pages/demo.typehead.js"></script>
-
     <!-- sweetalert2 js -->
     <script src="<?php echo URL . RQ ?>js/sweetalert2/sweetalert2.all.js"></script>
 
     <!-- <script>
         $(document).ready(function() {
             console.log("ready!");
-            $('#buscarCliente').typeahead({
-                minLength: 1,
-                order: "asc",
-                source: function(query, result) {
-                    console.log("nada");
+            var url = '<?php echo URL . RQ ?>php/buscarclienteajax.php';
+            $('#consultaCliente').typeahead({
+                source: function (busqueda, resultado) {
                     $.ajax({
-                        url: '<?php echo URL . RQ ?>php/buscarcliente.php',
-                        //url: "nuevaVenta/buscarCliente",
-                        method: "POST",
-                        data: {
-                            query: query
-                        },
+                        url: url,
+                        data: 'busqueda=' + busqueda,
                         dataType: "json",
-                        success: function(data) {
-                            result($.map(data, function(item) {
+                        type: "POST",
+                        success: function (data) {
+                            resultado($.map(data, function (item) {
                                 return item;
                             }));
                         },
-                        error: function(XMLHttpRequest, textStatus, errorThrown) {
-                            console.log(textStatus);
+                        error: function (data) {
+                            console.log(data);
                         }
-
-                    })
+                    });
                 }
             });
         });

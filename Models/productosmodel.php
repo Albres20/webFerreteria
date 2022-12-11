@@ -127,7 +127,7 @@
                 return NULL;
             }
         }
-
+        //ventas
         public function getProductosBySearch($search){
 
             try{
@@ -140,14 +140,48 @@
                 ORDER BY productos.prd_nombre LIMIT 0,6');
                 //$query->execute([ 'buscar' => $search]);
     
-                $data = $query->fetchAll(PDO::FETCH_ASSOC);
-
-                return $data;
+                if($query->rowCount() > 0){
+                    while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                        $data[] = $row['prd_nombre'];
+                        $data[] = $row['prd_codigo'];
+                    }
+                    return $data;
+                }
     
             }catch(PDOException $e){
                 echo $e;
             }
         }
+
+        public function getProductoBuscado($producto){
+            try{
+                $query = $this->prepare('SELECT productos.prd_codigo, productos.prd_nombre, producto_det.dpr_stock, producto_det.dpr_prec_prod 
+                FROM productos
+                LEFT JOIN producto_det 
+                on productos.prd_codigo = producto_det.prd_codigo 
+                WHERE productos.prd_nombre = :prd_nombre
+                OR productos.prd_codigo = :prd_codigo');
+                $query->execute([ 'prd_nombre' => $producto, 'prd_codigo' => $producto]);
+    
+                if($query->rowCount() > 0){
+                    while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                        $data['codigo'] = $row['prd_codigo'];
+                        $data['nombre'] = $row['prd_nombre'];
+                        $data['stock'] = $row['dpr_stock'];
+                        $data['precio'] = $row['dpr_prec_prod'];
+                    }
+                    return $data;
+                }
+    
+            }catch(PDOException $e){
+                echo $e;
+            }
+        }
+
+
+
+
+
         public function update(){}
 
         public function delete($id){

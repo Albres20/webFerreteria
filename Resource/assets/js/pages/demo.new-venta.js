@@ -1,7 +1,7 @@
 $(document).ready(function () {
     //leer el input del id = buscarProducto por cada tecla que se presione
     $('#buscarProducto').typeahead({
-        hint: true, 
+        hint: true,
         highlight: true,
         minLength: 0,
         source: function (busqueda, resultado) {
@@ -23,7 +23,7 @@ $(document).ready(function () {
     });
 
     $('#consultaCliente').typeahead({
-        hint: true, 
+        hint: true,
         highlight: true,
         minLength: 0,
         source: function (busqueda, resultado) {
@@ -47,37 +47,55 @@ $(document).ready(function () {
     //segun el cliente seleccionado, mostrar los datos en un div
     $('#consultaCliente').change(function () {
         var cliente = $(this).val();
-        $("#btnNuevoCliente").attr('disabled', false);
-        console.log(cliente);
-        $.ajax({
-            url: "nuevaVenta/mostrarCliente",
-            data: 'cliente=' + cliente,
-            dataType: "json",
-            type: "POST",
-            success: function (data) {
-                //console.log(data);
-                var html = "";
-                html += "<div class='form-group row required mt-3 mb-2'>";
-                html += "<div class='col-sm-4'><strong class='mdi mdi-account'> Nombre</strong></div>";
-                html += "<div class='col-sm-8'>"+ data.nombre + "</div>";
-                html += "</div>";
-                html += "<div class='form-group row mb-2'>";
-                html += "<div class='col-sm-4'><strong class='mdi mdi-card-account-details'>"+" "+ data.tipo +"</strong></div>";
-                html += "<div class='col-sm-8'>"+ data.num +"</div>";
-                html += "</div>";
-                html += "<div class='form-group row'>";
-                html += "<div class='col-sm-4'><strong class='mdi mdi-map-marker'> Dirección</strong></div>";
-                html += "<div class='col-sm-8'>"+ data.dir +"</div>";
-                html += "</div>";
-                html += "<div class='text-right mt-2'>";
-                html += "<a type='button' id='limpiarCliente' class='float-right' style='float: right; /*display:none;*/ '>Elegir otro cliente</a>";
-                html += "</div>";
-                $("#tablaDatoCliente").html(html);
-            },
-            error: function (data) {
-                console.log(data);
-            }
-        });
+        //habilitar el boton de buscar cliente
+        if (cliente == "") {
+            $('#consultaCliente').prop('disabled', false);
+            $("#btnBuscarCliente").prop('disabled', true);
+            $("#btnBuscarCliente").removeClass('btn-danger');
+            $("#btnBuscarCliente").removeClass('mdi-cancel');
+            $("#btnBuscarCliente").addClass('mdi-account-search');
+            $("#btnBuscarCliente").addClass('btn-outline-secondary');
+        } else {
+            console.log(cliente);
+            $.ajax({
+                url: "nuevaVenta/mostrarCliente",
+                data: 'cliente=' + cliente,
+                dataType: "json",
+                type: "POST",
+                success: function (data) {
+                    //console.log(data);
+                    var html = "";
+                    html += "<div class='form-group row required mt-3 mb-2'>";
+                    html += "<div class='col-sm-4'><strong class='mdi mdi-account'> Nombre</strong></div>";
+                    html += "<div class='col-sm-8'>" + data.nombre + "</div>";
+                    html += "</div>";
+                    html += "<div class='form-group row mb-2'>";
+                    html += "<div class='col-sm-4'><strong class='mdi mdi-card-account-details'>" + " " + data.tipo + "</strong></div>";
+                    html += "<div class='col-sm-8'>" + data.num + "</div>";
+                    html += "</div>";
+                    html += "<div class='form-group row'>";
+                    html += "<div class='col-sm-4'><strong class='mdi mdi-map-marker'> Dirección</strong></div>";
+                    html += "<div class='col-sm-8'>" + data.dir + "</div>";
+                    html += "</div>";
+                    html += "<div class='text-right mt-2'>";
+                    html += "<a role='button' class='limpiarCliente float-right' id='limpiarCliente' style='float: right;'>Elegir otro cliente</a>";
+                    html += "</div>";
+                    $("#tablaDatoCliente").html(html);
+                    $("#btnBuscarCliente").prop('disabled', false);
+                    //cambiar la clase del boton de buscar cliente
+                    $("#btnBuscarCliente").removeClass('mdi-account-search');
+                    $("#btnBuscarCliente").removeClass('btn-outline-secondary');
+                    $("#btnBuscarCliente").addClass('btn-danger');
+                    $("#btnBuscarCliente").addClass('mdi-cancel');
+                    //deshabilitar el input de consultaCliente
+                    $('#consultaCliente').prop('disabled', true);
+
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
     });
 
     $('#buscarProducto').change(function () {
@@ -90,8 +108,8 @@ $(document).ready(function () {
             type: "POST",
             success: function (data) {
                 console.log(data);
-                $("#cantidadproducto").val(data.stock);
-                $("#precioproducto").val(data.precio);
+                $("#cantidadproducto").focus();
+                $("#precioproducto").val(data.precio_producto);
             },
             error: function (data) {
                 console.log(data);
@@ -99,8 +117,28 @@ $(document).ready(function () {
         });
     });
 
-    $('#limpiarCliente').click(function(){
+    $("#btnBuscarCliente").click(function () {
+        $('#consultaCliente').prop('disabled', false);
+        $("#btnBuscarCliente").prop('disabled', true);
+        $("#btnBuscarCliente").removeClass('btn-danger');
+        $("#btnBuscarCliente").removeClass('mdi-cancel');
+        $("#btnBuscarCliente").addClass('mdi-account-search');
+        $("#btnBuscarCliente").addClass('btn-outline-secondary');
         $('#consultaCliente').val('');
         $('#tablaDatoCliente').html('');
-      });
+    });
+
+    $('.limpiarCliente').click(function () {
+        console.log('limpiar');
+        $('#consultaCliente').val('');
+        $('#tablaDatoCliente').html('');
+    });
 });
+
+function calcularPrecio(e){
+    e.preventDefault();
+    const cantidad = $("#cantidadproducto").val();
+    const precio = $("#precioproducto").val();
+    const total = cantidad * precio;
+    console.log(total);
+}

@@ -31,9 +31,9 @@ class NuevaVenta extends SessionController{
         error_log("Gestion de Nueva Venta ::buscarProducto() ::producto: ".$palabraclave);
         $productomodel = new ProductosModel();
         $productos = $productomodel->getProductosBySearch($palabraclave);
-        error_log("Gestion de Nueva Venta ::buscarProducto() ::productos: ".json_encode($productos));
+        error_log("Gestion de Nueva Venta ::buscarProducto() ::productos: ".json_encode($productos, JSON_UNESCAPED_UNICODE));
         //mostrar los datos en la vista mediante
-        echo json_encode($productos);
+        echo json_encode($productos, JSON_UNESCAPED_UNICODE);
         //return json_encode($res);
     }
 
@@ -56,9 +56,9 @@ class NuevaVenta extends SessionController{
         error_log("Gestion de Nueva Venta ::mostrarProducto() ::producto nombre o codigo: ".$producto);
         $productomodel = new ProductosModel();
         $productoBuscado = $productomodel->getProductoBuscado($producto);
-        error_log("Gestion de Nueva Venta ::mostrarProducto() ::producto: ".json_encode($productoBuscado));
+        error_log("Gestion de Nueva Venta ::mostrarProducto() ::producto: ".json_encode($productoBuscado, JSON_UNESCAPED_UNICODE));
         //mostrar los datos en la vista mediante
-        echo json_encode($productoBuscado);
+        echo json_encode($productoBuscado, JSON_UNESCAPED_UNICODE);
         //return json_encode($res);
     }
 

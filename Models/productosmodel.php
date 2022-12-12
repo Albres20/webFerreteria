@@ -155,7 +155,8 @@
 
         public function getProductoBuscado($producto){
             try{
-                $query = $this->prepare('SELECT productos.prd_codigo, productos.prd_nombre, producto_det.dpr_stock, producto_det.dpr_prec_prod 
+                $query = $this->prepare('SELECT productos.prd_codigo, productos.prd_nombre, productos.prd_imagen, producto_det.dpr_marca,  
+                producto_det.dpr_prec_compra, producto_det.dpr_prec_prod, producto_det.dpr_stock 
                 FROM productos
                 LEFT JOIN producto_det 
                 on productos.prd_codigo = producto_det.prd_codigo 
@@ -167,8 +168,11 @@
                     while($row = $query->fetch(PDO::FETCH_ASSOC)){
                         $data['codigo'] = $row['prd_codigo'];
                         $data['nombre'] = $row['prd_nombre'];
+                        $data['imagen'] = $row['prd_imagen'];
+                        $data['marca'] = $row['dpr_marca'];
+                        $data['precio_compra'] = $row['dpr_prec_compra'];
+                        $data['precio_producto'] = $row['dpr_prec_prod'];
                         $data['stock'] = $row['dpr_stock'];
-                        $data['precio'] = $row['dpr_prec_prod'];
                     }
                     return $data;
                 }

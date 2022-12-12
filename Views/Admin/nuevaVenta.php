@@ -74,7 +74,7 @@ $user = $this->d['user'];
                                 </div>
                                 <div class="col-md-3">
                                     <div class="mb-3">
-                                        <input class="form-control" type="number" name="cantidad" id="cantidadproducto" placeholder="Cantidad">
+                                        <input class="form-control" type="number" name="cantidad" id="cantidadproducto" placeholder="Cantidad" onkeyup="calcularPrecio(event)">
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -337,8 +337,8 @@ $user = $this->d['user'];
                             </div>
                             <div class="position-relative mb-4">
                                 <div class="input-group">
-                                    <input type="search" class="form-control" id="consultaCliente" name="consultaCliente" placeholder="Buscar por nombre, RUC o DNI" autocomplete="off">
-                                    <button class="btn btn-outline-secondary mdi mdi-account-search" type="button" id="btnBuscarProducto" style="font-size: 18px;"></button>
+                                    <input type="text" class="form-control" id="consultaCliente" name="consultaCliente" placeholder="Buscar por nombre, RUC o DNI" autocomplete="off">
+                                    <button class="btn btn-outline-secondary mdi mdi-account-search" type="button" id="btnBuscarCliente" style="font-size: 18px;" disabled></button>
                                 </div>
                                 <a type="button" data-bs-toggle="modal" data-bs-target="#modalnewCliente" id="btnNuevoCliente" value="btnNuevoCliente" class="float-right mt-2">Nuevo cliente</a>
                             </div>

@@ -3,10 +3,12 @@
 class NuevaVenta extends SessionController{
 
     private $user;
+    private $usercod;
 
     function __construct(){
         parent::__construct();
         $this->user = $this->getUserSessionData();
+        $this->usercod = $this->getUserId();
         error_log("Gestion de Nueva Venta ::constructor() ");
     }
 
@@ -54,7 +56,7 @@ class NuevaVenta extends SessionController{
         error_log("Gestion de Nueva Venta ::mostrarProducto() ");
         $producto = $_POST['producto'];
         error_log("Gestion de Nueva Venta ::mostrarProducto() ::producto nombre o codigo: ".$producto);
-        $productomodel = new ProductosModel();
+        $productomodel = new VentasModel();
         $productoBuscado = $productomodel->getProductoBuscado($producto);
         error_log("Gestion de Nueva Venta ::mostrarProducto() ::producto: ".json_encode($productoBuscado, JSON_UNESCAPED_UNICODE));
         //mostrar los datos en la vista mediante
@@ -66,11 +68,47 @@ class NuevaVenta extends SessionController{
         error_log("Gestion de Nueva Venta ::mostrarCliente() ");
         $cliente = $_POST['cliente'];
         error_log("Gestion de Nueva Venta ::mostrarCliente() ::nombre, RUC o DNI: ".$cliente);
-        $clientemodel = new ClienteProveedorModel();
+        $clientemodel = new VentasModel();
         $clienteBuscado = $clientemodel->getClienteBuscado($cliente);
         error_log("Gestion de Nueva Venta ::mostrarCliente() ::cliente: ".json_encode($clienteBuscado));
         //mostrar los datos en la vista mediante
         echo json_encode($clienteBuscado);
+        //return json_encode($res);
+    }
+
+    function addproducto(){
+        $id = $_POST['id'];
+        error_log("Gestion de Nueva Venta ::addproducto() ");
+        // $data = [];
+        // error_log("Gestion de Nueva Venta ::addproducto() ::producto: ".json_encode($producto));
+        $ventasmodel = new VentasModel();
+
+        $obtenerProducto = $ventasmodel->get($id);
+        //$ventasmodel->setVta_numped("0000000002");
+        $ventasmodel->setVta_fec_ped(date("Y-m-d H:i:s"));
+        $ventasmodel->setDet_est_ped("A");
+        $codigo = $obtenerProducto["prd_codigo"];
+        $precio = $obtenerProducto["dpr_prec_prod"];
+        $cantidad = $_POST['cantidad'];
+        $subtotal = $precio * $cantidad;
+        if($ventasmodel->saveProduct($codigo, $cantidad, $precio, $subtotal)){
+            $msg = "ok";
+        }else{
+            $msg = "error";
+        }
+        echo json_encode($msg, JSON_UNESCAPED_UNICODE);
+        // //return json_encode($res);
+        //print_r($obtenerProducto);
+    }
+
+    function listarProductos(){
+        error_log("Gestion de Nueva Venta ::listarProductos() ");
+        $numventa = "0000000001"; //despues se arregla de como sacar el dato
+        $ventasmodel = new VentasModel();
+        $lista = $ventasmodel->getListaProducto($numventa);
+        //error_log("Gestion de Nueva Venta ::listarProductos() ::productos: ".json_encode($productos, JSON_UNESCAPED_UNICODE));
+        //mostrar los datos en la vista mediante
+        echo json_encode($lista, JSON_UNESCAPED_UNICODE);
         //return json_encode($res);
     }
 

@@ -128,6 +128,7 @@ class SessionController extends Controller
         $id = $this->session->getCurrentUser();
         $this->user = new UserModel();
         $this->user->get($id);
+        $this->userid = $this->user->getusr_codigo();
         error_log("sessionController::getUserSessionData(): " . $this->user->getusr_nombre());
         return $this->user;
     }

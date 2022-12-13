@@ -1,5 +1,6 @@
 <?php
 $user = $this->d['user'];
+$historial = $this->d['historial'];
 
 ?>
 <!DOCTYPE html>
@@ -85,18 +86,40 @@ $user = $this->d['user'];
                                                     <label class="form-check-label" for="customCheck1">&nbsp;</label>
                                                 </div>
                                             </th>
-                                            <th data-sort="" class="all">N° Venta</th>
+                                            <th data-sort="id" class="all">N° Venta</th>
                                             <th data-sort="">Cliente</th>
                                             <th data-sort="">Total</th>
                                             <th data-sort="">Fecha</th>
                                             <th data-sort="">Docs</th>
                                             <th data-sort="">Usuario</th>
-                                            <th data-sort="">Seguimiento</th>
                                             <th style="width: 85px;">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody id="databody">
-
+                                        <?php
+                                        if ($historial === NULL) {
+                                            //showError('Datos no disponibles por el momento.');
+                                        }
+                                        foreach ($historial as $hist) { ?>
+                                            <tr id="fila-<?php echo $hist['historial']->getVta_numped() ?>">
+                                                <td>
+                                                    <div class="form-check">
+                                                        <label class="form-check-label" for="customCheck2">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <?php echo '<td>' . $hist['historial']->getVta_numped() . '</td>' ?>
+                                                <?php echo '<td>' . $hist['historial']->getCpr_nombre() . '</td>' ?>
+                                                <?php echo '<td>' . $hist['historial']->getVta_val_neto() . '</td>' ?>
+                                                <?php echo '<td>' . $hist['historial']->getVta_fec_ped() . '</td>' ?>
+                                                <?php echo '<td>' . $hist['historial']->getVta_fec_ped() . '</td>' ?>
+                                                <?php echo '<td>' . $hist['historial']->getUsr_nombre() . '</td>' ?>
+                                                <td class="table-action">
+                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
+                                                    <button class='action-icon' title='Actualizar venta' onclick="editarVenta('<?php echo $hist['historial']->getVta_numped() ?>');" id="<?php echo $hist['historial']->getVta_numped() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
+                                                    <a role="button" class='action-icon' title='Eliminar venta' onclick="eliminarVenta('<?php echo $hist['historial']->getVta_numped() ?>');" id="<?php echo $hist['historial']->getVta_numped() ?>"> <i class='mdi mdi-delete'></i></a>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>

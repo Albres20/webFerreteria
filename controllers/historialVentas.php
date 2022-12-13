@@ -15,12 +15,32 @@ class HistorialVentas extends SessionController{
 
         $this->view->render('admin/historialVentas', [
             'user' => $this->user,
-            //'clientes' => $this->getClienteDB(),
+            'historial' => $this->getVentasDB()
         ]);
         /*$this->view->render('admin/usuarios', [
             "usuarios" => $usuarios
         ]);*/
         //$this->view->render('admin/usuarios');
+    }
+
+    private function getVentasDB(){
+        $res = [];
+
+        $historialmodel = new VentasModel();
+        $historialventas = $historialmodel->getAll();
+
+        foreach ($historialventas as $historial) {
+            $historialsarray = [];
+            $historialsarray['historial'] = $historial;
+            // $categoryArray['total'] = $total;
+            // $categoryArray['count'] = $numberOfExpenses;
+            // $categoryArray['category'] = $category;
+
+            array_push($res, $historialsarray);
+        }
+        //$res = array_values(array_unique($res));
+
+        return $res;
     }
 
 }

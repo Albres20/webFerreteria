@@ -143,28 +143,6 @@ class ClienteProveedorModel extends Model implements IModel{
         }
     }
 
-    public function getClienteBuscado($cliente){
-        try{
-            $query = $this->prepare('SELECT cpr_nombre, cpr_tipodocum, cpr_numdoc, cpr_direccion 
-                FROM clientes 
-                WHERE cpr_nombre = :cpr_nombre or cpr_numdoc = :cpr_numdoc');
-            $query->execute([ 'cpr_numdoc' => $cliente, 'cpr_nombre' => $cliente]);
-            
-            if($query->rowCount() > 0){
-                while($row = $query->fetch(PDO::FETCH_ASSOC)){
-                    $data['nombre'] = $row['cpr_nombre'];
-                    $data['tipo'] = $row['cpr_tipodocum'];
-                    $data['num'] = $row['cpr_numdoc'];
-                    $data['dir'] = $row['cpr_direccion'];
-                }
-                return $data;
-            }
-
-        }catch(PDOException $e){
-            echo $e->getMessage();
-        }
-    }
-
     public function existsNUM($cpr_numdoc){
         try{
             $query = $this->prepare('SELECT cpr_numdoc FROM clientes WHERE cpr_numdoc = :cpr_numdoc');

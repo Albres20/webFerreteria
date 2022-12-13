@@ -153,39 +153,6 @@
             }
         }
 
-        public function getProductoBuscado($producto){
-            try{
-                $query = $this->prepare('SELECT productos.prd_codigo, productos.prd_nombre, productos.prd_imagen, producto_det.dpr_marca,  
-                producto_det.dpr_prec_compra, producto_det.dpr_prec_prod, producto_det.dpr_stock 
-                FROM productos
-                LEFT JOIN producto_det 
-                on productos.prd_codigo = producto_det.prd_codigo 
-                WHERE productos.prd_nombre = :prd_nombre
-                OR productos.prd_codigo = :prd_codigo');
-                $query->execute([ 'prd_nombre' => $producto, 'prd_codigo' => $producto]);
-    
-                if($query->rowCount() > 0){
-                    while($row = $query->fetch(PDO::FETCH_ASSOC)){
-                        $data['codigo'] = $row['prd_codigo'];
-                        $data['nombre'] = $row['prd_nombre'];
-                        $data['imagen'] = $row['prd_imagen'];
-                        $data['marca'] = $row['dpr_marca'];
-                        $data['precio_compra'] = $row['dpr_prec_compra'];
-                        $data['precio_producto'] = $row['dpr_prec_prod'];
-                        $data['stock'] = $row['dpr_stock'];
-                    }
-                    return $data;
-                }
-    
-            }catch(PDOException $e){
-                echo $e;
-            }
-        }
-
-
-
-
-
         public function update(){}
 
         public function delete($id){

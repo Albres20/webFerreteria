@@ -63,10 +63,12 @@ $user = $this->d['user'];
                         <div class="card-body">
                             <h4 class="header-title mb-3">Agregar Productos</h4>
                             <!--- boton de busqueda en 3 columnas-->
-                            <div class="row">
+
+                            <form id="addproductoventa" action="nuevaVenta/addproducto" class="row" method="post" autocomplete="off">
                                 <div class="col-md-5">
                                     <div class="mb-3">
                                         <input type="search" class="form-control" name="buscarProducto" placeholder="Buscar producto" id="buscarProducto">
+                                        <input type="hidden" id="id" name="id">
                                         <!-- <div class="input-group-append">
                                             <button class="btn btn-outline-secondary" type="button" id="btnBuscarProducto">Agregar</button>
                                         </div> -->
@@ -74,20 +76,21 @@ $user = $this->d['user'];
                                 </div>
                                 <div class="col-md-3">
                                     <div class="mb-3">
-                                        <input class="form-control" type="number" name="cantidad" id="cantidadproducto" placeholder="Cantidad" onkeyup="calcularPrecio(event)">
+                                        <input class="form-control" type="number" name="cantidad" id="cantidadproducto" placeholder="Cantidad" onkeyup="calcularPrecio(event)" required>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="mb-3">
-                                        <input class="form-control" type="number" name="precio" id="precioproducto" placeholder="Precio" disabled>
+                                        <input class="form-control" type="number" name="precio" id="precioproducto" placeholder="Precio" disabled min=1>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="mb-3">
-                                        <button class="btn btn-outline-secondary" type="button" id="btnBuscarProducto">Agregar</button>
+                                        <button class="btn btn-outline-secondary" type="submit" id="btnaddProducto">Agregar</button>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
+
                             <!--- end boton de busqueda en 3 columnas-->
                             <div class="table-responsive">
                                 <table class="table table-striped table-sm table-centered mb-0">
@@ -102,7 +105,7 @@ $user = $this->d['user'];
                                             <th style="width: 50px;"></th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="detalleProductos">
                                         <tr>
                                             <td>
                                                 <img src="assets/images/products/product-1.jpg" alt="contact-img" title="contact-img" class="rounded me-3" height="64">
@@ -110,8 +113,7 @@ $user = $this->d['user'];
                                                     <a href="apps-ecommerce-products-details.html" class="text-body">Amazing Modern Chair</a>
                                                     <br>
                                                     <small class="me-2"><b>Size:</b> Large </small>
-                                                    <small><b>Color:</b> Light Green
-                                                    </small>
+                                                    <small><b>Color:</b> Light Green</small>
                                                 </p>
                                             </td>
                                             <td>

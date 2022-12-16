@@ -61,14 +61,14 @@
                                <!-- <li>
                                    <a href="#">Seguimiento de venta</a>
                                </li> -->
-                               <?php if ($user->getrol_id() == 1) { ?>
+                               <!-- <?php //if ($user->getrol_id() == 1) { ?>
                                <li>
                                    <a href="historialFacturas">Facturación</a>
                                </li>
-                               <?php } ?>
+                               <?php //} ?>
                                <li>
                                    <a href="historialCotizaciones">Cotizaciones <span class="badge rounded-pill badge-success-lighten font-10 float-end">New</span></a>
-                               </li>
+                               </li> -->
                            </ul>
                        </div>
                    </li>

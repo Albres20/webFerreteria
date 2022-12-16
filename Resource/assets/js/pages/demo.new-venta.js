@@ -188,14 +188,13 @@ function cargarProductos() {
         url: "nuevaVenta/listarProductos",
         success: function (data) {
             const res = JSON.parse(data);
+            let subtotal = 0, total = 0, impuestototal = 0;
             var html = '';
             res.forEach(row => {
-                var impuesto = row.det_prec_total*0.18;
-                impuesto = impuesto.toFixed(2);
                 //añadir las filas a la tabla
                 html += '<tr>';
                 html += '<td>';
-                html += '<img src="resource/image/imgproductos/'+row.prd_imagen+'" alt="product-img" title="product-img" class="rounded me-3" height="64">';
+                // html += '<img src="resource/image/imgproductos/'+row.prd_imagen+'" alt="product-img" title="product-img" class="rounded me-3" height="64">';
                 html += '<p class="m-0 d-inline-block align-middle font-16">';
                 html += '<a class="text-body">'+row.prd_nombre+'</a>';
                 html += "<br>";
@@ -205,13 +204,21 @@ function cargarProductos() {
                 html += "</td>";
                 html += '<td><input type="number" min="1" value="'+row.det_prec_prod+'" class="form-control" placeholder="Qty" style="width: 90px;"></td>';
                 html += '<td><input type="number" min="1" value="'+row.det_cantidad+'" class="form-control" placeholder="Qty" style="width: 90px;"></td>';
-                html += "<td>" + impuesto + "</td>";
-                html += "<td>" + row.det_prec_total + "</td>";
-                html += "<td>" + row.det_prec_total + "</td>";
+                html += "<td>" + parseFloat(row.det_prec_total*0.18).toFixed(2) + "</td>";
+                impuestototal+=row.det_prec_total*0.18;
+                html += "<td>" + parseFloat(row.det_prec_total - row.det_prec_total*0.18).toFixed(2) + "</td>";
+                html += "<td>" + parseFloat(row.det_prec_total).toFixed(2) + "</td>";
+                //total += row.det_prec_total;
                 html += '<td><a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a></td>';
                 html += "</tr>";
             });
             $("#detalleProductos").html(html);
+            impuestototal = parseFloat(impuestototal).toFixed(2);
+            $("#impuesto").html(impuestototal);
+            subtotal = parseFloat(subtotal).toFixed(2);
+            $("#subtotal").html(subtotal);
+            total = parseFloat(total).toFixed(2);
+            $("#total").html(total);
         },
         error: function (data) {
             //console.log(data);

@@ -106,122 +106,6 @@ $user = $this->d['user'];
                                         </tr>
                                     </thead>
                                     <tbody id="detalleProductos">
-                                        <tr>
-                                            <td>
-                                                <img src="assets/images/products/product-1.jpg" alt="contact-img" title="contact-img" class="rounded me-3" height="64">
-                                                <p class="m-0 d-inline-block align-middle font-16">
-                                                    <a href="apps-ecommerce-products-details.html" class="text-body">Amazing Modern Chair</a>
-                                                    <br>
-                                                    <small class="me-2"><b>Size:</b> Large </small>
-                                                    <small><b>Color:</b> Light Green</small>
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <input type="number" min="1" value="5" class="form-control" placeholder="Qty" style="width: 90px;">
-                                            </td>
-                                            <td>
-                                                <input type="number" min="1" value="5" class="form-control" placeholder="Qty" style="width: 90px;">
-                                            </td>
-                                            <td>
-                                                $148.66
-                                            </td>
-                                            <td>
-                                                $148.66
-                                            </td>
-                                            <td>
-                                                $743.30
-                                            </td>
-                                            <td>
-                                                <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="assets/images/products/product-2.jpg" alt="contact-img" title="contact-img" class="rounded me-3" height="64">
-                                                <p class="m-0 d-inline-block align-middle font-16">
-                                                    <a href="apps-ecommerce-products-details.html" class="text-body">Biblio Plastic Armchair</a>
-                                                    <br>
-                                                    <small class="me-2"><b>Size:</b> Small </small>
-                                                    <small><b>Color:</b> Brown </small>
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <input type="number" min="1" value="2" class="form-control" placeholder="Qty" style="width: 90px;">
-                                            </td>
-                                            <td>
-                                                <input type="number" min="1" value="2" class="form-control" placeholder="Qty" style="width: 90px;">
-                                            </td>
-                                            <td>
-                                                $198.00
-                                            </td>
-                                            <td>
-                                                $198.00
-                                            </td>
-                                            <td>
-                                                $198.00
-                                            </td>
-                                            <td>
-                                                <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="assets/images/products/product-3.jpg" alt="contact-img" title="contact-img" class="rounded me-3" height="64">
-                                                <p class="m-0 d-inline-block align-middle font-16">
-                                                    <a href="apps-ecommerce-products-details.html" class="text-body">Designer Awesome Chair</a>
-                                                    <br>
-                                                    <small class="me-2"><b>Size:</b> Medium </small>
-                                                    <small><b>Color:</b> Green </small>
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <input type="number" min="1" value="10" class="form-control" placeholder="Qty" style="width: 90px;">
-                                            </td>
-                                            <td>
-                                                <input type="number" min="1" value="10" class="form-control" placeholder="Qty" style="width: 90px;">
-                                            </td>
-                                            <td>
-                                                $49.99
-                                            </td>
-                                            <td>
-                                                $49.99
-                                            </td>
-                                            <td>
-                                                $499.90
-                                            </td>
-                                            <td>
-                                                <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="assets/images/products/product-5.jpg" alt="contact-img" title="contact-img" class="rounded me-3" height="64">
-                                                <p class="m-0 d-inline-block align-middle font-16">
-                                                    <a href="apps-ecommerce-products-details.html" class="text-body">Unpowered aircraft</a>
-                                                    <br>
-                                                    <small class="me-2"><b>Size:</b> Large </small>
-                                                    <small><b>Color:</b> Orange </small>
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <input type="number" min="1" value="1" class="form-control" placeholder="Qty" style="width: 90px;">
-                                            </td>
-                                            <td>
-                                                <input type="number" min="1" value="1" class="form-control" placeholder="Qty" style="width: 90px;">
-                                            </td>
-                                            <td>
-                                                $129.99
-                                            </td>
-                                            <td>
-                                                $129.99
-                                            </td>
-                                            <td>
-                                                $129.99
-                                            </td>
-                                            <td>
-                                                <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div> <!-- end table-responsive-->
@@ -229,21 +113,17 @@ $user = $this->d['user'];
                             <div class="mb-4 mt-3" style="text-align: right;">
                                 <div class="row mb-2">
                                     <div class="col-md-9"><strong>Subtotal</strong></div>
-                                    <div class="col-md-3">$499.90</div>
+                                    <div class="col-md-3" id="subtotal">$499.90</div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-9"><strong>Impuesto (18%)</strong></div>
-                                    <div class="col-md-3">$49.99</div>
-                                </div>
-                                <div class="row mb-2">
-                                    <div class="col-md-9"><strong>Descuento</strong></div>
-                                    <div class="col-md-3"><input class="form-control form-control-sm text-right discount-input" type="number"></div>
+                                    <div class="col-md-3" id="impuesto">$49.99</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-9">
                                         <h4 class="font-weight-bold">Importe total</h4>
                                     </div>
-                                    <div class="col-md-3">$549.89</div>
+                                    <div class="col-md-3" id="total">$549.89</div>
                                 </div>
 
                             </div>

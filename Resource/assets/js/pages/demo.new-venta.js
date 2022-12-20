@@ -1,21 +1,21 @@
-$(document).ready(function () {
+$(document).ready(function() {
     //leer el input del id = buscarProducto por cada tecla que se presione
     $('#buscarProducto').typeahead({
         hint: true,
         highlight: true,
         minLength: 0,
-        source: function (busqueda, resultado) {
+        source: function(busqueda, resultado) {
             $.ajax({
                 url: "nuevaVenta/buscarProducto",
                 data: 'busqueda=' + busqueda,
                 dataType: "json",
                 type: "POST",
-                success: function (data) {
-                    resultado($.map(data, function (item) {
+                success: function(data) {
+                    resultado($.map(data, function(item) {
                         return item;
                     }));
                 },
-                error: function (data) {
+                error: function(data) {
                     console.log(data);
                 }
             });
@@ -26,26 +26,26 @@ $(document).ready(function () {
         hint: true,
         highlight: true,
         minLength: 0,
-        source: function (busqueda, resultado) {
+        source: function(busqueda, resultado) {
             $.ajax({
                 url: "nuevaVenta/buscarCliente",
                 data: 'busqueda=' + busqueda,
                 dataType: "json",
                 type: "POST",
-                success: function (data) {
-                    resultado($.map(data, function (item) {
+                success: function(data) {
+                    resultado($.map(data, function(item) {
                         return item;
                     }));
                     $("#btnBuscarProducto").attr('disabled', false);
                 },
-                error: function (data) {
+                error: function(data) {
                     console.log(data);
                 }
             });
         }
     });
     //segun el cliente seleccionado, mostrar los datos en un div
-    $('#consultaCliente').change(function () {
+    $('#consultaCliente').change(function() {
         var cliente = $(this).val();
         //habilitar el boton de buscar cliente
         if (cliente == "") {
@@ -62,7 +62,7 @@ $(document).ready(function () {
                 data: 'cliente=' + cliente,
                 dataType: "json",
                 type: "POST",
-                success: function (data) {
+                success: function(data) {
                     //console.log(data);
                     if (data == null) {
                         console.log("no existe el cliente");
@@ -95,14 +95,14 @@ $(document).ready(function () {
                     }
 
                 },
-                error: function (data) {
+                error: function(data) {
                     console.log(data);
                 }
             });
         }
     });
 
-    $('#buscarProducto').change(function () {
+    $('#buscarProducto').change(function() {
         var producto = $(this).val();
         console.log(producto);
         if (producto != "") {
@@ -111,7 +111,7 @@ $(document).ready(function () {
                 data: 'producto=' + producto,
                 dataType: "json",
                 type: "POST",
-                success: function (data) {
+                success: function(data) {
                     if (data == null) {
                         console.log("no existe el producto");
                     } else {
@@ -121,14 +121,14 @@ $(document).ready(function () {
                         $("#id").val(data.codigo);
                     }
                 },
-                error: function (data) {
+                error: function(data) {
                     console.log("no existe el producto");
                 }
             });
         }
     });
 
-    $("#btnBuscarCliente").click(function () {
+    $("#btnBuscarCliente").click(function() {
         $('#consultaCliente').prop('disabled', false);
         $("#btnBuscarCliente").prop('disabled', true);
         $("#btnBuscarCliente").removeClass('btn-danger');
@@ -139,14 +139,14 @@ $(document).ready(function () {
         $('#tablaDatoCliente').html('');
     });
 
-    $('.limpiarCliente').click(function () {
+    $('.limpiarCliente').click(function() {
         console.log('limpiar');
         $('#consultaCliente').val('');
         $('#tablaDatoCliente').html('');
     });
 
     //form de agregar producto a la venta
-    $("#addproductoventa").submit(function (e) {
+    $("#addproductoventa").submit(function(e) {
         e.preventDefault();
         var form = $(this);
         var url = form.attr("action");
@@ -156,9 +156,10 @@ $(document).ready(function () {
             type: "POST",
             url: url,
             data: data,
-            success: function (data) {
+            success: function(data) {
                 const res = JSON.parse(data);
                 if (res == "ok") {
+                    cargarProductos();
                     $.toast({
                         heading: "Producto agregado",
                         text: "Se ha registrado correctamente",
@@ -173,7 +174,7 @@ $(document).ready(function () {
                 }
                 // console.log(data);
             },
-            error: function (data) {
+            error: function(data) {
                 console.log(data);
             }
         });
@@ -186,9 +187,11 @@ function cargarProductos() {
     $.ajax({
         type: "GET",
         url: "nuevaVenta/listarProductos",
-        success: function (data) {
+        success: function(data) {
             const res = JSON.parse(data);
-            let subtotal = 0, total = 0, impuestototal = 0;
+            let subtotal = 0;
+            let total = 0;
+            let impuestototal = 0;
             var html = '';
             res.forEach(row => {
                 //añadir las filas a la tabla
@@ -196,19 +199,20 @@ function cargarProductos() {
                 html += '<td>';
                 // html += '<img src="resource/image/imgproductos/'+row.prd_imagen+'" alt="product-img" title="product-img" class="rounded me-3" height="64">';
                 html += '<p class="m-0 d-inline-block align-middle font-16">';
-                html += '<a class="text-body">'+row.prd_nombre+'</a>';
+                html += '<a class="text-body">' + row.prd_nombre + '</a>';
                 html += "<br>";
-                html += '<small class="me-2"><b>Catg:</b>'+row.cat_nombre+'</small>';
-                html += '<small><b>Codigo:</b>'+row.prd_codigo+'</small>';
+                html += '<small class="me-2"><b>Catg:</b>' + row.cat_nombre + '</small>';
+                html += '<small><b>Codigo:</b>' + row.prd_codigo + '</small>';
                 html += "</p>";
                 html += "</td>";
-                html += '<td><input type="number" min="1" value="'+row.det_prec_prod+'" class="form-control" placeholder="Qty" style="width: 90px;"></td>';
-                html += '<td><input type="number" min="1" value="'+row.det_cantidad+'" class="form-control" placeholder="Qty" style="width: 90px;"></td>';
-                html += "<td>" + parseFloat(row.det_prec_total*0.18).toFixed(2) + "</td>";
-                impuestototal+=row.det_prec_total*0.18;
-                html += "<td>" + parseFloat(row.det_prec_total - row.det_prec_total*0.18).toFixed(2) + "</td>";
+                html += '<td><input type="number" min="1" value="' + row.det_prec_prod + '" class="form-control" placeholder="Qty" style="width: 90px;"></td>';
+                html += '<td><input type="number" min="1" value="' + row.det_cantidad + '" class="form-control" placeholder="Qty" style="width: 90px;"></td>';
+                html += "<td>" + parseFloat(row.det_prec_total * 0.18).toFixed(2) + "</td>";
+                impuestototal += row.det_prec_total * 0.18;
+                html += "<td>" + parseFloat(row.det_prec_total - row.det_prec_total * 0.18).toFixed(2) + "</td>";
+                subtotal += row.det_prec_total - row.det_prec_total * 0.18;
                 html += "<td>" + parseFloat(row.det_prec_total).toFixed(2) + "</td>";
-                //total += row.det_prec_total;
+                total += row.det_prec_total;
                 html += '<td><a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a></td>';
                 html += "</tr>";
             });
@@ -217,10 +221,11 @@ function cargarProductos() {
             $("#impuesto").html(impuestototal);
             subtotal = parseFloat(subtotal).toFixed(2);
             $("#subtotal").html(subtotal);
+            // total = impuestototal + subtotal;
             total = parseFloat(total).toFixed(2);
             $("#total").html(total);
         },
-        error: function (data) {
+        error: function(data) {
             //console.log(data);
         }
     });

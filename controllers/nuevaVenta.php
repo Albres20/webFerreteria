@@ -87,11 +87,12 @@ class NuevaVenta extends SessionController{
         //$ventasmodel->setVta_numped("0000000002");
         $ventasmodel->setVta_fec_ped(date("Y-m-d H:i:s"));
         $ventasmodel->setDet_est_ped("A");
+        $vtanumero = "0000000001";
         $codigo = $obtenerProducto["prd_codigo"];
         $precio = $obtenerProducto["dpr_prec_prod"];
         $cantidad = $_POST['cantidad'];
         $subtotal = $precio * $cantidad;
-        if($ventasmodel->saveProduct($codigo, $cantidad, $precio, $subtotal)){
+        if($ventasmodel->saveProduct($codigo, $cantidad, $precio, $subtotal, $vtanumero)){
             $msg = "ok";
         }else{
             $msg = "error";

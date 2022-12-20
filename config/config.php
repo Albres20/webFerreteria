@@ -5,10 +5,10 @@
     define('HOST', 'localhost');
     define('DB', 'venta');
     define('USER', 'root');
-    define('PASSWORD', "qwerty");
+    define('PASSWORD', "");
     define('CHARSET', 'utf8');
 
     define('DFT', 'default/');
     define('RQ', 'resource/');
-    define('URL', 'http://localhost:8080/webFerreteria/');
+    define('URL', 'http://localhost/webFerreteria/');
 ?>

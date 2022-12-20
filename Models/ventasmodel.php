@@ -26,12 +26,13 @@ class VentasModel extends Model implements IModel{
 
     public function save(){}
 
-    public function saveProduct($codigo, $cantidad, $precio, $subtotal){
+    public function saveProduct($codigo, $cantidad, $precio, $subtotal, $vtanumero){
         //guardar en la tabla ventas_det
         try{
-            $query = $this->prepare('INSERT INTO ventas_det (prd_codigo, det_prec_prod, det_cantidad, det_prec_total, det_fec_ped, det_est_ped) 
-            VALUES (:prd_codigo, :det_prec_prod, :det_cantidad, :det_prec_total, :det_fec_ped, :det_est_ped)');
+            $query = $this->prepare('INSERT INTO ventas_det (vta_numped, prd_codigo, det_prec_prod, det_cantidad, det_prec_total, det_fec_ped, det_est_ped) 
+            VALUES (:vta_numped, :prd_codigo, :det_prec_prod, :det_cantidad, :det_prec_total, :det_fec_ped, :det_est_ped)');
             $query->execute([
+                'vta_numped' => $vtanumero,
                 'prd_codigo' => $codigo,
                 'det_prec_prod' => $precio,
                 'det_cantidad' => $cantidad,

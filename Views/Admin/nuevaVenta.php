@@ -113,17 +113,17 @@ $user = $this->d['user'];
                             <div class="mb-4 mt-3" style="text-align: right;">
                                 <div class="row mb-2">
                                     <div class="col-md-9"><strong>Subtotal</strong></div>
-                                    <div class="col-md-3" id="subtotal">$499.90</div>
+                                    <div class="col-md-3" id="subtotal">S/0</div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-9"><strong>Impuesto (18%)</strong></div>
-                                    <div class="col-md-3" id="impuesto">$49.99</div>
+                                    <div class="col-md-3" id="impuesto">S/0</div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-9">
                                         <h4 class="font-weight-bold">Importe total</h4>
                                     </div>
-                                    <div class="col-md-3" id="total">$549.89</div>
+                                    <div class="col-md-3 totalPagar" id="total">S/0</div>
                                 </div>
 
                             </div>
@@ -135,8 +135,7 @@ $user = $this->d['user'];
                                 </div> <!-- end col -->
                                 <div class="col-sm-6">
                                     <div class="text-sm-end">
-                                        <a href="#" class="btn btn-danger">
-                                            <i class="mdi mdi-content-save"></i> Guardar </a>
+                                    <a role="button" class="btn btn-danger" onclick="guardarVenta();" id=""> Guardar <i class="mdi mdi-content-save"></i></a>
                                     </div>
                                 </div> <!-- end col -->
                             </div> <!-- end row-->
@@ -170,7 +169,7 @@ $user = $this->d['user'];
                             </div>
                             <div class="position-relative mb-2">
                                 <h6 class="d-inline-block"><strong>Total</strong></h6>
-                                <h6 class="d-inline-block float-right">$549.89</h6>
+                                <h6 class="d-inline-block float-right totalPagar">S/0</h6>
                             </div>
 
                             <div>
@@ -195,15 +194,7 @@ $user = $this->d['user'];
                                             <option value="203">Transferencia Caja Piura</option>
                                         </select>
                                         <input type="text" class="form-control form-control-sm date" id="birthdatepicker" data-toggle="date-picker" data-single-date-picker="true">
-
-                                        <span class="input-group-text" id="inputGroupPrepend">S/</span>
-                                        <input type="text" class="form-control form-control-sm" id="validationCustomUsername" placeholder="0.00" aria-describedby="inputGroupPrepend">
                                     </div>
-                                </div>
-                                <a href="javascript:void(0);" class="mdi mdi-plus"> Pago</a>
-                                <div class="position-relative mt-2">
-                                    <h6 class="d-inline-block"><strong>Deuda</strong></h6>
-                                    <h6 class="d-inline-block float-right">S/ 0.00</h6>
                                 </div>
                             </div>
 

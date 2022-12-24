@@ -157,6 +157,7 @@ $(document).ready(function () {
             url: url,
             data: data,
             success: function (data) {
+                console.log(data);
                 const res = JSON.parse(data);
                 if (res == "ok") {
                     $.toast({
@@ -170,6 +171,20 @@ $(document).ready(function () {
                         stack: 6
                     });
                     form.trigger("reset");
+                    cargarProductos();
+                }else if(res == "update"){
+                    $.toast({
+                        heading: "Producto actualizado",
+                        text: "Se ha actualizado correctamente",
+                        position: "top-right",
+                        showHideTransition: 'plain',
+                        loaderBg: "#0acf97",
+                        icon: 'success',
+                        hideAfter: 3500,
+                        stack: 6
+                    });
+                    form.trigger("reset");
+                    cargarProductos();
                 }
                 // console.log(data);
             },
@@ -188,37 +203,32 @@ function cargarProductos() {
         url: "nuevaVenta/listarProductos",
         success: function (data) {
             const res = JSON.parse(data);
-            let subtotal = 0, total = 0, impuestototal = 0;
             var html = '';
-            res.forEach(row => {
+            res["detalle"].forEach(row => {
                 //añadir las filas a la tabla
-                html += '<tr>';
+                html += '<tr idprod='+row.det_id+'>';
                 html += '<td>';
                 // html += '<img src="resource/image/imgproductos/'+row.prd_imagen+'" alt="product-img" title="product-img" class="rounded me-3" height="64">';
                 html += '<p class="m-0 d-inline-block align-middle font-16">';
-                html += '<a class="text-body">'+row.prd_nombre+'</a>';
+                html += '<a class="text-body">'+row["prd_nombre"]+'</a>';
                 html += "<br>";
-                html += '<small class="me-2"><b>Catg:</b>'+row.cat_nombre+'</small>';
+                html += '<span class="badge badge-outline rounded-pill" style="background-color:'+row.cat_color+'">'+row.cat_nombre+'</span>';
                 html += '<small><b>Codigo:</b>'+row.prd_codigo+'</small>';
                 html += "</p>";
                 html += "</td>";
-                html += '<td><input type="number" min="1" value="'+row.det_prec_prod+'" class="form-control" placeholder="Qty" style="width: 90px;"></td>';
-                html += '<td><input type="number" min="1" value="'+row.det_cantidad+'" class="form-control" placeholder="Qty" style="width: 90px;"></td>';
-                html += "<td>" + parseFloat(row.det_prec_total*0.18).toFixed(2) + "</td>";
-                impuestototal+=row.det_prec_total*0.18;
-                html += "<td>" + parseFloat(row.det_prec_total - row.det_prec_total*0.18).toFixed(2) + "</td>";
-                html += "<td>" + parseFloat(row.det_prec_total).toFixed(2) + "</td>";
-                //total += row.det_prec_total;
-                html += '<td><a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a></td>';
+                html += '<td><input type="number" min="1" value="'+row.det_prec_prod+'" class="form-control" placeholder="Qty" style="width: 90px;" disabled></td>';
+                html += '<td><input type="number" min="1" value="'+row.det_cantidad+'" class="form-control" placeholder="Qty" style="width: 90px;" disabled></td>';
+                html += "<td>" + parseFloat(row.det_prec_subtotal*0.18).toFixed(2) + "</td>";
+                html += "<td>" + parseFloat(row.det_prec_subtotal - row.det_prec_subtotal*0.18).toFixed(2) + "</td>";
+                html += "<td>" + parseFloat(row.det_prec_subtotal).toFixed(2) + "</td>";
+                html += '<td><a role="button" class="action-icon" title="Eliminar producto" onclick="eliminarProductoLista('+row.det_id+');" id=""> <i class="mdi mdi-delete"></i></a></td>';
                 html += "</tr>";
             });
             $("#detalleProductos").html(html);
-            impuestototal = parseFloat(impuestototal).toFixed(2);
-            $("#impuesto").html(impuestototal);
-            subtotal = parseFloat(subtotal).toFixed(2);
-            $("#subtotal").html(subtotal);
-            total = parseFloat(total).toFixed(2);
-            $("#total").html(total);
+
+            $("#impuesto").html((res["total_pagar"].total*0.18).toFixed(2));
+            $("#subtotal").html((res["total_pagar"].total - res["total_pagar"].total*0.18).toFixed(2));
+            $(".totalPagar").html(res["total_pagar"].total);
         },
         error: function (data) {
             //console.log(data);
@@ -232,4 +242,88 @@ function calcularPrecio(e) {
     const precio = $("#precioproducto").val();
     const total = cantidad * precio;
     console.log(total);
+}
+
+function eliminarProductoLista(id){
+    console.log(id);
+    Swal.fire({
+        title: '¿Está seguro?',
+        text: "¡No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '¡Sí, borrarlo!',
+        cancelButtonText: '¡No, cancelar!',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.value) {
+            console.log(result.value);
+            $.ajax({
+                type: "GET",
+                url: "nuevaVenta/delete/" + id,
+                success: function (data) {  
+                    console.log(data);
+                    const res = JSON.parse(data);
+                    if (res == "ok") {
+                        $.toast({
+                            heading: "Producto eliminado",
+                            text: "Se ha eliminado correctamente",
+                            position: "top-right",
+                            showHideTransition: 'plain',
+                            loaderBg: "#0acf97",
+                            icon: 'success',
+                            hideAfter: 3500,
+                            stack: 6
+                        });
+                        cargarProductos();
+                    }
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+    })
+}
+
+function guardarVenta(){
+    Swal.fire({
+        title: '¿Está seguro de realizar la venta?',
+        text: "¡No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '¡Sí!',
+        cancelButtonText: '¡No!',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                type: "GET",
+                url: "nuevaVenta/guardarVenta",
+                success: function (data) {
+                    console.log(data);
+                    const res = JSON.parse(data);
+                    if (res == "ok") {
+                        $.toast({
+                            heading: "Venta realizada",
+                            text: "Se ha realizado correctamente",
+                            position: "top-right",
+                            showHideTransition: 'plain',
+                            loaderBg: "#0acf97",
+                            icon: 'success',
+                            hideAfter: 3500,
+                            stack: 6
+                        });
+                        //cargarProductos();
+                    }
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+    })
 }

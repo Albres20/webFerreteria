@@ -63,13 +63,14 @@ $(document).ready(function () {
                 dataType: "json",
                 type: "POST",
                 success: function (data) {
-                    //console.log(data);
+                    console.log(data);
                     if (data == null) {
                         console.log("no existe el cliente");
                     } else {
                         var html = "";
                         html += "<div class='form-group row required mt-3 mb-2'>";
                         html += "<div class='col-sm-4'><strong class='mdi mdi-account'> Nombre</strong></div>";
+                        html += "<input type='hidden' name='cpr_Cliente' id='cpr_Cliente' value='" + data.id + "'>";
                         html += "<div class='col-sm-8'>" + data.nombre + "</div>";
                         html += "</div>";
                         html += "<div class='form-group row mb-2'>";
@@ -152,46 +153,60 @@ $(document).ready(function () {
         var url = form.attr("action");
         var data = form.serialize();
 
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: data,
-            success: function (data) {
-                console.log(data);
-                const res = JSON.parse(data);
-                if (res == "ok") {
-                    $.toast({
-                        heading: "Producto agregado",
-                        text: "Se ha registrado correctamente",
-                        position: "top-right",
-                        showHideTransition: 'plain',
-                        loaderBg: "#0acf97",
-                        icon: 'success',
-                        hideAfter: 3500,
-                        stack: 6
-                    });
-                    form.trigger("reset");
-                    cargarProductos();
-                }else if(res == "update"){
-                    $.toast({
-                        heading: "Producto actualizado",
-                        text: "Se ha actualizado correctamente",
-                        position: "top-right",
-                        showHideTransition: 'plain',
-                        loaderBg: "#0acf97",
-                        icon: 'success',
-                        hideAfter: 3500,
-                        stack: 6
-                    });
-                    form.trigger("reset");
-                    cargarProductos();
+        if($("#cantidadproducto").val() > 0){
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: data,
+                success: function (data) {
+                    console.log(data);
+                    const res = JSON.parse(data);
+                    if (res == "ok") {
+                        $.toast({
+                            heading: "Producto agregado",
+                            text: "Se ha registrado correctamente",
+                            position: "top-right",
+                            showHideTransition: 'plain',
+                            loaderBg: "#0acf97",
+                            icon: 'success',
+                            hideAfter: 3500,
+                            stack: 6
+                        });
+                        form.trigger("reset");
+                        cargarProductos();
+                    }else if(res == "update"){
+                        $.toast({
+                            heading: "Producto actualizado",
+                            text: "Se ha actualizado correctamente",
+                            position: "top-right",
+                            showHideTransition: 'plain',
+                            loaderBg: "#0acf97",
+                            icon: 'success',
+                            hideAfter: 3500,
+                            stack: 6
+                        });
+                        form.trigger("reset");
+                        cargarProductos();
+                    }
+                    // console.log(data);
+                },
+                error: function (data) {
+                    console.log(data);
                 }
-                // console.log(data);
-            },
-            error: function (data) {
-                console.log(data);
-            }
-        });
+            });
+        }else{
+            $.toast({
+                heading: "Error",
+                text: "La cantidad debe ser mayor a 0",
+                position: "top-right",
+                showHideTransition: 'plain',
+                loaderBg: "#0acf97",
+                icon: 'error',
+                hideAfter: 3500,
+                stack: 6
+            });
+        }
     });
 
 });
@@ -300,13 +315,20 @@ function guardarVenta(){
         reverseButtons: true
     }).then((result) => {
         if (result.value) {
+            var id_cliente;
+            if($("#cpr_Cliente").val() == undefined){
+                id_cliente = 0;
+            }else{
+                id_cliente = $("#cpr_Cliente").val();
+            }
+            console.log(id_cliente);
             $.ajax({
                 type: "GET",
-                url: "nuevaVenta/guardarVenta",
+                url: "nuevaVenta/guardarVenta/"+id_cliente,
                 success: function (data) {
                     console.log(data);
                     const res = JSON.parse(data);
-                    if (res == "ok") {
+                    if (res.msg == "ok") {
                         $.toast({
                             heading: "Venta realizada",
                             text: "Se ha realizado correctamente",
@@ -318,6 +340,10 @@ function guardarVenta(){
                             stack: 6
                         });
                         //cargarProductos();
+                        window.open("nuevaVenta/generarPDF/" + res.id_venta);
+                        setTimeout(function () {
+                            window.location.href = "nuevaVenta";
+                        } , 2000);
                     }
                 },
                 error: function (data) {

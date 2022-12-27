@@ -202,6 +202,68 @@ class VentasModel extends Model implements IModel{
             return false;
         }
     }
+
+    public function actualizarStock($prd_codigo, $det_cantidad){
+        try{
+            $query = $this->prepare('UPDATE producto_det
+            JOIN productos
+            on productos.prd_codigo = producto_det.prd_codigo
+            SET producto_det.dpr_stock = :prd_stock
+            WHERE productos.prd_codigo = :prd_codigo');
+            $query->execute([
+                'prd_stock' => $det_cantidad,
+                'prd_codigo' => $prd_codigo
+            ]);
+            return true;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    public function vaciarDetalle($usr_cod){
+        try{
+            $query = $this->prepare('DELETE FROM ventas_det WHERE usr_codigo = :usr_codigo');
+            $query->execute([ 'usr_codigo' => $usr_cod]);
+            return true;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    public function getProVenta($id_venta){
+        $items = [];
+        try{
+            $query = $this->prepare("SELECT clientes.*, ventas.*, ventas_list.*, productos.prd_nombre FROM ventas
+            INNER JOIN ventas_list
+            on ventas.vta_numped = ventas_lisidventa
+            INNER JOIN clientes
+            on ventas.cpr_cliente = clientes.cpr_id
+            INNER JOIN productos
+            on productos.prd_codigo = ventas_listidproducto
+            WHERE ventas.vta_numped = :ventas_id");
+            $query->execute([ 'ventas_id' => $id_venta]);
+            $data = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $data;
+        }catch(PDOException $e){
+            die($e->getMessage());
+        }
+    }
+    public function getClienteVenta($id_venta){
+        $items = [];
+        try{
+            $query = $this->prepare("SELECT ventas.vta_numped, ventas.cpr_cliente, clientes.* FROM ventas
+            INNER JOIN clientes
+            on ventas.cpr_cliente = clientes.cpr_id
+            WHERE ventas.vta_numped = :ventas_id");
+            $query->execute([ 'ventas_id' => $id_venta]);
+            $data = $query->fetch(PDO::FETCH_ASSOC);
+            return $data;
+        }catch(PDOException $e){
+            die($e->getMessage());
+        }
+    }
     public function update(){}
     public function from($array){
         $this->vta_numped = $array['vta_numped'];
@@ -213,13 +275,14 @@ class VentasModel extends Model implements IModel{
 
     public function getClienteBuscado($cliente){
         try{
-            $query = $this->prepare('SELECT cpr_nombre, cpr_tipodocum, cpr_numdoc, cpr_direccion 
+            $query = $this->prepare('SELECT cpr_id, cpr_nombre, cpr_tipodocum, cpr_numdoc, cpr_direccion 
                 FROM clientes 
                 WHERE cpr_nombre = :cpr_nombre or cpr_numdoc = :cpr_numdoc');
             $query->execute([ 'cpr_numdoc' => $cliente, 'cpr_nombre' => $cliente]);
             
             if($query->rowCount() > 0){
                 while($row = $query->fetch(PDO::FETCH_ASSOC)){
+                    $data['id'] = $row['cpr_id'];
                     $data['nombre'] = $row['cpr_nombre'];
                     $data['tipo'] = $row['cpr_tipodocum'];
                     $data['num'] = $row['cpr_numdoc'];

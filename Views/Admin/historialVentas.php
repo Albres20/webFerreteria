@@ -90,7 +90,6 @@ $historial = $this->d['historial'];
                                             <th data-sort="">Cliente</th>
                                             <th data-sort="">Total</th>
                                             <th data-sort="">Fecha</th>
-                                            <th data-sort="">Docs</th>
                                             <th data-sort="">Usuario</th>
                                             <th style="width: 85px;">Acciones</th>
                                         </tr>
@@ -111,11 +110,9 @@ $historial = $this->d['historial'];
                                                 <?php echo '<td>' . $hist['historial']->getCpr_nombre() . '</td>' ?>
                                                 <?php echo '<td>' . $hist['historial']->getVta_val_neto() . '</td>' ?>
                                                 <?php echo '<td>' . $hist['historial']->getVta_fec_ped() . '</td>' ?>
-                                                <?php echo '<td>' . $hist['historial']->getVta_fec_ped() . '</td>' ?>
                                                 <?php echo '<td>' . $hist['historial']->getUsr_nombre() . '</td>' ?>
                                                 <td class="table-action">
-                                                    <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                    <button class='action-icon' title='Actualizar venta' onclick="editarVenta('<?php echo $hist['historial']->getVta_numped() ?>');" id="<?php echo $hist['historial']->getVta_numped() ?>" style='border-width: 0px; background-color: transparent;'> <i class='mdi mdi-square-edit-outline'></i></button>
+                                                    <a href="<?php echo "nuevaVenta/generarPDF/".$hist['historial']->getVta_numped() ?>" class="action-icon" target="_blank"> <i class="mdi mdi-file-pdf"></i></a>
                                                     <a role="button" class='action-icon' title='Eliminar venta' onclick="eliminarVenta('<?php echo $hist['historial']->getVta_numped() ?>');" id="<?php echo $hist['historial']->getVta_numped() ?>"> <i class='mdi mdi-delete'></i></a>
                                                 </td>
                                             </tr>

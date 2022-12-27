@@ -151,12 +151,15 @@ class NuevaVenta extends SessionController{
     }
 
     ///////////////////////////////
-    function guardarVenta(){
+    function guardarVenta($cpr_cliente){
         error_log("Gestion de Nueva Venta ::guardarVenta() ");
         $ventasmodel = new VentasModel();
         $total = $ventasmodel->getCalularVenta($this->usercod);
         $ventasmodel->setVta_fec_ped(date("Y-m-d H:i:s"));
         $ventasmodel->setVta_est_ped("A");
+        if($cpr_cliente[0] == "0"){$ventasmodel->setCpr_cliente(null);
+        }else{$ventasmodel->setCpr_cliente($cpr_cliente[0]);}
+        //print_r($cpr_cliente);
         if($ventasmodel->registrarVenta($this->usercod, $total['total'])){
             $detalle = $ventasmodel->getListaProducto($this->usercod);
             $idVenta = $ventasmodel->getUltimaVenta($this->usercod);
@@ -168,23 +171,29 @@ class NuevaVenta extends SessionController{
                 error_log("idventa:".$idVenta['vta_numped']. " codigo: " . $codigo . " cantidad: " . $cantidad . " precio: " . $precio . " subtotal: " . $subtotal);
                 if($ventasmodel->registrarDetalleVenta($idVenta['vta_numped'], $codigo, $cantidad, $precio, $subtotal)){
                     $msg = "ok";
-                }else{
-                    $msg = "error registrarDetalleVenta";
-                }
+                }else{$msg = "error registrarDetalleVenta";}
+                $stock_actual = $ventasmodel->get($codigo);
+                $stock = $stock_actual["dpr_stock"] - $cantidad;
+                $ventasmodel->actualizarStock($codigo, $stock);
             }
-            $msg = "ok";
+            if($ventasmodel-> vaciarDetalle($this->usercod)){
+                $msg = array('msg' => 'ok', 'id_venta' => $idVenta['vta_numped']);
+            }
         }else{
             $msg = "error registrarVenta";
         }
         echo json_encode($msg, JSON_UNESCAPED_UNICODE);
     }
 
-    function generarPDF($id_compra){
+    function generarPDF($id_venta){
+        error_log("Gestion de Nueva Venta ::generarPDF() ". $id_venta[0]);
+        $ventasmodel = new VentasModel();
         //require('fpdf.php');
         $empresa = $this->getJSONFileConfig();
 
         $pdf = new FPDF($orientation='P',$unit='mm');
         $pdf->AddPage();
+        $pdf->SetTitle("Comprobante de Venta");
         $pdf->SetFont('Arial','B',20);    
         $textypos = 5;
         $pdf->setY(12);
@@ -196,57 +205,53 @@ class NuevaVenta extends SessionController{
         $pdf->Cell(5,$textypos,"DE:");
         $pdf->SetFont('Arial','',10);    
         $pdf->setY(35);$pdf->setX(10);
-        $pdf->Cell(5,$textypos,"Nombre de la empresa");
+        $pdf->Cell(5,$textypos,$empresa[0]['Razon_social']);
         $pdf->setY(40);$pdf->setX(10);
-        $pdf->Cell(5,$textypos,"Direccion de la empresa");
-        $pdf->setY(45);$pdf->setX(10);
-        $pdf->Cell(5,$textypos,"Telefono de la empresa");
+        $pdf->Cell(5,$textypos,$empresa[0]['Region'] . ' / ' .$empresa[0]['Provincia'] . ' / ' .$empresa[0]['Distrito']);
+        // $pdf->setY(45);$pdf->setX(10);
+        // $pdf->Cell(5,$textypos,utf8_decode($empresa[0]['Direccion']));
         $pdf->setY(50);$pdf->setX(10);
-        $pdf->Cell(5,$textypos,"Email de la empresa");
+        $pdf->Cell(5,$textypos,$empresa[0]['Telefono']);
+        $pdf->setY(55);$pdf->setX(10);
+        $pdf->Cell(5,$textypos,$empresa[0]['Correo']);
         
         // Agregamos los datos del cliente
+        $cliente = $ventasmodel->getClienteVenta($id_venta[0]);
         $pdf->SetFont('Arial','B',10);    
         $pdf->setY(30);$pdf->setX(75);
         $pdf->Cell(5,$textypos,"PARA:");
         $pdf->SetFont('Arial','',10);    
         $pdf->setY(35);$pdf->setX(75);
-        $pdf->Cell(5,$textypos,"Nombre del cliente");
+        $pdf->Cell(5,$textypos,$cliente["cpr_nombre"]);
         $pdf->setY(40);$pdf->setX(75);
-        $pdf->Cell(5,$textypos,"Direccion del cliente");
+        $pdf->Cell(5,$textypos,utf8_decode($cliente["cpr_direccion"]));
         $pdf->setY(45);$pdf->setX(75);
-        $pdf->Cell(5,$textypos,"Telefono del cliente");
+        $pdf->Cell(5,$textypos,$cliente["cpr_telefono"]);
         $pdf->setY(50);$pdf->setX(75);
-        $pdf->Cell(5,$textypos,"Email del cliente");
+        $pdf->Cell(5,$textypos,$cliente["cpr_tipodocum"]);
+        $pdf->setY(55);$pdf->setX(75);
+        $pdf->Cell(5,$textypos,$cliente["cpr_numdoc"]);
         
         // Agregamos los datos del cliente
         $pdf->SetFont('Arial','B',10);    
-        $pdf->setY(30);$pdf->setX(135);
+        $pdf->setY(30);$pdf->setX(145);
         $pdf->Cell(5,$textypos,"FACTURA #12345");
         $pdf->SetFont('Arial','',10);    
-        $pdf->setY(35);$pdf->setX(135);
-        $pdf->Cell(5,$textypos,"Fecha: 11/DIC/2019");
-        $pdf->setY(40);$pdf->setX(135);
-        $pdf->Cell(5,$textypos,"Vencimiento: 11/ENE/2020");
-        $pdf->setY(45);$pdf->setX(135);
+        $pdf->setY(35);$pdf->setX(145);
+        $pdf->Cell(5,$textypos, "Fecha: " . date("d/m/Y") );
+        $pdf->setY(40);$pdf->setX(145);
         $pdf->Cell(5,$textypos,"");
-        $pdf->setY(50);$pdf->setX(135);
+        $pdf->setY(50);$pdf->setX(145);
         $pdf->Cell(5,$textypos,"");
         
         /// Apartir de aqui empezamos con la tabla de productos
-        $pdf->setY(60);$pdf->setX(135);
+        $pdf->setY(60);$pdf->setX(145);
             $pdf->Ln();
         /////////////////////////////
         //// Array de Cabecera
         $header = array("Cod.", "Descripcion","Cant.","Precio","Total");
         //// Arrar de Productos
-        $products = array(
-            array("0010", "Producto 1",2,120,0),
-            array("0024", "Producto 2",5,80,0),
-            array("0001", "Producto 3",1,40,0),
-            array("0001", "Producto 3",5,80,0),
-            array("0001", "Producto 3",4,30,0),
-            array("0001", "Producto 3",7,80,0),
-        );
+        $productos = $ventasmodel->getProVenta($id_venta[0]);
             // Column widths
             $w = array(20, 95, 20, 25, 25);
             // Header
@@ -255,21 +260,21 @@ class NuevaVenta extends SessionController{
             $pdf->Ln();
             // Data
             $total = 0;
-            foreach($products as $row)
+            foreach($productos as $row)
             {
-                $pdf->Cell($w[0],6,$row[0],1);
-                $pdf->Cell($w[1],6,$row[1],1);
-                $pdf->Cell($w[2],6,number_format($row[2]),'1',0,'R');
-                $pdf->Cell($w[3],6,"$ ".number_format($row[3],2,".",","),'1',0,'R');
-                $pdf->Cell($w[4],6,"$ ".number_format($row[3]*$row[2],2,".",","),'1',0,'R');
+                $pdf->Cell($w[0],6,$row['ventas_listidproducto'],1);
+                $pdf->Cell($w[1],6,utf8_decode($row['prd_nombre']),1);
+                $pdf->Cell($w[2],6,number_format($row['ventas_listcantidad']),'1',0,'R');
+                $pdf->Cell($w[3],6,"S/. ".number_format($row['ventas_listprecio'],2,".",","),'1',0,'R');
+                $pdf->Cell($w[4],6,"S/. ".number_format($row['ventas_listcantidad'] * $row['ventas_listprecio'],2,".",","),'1',0,'R');
         
                 $pdf->Ln();
-                $total+=$row[3]*$row[2];
+                $total+=$row['ventas_listprecio']*$row['ventas_listcantidad'];
         
             }
         /////////////////////////////
         //// Apartir de aqui esta la tabla con los subtotales y totales
-        $yposdinamic = 60 + (count($products)*10);
+        $yposdinamic = 60 + (count($productos)*10);
         
         $pdf->setY($yposdinamic);
         $pdf->setX(235);
@@ -278,7 +283,6 @@ class NuevaVenta extends SessionController{
         $header = array("", "");
         $data2 = array(
             array("Subtotal",$total),
-            array("Descuento", 0),
             array("Impuesto", 0),
             array("Total", $total),
         );
@@ -292,7 +296,7 @@ class NuevaVenta extends SessionController{
             {
         $pdf->setX(115);
                 $pdf->Cell($w2[0],6,$row[0],1);
-                $pdf->Cell($w2[1],6,"$ ".number_format($row[1], 2, ".",","),'1',0,'R');
+                $pdf->Cell($w2[1],6,"S/. ".number_format($row[1], 2, ".",","),'1',0,'R');
         
                 $pdf->Ln();
             }
@@ -310,12 +314,11 @@ class NuevaVenta extends SessionController{
         $pdf->setX(10);
         $pdf->Cell(5,$textypos,"El cliente se compromete a pagar la factura.");
         $pdf->setY($yposdinamic+20);
-        $pdf->setX(10);
-        $pdf->Cell(5,$textypos,"Powered by Evilnapsis");
         
         
+        
+        $pdf->Image(URL . RQ . 'image/empresa/' . $empresa[0]['Logo'] . '', 165, 0, 35, 30);
         $pdf->output();
-        //$pdf->Image(URL . RQ . 'image/empresa/' . $empresa[0]['Logo'] . '', 50, 16, 30, 30);
     } 
 
 }
